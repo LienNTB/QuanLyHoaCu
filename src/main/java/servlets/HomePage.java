@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Login
+ * Servlet implementation class HomePage
  */
-@WebServlet(name="Login",urlPatterns = { "/Login" })
-public class Login extends HttpServlet {
+@WebServlet(name="HomePage",urlPatterns = { "/HomePage" })
+public class HomePage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public HomePage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	       response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
-	                .getRequestDispatcher("/WEB-INF/views/login.jsp");
+	                .getRequestDispatcher("/WEB-INF/views/homepage.jsp");
 	        dispatcher.forward(request, response);
 	}
 
