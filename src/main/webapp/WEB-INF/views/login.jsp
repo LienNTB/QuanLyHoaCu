@@ -68,6 +68,6 @@
         >.
       </p>
     </footer>
-      <script type="text/javascript" src="${pageContext.request.contextPath}/WEB-INF/js/login.js"></script>
+      <script type="text/javascript" src="${pageContext.request.contextPath}/js/login.js"></script>
   </body>
 </html>
