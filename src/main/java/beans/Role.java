@@ -1,19 +1,20 @@
 package beans;
 
 public class Role {
-	private int id;
-	private String name;
-	public int getId() {
-		return id;
+	private String roleID;
+	private String roleName;
+	public String getRoleID() {
+		return roleID;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setRoleID(String roleID) {
+		this.roleID = roleID;
 	}
-	public String getName() {
-		return name;
+	public String getRoleName() {
+		return roleName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
+
 	
 }

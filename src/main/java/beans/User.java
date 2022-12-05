@@ -3,39 +3,66 @@ package beans;
 import java.sql.Date;
 
 public class User {
-	private String username;
-	private String password;
-	private String hoten;
-	private Date ngaysinh;
-	private String diachi;
-	public String getUsername() {
-		return username;
+	private String maNguoiDung;
+	private String tenDangNhap;
+	private String matKhau;
+	private String hoTen;
+	private Date ngaySinh;
+	private String diaChi;
+	private String roleID;
+	public String getMaNguoiDung() {
+		return maNguoiDung;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setMaNguoiDung(String maNguoiDung) {
+		this.maNguoiDung = maNguoiDung;
 	}
-	public String getPassword() {
-		return password;
+	public String getTenDangNhap() {
+		return tenDangNhap;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setTenDangNhap(String tenDangNhap) {
+		this.tenDangNhap = tenDangNhap;
 	}
-	public String getHoten() {
-		return hoten;
+	public String getMatKhau() {
+		return matKhau;
 	}
-	public void setHoten(String hoten) {
-		this.hoten = hoten;
+	public void setMatKhau(String matKhau) {
+		this.matKhau = matKhau;
 	}
-	public Date getNgaysinh() {
-		return ngaysinh;
+	public String getHoTen() {
+		return hoTen;
 	}
-	public void setNgaysinh(Date ngaysinh) {
-		this.ngaysinh = ngaysinh;
+	public void setHoTen(String hoTen) {
+		this.hoTen = hoTen;
 	}
-	public String getDiachi() {
-		return diachi;
+	public Date getNgaySinh() {
+		return ngaySinh;
 	}
-	public void setDiachi(String diachi) {
-		this.diachi = diachi;
+	public void setNgaySinh(Date ngaySinh) {
+		this.ngaySinh = ngaySinh;
 	}
+	public String getDiaChi() {
+		return diaChi;
+	}
+	public void setDiaChi(String diaChi) {
+		this.diaChi = diaChi;
+	}
+	public String getRoleID() {
+		return roleID;
+	}
+	public void setRoleID(String roleID) {
+		this.roleID = roleID;
+	}
+	public void OutPrint()
+	{
+		System.out.println("maNguoiDung:"+maNguoiDung);
+        System.out.println("tenDangNhap:"+tenDangNhap);
+		System.out.println("matKhau:"+matKhau);
+		System.out.println("hoTen:"+hoTen);
+	    System.out.println("ngaySinh:"+ngaySinh);
+		System.out.println("diaChi:"+diaChi);
+		System.out.println("roleID:"+roleID);
+
+	}
+	
+
 }

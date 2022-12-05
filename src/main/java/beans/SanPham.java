@@ -1,46 +1,47 @@
 package beans;
 
 public class SanPham {
-	private int masp;
-	private String tensp;
-	private int giatien;
-	private String noidung;
-	private int loaisp;
-	private String img;
-	public int getMasp() {
-		return masp;
+	private String maSP;
+	private String tenSP;
+	private int gia;
+	private String chiTiet;
+	private String hinh;
+	private String maLoaiSP;
+	public String getMaSP() {
+		return maSP;
 	}
-	public void setMasp(int masp) {
-		this.masp = masp;
+	public void setMaSP(String maSP) {
+		this.maSP = maSP;
 	}
-	public String getTensp() {
-		return tensp;
+	public String getTenSP() {
+		return tenSP;
 	}
-	public void setTensp(String tensp) {
-		this.tensp = tensp;
+	public void setTenSP(String tenSP) {
+		this.tenSP = tenSP;
 	}
-	public int getGiatien() {
-		return giatien;
+	public int getGia() {
+		return gia;
 	}
-	public void setGiatien(int giatien) {
-		this.giatien = giatien;
+	public void setGia(int gia) {
+		this.gia = gia;
 	}
-	public String getNoidung() {
-		return noidung;
+	public String getChiTiet() {
+		return chiTiet;
 	}
-	public void setNoidung(String noidung) {
-		this.noidung = noidung;
+	public void setChiTiet(String chiTiet) {
+		this.chiTiet = chiTiet;
 	}
-	public int getLoaisp() {
-		return loaisp;
+	public String getHinh() {
+		return hinh;
 	}
-	public void setLoaisp(int loaisp) {
-		this.loaisp = loaisp;
+	public void setHinh(String hinh) {
+		this.hinh = hinh;
 	}
-	public String getImg() {
-		return img;
+	public String getMaLoaiSP() {
+		return maLoaiSP;
 	}
-	public void setImg(String img) {
-		this.img = img;
+	public void setMaLoaiSP(String maLoaiSP) {
+		this.maLoaiSP = maLoaiSP;
 	}
+
 }

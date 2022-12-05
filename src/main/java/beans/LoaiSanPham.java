@@ -1,19 +1,19 @@
 package beans;
 
 public class LoaiSanPham {
-	private int id;
-	private String tenloai;
-	public int getId() {
-		return id;
+	private String maLoaiSP;
+	private String tenLoaiSanPham;
+	public String getMaLoaiSP() {
+		return maLoaiSP;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setMaLoaiSP(String maLoaiSP) {
+		this.maLoaiSP = maLoaiSP;
 	}
-	public String getTenloai() {
-		return tenloai;
+	public String getTenLoaiSanPham() {
+		return tenLoaiSanPham;
 	}
-	public void setTenloai(String tenloai) {
-		this.tenloai = tenloai;
+	public void setTenLoaiSanPham(String tenLoaiSanPham) {
+		this.tenLoaiSanPham = tenLoaiSanPham;
 	}
-	
+
 }

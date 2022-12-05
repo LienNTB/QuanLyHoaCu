@@ -1,46 +1,94 @@
 package beans;
 
+import java.util.Date;
+
 public class HoaDon {
-	private int id;
-	private String username;
-	private String ghichu;
-	private int trangthai;
-	private int thanhtien;
-	private String diachi;
-	public int getId() {
-		return id;
+	private String maHoaDon;
+	private String ghiChu;
+	private int tongThanhToan;
+	private String diaChiGiaoHang;
+	private String soDienThoai;
+	private String maKhachHang;
+	private Date thoiGianGiaoHang;
+	private boolean trangThaiDonHang;
+	private boolean trangThaiThanhToan;
+	public String getMaHoaDon() {
+		return maHoaDon;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setMaHoaDon(String maHoaDon) {
+		this.maHoaDon = maHoaDon;
 	}
-	public String getUsername() {
-		return username;
+	public String getGhiChu() {
+		return ghiChu;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setGhiChu(String ghiChu) {
+		this.ghiChu = ghiChu;
 	}
-	public String getGhichu() {
-		return ghichu;
+	/**
+	 * @return the tongThanhToan
+	 */
+	public int getTongThanhToan() {
+		return tongThanhToan;
 	}
-	public void setGhichu(String ghichu) {
-		this.ghichu = ghichu;
+	/**
+	 * @param tongThanhToan the tongThanhToan to set
+	 */
+	public void setTongThanhToan(int tongThanhToan) {
+		this.tongThanhToan = tongThanhToan;
 	}
-	public int getTrangthai() {
-		return trangthai;
+	/**
+	 * @return the diaChiGiaoHang
+	 */
+	public String getDiaChiGiaoHang() {
+		return diaChiGiaoHang;
 	}
-	public void setTrangthai(int trangthai) {
-		this.trangthai = trangthai;
+	/**
+	 * @param diaChiGiaoHang the diaChiGiaoHang to set
+	 */
+	public void setDiaChiGiaoHang(String diaChiGiaoHang) {
+		this.diaChiGiaoHang = diaChiGiaoHang;
 	}
-	public int getThanhtien() {
-		return thanhtien;
+	/**
+	 * @return the soDienThoai
+	 */
+	public String getSoDienThoai() {
+		return soDienThoai;
 	}
-	public void setThanhtien(int thanhtien) {
-		this.thanhtien = thanhtien;
+	/**
+	 * @param soDienThoai the soDienThoai to set
+	 */
+	public void setSoDienThoai(String soDienThoai) {
+		this.soDienThoai = soDienThoai;
 	}
-	public String getDiachi() {
-		return diachi;
+	/**
+	 * @return the maKhachHang
+	 */
+	public String getMaKhachHang() {
+		return maKhachHang;
 	}
-	public void setDiachi(String diachi) {
-		this.diachi = diachi;
+	/**
+	 * @param maKhachHang the maKhachHang to set
+	 */
+	public void setMaKhachHang(String maKhachHang) {
+		this.maKhachHang = maKhachHang;
 	}
+	public boolean isTrangThaiDonHang() {
+		return trangThaiDonHang;
+	}
+	public void setTrangThaiDonHang(boolean trangThaiDonHang) {
+		this.trangThaiDonHang = trangThaiDonHang;
+	}
+	public Date getThoiGianGiaoHang() {
+		return thoiGianGiaoHang;
+	}
+	public void setThoiGianGiaoHang(Date thoiGianGiaoHang) {
+		this.thoiGianGiaoHang = thoiGianGiaoHang;
+	}
+	public boolean isTrangThaiThanhToan() {
+		return trangThaiThanhToan;
+	}
+	public void setTrangThaiThanhToan(boolean trangThaiThanhToan) {
+		this.trangThaiThanhToan = trangThaiThanhToan;
+	}
+	
 }

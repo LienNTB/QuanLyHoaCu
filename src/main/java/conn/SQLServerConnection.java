@@ -11,10 +11,10 @@ public class SQLServerConnection {
 	        String dbDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"; 
 	        String dbURL = "jdbc:sqlserver://localhost:1433"; 
 	        // Database name to access 
-	        String dbName = "QUANLIHOACU"; 
+	        String dbName = "QUANLYHOACU"; 
 	        String dbUsername = "sa"; 
 	        String dbPassword = "Mtl@091202"; 
-	        String connectionURL = dbURL + ";databaseName=" + dbName;
+	        String connectionURL = dbURL + ";databaseName=" + dbName+";encrypt=true;trustServerCertificate=true;";
 	        Connection conn = null;
 	        try {
 	            Class.forName(dbDriver);

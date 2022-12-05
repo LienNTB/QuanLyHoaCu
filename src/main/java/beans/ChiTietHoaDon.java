@@ -1,32 +1,33 @@
 package beans;
 
 public class ChiTietHoaDon {
-	private int mahoadon;
-	private int masanpham;
-	private int soluong;
-	private int tongphu;
-	public int getMahoadon() {
-		return mahoadon;
+	private String maHoaDon;
+	private String maSP;
+	private int soLuong;
+	private float tongPhu;
+	public String getMaHoaDon() {
+		return maHoaDon;
 	}
-	public void setMahoadon(int mahoadon) {
-		this.mahoadon = mahoadon;
+	public void setMaHoaDon(String maHoaDon) {
+		this.maHoaDon = maHoaDon;
 	}
-	public int getMasanpham() {
-		return masanpham;
+	public String getMaSP() {
+		return maSP;
 	}
-	public void setMasanpham(int masanpham) {
-		this.masanpham = masanpham;
+	public void setMaSP(String maSP) {
+		this.maSP = maSP;
 	}
-	public int getSoluong() {
-		return soluong;
+	public int getSoLuong() {
+		return soLuong;
 	}
-	public void setSoluong(int soluong) {
-		this.soluong = soluong;
+	public void setSoLuong(int soLuong) {
+		this.soLuong = soLuong;
 	}
-	public int getTongphu() {
-		return tongphu;
+	public float getTongPhu() {
+		return tongPhu;
 	}
-	public void setTongphu(int tongphu) {
-		this.tongphu = tongphu;
+	public void setTongPhu(float tongPhu) {
+		this.tongPhu = tongPhu;
 	}
+
 }
