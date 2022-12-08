@@ -4,9 +4,10 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
 id="WebApp_ID" version="4.0">
   <display-name>QUANLYHOACU</display-name>
-	<welcome-file>HomePage</welcome-file>
+  <welcome-file-list>
+	<welcome-file>Login</welcome-file>
     <!--  Ư   <welcome-file>SanPham</welcome-file> -->
     <!--     <welcome-file>Store</welcome-file> -->
     <!--   S  <welcome-file>CheckOut</welcome-file> -->
-
+	</welcome-file-list>
 </web-app>

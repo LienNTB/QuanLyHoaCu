@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@spage language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -12,14 +13,13 @@
 
  		<!-- Google font -->
  		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
- 		<style type="text/css">
-		<%@ include file="/WEB-INF/views/allUser/css/bootstrap.min.css" %>
-		<%@ include file="/WEB-INF/views/allUser/css/font-awesome.min.css" %>
-		<%@ include file="/WEB-INF/views/allUser/css/nouislider.min.css" %>
-		<%@ include file="/WEB-INF/views/allUser/css/slick.css" %>
-		<%@ include file="/WEB-INF/views/allUser/css/slick-theme.css" %>
-		<%@ include file="/WEB-INF/views/allUser/css/style.css" %>
+	 	<style type="text/css" rel="stylesheet">
+			<%@ include file="/static/allUser/css/bootstrap.min.css" %>
+			<%@ include file="/static/allUser/css/font-awesome.min.css" %>
+			<%@ include file="/static/allUser/css/nouislider.min.css" %>
+			<%@ include file="/static/allUser/css/slick.css" %>
+			<%@ include file="/static/allUser/css/slick-theme.css" %>
+			<%@ include file="/static/allUser/css/style.css" %>
 		</style>
 
     </head>
