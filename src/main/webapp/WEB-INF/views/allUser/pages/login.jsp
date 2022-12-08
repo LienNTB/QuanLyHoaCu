@@ -7,8 +7,7 @@
     <title>Art Store</title>
     <link rel="stylesheet" href="css/login.css" />
     <style type="text/css">
-
-      <%@ include file="/WEB-INF/views/allUser/css/login.css" %>
+      <%@ include file="/static/allUser/css/login.css" %>
     </style>
   </head>
   <body>
@@ -16,20 +15,20 @@
       <div class="form-container sign-up-container">
         <form action="#">
           <h1>Create Account</h1>
-          <input type="text" placeholder="Username" />
-          <input type="password" placeholder="Password" />
-          <input type="password" placeholder="Retype Password" />
-          <input type="text" placeholder="Name" />
-          <input type="date" placeholder="Date Birth" />
-          <input type="text" placeholder="Address" />
+          <input type="text" placeholder="Username" name="Username" />
+          <input type="password" placeholder="Password" name="Password" />
+          <input type="password" placeholder="Retype Password" name="Repassword" />
+          <input type="text" placeholder="Name"  name="Name"/>
+          <input type="date" placeholder="Date Birth" name="Birthday" />
+          <input type="text" placeholder="Address" name="Address" />
           <button>Sign Up</button>
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action="huongcute">
+        <form action=${pageContext.request.contextPath}/Login method="post">
           <h1>Sign in</h1>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input type="text" placeholder="Username" name="Username" />
+          <input type="password" placeholder="Password" name="Password" />
           <a href="#">Forgot your password?</a>
           <button>Sign In</button>
         </form>
