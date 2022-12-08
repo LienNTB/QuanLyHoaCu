@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
 <title>Art Store</title>
 
 
@@ -17,31 +15,27 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
 	rel="stylesheet">
-
 <!-- Bootstrap -->
 <link type="text/css" rel="stylesheet"
 	href="/QUANLYHOACU/static/allUser/./css/bootstrap.min.css" />
-
 <!-- Slick -->
 <link type="text/css" rel="stylesheet"
 	href="/QUANLYHOACU/static/allUser/./css/slick.css" />
 <link type="text/css" rel="stylesheet"
 	href="/QUANLYHOACU/static/allUser/./css/slick-theme.css" />
-
 <!-- nouislider -->
 <link type="text/css" rel="stylesheet"
 	href="/QUANLYHOACU/static/allUser/./css/nouislider.min.css" />
-
 <!-- Font Awesome Icon -->
 <link rel="stylesheet"
-	href="/QUANLYHOACU/static/allUser/.//QUANLYHOACU/static/allUser/./css/font-awesome.min.css">
-
+	href="/QUANLYHOACU/static/allUser/./css/font-awesome.min.css">
 <!-- Custom stlylesheet -->
 <link type="text/css" rel="stylesheet"
 	href="/QUANLYHOACU/static/allUser/./css/style.css" />
-
-
+	
 </head>
+
+
 <body>
 	<!-- HEADER -->
 	<header>
@@ -49,12 +43,9 @@
 		<div id="top-header">
 			<div class="container">
 				<ul class="header-links pull-left">
-					<li><a href="#"><i class="fa fa-phone"></i> +454-54-54-54</a>
-					</li>
-					<li><a href="#"><i class="fa fa-envelope-o"></i>
-							quanlihoacu@email.com</a></li>
-					<li><a href="#"><i class="fa fa-map-marker"></i> 1 Vo Van
-							Ngan</a></li>
+					<li><a href="#"><i class="fa fa-phone"></i> +454-54-54-54</a></li>
+					<li><a href="#"><i class="fa fa-envelope-o"></i> quanlihoacu@email.com</a></li>
+					<li><a href="#"><i class="fa fa-map-marker"></i> 1 Vo Van Ngan</a></li>
 				</ul>
 				<ul class="header-links pull-right">
 					<li><a href="#"><i class="fa fa-dollar"></i> VND</a></li>
@@ -73,14 +64,14 @@
 					<!-- LOGO -->
 					<div class="col-md-3">
 						<div class="header-logo">
-							<a href="#" class="logo"> <img src="./img/logo4.png" alt="" />
+							<a href="#" class="logo" > 
+							<img src="/QUANLYHOACU/static/allUser/./image/logo4.png" alt="" />
 							</a>
 						</div>
 					</div>
 					<!-- /LOGO -->
 
 					<!-- SEARCH BAR -->
-
 					<div class="col-md-6">
 						<div class="header-search">
 							<form>
@@ -100,25 +91,28 @@
 						<div class="header-ctn">
 							<!-- Wishlist -->
 							<div>
-								<a href="#"> <i class="fa fa-heart-o"></i> <span>Your
-										Wishlist</span>
-									<div class="qty">2</div>
+								<a href="Store"> 
+								<i class="fa fa-heart-o" aria-hidden="true"></i> 
+								<span>Your Wishlist</span>
+								<div class="qty">2</div>
 								</a>
 							</div>
 							<!-- /Wishlist -->
 
 							<!-- Cart -->
 							<div class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown"
-									aria-expanded="true"> <i class="fa fa-shopping-cart"></i> <span>Your
-										Cart</span>
-									<div class="qty">3</div>
+								<a  href="CheckOut" aria-expanded="false" 
+															class="dropdown-toggle" data-toggle="dropdown"> 
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i> 
+								<span>Your Cart</span>
+								<div class="qty">3</div>
 								</a>
+						
 								<div class="cart-dropdown">
 									<div class="cart-list">
 										<div class="product-widget">
 											<div class="product-img">
-												<img src="./img/product01.png" alt="" />
+												<img src="/QUANLYHOACU/static/allUser/./image/product01.png" alt="" />
 											</div>
 											<div class="product-body">
 												<h3 class="product-name">
@@ -135,7 +129,7 @@
 
 										<div class="product-widget">
 											<div class="product-img">
-												<img src="./img/product02.png" alt="" />
+												<img src="/QUANLYHOACU/static/allUser/./image/product02.png" alt="" />
 											</div>
 											<div class="product-body">
 												<h3 class="product-name">
@@ -155,7 +149,7 @@
 										<h5>SUBTOTAL: $2940.00</h5>
 									</div>
 									<div class="cart-btns">
-										<a href="#">View Cart</a> <a href="#">Checkout <i
+										<a href="CheckOut">View Cart<i
 											class="fa fa-arrow-circle-right"></i>
 										</a>
 									</div>
@@ -280,7 +274,7 @@
 						<h3 class="aside-title">Top selling</h3>
 						<div class="product-widget">
 							<div class="product-img">
-								<img src="./img/10.jpeg" alt="" />
+								<img src="/QUANLYHOACU/static/allUser/./image/10.jpeg" alt="" />
 							</div>
 							<div class="product-body">
 								<p class="product-category">Category</p>
@@ -296,7 +290,7 @@
 
 						<div class="product-widget">
 							<div class="product-img">
-								<img src="./img/3.jpeg" alt="" />
+								<img src="/QUANLYHOACU/static/allUser/./image/3.jpeg" alt="" />
 							</div>
 							<div class="product-body">
 								<p class="product-category">Category</p>
@@ -312,7 +306,7 @@
 
 						<div class="product-widget">
 							<div class="product-img">
-								<img src="./img/7.jpeg" alt="" />
+								<img src="/QUANLYHOACU/static/allUser/./image/7.jpeg" alt="" />
 							</div>
 							<div class="product-body">
 								<p class="product-category">Category</p>
@@ -360,7 +354,7 @@
 						<div class="col-md-4 col-xs-6">
 							<div class="product">
 								<div class="product-img">
-									<img src="./img/1.jpg" alt="" />
+									<img src="/QUANLYHOACU/static/allUser/./image/1.jpg" alt="" />
 								</div>
 								<div class="product-body">
 									<p class="product-category">Category</p>
@@ -374,22 +368,23 @@
 									<div class="product-rating"></div>
 									<div class="product-btns">
 										<button class="add-to-wishlist">
-											<i class="fa fa-heart-o"></i><span class="tooltipp">add
-												to wishlist</span>
+											<i class="fa fa-heart-o"></i>
+											<span class="tooltipp">add to wishlist</span>
 										</button>
 										<button class="add-to-compare">
-											<i class="fa fa-exchange"></i><span class="tooltipp">add
-												to compare</span>
+											<i class="fa fa-exchange"></i>
+											<span class="tooltipp">add to compare</span>
 										</button>
 										<button class="quick-view">
-											<i class="fa fa-eye"></i><span class="tooltipp">quick
-												view</span>
+											<i class="fa fa-eye"></i>
+											<span class="tooltipp">quick view</span>
 										</button>
 									</div>
 								</div>
 								<div class="add-to-cart">
 									<button class="add-to-cart-btn">
-										<i class="fa fa-shopping-cart"></i> add to cart
+										<i class="fa fa-shopping-cart"></i> 
+										add to cart
 									</button>
 								</div>
 							</div>
@@ -397,7 +392,7 @@
 						<div class="col-md-4 col-xs-6">
 							<div class="product">
 								<div class="product-img">
-									<img src="./img/5.jpg" alt="" />
+									<img src="/QUANLYHOACU/static/allUser/./image/5.jpg" alt="" />
 								</div>
 								<div class="product-body">
 									<p class="product-category">Category</p>
@@ -411,16 +406,16 @@
 									<div class="product-rating"></div>
 									<div class="product-btns">
 										<button class="add-to-wishlist">
-											<i class="fa fa-heart-o"></i><span class="tooltipp">add
-												to wishlist</span>
+											<i class="fa fa-heart-o"></i>
+											<span class="tooltipp">add to wishlist</span>
 										</button>
 										<button class="add-to-compare">
-											<i class="fa fa-exchange"></i><span class="tooltipp">add
-												to compare</span>
+											<i class="fa fa-exchange"></i>
+											<span class="tooltipp">add to compare</span>
 										</button>
 										<button class="quick-view">
-											<i class="fa fa-eye"></i><span class="tooltipp">quick
-												view</span>
+											<i class="fa fa-eye"></i>
+											<span class="tooltipp">quick view</span>
 										</button>
 									</div>
 								</div>
@@ -434,7 +429,7 @@
 						<div class="col-md-4 col-xs-6">
 							<div class="product">
 								<div class="product-img">
-									<img src="./img/2.jpg" alt="" />
+									<img src="/QUANLYHOACU/static/allUser/./image/2.jpg" alt="" />
 								</div>
 								<div class="product-body">
 									<p class="product-category">Category</p>
@@ -468,122 +463,9 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="col-md-4 col-xs-6">
-							<div class="product">
-								<div class="product-img">
-									<img src="./img/6.jpg" alt="" />
-								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name">
-										<a href="#">BÚT ĐI NÉT MARVY</a>
-									</h3>
-									<h4 class="product-price">
-										$980.00
-										<del class="product-old-price">$990.00</del>
-									</h4>
-									<div class="product-rating"></div>
-									<div class="product-btns">
-										<button class="add-to-wishlist">
-											<i class="fa fa-heart-o"></i><span class="tooltipp">add
-												to wishlist</span>
-										</button>
-										<button class="add-to-compare">
-											<i class="fa fa-exchange"></i><span class="tooltipp">add
-												to compare</span>
-										</button>
-										<button class="quick-view">
-											<i class="fa fa-eye"></i><span class="tooltipp">quick
-												view</span>
-										</button>
-									</div>
-								</div>
-								<div class="add-to-cart">
-									<button class="add-to-cart-btn">
-										<i class="fa fa-shopping-cart"></i> add to cart
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-6">
-							<div class="product">
-								<div class="product-img">
-									<img src="./img/7.jpeg" alt="" />
-								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name">
-										<a href="#">BÚT CHÌ KIM ECON FABER CASTELL 0.5MM</a>
-									</h3>
-									<h4 class="product-price">
-										$980.00
-										<del class="product-old-price">$990.00</del>
-									</h4>
-									<div class="product-rating"></div>
-									<div class="product-btns">
-										<button class="add-to-wishlist">
-											<i class="fa fa-heart-o"></i><span class="tooltipp">add
-												to wishlist</span>
-										</button>
-										<button class="add-to-compare">
-											<i class="fa fa-exchange"></i><span class="tooltipp">add
-												to compare</span>
-										</button>
-										<button class="quick-view">
-											<i class="fa fa-eye"></i><span class="tooltipp">quick
-												view</span>
-										</button>
-									</div>
-								</div>
-								<div class="add-to-cart">
-									<button class="add-to-cart-btn">
-										<i class="fa fa-shopping-cart"></i> add to cart
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-6">
-							<div class="product">
-								<div class="product-img">
-									<img src="./img/8.jpg" alt="" />
-								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name">
-										<a href="#">TẨY MONO DUST CATCH MÀU ĐEN</a>
-									</h3>
-									<h4 class="product-price">
-										$980.00
-										<del class="product-old-price">$990.00</del>
-									</h4>
-									<div class="product-rating"></div>
-									<div class="product-btns">
-										<button class="add-to-wishlist">
-											<i class="fa fa-heart-o"></i><span class="tooltipp">add
-												to wishlist</span>
-										</button>
-										<button class="add-to-compare">
-											<i class="fa fa-exchange"></i><span class="tooltipp">add
-												to compare</span>
-										</button>
-										<button class="quick-view">
-											<i class="fa fa-eye"></i><span class="tooltipp">quick
-												view</span>
-										</button>
-									</div>
-								</div>
-								<div class="add-to-cart">
-									<button class="add-to-cart-btn">
-										<i class="fa fa-shopping-cart"></i> add to cart
-									</button>
-								</div>
-							</div>
-						</div>
-
-						<div class="clearfix visible-lg visible-md visible-sm visible-xs"></div>
-					</div>
 					<!-- /store products -->
+
+
 
 					<!-- store bottom filter -->
 					<div class="store-filter clearfix">

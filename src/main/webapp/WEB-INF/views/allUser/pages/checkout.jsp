@@ -28,7 +28,7 @@
 
 		<!-- Font Awesome Icon -->
 		<link rel="stylesheet"
-			href="/QUANLYHOACU/static/allUser/.//QUANLYHOACU/static/allUser/./css/font-awesome.min.css">
+			href="/QUANLYHOACU/static/allUser/./css/font-awesome.min.css">
 
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/style.css" />
@@ -65,7 +65,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo"> <img src="./img/logo4.png" alt="">
+								<a href="#" class="logo"> <img src="/QUANLYHOACU/static/allUser/./image/logo4.png" alt="">
 								</a>
 							</div>
 						</div>
@@ -109,7 +109,7 @@
 										<div class="cart-list">
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="./img/product01.png" alt="">
+													<img src="/QUANLYHOACU/static/allUser/./image/product01.png" alt="">
 												</div>
 												<div class="product-body">
 													<h3 class="product-name">
@@ -126,7 +126,7 @@
 
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="./img/product02.png" alt="">
+													<img src="/QUANLYHOACU/static/allUser/./image/product02.png" alt="">
 												</div>
 												<div class="product-body">
 													<h3 class="product-name">

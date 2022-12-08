@@ -7,7 +7,7 @@
 <link rel="stylesheet"
 	href="/QUANLYHOACU/static/allUser/./css/login.css" />
 
-
+<title>Login</title>
 
 </head>
 <body>

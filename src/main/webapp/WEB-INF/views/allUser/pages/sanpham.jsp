@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<title>Store</title>
+<title>Product</title>
 
 <!-- Google font -->
 <link
@@ -30,7 +30,7 @@
 
 <!-- Font Awesome Icon -->
 <link rel="stylesheet"
-	href="/QUANLYHOACU/static/allUser/.//QUANLYHOACU/static/allUser/./css/font-awesome.min.css">
+	href="/QUANLYHOACU/static/allUser/./css/font-awesome.min.css">
 
 <!-- Custom stlylesheet -->
 <link type="text/css" rel="stylesheet"
@@ -45,10 +45,8 @@
 			<div class="container">
 				<ul class="header-links pull-left">
 					<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-					<li><a href="#"><i class="fa fa-envelope-o"></i>
-							email@email.com</a></li>
-					<li><a href="#"><i class="fa fa-map-marker"></i> 1734
-							Stonecoal Road</a></li>
+					<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+					<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
 				</ul>
 				<ul class="header-links pull-right">
 					<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
@@ -67,7 +65,7 @@
 					<!-- LOGO -->
 					<div class="col-md-3">
 						<div class="header-logo">
-							<a href="#" class="logo"> <img src="./img/logo.png" alt="">
+							<a href="#" class="logo"> <img src="/QUANLYHOACU/static/allUser/./image/logo.png" alt="">
 							</a>
 						</div>
 					</div>
@@ -111,7 +109,7 @@
 									<div class="cart-list">
 										<div class="product-widget">
 											<div class="product-img">
-												<img src="./img/product01.png" alt="">
+												<img src="/QUANLYHOACU/static/allUser/./image/product01.png" alt="">
 											</div>
 											<div class="product-body">
 												<h3 class="product-name">
@@ -128,7 +126,7 @@
 
 										<div class="product-widget">
 											<div class="product-img">
-												<img src="./img/product02.png" alt="">
+												<img src="/QUANLYHOACU/static/allUser/./image/product02.png" alt="">
 											</div>
 											<div class="product-body">
 												<h3 class="product-name">
@@ -229,19 +227,19 @@
 				<div class="col-md-5 col-md-push-2">
 					<div id="product-main-img">
 						<div class="product-preview">
-							<img src="./img/product01.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product01.png" alt="">
 						</div>
 
 						<div class="product-preview">
-							<img src="./img/product03.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product03.png" alt="">
 						</div>
 
 						<div class="product-preview">
-							<img src="./img/product06.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product06.png" alt="">
 						</div>
 
 						<div class="product-preview">
-							<img src="./img/product08.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product08.png" alt="">
 						</div>
 					</div>
 				</div>
@@ -251,19 +249,19 @@
 				<div class="col-md-2  col-md-pull-5">
 					<div id="product-imgs">
 						<div class="product-preview">
-							<img src="./img/product01.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product01.png" alt="">
 						</div>
 
 						<div class="product-preview">
-							<img src="./img/product03.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product03.png" alt="">
 						</div>
 
 						<div class="product-preview">
-							<img src="./img/product06.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product06.png" alt="">
 						</div>
 
 						<div class="product-preview">
-							<img src="./img/product08.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product08.png" alt="">
 						</div>
 					</div>
 				</div>
@@ -580,7 +578,7 @@
 				<div class="col-md-3 col-xs-6">
 					<div class="product">
 						<div class="product-img">
-							<img src="./img/product01.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product01.png" alt="">
 							<div class="product-label">
 								<span class="sale">-30%</span>
 							</div>
@@ -623,7 +621,7 @@
 				<div class="col-md-3 col-xs-6">
 					<div class="product">
 						<div class="product-img">
-							<img src="./img/product02.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product02.png" alt="">
 							<div class="product-label">
 								<span class="new">NEW</span>
 							</div>
@@ -672,7 +670,7 @@
 				<div class="col-md-3 col-xs-6">
 					<div class="product">
 						<div class="product-img">
-							<img src="./img/product03.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product03.png" alt="">
 						</div>
 						<div class="product-body">
 							<p class="product-category">Category</p>
@@ -716,7 +714,7 @@
 				<div class="col-md-3 col-xs-6">
 					<div class="product">
 						<div class="product-img">
-							<img src="./img/product04.png" alt="">
+							<img src="/QUANLYHOACU/static/allUser/./image/product04.png" alt="">
 						</div>
 						<div class="product-body">
 							<p class="product-category">Category</p>
