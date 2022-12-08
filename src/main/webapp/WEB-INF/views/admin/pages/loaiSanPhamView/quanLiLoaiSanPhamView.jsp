@@ -9,7 +9,12 @@
         <title>Art Store - Admin</title>
 
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/QUANLYHOACU/static/admin/images/favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="10x10"
+      href="/QUANLYHOACU/static/admin/images/logo-icon.png"
+    />
     <!-- Custom Stylesheet -->
     <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="/QUANLYHOACU/static/admin/css/adminpage.css" />

@@ -8,7 +8,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="/QUANLYHOACU/static/admin/images/favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="10x10"
+      href="/QUANLYHOACU/static/admin/images/logo-icon.png"
+    />
     <link
       href="/QUANLYHOACU/static/admin/./plugins/pg-calendar/css/pignose.calendar.min.css"
       rel="stylesheet"
