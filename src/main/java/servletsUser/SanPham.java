@@ -30,7 +30,7 @@ public class SanPham extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		   response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
-	                .getRequestDispatcher("/WEB-INF/views/pages/sanpham.jsp");
+	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/sanpham.jsp");
 	        dispatcher.forward(request, response);
 	}
 
