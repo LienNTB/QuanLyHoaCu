@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class SanPham
  */
-@WebServlet(name="SanPham",urlPatterns = { "/SanPham" })
+@WebServlet("/SanPham")
 public class SanPham extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,7 +30,7 @@ public class SanPham extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		   response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
-	                .getRequestDispatcher("/WEB-INF/views/sanpham.jsp");
+	                .getRequestDispatcher("/WEB-INF/views/pages/sanpham.jsp");
 	        dispatcher.forward(request, response);
 	}
 
