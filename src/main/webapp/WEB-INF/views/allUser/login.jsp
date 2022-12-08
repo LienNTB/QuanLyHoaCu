@@ -7,8 +7,6 @@
     <title>Art Store</title>
     <link rel="stylesheet" href="css/login.css" />
     <style type="text/css">
-
-
       <%@ include file="css/login.css" %>
     </style>
   </head>

@@ -18,7 +18,7 @@ import utils.userUtils;
 /**
  * Servlet implementation class Login
  */
-@WebServlet("/Login")
+@WebServlet(name="Login",urlPatterns = { "/Login" })
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
