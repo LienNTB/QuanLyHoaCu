@@ -1,4 +1,18 @@
 eclipse.preferences.version=1
+
 encoding//src/main/webapp/WEB-INF/views/admin/pages/homepage.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/allUser/pages/checkout.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/allUser/pages/store.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/admin/pages/sanPhamView/quanLiSanPhamView.jsp=UTF-8
+
+
+
+
+
+
+
+ <script src="/QUANLYHOACU/static/admin/plugins/common/common.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/custom.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/settings.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/gleek.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/styleSwitcher.js"></script>
+    <script src="/QUANLYHOACU/static/admin/plugins/validation/jquery.validate.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/plugins/validation/jquery.validate-init.js"></script>

@@ -11,7 +11,6 @@
 <title>Home</title>
 
 
-
 <!-- Google font -->
 <link
 	href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
@@ -58,6 +57,7 @@
 					<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
 					<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 				</ul>
+
 			</div>
 		</div>
 		<!-- /TOP HEADER -->

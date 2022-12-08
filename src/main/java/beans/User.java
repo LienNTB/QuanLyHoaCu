@@ -1,6 +1,6 @@
 package beans;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class User {
 	private String maNguoiDung;
@@ -9,7 +9,18 @@ public class User {
 	private String hoTen;
 	private Date ngaySinh;
 	private String diaChi;
-	private String roleID;
+	private String role;
+	public User() {};
+	public User(String tenDangNhap, String matKhau, String hoTen, java.util.Date birthday, String diaChi)
+	{
+		this.tenDangNhap = tenDangNhap;
+		this.maNguoiDung=this.createMaNguoiDung();
+        this.matKhau = matKhau;
+        this.hoTen = hoTen;
+		this.ngaySinh = birthday;
+        this.diaChi = diaChi;
+		this.role="USER";
+	}
 	public String getMaNguoiDung() {
 		return maNguoiDung;
 	}
@@ -46,11 +57,11 @@ public class User {
 	public void setDiaChi(String diaChi) {
 		this.diaChi = diaChi;
 	}
-	public String getRoleID() {
-		return roleID;
+	public String getRole() {
+		return role;
 	}
-	public void setRoleID(String roleID) {
-		this.roleID = roleID;
+	public void setRole(String roleID) {
+		this.role = roleID;
 	}
 	public void OutPrint()
 	{
@@ -60,8 +71,13 @@ public class User {
 		System.out.println("hoTen:"+hoTen);
 	    System.out.println("ngaySinh:"+ngaySinh);
 		System.out.println("diaChi:"+diaChi);
-		System.out.println("roleID:"+roleID);
-
+		System.out.println("roleID:"+role);
+	}
+	public String createMaNguoiDung()
+	{
+		String maNguoiDung;
+		maNguoiDung = this.tenDangNhap;
+        return maNguoiDung;
 	}
 	
 

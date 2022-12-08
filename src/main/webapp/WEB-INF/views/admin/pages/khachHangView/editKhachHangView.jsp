@@ -1,14 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-       <title>Art Store - Admin</title>
-
+    <title>Art Store - Admin</title>
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -18,7 +16,6 @@
     />
     <!-- Custom Stylesheet -->
     <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/QUANLYHOACU/static/admin/css/adminpage.css" />
   </head>
 
   <body>
@@ -51,7 +48,7 @@
       <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
+      <div class="nav-header">
         <div class="brand-logo">
           <a href="homepage.html">
             <img src="./images/logo.png" alt="" />
@@ -72,9 +69,7 @@
               <span class="toggle-icon"><i class="icon-menu"></i></span>
             </div>
           </div>
-          <div class="header-left">
-         
-          </div>
+          <div class="header-left"></div>
           <div class="header-right">
             <ul class="clearfix">
               <li class="icons dropdown">{Username}</li>
@@ -131,7 +126,7 @@
       <!--**********************************
             Sidebar start
         ***********************************-->
-      <div class="nk-sidebar">
+    <div class="nk-sidebar">
         <div class="nk-nav-scroll">
           <ul class="metismenu" id="menu">
             <li>
@@ -184,7 +179,7 @@
                 <a href="javascript:void(0)">Trang chủ</a>
               </li>
               <li class="breadcrumb-item active">
-                <a href="javascript:void(0)">Quản lí đơn hàng</a>
+                <a href="javascript:void(0)">Edit khách hàng</a>
               </li>
             </ol>
           </div>
@@ -192,68 +187,74 @@
         <!-- row -->
 
         <div class="container-fluid">
-          <div class="row">
-            <div class="product-mng col-lg-6">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">QUẢN LÍ ĐƠN HÀNG</h4>
-                  <a href="ThemDonHang">
-                    <button type="button" class="btn mb-1 btn-primary">Thêm đơn hàng mới</button>
-                  </a>
-                  <br/>
-                  <br/>
-                  <div class="table-responsive">    
-                    <table class="table table-bordered verticle-middle">
-                      <thead>
-                        <tr>
-                          <th scope="col">Order ID</th>
-                          <th scope="col">Product ID</th>
-                          <th scope="col">Total Amount</th>
-                          <th scope="col">Order Address</th>
-                          <th scope="col">Phone Number</th>
-                          <th scope="col">User ID</th>
-                          <th scope="col">Time</th>
-                          <th scope="col">Order Status</th>
-                          <th scope="col">Delivery Status</th>
-                          <th scope="col">Payment Status</th>
-                          <th scope="col">Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>1</td>
-                        
-                          <td>1</td>
-                          <td>1 Vo Van Ngan, phuong linh chieu thu duc</td>
-                          <td>1234567890</td>
-                          <td>123</td>
-                          <td>10:15:08</td>
-                          <td>Đã duyệt</td>
-                          <td>Đang giao</td>
-                          <td>Đã thanh toán</td>
-                          <td >
-                           
-                              <a class="action-item"
-                                href="EditDonHang"
-                                data-toggle="tooltip"
-                                data-placement="top"
-                                title="Edit"
-                                ><i
-                                  class="fa fa-pencil color-muted m-r-5"
-                                ></i> </a
-                              >
-                              <a
-                                href="#"
-                                data-toggle="tooltip"
-                                data-placement="top"
-                                title="Delete"
-                                ><i class="fa fa-close color-danger"></i></a
-                            ></span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div class="form-validation">
+                    <form class="form-valide" action="#" method="post">
+                      <div class="form-group row">
+                        <label
+                          class="col-lg-4 col-form-label"
+                          for="val-productTypeId"
+                          >User ID <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="userId"
+                            name="userId"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Username <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Date Birth <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Address<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-lg-8 ml-auto">
+                          <button type="submit" class="btn btn-primary">
+                            Update
+                          </button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -293,5 +294,8 @@
     <script src="/QUANLYHOACU/static/admin/js/settings.js"></script>
     <script src="/QUANLYHOACU/static/admin/js/gleek.js"></script>
     <script src="/QUANLYHOACU/static/admin/js/styleSwitcher.js"></script>
+
+    <script src="/QUANLYHOACU/static/admin/plugins/validation/jquery.validate.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/plugins/validation/jquery.validate-init.js"></script>
   </body>
 </html>

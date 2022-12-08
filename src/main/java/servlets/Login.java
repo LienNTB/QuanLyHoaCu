@@ -45,9 +45,9 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				// TODO Auto-generated method stub
-		String username = request.getParameter("Email");
+		String username = request.getParameter("Username");
 		String password = request.getParameter("Password");
-		User user=null;
+		User user=new User();
 		boolean hasError = false;
 		String errorString=null;	
 		if (username == null || password ==null || username.length() == 0 || password.length() == 0)
@@ -86,8 +86,13 @@ public class Login extends HttpServlet {
 		}
 		else
 		{
-
-			response.sendRedirect(request.getContextPath()+"/HomePage");
+			System.out.println(user.getRole());
+			String testAfterLogin_customer="HomePage";
+			String testAfterLogin_admin="Admin_HomePage";
+			if (user.getRole().equals("USER"))
+				response.sendRedirect(request.getContextPath()+"/"+testAfterLogin_customer);
+			else if (user.getRole().equals("ADMIN"))
+				response.sendRedirect(request.getContextPath()+"/"+testAfterLogin_admin);
 		}
 	}
 

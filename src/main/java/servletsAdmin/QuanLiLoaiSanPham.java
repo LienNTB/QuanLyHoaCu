@@ -1,4 +1,4 @@
-package servletsUser;
+package servletsAdmin;
 
 import java.io.IOException;
 
@@ -10,28 +10,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HomePage
+ * Servlet implementation class QuanLiLoaiSanPham
  */
-@WebServlet(name="/HomePage", urlPatterns= {"/HomePage"})
-public class HomePage extends HttpServlet {
+@WebServlet("/QuanLiLoaiSanPham")
+public class QuanLiLoaiSanPham extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HomePage() {
+    public QuanLiLoaiSanPham() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse respo	nse)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	       response.setContentType("text/html;charset=UTF-8");
-	        RequestDispatcher dispatcher = request.getServletContext()
-	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
-	        dispatcher.forward(request, response);
+		response.setContentType("text/html;charset=UTF-8");
+        RequestDispatcher dispatcher = request.getServletContext()
+                .getRequestDispatcher("/WEB-INF/views/admin/pages/loaiSanPhamView/quanLiLoaiSanPhamView.jsp");
+        dispatcher.forward(request, response);
 	}
 
 	/**

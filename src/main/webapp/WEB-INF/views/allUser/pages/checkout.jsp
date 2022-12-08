@@ -11,6 +11,7 @@
 
 <title>Check Out</title>
 
+
 <!-- Google font -->
 <link
 	href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
@@ -19,6 +20,7 @@
 <!-- Bootstrap -->
 <link type="text/css" rel="stylesheet"
 	href="/QUANLYHOACU/static/allUser/./css/bootstrap.min.css" />
+
 
 <!-- Slick -->
 <link type="text/css" rel="stylesheet"
