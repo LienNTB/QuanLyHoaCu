@@ -12,6 +12,7 @@ public class HoaDon {
 	private Date thoiGianGiaoHang;
 	private boolean trangThaiDonHang;
 	private boolean trangThaiThanhToan;
+	private boolean trangThaiGiaoHang;
 	public String getMaHoaDon() {
 		return maHoaDon;
 	}
@@ -72,7 +73,7 @@ public class HoaDon {
 	public void setMaKhachHang(String maKhachHang) {
 		this.maKhachHang = maKhachHang;
 	}
-	public boolean isTrangThaiDonHang() {
+	public boolean getTrangThaiDonHang() {
 		return trangThaiDonHang;
 	}
 	public void setTrangThaiDonHang(boolean trangThaiDonHang) {
@@ -84,11 +85,17 @@ public class HoaDon {
 	public void setThoiGianGiaoHang(Date thoiGianGiaoHang) {
 		this.thoiGianGiaoHang = thoiGianGiaoHang;
 	}
-	public boolean isTrangThaiThanhToan() {
+	public boolean getTrangThaiThanhToan() {
 		return trangThaiThanhToan;
 	}
 	public void setTrangThaiThanhToan(boolean trangThaiThanhToan) {
 		this.trangThaiThanhToan = trangThaiThanhToan;
+	}
+	public boolean getTrangThaiGiaoHang() {
+		return trangThaiGiaoHang;
+	}
+	public void setTrangThaiGiaoHang(boolean trangThaiGiaoHang) {
+		this.trangThaiGiaoHang = trangThaiGiaoHang;
 	}
 	
 }
