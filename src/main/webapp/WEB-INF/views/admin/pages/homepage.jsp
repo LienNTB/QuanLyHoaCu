@@ -5,22 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
-       <style type="text/css">
-      <%@ include file="/WEB-INF/views/admin/plugins/pg-calendar/css/pignose.calendar.min.css" %>
-      <%@ include file="/WEB-INF/views/admin/plugins/chartist/css/chartist.min.css" %>
-      <%@ include file="/WEB-INF/views/admin/css/adminpage.css" %>
-      <%@ include file="/WEB-INF/views/admin/css/style.css" %>
-    </style>
+
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
     <!-- Pignose Calender -->
     <link
-      href="./views/admin/plugins/pg-calendar/css/pignose.calendar.min.css"
+      href="./plugins/pg-calendar/css/pignose.calendar.min.css"
       rel="stylesheet"
-      type="text/css"
     />
     <!-- Chartist -->
-    <link rel="stylesheet" href="/plugins/chartist/css/chartist.min.css" />
+    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css" />
     <link rel="stylesheet" href="./css/adminpage.css" />
     <link
       rel="stylesheet"
