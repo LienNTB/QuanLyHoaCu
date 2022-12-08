@@ -1,16 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    
-    <style type="text/css">
+    <title>Art Store</title>
+    <link rel="stylesheet" href="css/login.css" />
+      <style type="text/css">
 		<%@ include file="css/login.css" %>
 		<%@ include file="js/login.js" %>
 	</style>
@@ -18,7 +14,7 @@
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="HomePage">
+        <form action="#">
           <h1>Create Account</h1>
           <input type="text" placeholder="Username" />
           <input type="password" placeholder="Password" />
@@ -30,10 +26,10 @@
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action=${pageContext.request.contextPath}/Login method="post" >
+        <form action="huongcute">
           <h1>Sign in</h1>
-          <input type="text" placeholder="Email" name="Email" />
-          <input type="password" placeholder="Password" name="Password" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
           <button>Sign In</button>
         </form>
@@ -68,5 +64,6 @@
         >.
       </p>
     </footer>
+    <script src="./js/login.js"></script>
   </body>
 </html>
