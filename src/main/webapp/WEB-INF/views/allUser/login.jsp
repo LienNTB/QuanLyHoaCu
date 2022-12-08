@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/login.css" />
       <style type="text/css">
 		<%@ include file="css/login.css" %>
-		<%@ include file="js/login.js" %>
 	</style>
   </head>
   <body>
