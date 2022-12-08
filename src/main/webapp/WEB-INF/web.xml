@@ -6,7 +6,7 @@
   <display-name>QUANLYHOACU</display-name>
   <welcome-file-list>
 
-
+	<welcome-file>Admin_HomePage</welcome-file>
     <welcome-file>QuanLiSanPham</welcome-file>
     <welcome-file>EditSanPham</welcome-file>
     <welcome-file>ThemSanPham</welcome-file>
@@ -16,6 +16,9 @@
     <welcome-file>QuanLiKhachHang</welcome-file>
     <welcome-file>EditKhachHang</welcome-file>
     <welcome-file>ThemKhachHang</welcome-file>
+    <welcome-file>QuanLiDonHang</welcome-file>
+    <welcome-file>EditDonHang</welcome-file>
+    <welcome-file>ThemDonHang</welcome-file>
   </welcome-file-list>
 
 </web-app>

@@ -12,10 +12,10 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/QUANLYHOACU/static/images/art-store-logo.png"
+      href="/QUANLYHOACU/static/admin/images/art-store-logo.png"
     />
     <!-- Custom Stylesheet -->
-    <link href="/QUANLYHOACU/static/css/style.css" rel="stylesheet" />
+    <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -130,7 +130,7 @@
         <div class="nk-nav-scroll">
           <ul class="metismenu" id="menu">
             <li>
-              <a href="homepage.html" aria-expanded="false">
+              <a href="Admin_HomePage" aria-expanded="false">
                 <!-- <i class="fa-solid fa-house"></i> -->
                 <!-- <i class="fas fa-home"></i> -->
                 <i class="fa fa-home" aria-hidden="true"></i>
@@ -138,25 +138,25 @@
               </a>
             </li>
             <li>
-              <a href="quanlisanpham.html" aria-expanded="false">
+              <a href="QuanLiSanPham" aria-expanded="false">
                 <i class="fa fa-square" aria-hidden="true"></i
                 ><span class="nav-text">Quản lí sản phẩm</span>
               </a>
             </li>
             <li>
-              <a href="quanliloaisanpham.html" aria-expanded="false">
+              <a href="QuanLiLoaiSanPham" aria-expanded="false">
                 <i class="fa fa-circle" aria-hidden="true"></i
                 ><span class="nav-text">Quản lí loại sản phẩm</span>
               </a>
             </li>
             <li>
-              <a href="quanlikhachhang.html" aria-expanded="false">
+              <a href="QuanLiKhachHang" aria-expanded="false">
                 <i class="fa fa-users" aria-hidden="true"></i
                 ><span class="nav-text">Quản lí khách hàng</span>
               </a>
             </li>
             <li>
-              <a href="quanlidonhang.html" aria-expanded="false">
+              <a href="QuanLiDonHang" aria-expanded="false">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i
                 ><span class="nav-text">Quản lí đơn hàng</span>
               </a>
@@ -289,13 +289,12 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="/QUANLYHOACU/static/plugins/common/common.min.js"></script>
-    <script src="/QUANLYHOACU/static/js/custom.min.js"></script>
-    <script src="/QUANLYHOACU/static/js/settings.js"></script>
-    <script src="/QUANLYHOACU/static/js/gleek.js"></script>
-    <script src="/QUANLYHOACU/static/js/styleSwitcher.js"></script>
-
-    <script src="/QUANLYHOACU/static/plugins/validation/jquery.validate.min.js"></script>
-    <script src="/QUANLYHOACU/static/plugins/validation/jquery.validate-init.js"></script>
+    <script src="/QUANLYHOACU/static/admin/plugins/common/common.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/custom.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/settings.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/gleek.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/styleSwitcher.js"></script>
+    <script src="/QUANLYHOACU/static/admin/plugins/validation/jquery.validate.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/plugins/validation/jquery.validate-init.js"></script>
   </body>
 </html>

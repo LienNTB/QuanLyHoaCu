@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,10 +13,10 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/QUANLYHOACU/static/images/art-store-logo.png"
+      href="/QUANLYHOACU/static/admin/images/art-store-logo.png"
     />
     <!-- Custom Stylesheet -->
-    <link href="/QUANLYHOACU/static/css/style.css" rel="stylesheet" />
+    <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -179,7 +180,7 @@
                 <a href="javascript:void(0)">Trang chủ</a>
               </li>
               <li class="breadcrumb-item active">
-                <a href="javascript:void(0)">Thêm loại sản phẩm</a>
+                <a href="javascript:void(0)">Thêm đơn hàng</a>
               </li>
             </ol>
           </div>
@@ -194,34 +195,153 @@
                   <div class="form-validation">
                     <form class="form-valide" action="#" method="post">
                       <div class="form-group row">
-                        <label
-                          class="col-lg-4 col-form-label"
-                          for="val-productTypeId"
-                          >Product Type ID <span class="text-danger">*</span>
+                        <label class="col-lg-4 col-form-label" for="val-orderId"
+                          >Order ID <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="productTypeId"
-                            name="productTypeId"
+                            id="orderId"
+                            name="orderId"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-lg-4 col-form-label" for="val-email"
-                          >Product Type Name <span class="text-danger">*</span>
+                          >Product Name <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="productTypeName"
-                            name="productTypeName"
+                            id="productName"
+                            name="productName"
                           />
                         </div>
                       </div>
-
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Total Amount<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="totalAmount"
+                            name="totalAmount"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Order Address<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="orderAddress"
+                            name="orderAddress"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Phone Number<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >User ID<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="UserID"
+                            name="UserID"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Order Time<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="time"
+                            class="form-control"
+                            id="time"
+                            name="time"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Order Status<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <div class="dropdown custom-dropdown">
+                            <button
+                              type="button"
+                              class="btn btn-sm btn-outline-primary"
+                              data-toggle="dropdown"
+                            >
+                              OrderStatus <i class="fa fa-angle-down m-l-5"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item" href="#">Approved</a>
+                              <a class="dropdown-item" href="#">Not Approved</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Delivery Status<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <div class="dropdown custom-dropdown">
+                            <button
+                              type="button"
+                              class="btn btn-sm btn-outline-primary"
+                              data-toggle="dropdown"
+                            >
+                              Delivery Status
+                              <i class="fa fa-angle-down m-l-5"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item" href="#"
+                                >Not Delivered</a
+                              >
+                              <a class="dropdown-item" href="#">Delivering</a>
+                              <a class="dropdown-item" href="#">Delivered</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Payment Status<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="paymentStatus"
+                            name="paymentStatus"
+                          />
+                        </div>
+                      </div>
                       <div class="form-group row">
                         <div class="col-lg-8 ml-auto">
                           <button type="submit" class="btn btn-primary">
@@ -269,6 +389,7 @@
     <script src="/QUANLYHOACU/static/admin/js/settings.js"></script>
     <script src="/QUANLYHOACU/static/admin/js/gleek.js"></script>
     <script src="/QUANLYHOACU/static/admin/js/styleSwitcher.js"></script>
+
     <script src="/QUANLYHOACU/static/admin/plugins/validation/jquery.validate.min.js"></script>
     <script src="/QUANLYHOACU/static/admin/plugins/validation/jquery.validate-init.js"></script>
   </body>
