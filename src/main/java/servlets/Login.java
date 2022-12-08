@@ -36,7 +36,7 @@ public class Login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	       response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
-	                .getRequestDispatcher("/WEB-INF/views/allUser/login.jsp");
+	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/login.jsp");
 	        dispatcher.forward(request, response);
 	}
 
@@ -81,7 +81,7 @@ public class Login extends HttpServlet {
 		}
 		if (hasError)
 		{
-			RequestDispatcher dispatcher= this.getServletContext().getRequestDispatcher("/WEB-INF/views/allUser/login.jsp");
+			RequestDispatcher dispatcher= this.getServletContext().getRequestDispatcher("/WEB-INF/views/allUser/pages/login.jsp");
 			dispatcher.forward(request,response);
 		}
 		else

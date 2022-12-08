@@ -14,12 +14,12 @@
  		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
  		<style type="text/css">
-		<%@ include file="css/bootstrap.min.css" %>
-		<%@ include file="css/font-awesome.min.css" %>
-		<%@ include file="css/nouislider.min.css" %>
-		<%@ include file="css/slick.css" %>
-		<%@ include file="css/slick-theme.css" %>
-		<%@ include file="css/style.css" %>
+		<%@ include file="/WEB-INF/views/allUser/css/bootstrap.min.css" %>
+		<%@ include file="/WEB-INF/views/allUser/css/font-awesome.min.css" %>
+		<%@ include file="/WEB-INF/views/allUser/css/nouislider.min.css" %>
+		<%@ include file="/WEB-INF/views/allUser/css/slick.css" %>
+		<%@ include file="/WEB-INF/views/allUser/css/slick-theme.css" %>
+		<%@ include file="/WEB-INF/views/allUser/css/style.css" %>
 		</style>
 
     </head>
