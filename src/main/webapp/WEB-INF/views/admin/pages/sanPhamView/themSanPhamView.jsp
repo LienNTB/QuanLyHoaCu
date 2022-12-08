@@ -12,8 +12,8 @@
     <link
       rel="icon"
       type="image/png"
-      sizes="16x16"
-      href="/QUANLYHOACU/static/admin/images/art-store-logo.png"
+      sizes="10x10"
+      href="/QUANLYHOACU/static/admin/images/logo-icon.png"
     />
     <!-- Custom Stylesheet -->
     <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />

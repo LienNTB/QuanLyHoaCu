@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
     <!-- Favicon icon -->
-    <link
+   <link
       rel="icon"
       type="image/png"
-      sizes="16x16"
-      href="/QUANLYHOACU/static/admin/images/art-store-logo.png"
+      sizes="10x10"
+      href="/QUANLYHOACU/static/admin/images/logo-icon.png"
     />
     <!-- Custom Stylesheet -->
     <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />
@@ -165,6 +165,7 @@
           </ul>
         </div>
       </div>
+      <!--*****
       <!--**********************************
             Sidebar end
         ***********************************-->
