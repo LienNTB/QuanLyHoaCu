@@ -12,10 +12,10 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/QUANLYHOACU/static/images/art-store-logo.png"
+      href="/QUANLYHOACU/static/admin/images/art-store-logo.png"
     />
     <!-- Custom Stylesheet -->
-    <link href="/QUANLYHOACU/static/css/style.css" rel="stylesheet" />
+    <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />
   </head>
 
   <body>

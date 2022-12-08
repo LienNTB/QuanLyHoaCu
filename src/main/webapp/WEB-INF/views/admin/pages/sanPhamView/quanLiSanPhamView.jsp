@@ -192,7 +192,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">QUẢN LÍ SẢN PHẨM</h4>
-                  <a href="themsanpham.html">
+                  <a href="ThemSanPham">
                     <button type="button" class="btn mb-1 btn-primary">Thêm sản phẩm mới</button>
                   </a>
                   <br/>
@@ -221,7 +221,7 @@
                           <td >
                            
                               <a class="action-item"
-                                href="editsanpham.html"
+                                href="EditSanPham"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Edit"

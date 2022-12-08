@@ -191,7 +191,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">QUẢN LÍ KHÁCH HÀNG</h4>
-                  <a href="themkhachhang.html">
+                  <a href="ThemKhachHang">
                     <button type="button" class="btn mb-1 btn-primary">Thêm khách hàng mới</button>
                   </a>
                   <br/>
@@ -217,7 +217,7 @@
                           <td >
                            
                               <a class="action-item"
-                                href="editkhachhang.html"
+                                href="EditKhachHang"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Edit"
