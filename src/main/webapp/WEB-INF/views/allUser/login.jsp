@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Art Store</title>
     <link rel="stylesheet" href="css/login.css" />
-      <style type="text/css">
-		<%@ include file="css/login.css" %>
-	</style>
+    <style type="text/css">
+
+
+      <%@ include file="css/login.css" %>
+    </style>
   </head>
   <body>
     <div class="container" id="container">

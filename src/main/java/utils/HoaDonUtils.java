@@ -1,5 +1,6 @@
 package utils;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -52,6 +53,7 @@ public class HoaDonUtils {
             hoaDon.setTrangThaiThanhToan(rs.getBoolean("TrangThaiThanhToan"));
             return hoaDon;
         }
+        return null;
 
     }
     public static void insertHoaDon(Connection conn, HoaDon hd) throws SQLException {
@@ -63,7 +65,7 @@ public class HoaDonUtils {
         pst.setString(4,hd.getDiaChiGiaoHang());
         pst.setString(5,hd.getSoDienThoai());
         pst.setString(6,hd.getMaKhachHang());
-        pst.setDate(7,hd.getThoiGianGiaoHang());
+        pst.setDate(7,(Date) hd.getThoiGianGiaoHang());
         pst.setBoolean(8,hd.getTrangThaiDonHang());
         pst.setBoolean(9,hd.getTrangThaiGiaoHang());
         pst.setBoolean(10,hd.getTrangThaiThanhToan());
@@ -78,7 +80,7 @@ public class HoaDonUtils {
         pst.setString(3,hd.getDiaChiGiaoHang());
         pst.setString(4,hd.getSoDienThoai());
         pst.setString(5,hd.getMaKhachHang());
-        pst.setDate(6,hd.getThoiGianGiaoHang());
+        pst.setDate(6,(Date) hd.getThoiGianGiaoHang());
         pst.setBoolean(7,hd.getTrangThaiDonHang());
         pst.setBoolean(8,hd.getTrangThaiGiaoHang());
         pst.setBoolean(9,hd.getTrangThaiThanhToan());
