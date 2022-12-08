@@ -9,7 +9,6 @@
     <style type="text/css">
 
       <%@ include file="/WEB-INF/views/allUser/css/login.css" %>
-      <%@ include file="/WEB-INF/views/allUser/js/login.js" %>
     </style>
   </head>
   <body>
