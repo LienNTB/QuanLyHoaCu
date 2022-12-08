@@ -1,8 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-   <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-  <%@page import="beans.commons" %>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,24 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
-
+    <%@ include file="css/login.css" %>
+	<%@ include file="js/login.js" %>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<%=commons.admin_url%>/images/favion.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
     <!-- Pignose Calender -->
     <link
-      href="<%=commons.admin_url%>/plugins/pg-calendar/css/pignose.calendar.min.css"
+      href="./plugins/pg-calendar/css/pignose.calendar.min.css"
       rel="stylesheet"
     />
     <!-- Chartist -->
-    <link rel="stylesheet" href="<%=commons.admin_url%>/plugins/chartist/css/chartist.min.css" /> 
-    <link rel="stylesheet" href="<%=commons.admin_url%>/css/adminpage.css" />
+    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css" />
+    <link rel="stylesheet" href="./css/adminpage.css" />
     <link
       rel="stylesheet"
-      href="<%=commons.admin_url%>/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css"
-    /> 
-
+      href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css"
+    />
     <!-- Custom Stylesheet -->
-    <link href="<%=commons.admin_url%>/css/style.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -63,7 +58,7 @@
       <div class="nav-header">
         <div class="brand-logo">
           <a href="homepage.html">
-            <img src="<%=commons.admin_url%>images/logo.png" alt="" />
+            <img src="./images/logo.png" alt="" />
           </a>
         </div>
       </div>
