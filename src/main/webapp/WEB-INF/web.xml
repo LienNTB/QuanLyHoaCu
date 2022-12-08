@@ -5,7 +5,7 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 id="WebApp_ID" version="4.0">
   <display-name>QUANLYHOACU</display-name>
   <welcome-file-list>
-	<welcome-file>Login</welcome-file>
+	<welcome-file>HomePage</welcome-file>
     <!--  Ư   <welcome-file>SanPham</welcome-file> -->
     <!--     <welcome-file>Store</welcome-file> -->
     <!--   S  <welcome-file>CheckOut</welcome-file> -->

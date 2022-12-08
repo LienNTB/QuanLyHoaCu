@@ -9,11 +9,14 @@
     <style type="text/css">
       <%@ include file="/static/allUser/css/login.css" %>
     </style>
+    <script type="text/javascript">
+      <%@ include file="/static/allUser/js/login.js" %>
+    </script>
   </head>
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="#">
+        <form action=${pageContext.request.contextPath}/SignUp method="post" name="SignUpForm" onsubmit=" return validateSignUpForm();">
           <h1>Create Account</h1>
           <input type="text" placeholder="Username" name="Username" />
           <input type="password" placeholder="Password" name="Password" />
@@ -25,7 +28,7 @@
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action=${pageContext.request.contextPath}/Login method="post">
+        <form action=${pageContext.request.contextPath}/Login method="post" name="LoginForm" onsubmit=" return validateLoginForm();" >
           <h1>Sign in</h1>
           <input type="text" placeholder="Username" name="Username" />
           <input type="password" placeholder="Password" name="Password" />
