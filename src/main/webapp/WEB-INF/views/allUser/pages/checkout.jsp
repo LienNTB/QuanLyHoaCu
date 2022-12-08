@@ -28,7 +28,7 @@
 
 		<!-- Font Awesome Icon -->
 		<link rel="stylesheet"
-			href="/QUANLYHOACU/static/allUser/./css/font-awesome.min.css">
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/style.css" />
@@ -65,7 +65,8 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo"> <img src="/QUANLYHOACU/static/allUser/./image/logo4.png" alt="">
+								<a href="#" class="logo"> <img src="/QUANLYHOACU/static/allUser/./image/logo4.png"
+										alt="" width="153" height="70" border="0">
 								</a>
 							</div>
 						</div>

@@ -65,7 +65,9 @@
 					<!-- LOGO -->
 					<div class="col-md-3">
 						<div class="header-logo">
-							<a href="#" class="logo"> <img src="/QUANLYHOACU/static/allUser/./image/logo.png" alt="">
+							<a href="#" class="logo"> 
+							<img src="/QUANLYHOACU/static/allUser/./image/logo4.png" 
+							alt="" width="153" height="70" border="0">
 							</a>
 						</div>
 					</div>
