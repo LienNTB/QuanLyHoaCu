@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
 
+ 	<style type="text/css" rel="stylesheet">
+			<%@ include file="/WEB-INF/views/admin/plugins/pg-calendar/css/pignose.calendar.min.css" %>
+			<%@ include file="/WEB-INF/views/admin/images/favicon.png" %>
+			<%@ include file="/WEB-INF/views/admin/css/adminpage.css" %>
+			<%@ include file="/WEB-INF/views/admin/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css" %>
+	</style>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
     <!-- Pignose Calender -->
