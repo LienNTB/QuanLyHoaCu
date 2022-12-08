@@ -1,30 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Art Store - Admin</title>
+       <title>Art Store - Admin</title>
 
+    <!-- Favicon icon -->
     <link
       rel="icon"
       type="image/png"
       sizes="10x10"
       href="/QUANLYHOACU/static/admin/images/logo-icon.png"
     />
-    <link
-      href="/QUANLYHOACU/static/admin/./plugins/pg-calendar/css/pignose.calendar.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/QUANLYHOACU/static/admin/./plugins/chartist/css/chartist.min.css" />
-    <link rel="stylesheet" href="/QUANLYHOACU/static/admin/./css/adminpage.css" />
-    <link
-      rel="stylesheet"
-      href="/QUANLYHOACU/static/admin/./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css"
-    />
+    <!-- Custom Stylesheet -->
     <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/QUANLYHOACU/static/admin/css/adminpage.css" />
   </head>
 
   <body>
@@ -57,10 +51,10 @@
       <!--**********************************
             Nav header start
         ***********************************-->
-      <div class="nav-header">
+        <div class="nav-header">
         <div class="brand-logo">
           <a href="homepage.html">
-            <img src="/QUANLYHOACU/static/admin/images/logo.png" alt="" />
+            <img src="./images/logo.png" alt="" />
           </a>
         </div>
       </div>
@@ -78,7 +72,9 @@
               <span class="toggle-icon"><i class="icon-menu"></i></span>
             </div>
           </div>
-          <div class="header-left"></div>
+          <div class="header-left">
+         
+          </div>
           <div class="header-right">
             <ul class="clearfix">
               <li class="icons dropdown">{Username}</li>
@@ -181,85 +177,84 @@
             Content body start
         ***********************************-->
       <div class="content-body">
-        <div class="container-fluid mt-3">
+        <div class="row page-titles mx-0">
+          <div class="col p-md-0">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">Trang chủ</a>
+              </li>
+              <li class="breadcrumb-item active">
+                <a href="javascript:void(0)">Quản lí đơn hàng</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- row -->
+
+        <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-3 col-sm-6">
-              <div class="card gradient-1">
+            <div class="product-mng col-lg-6">
+              <div class="card">
                 <div class="card-body">
-                  <h3 class="card-title text-white">Tổng số hóa đơn</h3>
-                  <div class="d-inline-block">
-                    <h2 class="text-white">4565</h2>
-                    <p class="text-white mb-0">Jan - March 2019</p>
+                  <h4 class="card-title">QUẢN LÍ ĐƠN HÀNG</h4>
+                  <a href="ThemDonHang">
+                    <button type="button" class="btn mb-1 btn-primary">Thêm đơn hàng mới</button>
+                  </a>
+                  <br/>
+                  <br/>
+                  <div class="table-responsive">    
+                    <table class="table table-bordered verticle-middle">
+                      <thead>
+                        <tr>
+                          <th scope="col">Order ID</th>
+                          <th scope="col">Product ID</th>
+                          <th scope="col">Total Amount</th>
+                          <th scope="col">Order Address</th>
+                          <th scope="col">Phone Number</th>
+                          <th scope="col">User ID</th>
+                          <th scope="col">Time</th>
+                          <th scope="col">Order Status</th>
+                          <th scope="col">Delivery Status</th>
+                          <th scope="col">Payment Status</th>
+                          <th scope="col">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>1</td>
+                        
+                          <td>1</td>
+                          <td>1 Vo Van Ngan, phuong linh chieu thu duc</td>
+                          <td>1234567890</td>
+                          <td>123</td>
+                          <td>10:15:08</td>
+                          <td>Đã duyệt</td>
+                          <td>Đang giao</td>
+                          <td>Đã thanh toán</td>
+                          <td >
+                           
+                              <a class="action-item"
+                                href="EditDonHang"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Edit"
+                                ><i
+                                  class="fa fa-pencil color-muted m-r-5"
+                                ></i> </a
+                              >
+                              <a
+                                href="#"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Delete"
+                                ><i class="fa fa-close color-danger"></i></a
+                            ></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                  <span class="float-right display-5 opacity-5"
-                    ><i class="fa fa-shopping-cart"></i
-                  ></span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="card gradient-2">
-                <div class="card-body">
-                  <h3 class="card-title text-white">Tổng doanh thu</h3>
-                  <div class="d-inline-block">
-                    <h2 class="text-white">$ 8541</h2>
-                    <p class="text-white mb-0">Jan - March 2019</p>
-                  </div>
-                  <span class="float-right display-5 opacity-5"
-                    ><i class="fa fa-money"></i
-                  ></span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="card gradient-3">
-                <div class="card-body">
-                  <h3 class="card-title text-white">Số lượng sản phẩm</h3>
-                  <div class="d-inline-block">
-                    <h2 class="text-white">4565</h2>
-                    <p class="text-white mb-0">Jan - March 2019</p>
-                  </div>
-                  <span class="float-right display-5 opacity-5"
-                    ><i class="fa fa-users"></i
-                  ></span>
-                </div>
-              </div>
-            </div>
-            <div class="revenue">
-              <div class="revenue-item col-lg-3 col-sm-6">
-                <div class="card gradient-4">
-                  <div class="card-body">
-                    <h3 class="card-title text-white">
-                      Tổng doanh thu theo ngày
-                    </h3>
-                    <div class="d-inline-block">
-                      <h2 class="text-white">99%</h2>
-                      <p class="text-white mb-0">Jan - March 2019</p>
-                    </div>
-                    <span class="float-right display-5 opacity-5"
-                      ><i class="fa fa-heart"></i
-                    ></span>
-                  </div>
-                  <input type="date" id="birthday" name="birthday" />
-                  <input type="submit" />
-                </div>
-              </div>
-              <div class="revenue-item col-lg-3 col-sm-6">
-                <div class="card gradient-4">
-                  <div class="card-body">
-                    <h3 class="card-title text-white">
-                      Tổng doanh thu theo tháng
-                    </h3>
-                    <div class="d-inline-block">
-                      <h2 class="text-white">99%</h2>
-                      <p class="text-white mb-0">Jan - March 2019</p>
-                    </div>
-                    <span class="float-right display-5 opacity-5"
-                      ><i class="fa fa-heart"></i
-                    ></span>
-                  </div>
-                  <input type="month" id="birthday" name="birthday" />
-                  <input type="submit" />
                 </div>
               </div>
             </div>
@@ -298,26 +293,5 @@
     <script src="/QUANLYHOACU/static/admin/js/settings.js"></script>
     <script src="/QUANLYHOACU/static/admin/js/gleek.js"></script>
     <script src="/QUANLYHOACU/static/admin/js/styleSwitcher.js"></script>
-
-    <!-- Chartjs -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/chart.js/Chart.bundle.min.js"></script>
-    <!-- Circle progress -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/circle-progress/circle-progress.min.js"></script>
-    <!-- Datamap -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/d3v3/index.js"></script>
-    <script src="/QUANLYHOACU/static/admin/./plugins/topojson/topojson.min.js"></script>
-    <script src="/QUANLYHOACU/static/admin/./plugins/datamaps/datamaps.world.min.js"></script>
-    <!-- Morrisjs -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/raphael/raphael.min.js"></script>
-    <script src="/QUANLYHOACU/static/admin/./plugins/morris/morris.min.js"></script>
-    <!-- Pignose Calender -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/moment/moment.min.js"></script>
-    <script src="/QUANLYHOACU/static/admin/./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
-    <!-- ChartistJS -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/chartist/js/chartist.min.js"></script>
-    <script src="/QUANLYHOACU/static/admin/./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
-
-    <script src="/QUANLYHOACU/static/admin/./js/dashboard/dashboard-1.js"></script>
   </body>
 </html>
-    

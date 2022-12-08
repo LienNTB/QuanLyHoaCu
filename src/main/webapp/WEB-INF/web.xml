@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
-xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
-id="WebApp_ID" version="4.0">
+  xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+  id="WebApp_ID" version="4.0">
+
   <display-name>QUANLYHOACU</display-name>
   <welcome-file-list>
-	<welcome-file>HomePage</welcome-file>
-    <!--  Ư   <welcome-file>SanPham</welcome-file> -->
-    <!--     <welcome-file>Store</welcome-file> -->
-    <!--   S  <welcome-file>CheckOut</welcome-file> -->
-	</welcome-file-list>
+
+  
+	<welcome-file>Admin_HomePage</welcome-file>
+    <welcome-file>QuanLiSanPham</welcome-file>
+    <welcome-file>EditSanPham</welcome-file>
+    <welcome-file>ThemSanPham</welcome-file>
+    <welcome-file>QuanLiLoaiSanPham</welcome-file>
+    <welcome-file>EditLoaiSanPham</welcome-file>
+    <welcome-file>ThemLoaiSanPham</welcome-file>
+    <welcome-file>QuanLiKhachHang</welcome-file>
+    <welcome-file>EditKhachHang</welcome-file>
+    <welcome-file>ThemKhachHang</welcome-file>
+    <welcome-file>QuanLiDonHang</welcome-file>
+    <welcome-file>EditDonHang</welcome-file>
+    <welcome-file>ThemDonHang</welcome-file>
+
+  </welcome-file-list>
 </web-app>

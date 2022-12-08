@@ -1,4 +1,4 @@
-package servletsUser;
+package servletsAdmin;
 
 import java.io.IOException;
 
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SanPham
+ * Servlet implementation class ThemKhachHang
  */
-@WebServlet("/SanPham")
-public class SanPham extends HttpServlet {
+@WebServlet("/ThemKhachHang")
+public class ThemKhachHang extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SanPham() {
+    public ThemKhachHang() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,10 +28,10 @@ public class SanPham extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		   response.setContentType("text/html;charset=UTF-8");
-	        RequestDispatcher dispatcher = request.getServletContext()
-	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/sanpham.jsp");
-	        dispatcher.forward(request, response);
+		response.setContentType("text/html;charset=UTF-8");
+        RequestDispatcher dispatcher = request.getServletContext()
+                .getRequestDispatcher("/WEB-INF/views/admin/pages/khachHangView/themKhachHangView.jsp");
+        dispatcher.forward(request, response);
 	}
 
 	/**

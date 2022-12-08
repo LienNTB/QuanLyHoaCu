@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,14 +12,11 @@
     <style type="text/css">
       <%@ include file="/static/allUser/css/login.css" %>
     </style>
-    <script type="text/javascript">
-      <%@ include file="/static/allUser/js/login.js" %>
-    </script>
   </head>
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action=${pageContext.request.contextPath}/SignUp method="post" name="SignUpForm" onsubmit=" return validateSignUpForm();">
+        <form action="#">
           <h1>Create Account</h1>
           <input type="text" placeholder="Username" name="Username" />
           <input type="password" placeholder="Password" name="Password" />
@@ -28,7 +28,7 @@
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action=${pageContext.request.contextPath}/Login method="post" name="LoginForm" onsubmit=" return validateLoginForm();" >
+        <form action=${pageContext.request.contextPath}/Login method="post">
           <h1>Sign in</h1>
           <input type="text" placeholder="Username" name="Username" />
           <input type="password" placeholder="Password" name="Password" />
@@ -54,18 +54,14 @@
       </div>
     </div>
 
-    <footer>
-      <p>
-        Created with <i class="fa fa-heart"></i> by
-        <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-        - Read how I created this and how you can join the challenge
-        <a
-          target="_blank"
-          href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/"
-          >here</a
-        >.
-      </p>
-    </footer>
-    <script src="./js/login.js"></script>
-  </body>
+	<footer>
+		<p>
+			Created with <i class="fa fa-heart"></i> by <a target="_blank"
+				href="https://florin-pop.com">Florin Pop</a> - Read how I created
+			this and how you can join the challenge <a target="_blank"
+				href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+		</p>
+	</footer>
+	<script src="./js/login.js"></script>
+</body>
 </html>

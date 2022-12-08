@@ -7,23 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
-
+    <!-- Favicon icon -->
     <link
       rel="icon"
       type="image/png"
       sizes="10x10"
       href="/QUANLYHOACU/static/admin/images/logo-icon.png"
     />
-    <link
-      href="/QUANLYHOACU/static/admin/./plugins/pg-calendar/css/pignose.calendar.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/QUANLYHOACU/static/admin/./plugins/chartist/css/chartist.min.css" />
-    <link rel="stylesheet" href="/QUANLYHOACU/static/admin/./css/adminpage.css" />
-    <link
-      rel="stylesheet"
-      href="/QUANLYHOACU/static/admin/./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css"
-    />
+    <!-- Custom Stylesheet -->
     <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />
   </head>
 
@@ -60,7 +51,7 @@
       <div class="nav-header">
         <div class="brand-logo">
           <a href="homepage.html">
-            <img src="/QUANLYHOACU/static/admin/images/logo.png" alt="" />
+            <img src="./images/logo.png" alt="" />
           </a>
         </div>
       </div>
@@ -135,7 +126,7 @@
       <!--**********************************
             Sidebar start
         ***********************************-->
-      <div class="nk-sidebar">
+    <div class="nk-sidebar">
         <div class="nk-nav-scroll">
           <ul class="metismenu" id="menu">
             <li>
@@ -181,85 +172,90 @@
             Content body start
         ***********************************-->
       <div class="content-body">
-        <div class="container-fluid mt-3">
-          <div class="row">
-            <div class="col-lg-3 col-sm-6">
-              <div class="card gradient-1">
+        <div class="row page-titles mx-0">
+          <div class="col p-md-0">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">Trang chủ</a>
+              </li>
+              <li class="breadcrumb-item active">
+                <a href="javascript:void(0)">Edit khách hàng</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- row -->
+
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="card">
                 <div class="card-body">
-                  <h3 class="card-title text-white">Tổng số hóa đơn</h3>
-                  <div class="d-inline-block">
-                    <h2 class="text-white">4565</h2>
-                    <p class="text-white mb-0">Jan - March 2019</p>
+                  <div class="form-validation">
+                    <form class="form-valide" action="#" method="post">
+                      <div class="form-group row">
+                        <label
+                          class="col-lg-4 col-form-label"
+                          for="val-productTypeId"
+                          >User ID <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="userId"
+                            name="userId"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Username <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Date Birth <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Address<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-lg-8 ml-auto">
+                          <button type="submit" class="btn btn-primary">
+                            Update
+                          </button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
-                  <span class="float-right display-5 opacity-5"
-                    ><i class="fa fa-shopping-cart"></i
-                  ></span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="card gradient-2">
-                <div class="card-body">
-                  <h3 class="card-title text-white">Tổng doanh thu</h3>
-                  <div class="d-inline-block">
-                    <h2 class="text-white">$ 8541</h2>
-                    <p class="text-white mb-0">Jan - March 2019</p>
-                  </div>
-                  <span class="float-right display-5 opacity-5"
-                    ><i class="fa fa-money"></i
-                  ></span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="card gradient-3">
-                <div class="card-body">
-                  <h3 class="card-title text-white">Số lượng sản phẩm</h3>
-                  <div class="d-inline-block">
-                    <h2 class="text-white">4565</h2>
-                    <p class="text-white mb-0">Jan - March 2019</p>
-                  </div>
-                  <span class="float-right display-5 opacity-5"
-                    ><i class="fa fa-users"></i
-                  ></span>
-                </div>
-              </div>
-            </div>
-            <div class="revenue">
-              <div class="revenue-item col-lg-3 col-sm-6">
-                <div class="card gradient-4">
-                  <div class="card-body">
-                    <h3 class="card-title text-white">
-                      Tổng doanh thu theo ngày
-                    </h3>
-                    <div class="d-inline-block">
-                      <h2 class="text-white">99%</h2>
-                      <p class="text-white mb-0">Jan - March 2019</p>
-                    </div>
-                    <span class="float-right display-5 opacity-5"
-                      ><i class="fa fa-heart"></i
-                    ></span>
-                  </div>
-                  <input type="date" id="birthday" name="birthday" />
-                  <input type="submit" />
-                </div>
-              </div>
-              <div class="revenue-item col-lg-3 col-sm-6">
-                <div class="card gradient-4">
-                  <div class="card-body">
-                    <h3 class="card-title text-white">
-                      Tổng doanh thu theo tháng
-                    </h3>
-                    <div class="d-inline-block">
-                      <h2 class="text-white">99%</h2>
-                      <p class="text-white mb-0">Jan - March 2019</p>
-                    </div>
-                    <span class="float-right display-5 opacity-5"
-                      ><i class="fa fa-heart"></i
-                    ></span>
-                  </div>
-                  <input type="month" id="birthday" name="birthday" />
-                  <input type="submit" />
                 </div>
               </div>
             </div>
@@ -299,25 +295,7 @@
     <script src="/QUANLYHOACU/static/admin/js/gleek.js"></script>
     <script src="/QUANLYHOACU/static/admin/js/styleSwitcher.js"></script>
 
-    <!-- Chartjs -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/chart.js/Chart.bundle.min.js"></script>
-    <!-- Circle progress -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/circle-progress/circle-progress.min.js"></script>
-    <!-- Datamap -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/d3v3/index.js"></script>
-    <script src="/QUANLYHOACU/static/admin/./plugins/topojson/topojson.min.js"></script>
-    <script src="/QUANLYHOACU/static/admin/./plugins/datamaps/datamaps.world.min.js"></script>
-    <!-- Morrisjs -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/raphael/raphael.min.js"></script>
-    <script src="/QUANLYHOACU/static/admin/./plugins/morris/morris.min.js"></script>
-    <!-- Pignose Calender -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/moment/moment.min.js"></script>
-    <script src="/QUANLYHOACU/static/admin/./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
-    <!-- ChartistJS -->
-    <script src="/QUANLYHOACU/static/admin/./plugins/chartist/js/chartist.min.js"></script>
-    <script src="/QUANLYHOACU/static/admin/./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
-
-    <script src="/QUANLYHOACU/static/admin/./js/dashboard/dashboard-1.js"></script>
+    <script src="/QUANLYHOACU/static/admin/plugins/validation/jquery.validate.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/plugins/validation/jquery.validate-init.js"></script>
   </body>
 </html>
-    
