@@ -8,21 +8,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
 
-    <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/QUANLYHOACU/static/admin/images/favicon.png" />
-    <!-- Pignose Calender -->
     <link
       href="/QUANLYHOACU/static/admin/./plugins/pg-calendar/css/pignose.calendar.min.css"
       rel="stylesheet"
     />
-    <!-- Chartist -->
     <link rel="stylesheet" href="/QUANLYHOACU/static/admin/./plugins/chartist/css/chartist.min.css" />
     <link rel="stylesheet" href="/QUANLYHOACU/static/admin/./css/adminpage.css" />
     <link
       rel="stylesheet"
       href="/QUANLYHOACU/static/admin/./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css"
     />
-    <!-- Custom Stylesheet -->
     <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />
   </head>
 

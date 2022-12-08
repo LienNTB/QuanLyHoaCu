@@ -6,13 +6,16 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Art Store - Admin</title>
-
+    <title>Art Store - Admin</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/QUANLYHOACU/static/images/favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/QUANLYHOACU/static/images/art-store-logo.png"
+    />
     <!-- Custom Stylesheet -->
     <link href="/QUANLYHOACU/static/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/QUANLYHOACU/static/css/adminpage.css" />
   </head>
 
   <body>
@@ -45,7 +48,7 @@
       <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
+      <div class="nav-header">
         <div class="brand-logo">
           <a href="homepage.html">
             <img src="./images/logo.png" alt="" />
@@ -176,7 +179,7 @@
                 <a href="javascript:void(0)">Trang chủ</a>
               </li>
               <li class="breadcrumb-item active">
-                <a href="javascript:void(0)">Quản lí loại sản phẩm</a>
+                <a href="javascript:void(0)">Edit khách hàng</a>
               </li>
             </ol>
           </div>
@@ -184,51 +187,74 @@
         <!-- row -->
 
         <div class="container-fluid">
-          <div class="row">
-            <div class="product-mng col-lg-6">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">QUẢN LÍ LOẠI SẢN PHẨM</h4>
-                  <a href="themloaisanpham.html">
-                    <button type="button" class="btn mb-1 btn-primary">Thêm loại sản phẩm mới</button>
-                  </a>
-                  <br/>
-                  <br />
-                  <div class="table-responsive">
-                    <table class="table table-bordered verticle-middle">
-                      <thead>
-                        <tr>
-                          <th scope="col">Product Type ID</th>
-                          <th scope="col">Product Type Name</th>
-                          <th scope="col">Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Giấy vẽ</td>
-                          <td >
-                           
-                              <a class="action-item"
-                                href="editloaisanpham.html"
-                                data-toggle="tooltip"
-                                data-placement="top"
-                                title="Edit"
-                                ><i
-                                  class="fa fa-pencil color-muted m-r-5"
-                                ></i> </a
-                              >
-                              <a
-                                href="#"
-                                data-toggle="tooltip"
-                                data-placement="top"
-                                title="Delete"
-                                ><i class="fa fa-close color-danger"></i></a
-                            ></span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div class="form-validation">
+                    <form class="form-valide" action="#" method="post">
+                      <div class="form-group row">
+                        <label
+                          class="col-lg-4 col-form-label"
+                          for="val-productTypeId"
+                          >User ID <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="userId"
+                            name="userId"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Username <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Date Birth <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Address<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-lg-8 ml-auto">
+                          <button type="submit" class="btn btn-primary">
+                            Update
+                          </button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -268,6 +294,8 @@
     <script src="/QUANLYHOACU/static/js/settings.js"></script>
     <script src="/QUANLYHOACU/static/js/gleek.js"></script>
     <script src="/QUANLYHOACU/static/js/styleSwitcher.js"></script>
+
+    <script src="/QUANLYHOACU/static/plugins/validation/jquery.validate.min.js"></script>
+    <script src="/QUANLYHOACU/static/plugins/validation/jquery.validate-init.js"></script>
   </body>
-</html>
 </html>
