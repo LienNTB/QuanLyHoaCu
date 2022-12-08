@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,21 +9,21 @@
     <title>Art Store - Admin</title>
 
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/QUANLYHOACU/static/admin/images/favicon.png" />
     <!-- Pignose Calender -->
     <link
-      href="./plugins/pg-calendar/css/pignose.calendar.min.css"
+      href="/QUANLYHOACU/static/admin/./plugins/pg-calendar/css/pignose.calendar.min.css"
       rel="stylesheet"
     />
     <!-- Chartist -->
-    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css" />
-    <link rel="stylesheet" href="./css/adminpage.css" />
+    <link rel="stylesheet" href="/QUANLYHOACU/static/admin/./plugins/chartist/css/chartist.min.css" />
+    <link rel="stylesheet" href="/QUANLYHOACU/static/admin/./css/adminpage.css" />
     <link
       rel="stylesheet"
-      href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css"
+      href="/QUANLYHOACU/static/admin/./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css"
     />
     <!-- Custom Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -57,7 +59,7 @@
       <div class="nav-header">
         <div class="brand-logo">
           <a href="homepage.html">
-            <img src="./images/logo.png" alt="" />
+            <img src="/QUANLYHOACU/static/admin/images/logo.png" alt="" />
           </a>
         </div>
       </div>
@@ -290,30 +292,31 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="plugins/common/common.min.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/gleek.js"></script>
-    <script src="js/styleSwitcher.js"></script>
+    <script src="/QUANLYHOACU/static/admin/plugins/common/common.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/custom.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/settings.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/gleek.js"></script>
+    <script src="/QUANLYHOACU/static/admin/js/styleSwitcher.js"></script>
 
     <!-- Chartjs -->
-    <script src="./plugins/chart.js/Chart.bundle.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./plugins/chart.js/Chart.bundle.min.js"></script>
     <!-- Circle progress -->
-    <script src="./plugins/circle-progress/circle-progress.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./plugins/circle-progress/circle-progress.min.js"></script>
     <!-- Datamap -->
-    <script src="./plugins/d3v3/index.js"></script>
-    <script src="./plugins/topojson/topojson.min.js"></script>
-    <script src="./plugins/datamaps/datamaps.world.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./plugins/d3v3/index.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./plugins/topojson/topojson.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./plugins/datamaps/datamaps.world.min.js"></script>
     <!-- Morrisjs -->
-    <script src="./plugins/raphael/raphael.min.js"></script>
-    <script src="./plugins/morris/morris.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./plugins/raphael/raphael.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./plugins/morris/morris.min.js"></script>
     <!-- Pignose Calender -->
-    <script src="./plugins/moment/moment.min.js"></script>
-    <script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./plugins/moment/moment.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
     <!-- ChartistJS -->
-    <script src="./plugins/chartist/js/chartist.min.js"></script>
-    <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./plugins/chartist/js/chartist.min.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
 
-    <script src="./js/dashboard/dashboard-1.js"></script>
+    <script src="/QUANLYHOACU/static/admin/./js/dashboard/dashboard-1.js"></script>
   </body>
 </html>
+    
