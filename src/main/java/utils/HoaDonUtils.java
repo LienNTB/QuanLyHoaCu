@@ -13,7 +13,7 @@ public class HoaDonUtils {
 
 
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
-        PreparedStatement pst = con.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,, TrangThaiGiaoHang TrangThaiThanhToan from HoaDon where MaKhachHang=?");
+        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,, TrangThaiGiaoHang TrangThaiThanhToan from HoaDon where MaKhachHang=?");
         pst.setString(1, MaKH);
         ResultSet rs = pst.executeQuery();
         while (rs.next()) 

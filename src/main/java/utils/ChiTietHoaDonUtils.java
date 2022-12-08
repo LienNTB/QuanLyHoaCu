@@ -28,7 +28,7 @@ public class ChiTietHoaDonUtils
     }
     public static void insertChiTietHoaDon(Connection conn, ChiTietHoaDon cthd) throws SQLException
     {
-        PreparedStatement ps ==conn.prepareStatement("INSERT INTO ChiTietHoaDon VALUES (?,?,?,?)");
+        PreparedStatement ps =conn.prepareStatement("INSERT INTO ChiTietHoaDon VALUES (?,?,?,?)");
         ps.setString(1, cthd.getMaHoaDon());
         ps.setString(2, cthd.getMaSP());
         ps.setInt(3, cthd.getSoLuong());
