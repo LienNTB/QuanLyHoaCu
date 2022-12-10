@@ -1,6 +1,8 @@
 package servletsAdmin;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,10 +11,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.LoaiSanPham;
+import conn.DBConnection;
+import utils.LoaiSanPhamUtils;
+
 /**
  * Servlet implementation class ThemLoaiSanPham
  */
-@WebServlet("/ThemLoaiSanPham")
+@WebServlet(name="/ThemLoaiSanPham",urlPatterns= {"/ThemLoaiSanPham"})
 public class ThemLoaiSanPham extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -28,6 +34,7 @@ public class ThemLoaiSanPham extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher dispatcher = request.getServletContext()
                 .getRequestDispatcher("/WEB-INF/views/admin/pages/loaiSanPhamView/themLoaiSanPhamView.jsp");
@@ -39,7 +46,38 @@ public class ThemLoaiSanPham extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		Connection conn=null;
+		String errorString=null;
+		try{
+			conn=DBConnection.getConnection();
+
+		}
+		catch(SQLException | ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		String maLoaiSanPham = request.getParameter("maLoaiSanPham");
+		String tenLoaiSanPham = new String(request.getParameter("tenLoaiSanPham").getBytes("ISO-8859-1"),"UTF-8");
+		LoaiSanPham lsp=new LoaiSanPham(maLoaiSanPham,tenLoaiSanPham);
+		try
+        {
+			LoaiSanPhamUtils.insertLoaiSanPham(conn,lsp);
+		}
+		catch(SQLException e)
+        {
+			errorString = e.getMessage();
+		}
+		if(errorString!=null)
+		{
+			request.setAttribute("error",errorString);
+			RequestDispatcher dispatcher = request.getServletContext()
+			.getRequestDispatcher("/WEB-INF/views/admin/pages/loaiSanPhamView/themLoaiSanPhamView.jsp");
+	dispatcher.forward(request, response);
+		}
+		else
+		{
+			response.sendRedirect(request.getContextPath()+"/QuanLiLoaiSanPham");
+		}
 	}
 
 }

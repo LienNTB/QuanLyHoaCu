@@ -6,8 +6,7 @@
 
   <display-name>QUANLYHOACU</display-name>
   <welcome-file-list>
-
-  
+  	<welcome-file>QuanLiSanPham</welcome-file>
 	<welcome-file>Admin_HomePage</welcome-file>
     <welcome-file>QuanLiSanPham</welcome-file>
     <welcome-file>EditSanPham</welcome-file>

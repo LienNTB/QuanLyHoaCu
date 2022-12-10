@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -205,27 +206,29 @@
                     <table class="table table-bordered verticle-middle">
                       <thead>
                         <tr>
-                          <th scope="col">User ID</th>
-                          <th scope="col">Username</th>
-                          <th scope="col">Date Birth</th>
-                          <th scope="col">Address</th>
+                          <th scope="col">Mã người dùng</th>
+                          <th scope="col">Tên đăng nhập</th>
+                          <th scope="col">Họ tên</th>
+                          <th scope="col">Ngày sinh</th>
+                          <th scope="col">Địa chỉ</th>
                           <th scope="col">Actions</th>
                         </tr>
                       </thead>
                       <tbody>
+                      <c:forEach var="user" items="${users}">
                         <tr>
-                          <td>1</td>
-                          <td>qhuong1008</td>
-                        
-                          <td>31/01/2002</td>
-                          <td>1 Vo Van Ngan, phuong linh chieu thu duc</td>
-                          <td >
+                          	<td>${user.maNguoiDung}</td>
+                          	<td>${user.tenDangNhap}</td>
+                        	<td>${user.hoTen}</td>
+                          	<td>${user.ngaySinh}</td>
+                          	<td>${user.diaChi}</td>
+                          	<td >
                            
                               <a class="action-item"
-                                href="EditKhachHang"
+                                href="EditKhachHang?id=${user.maNguoiDung}"
                                 data-toggle="tooltip"
                                 data-placement="top"
-                                title="Edit"
+                                title="EditKhachHang"
                                 ><i
                                   class="fa fa-pencil color-muted m-r-5"
                                 ></i> </a
@@ -239,6 +242,7 @@
                             ></span>
                           </td>
                         </tr>
+                        </c:forEach>
                       </tbody>
                     </table>
                   </div>

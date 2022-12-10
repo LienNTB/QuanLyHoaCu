@@ -193,45 +193,48 @@
               <div class="card">
                 <div class="card-body">
                   <div class="form-validation">
-                    <form class="form-valide" action="#" method="post">
+                    <form method="POST" action="${pageContext.request.contextPath}/EditSanPham">
                       <div class="form-group row">
                         <label
                           class="col-lg-4 col-form-label"
                           for="val-productId"
-                          >Product ID <span class="text-danger">*</span>
+                          >Mã sản phẩm <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="productId"
-                            name="productId"
+                            id="maSP"
+                            name="maSP"
+                            value="${sanpham.maSP }"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label class="col-lg-4 col-form-label" for="val-email"
-                          >Product Name <span class="text-danger">*</span>
+                        <label class="col-lg-4 col-form-label" for="val-productName"
+                          >Tên sản phẩm <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="productName"
-                            name="productName"
+                            id="tenSP"
+                            name="tenSP"
+                            value="${sanpham.tenSP }"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-lg-4 col-form-label" for="price"
-                          >Price <span class="text-danger">*</span>
+                          >Giá <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
-                            type="password"
+                            type="text"
                             class="form-control"
-                            id="price"
-                            name="price"
+                            id="gia"
+                            name="gia"
+                            value="${sanpham.gia }"
                           />
                         </div>
                       </div>
@@ -239,38 +242,36 @@
                         <label
                           class="col-lg-4 col-form-label"
                           for="val-confirm-password"
-                          >Detail<span class="text-danger">*</span>
+                          >Chi Tiết<span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             class="form-control"
-                            id="detail"
-                            name="detail"
+                            id="chiTiet"
+                            name="chiTiet"
+                            value="${sanpham.chiTiet }"
                           />
                         </div>
+
                       </div>
                       <div class="form-group row">
                         <label
                           class="col-lg-4 col-form-label"
                           for="val-suggestions"
-                          >Image <span class="text-danger">*</span>
+                          >Link hình ảnh<span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <div class="basic-form">
-                            <form>
                               <div class="form-group">
-                                <input type="file" class="form-control-file" />
+                                <input type="file" class="form-control-file" value="${sanpham.hinh } " />
                               </div>
-                            </form>
                           </div>
                         </div>
                       </div>
-
                       <div class="form-group row">
                         <div class="col-lg-8 ml-auto">
-                          <button type="submit" class="btn btn-primary">
-                            Update
-                          </button>
+                          <input type="submit" class="btn btn-primary" value="Cập nhật" >
+                           
                         </div>
                       </div>
                     </form>
