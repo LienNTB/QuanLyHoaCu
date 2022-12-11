@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
 	<!DOCTYPE html>
 	<html lang="en">
 
-	<link rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/login.css" />
-
-	<title>Login</title>
-
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Art Store</title>
+		<link rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/login.css" />
 	</head>
 
 	<body>
@@ -14,18 +15,21 @@
 			<div class="form-container sign-up-container">
 				<form action="#">
 					<h1>Create Account</h1>
-					<input type="text" placeholder="Username" /> <input type="password" placeholder="Password" /> <input
-						type="password" placeholder="Retype Password" /> <input type="text" placeholder="Name" /> <input
-						type="date" placeholder="Date Birth" />
-					<input type="text" placeholder="Address" />
+					<input type="text" placeholder="Username" name="Username" />
+					<input type="password" placeholder="Password" name="Password" />
+					<input type="password" placeholder="Retype Password" name="Repassword" />
+					<input type="text" placeholder="Name" name="Name" />
+					<input type="date" placeholder="Date Birth" name="Birthday" />
+					<input type="text" placeholder="Address" name="Address" />
 					<button>Sign Up</button>
 				</form>
 			</div>
 			<div class="form-container sign-in-container">
-				<form action="huongcute">
+				<form action=${pageContext.request.contextPath}/Login method="post">
 					<h1>Sign in</h1>
-					<input type="email" placeholder="Email" /> <input type="password" placeholder="Password" /> <a
-						href="#">Forgot your password?</a>
+					<input type="text" placeholder="Username" name="Username" />
+					<input type="password" placeholder="Password" name="Password" />
+					<a href="#">Forgot your password?</a>
 					<button>Sign In</button>
 				</form>
 			</div>
@@ -33,8 +37,9 @@
 				<div class="overlay">
 					<div class="overlay-panel overlay-left">
 						<h1>Welcome Back!</h1>
-						<p>To keep connected with us please login with your personal
-							info</p>
+						<p>
+							To keep connected with us please login with your personal info
+						</p>
 						<button class="ghost" id="signIn">Sign In</button>
 					</div>
 					<div class="overlay-panel overlay-right">
@@ -45,6 +50,7 @@
 				</div>
 			</div>
 		</div>
+		>>>>>>> g4nh_t4o_v01
 
 		<footer>
 			<p>

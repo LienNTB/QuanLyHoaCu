@@ -192,7 +192,8 @@
               <div class="card">
                 <div class="card-body">
                   <div class="form-validation">
-                    <form class="form-valide" action="#" method="post">
+                  <p style="color:red;">${errorString}</p>
+                    <form class="form-valide" method="POST" action="${pageContext.request.contextPath}/ThemKhachHang">
                       <div class="form-group row">
                         <label
                           class="col-lg-4 col-form-label"
@@ -203,8 +204,8 @@
                           <input
                             type="text"
                             class="form-control"
-                            id="userId"
-                            name="userId"
+                            id="maNguoiDung"
+                            name="maNguoiDung"
                           />
                         </div>
                       </div>
@@ -216,11 +217,24 @@
                           <input
                             type="text"
                             class="form-control"
-                            id="username"
-                            name="username"
+                            id="tenDangNhap"
+                            name="tenDangNhap"
                           />
                         </div>
                       </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Name <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="hoTen"
+                            name="hoTen"
+                          />
+                        </div>
+                       </div>
                       <div class="form-group row">
                         <label class="col-lg-4 col-form-label" for="val-email"
                           >Date Birth <span class="text-danger">*</span>
@@ -229,8 +243,8 @@
                           <input
                             type="date"
                             class="form-control"
-                            id="username"
-                            name="username"
+                            id="ngaySinh"
+                            name="ngaySinh"
                           />
                         </div>
                       </div>
@@ -242,16 +256,15 @@
                           <input
                             type="text"
                             class="form-control"
-                            id="username"
-                            name="username"
+                            id="diaChi"
+                            name="diaChi"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
                         <div class="col-lg-8 ml-auto">
-                          <button type="submit" class="btn btn-primary">
-                            Thêm
-                          </button>
+                          <input type="submit" class="btn btn-primary" value="Thêm">
+                     
                         </div>
                       </div>
                     </form>

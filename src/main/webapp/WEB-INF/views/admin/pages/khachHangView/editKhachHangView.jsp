@@ -192,7 +192,8 @@
               <div class="card">
                 <div class="card-body">
                   <div class="form-validation">
-                    <form class="form-valide" action="#" method="post">
+                  <p style="color:red;">${errorString}</p>
+                    <form class="form-valide" method="post" action="${pageContext.request.contextPath}/EditKhachHang">
                       <div class="form-group row">
                         <label
                           class="col-lg-4 col-form-label"
@@ -203,8 +204,9 @@
                           <input
                             type="text"
                             class="form-control"
-                            id="userId"
-                            name="userId"
+                            id="maNguoiDung"
+                            name="maNguoiDung"
+                            value="${user.maNguoiDung}"
                           />
                         </div>
                       </div>
@@ -216,8 +218,9 @@
                           <input
                             type="text"
                             class="form-control"
-                            id="username"
-                            name="username"
+                            id="tenDangNhap"
+                            name="tenDangNhap"
+                            value="${user.tenDangNhap}"
                           />
                         </div>
                       </div>
@@ -229,8 +232,9 @@
                           <input
                             type="date"
                             class="form-control"
-                            id="username"
-                            name="username"
+                            id="ngaySinh"
+                            name="ngaySinh"
+                            value="${username.ngaySinh}"                            
                           />
                         </div>
                       </div>
@@ -242,16 +246,15 @@
                           <input
                             type="text"
                             class="form-control"
-                            id="username"
-                            name="username"
+                            id="diaChi"
+                            name="diaChi"
+                            value="${user.diaChi}"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
                         <div class="col-lg-8 ml-auto">
-                          <button type="submit" class="btn btn-primary">
-                            Update
-                          </button>
+                          <input type="submit" class="btn btn-primary" value="Cập nhật">
                         </div>
                       </div>
                     </form>

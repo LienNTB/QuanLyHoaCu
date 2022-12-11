@@ -57,7 +57,7 @@ public class SignUp extends HttpServlet {
 			error="Lỗi định dạng ngày sinh!";
 			return;
 		}
-		user=new User( request.getParameter("Username"), request.getParameter("Password"), request.getParameter("Name"), dates1, request.getParameter("Address"));
+		user=new User( request.getParameter("Username"), request.getParameter("Password"), new String(request.getParameter("Name").getBytes("ISO-8859-1"),"UTF-8"), dates1, new String(request.getParameter("Address").getBytes("ISO-8859-1"),"UTF-8"));
 		Connection conn=null;
 		try {
             conn=DBConnection.getConnection();

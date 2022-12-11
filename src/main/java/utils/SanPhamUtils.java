@@ -28,6 +28,25 @@ public class SanPhamUtils
         }   
         return sanPhamList;
     }
+    public static List<SanPham> getListSanPhamWithoutMaLSP(Connection conn) throws SQLException 
+    {
+        String sqlString = "Select sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh, sp.TenLoaiSanPham from SanPham sp ";
+        PreparedStatement stmt= conn.prepareStatement(sqlString);
+        ResultSet rs= stmt.executeQuery();
+        List<SanPham> sanPhamList=new ArrayList<>();
+        while(rs.next())
+        {
+            SanPham sanPham= new SanPham();
+            sanPham.setMaSP(rs.getString("MaSP"));
+            sanPham.setTenSP(rs.getString("TenSP"));
+            sanPham.setGia(rs.getInt("Gia"));
+            sanPham.setChiTiet(rs.getString("ChiTiet"));
+            sanPham.setHinh(rs.getString("Hinh"));
+            sanPham.setMaLoaiSP(rs.getString("TenLoaiSanPham"));
+            sanPhamList.add(sanPham);
+        }   
+        return sanPhamList;
+    }
     public static SanPham GetSanPhamById(Connection conn, String maSP) throws SQLException
     {
         String sqlString = "Select sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh, lsp.TenLoaiSanPham from SanPham sp, LoaiSanPham lsp where sp.MaSP=? and sp.MaLoaiSP=lsp.MaLoaiSP";

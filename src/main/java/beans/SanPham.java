@@ -7,6 +7,25 @@ public class SanPham {
 	private String chiTiet;
 	private String hinh;
 	private String maLoaiSP;
+	public SanPham(){}
+	public SanPham(String maSP, String tenSP, int gia, String chiTiet, String hinh, String maLoaiSP)
+	{
+		this.maSP = maSP;
+        this.tenSP = tenSP;
+        this.gia = gia;
+        this.chiTiet = chiTiet;
+		this.hinh =hinh;
+		this.maLoaiSP = maLoaiSP;
+	}
+	public SanPham(String maSP, String tenSP, int gia, String chiTiet, String hinh)
+	{
+		this.maSP = maSP;
+        this.tenSP = tenSP;
+        this.gia = gia;
+        this.chiTiet = chiTiet;
+		this.hinh =hinh;
+		this.maLoaiSP = "lsp00";
+	}
 	public String getMaSP() {
 		return maSP;
 	}
@@ -35,12 +54,16 @@ public class SanPham {
 		return hinh;
 	}
 	public void setHinh(String hinh) {
+		if (hinh == null)
+			hinh="null";
 		this.hinh = hinh;
 	}
 	public String getMaLoaiSP() {
 		return maLoaiSP;
 	}
 	public void setMaLoaiSP(String maLoaiSP) {
+		if (maLoaiSP ==null)
+			maLoaiSP = "lsp00";
 		this.maLoaiSP = maLoaiSP;
 	}
 

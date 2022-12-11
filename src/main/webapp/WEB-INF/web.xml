@@ -6,6 +6,7 @@
 
   <display-name>QUANLYHOACU</display-name>
   <welcome-file-list>
+
   
 <!-- 	<welcome-file>Admin_HomePage</welcome-file> -->
 <!--     <welcome-file>QuanLiSanPham</welcome-file> -->
@@ -26,6 +27,6 @@
     <welcome-file>SanPham</welcome-file>
     <welcome-file>Login</welcome-file>
     
-  </welcome-file-list>
 
+  </welcome-file-list>
 </web-app>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -216,17 +217,18 @@
                         </tr>
                       </thead>
                       <tbody>
+                      	<c:forEach var="sp" items="${sanPhamList }" >
                         <tr>
-                          <td>1</td>
-                          <td>Giấy vẽ manga</td>
-                          <td>450.000</td>
-                          <td>Giấy vẽ nhập khẩu từ Đức</td>
-                          <td>fjjpdpfgjfpdgdj</td>
-                          <td>Giấy vẽ</td>
+                          <td>${sp.maSP }</td>
+                          <td>${sp.tenSP }</td>
+                          <td>${sp.gia }</td>
+                          <td>${sp.chiTiet }</td>
+                          <td>${sp.hinh }</td>
+                          <td>${sp.maLoaiSP }</td>
                           <td >
                            
                               <a class="action-item"
-                                href="EditSanPham"
+                                href="EditSanPham?id=${sp.maSP }"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Edit"
@@ -243,6 +245,7 @@
                             ></span>
                           </td>
                         </tr>
+                        </c:forEach>
                       </tbody>
                     </table>
                   </div>

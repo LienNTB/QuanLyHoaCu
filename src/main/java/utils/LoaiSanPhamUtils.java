@@ -32,9 +32,8 @@ public class LoaiSanPhamUtils
         LoaiSanPham loaiSanPham = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-
         stmt = connection.prepareStatement("SELECT MaLoaiSP, TenLoaiSanPham FROM LoaiSanPham WHERE MaLoaiSP =?");
-        stmt.setInt(1, Integer.parseInt(MaLoaiSP));
+        stmt.setString(1, MaLoaiSP);
         rs = stmt.executeQuery();
         if (rs.next())
         {

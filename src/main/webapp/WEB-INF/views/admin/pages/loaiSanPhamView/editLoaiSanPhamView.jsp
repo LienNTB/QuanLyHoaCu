@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -192,41 +193,41 @@
               <div class="card">
                 <div class="card-body">
                   <div class="form-validation">
-                    <form class="form-valide" action="#" method="post">
+                    <form class="form-valide" method="POST" action="${pageContext.request.contextPath}/EditLoaiSanPham">
                       <div class="form-group row">
                         <label
                           class="col-lg-4 col-form-label"
                           for="val-productTypeId"
-                          >Product Type ID <span class="text-danger">*</span>
+                          >Mã loại sản phẩm <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="productTypeId"
-                            name="productTypeId"
+                            id="maLoaiSP"
+                            name="maLoaiSP"
+                            value="${loaiSanPham.maLoaiSP}"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-lg-4 col-form-label" for="val-email"
-                          >Product Type Name <span class="text-danger">*</span>
+                          >Tên loại sản phẩm <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="productTypeName"
-                            name="productTypeName"
+                            id="tenLoaiSanPham"
+                            name="tenLoaiSanPham"
+                            value="${loaiSanPham.tenLoaiSanPham}"
                           />
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <div class="col-lg-8 ml-auto">
-                          <button type="submit" class="btn btn-primary">
-                            Update
-                          </button>
+ 							<input type="submit" class="btn btn-primary" value="Cập nhật" >
                         </div>
                       </div>
                     </form>
