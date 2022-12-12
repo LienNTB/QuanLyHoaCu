@@ -8,6 +8,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
+    <script type="text/javascript">
+      function validateForm()
+      {
+        var maLSP=document.forms["editLoaiSPForm"]["maLoaiSP"].value;
+        var tenLSP=document.forms["editLoaiSPForm"]["tenLoaiSanPham"].value;
+        if(maLSP=="" || tenLSP=="" )
+        {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return false;
+        }
+        return true;
+      
+      }
+      </script>
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -193,7 +207,8 @@
               <div class="card">
                 <div class="card-body">
                   <div class="form-validation">
-                    <form class="form-valide" method="POST" action="${pageContext.request.contextPath}/EditLoaiSanPham">
+                    <p style="color:red;">${errorString}</p>
+                    <form class="form-valide" method="POST" action="${pageContext.request.contextPath}/EditLoaiSanPham" name ="editLoaiSPForm" onsubmit=" return validateForm();">
                       <div class="form-group row">
                         <label
                           class="col-lg-4 col-form-label"

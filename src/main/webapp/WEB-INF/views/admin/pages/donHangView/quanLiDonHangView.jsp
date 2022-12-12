@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+  <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -206,36 +206,26 @@
                     <table class="table table-bordered verticle-middle">
                       <thead>
                         <tr>
-                          <th scope="col">Order ID</th>
-                          <th scope="col">Product ID</th>
-                          <th scope="col">Total Amount</th>
-                          <th scope="col">Order Address</th>
-                          <th scope="col">Phone Number</th>
-                          <th scope="col">User ID</th>
-                          <th scope="col">Time</th>
-                          <th scope="col">Order Status</th>
-                          <th scope="col">Delivery Status</th>
-                          <th scope="col">Payment Status</th>
                           <th scope="col">Actions</th>
+                          <th scope="col">Số thứ tự</th>
+                          <th scope="col">Mã đơn hàng</th>
+                          <th scope="col">Mã khách hàng</th>
+                          <th scope="col">Số điện thoại</th>
+                          <th scope="col">Tổng thanh toán</th>
+                          <th scope="col">Thời gian giao hàng</th>
+                          <th scope="col">Trạng thái đơn hàng</th>
+                          <th scope="col">Trạng thái giao hàng</th>
+                          <th scope="col">Trạng thái thanh toán</th>
+                          <th scope="col">Ghi chú</th>
                         </tr>
                       </thead>
                       <tbody>
+                      <c:forEach var="dh" items="${hoaDonList}" varStatus="loop">
                         <tr>
-                          <td>1</td>
-                          <td>1</td>
-                        
-                          <td>1</td>
-                          <td>1 Vo Van Ngan, phuong linh chieu thu duc</td>
-                          <td>1234567890</td>
-                          <td>123</td>
-                          <td>10:15:08</td>
-                          <td>Đã duyệt</td>
-                          <td>Đang giao</td>
-                          <td>Đã thanh toán</td>
-                          <td >
+                           <td >
                            
                               <a class="action-item"
-                                href="EditDonHang"
+                                href="EditDonHang?id=${dh.maHoaDon}"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Edit"
@@ -249,9 +239,20 @@
                                 data-placement="top"
                                 title="Delete"
                                 ><i class="fa fa-close color-danger"></i></a
-                            ></span>
-                          </td>
+                            >
+                            </td>
+                          <td>${loop.index+1}</td>
+                          <td>${dh.maHoaDon}</td>
+                          <td>${dh.maKhachHang}</td>
+                          <td>${dh.soDienThoai}</td>
+                          <td>${dh.tongThanhToan}</td>
+                          <td>${dh.thoiGianGiaoHang}</td>
+                          <td>${dh.meanTrangThaiDonHang()}</td>
+                          <td>${dh.meanTrangThaiGiaoHang()}</td>
+                          <td>${dh.meanTrangThaiThanhToan()}</td>
+                          <td>${dh.ghiChu}</td>
                         </tr>
+                      </c:forEach>
                       </tbody>
                     </table>
                   </div>

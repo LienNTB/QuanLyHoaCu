@@ -12,6 +12,7 @@
     <style type="text/css">
       <%@ include file="/static/allUser/css/login.css" %>
     </style>
+    <script type="text/javascript"> <%@ include file="/static/allUser/js/login.js" %></script>
   </head>
   <body>
     <div class="container" id="container">
@@ -62,6 +63,6 @@
 				href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
 		</p>
 	</footer>
-	<script src="./js/login.js"></script>
+
 </body>
 </html>

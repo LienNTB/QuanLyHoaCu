@@ -2,7 +2,7 @@ package beans;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 public class User {
 	private String maNguoiDung;
@@ -13,13 +13,14 @@ public class User {
 	private String diaChi;
 	private String role;
 	public User() {};
-	public User(String MaNguoiDung, String tenDangNhap, String matKhau, String hoTen, String birthday, String diaChi, String role) throws ParseException 
+	
+	public User(String MaNguoiDung, String tenDangNhap, String matKhau, String hoTen, Date birthday, String diaChi, String role) throws ParseException 
 	{
 		this.tenDangNhap = tenDangNhap;
 		this.maNguoiDung=MaNguoiDung;
         this.matKhau = matKhau;
         this.hoTen = hoTen;
-		this.ngaySinh = new SimpleDateFormat("yyyy-MM-dd").parse(birthday);
+		this.ngaySinh =birthday; 
         this.diaChi = diaChi;
 		this.role = role;
 	}
@@ -54,7 +55,7 @@ public class User {
 		return ngaySinh;
 	}
 	public void setNgaySinh(Date ngaySinh) {
-		this.ngaySinh = ngaySinh;
+		this.ngaySinh=ngaySinh;
 	}
 	public String getDiaChi() {
 		return diaChi;

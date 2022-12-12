@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.commons;
 import conn.DBConnection;
 import utils.LoaiSanPhamUtils;
 
@@ -33,6 +34,11 @@ public class DeleteLoaiSanPham extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		if (!commons.checkAdmin()) 
+		{
+			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			return;
+		}
 		Connection connection =null;
 		String errorString =null;
 		try{
@@ -51,7 +57,7 @@ public class DeleteLoaiSanPham extends HttpServlet {
 		{
 			e.printStackTrace();
 		}
-		response.sendRedirect(request.getContextPath()+"/QuanLiSanPham");
+		response.sendRedirect(request.getContextPath()+"/QuanLiLoaiSanPham");
 		
 	}
 

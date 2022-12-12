@@ -3,8 +3,9 @@ package servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.User;
+import beans.commons;
 import conn.DBConnection;
 import utils.userUtils;
 
@@ -37,7 +39,10 @@ public class SignUp extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	       response.setContentType("text/html;charset=UTF-8");
+	        RequestDispatcher dispatcher = request.getServletContext()
+	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/signup.jsp");
+	        dispatcher.forward(request, response);
 	}
 
 	/**
@@ -47,17 +52,17 @@ public class SignUp extends HttpServlet {
 		// TODO Auto-generated method stub
 		String error=null;
 		User user=null;
-		Date dates1;
-		String dateStr=request.getParameter("Birthday");
+		String tenDangNhap=request.getParameter("Username");
+		String matKhau=request.getParameter("Password");
+		String hoTen= new String(request.getParameter("Name").getBytes("ISO-8859-1"),"UTF-8");
+		 java.sql.Date NgaySinh = commons.ConvertStringToSQLDate(request.getParameter("ngaySinh"));
+		String diaChi=new String(request.getParameter("Address").getBytes("ISO-8859-1"),"UTF-8");
 		try {
-			dates1=new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
+			user = new User(tenDangNhap, tenDangNhap, matKhau,hoTen, NgaySinh, diaChi, "001");
+		} catch (ParseException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
 		}
-		catch(Exception e)
-		{
-			error="Lỗi định dạng ngày sinh!";
-			return;
-		}
-		user=new User( request.getParameter("Username"), request.getParameter("Password"), new String(request.getParameter("Name").getBytes("ISO-8859-1"),"UTF-8"), dates1, new String(request.getParameter("Address").getBytes("ISO-8859-1"),"UTF-8"));
 		Connection conn=null;
 		try {
             conn=DBConnection.getConnection();

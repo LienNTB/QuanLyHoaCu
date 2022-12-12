@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.User;
+import beans.commons;
 import conn.DBConnection;
 import utils.userUtils;
 
@@ -36,6 +37,11 @@ public class QuanLiKhachHang extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (!commons.checkAdmin()) 
+		{
+			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			return;
+		}
 		Connection conn = null;
 		try
 		{

@@ -73,7 +73,7 @@ public class userUtils {
         stmt.setString(2,user.getTenDangNhap());
         stmt.setString(3,user.getHoTen());
         stmt.setString(4,user.getMatKhau());
-        stmt.setString(5, new SimpleDateFormat("yyyy-MM-dd").format(user.getNgaySinh()));
+        stmt.setDate(5, (java.sql.Date) user.getNgaySinh());
         stmt.setString(6,user.getDiaChi());
         stmt.setString(7,user.getRole());
         stmt.executeUpdate();

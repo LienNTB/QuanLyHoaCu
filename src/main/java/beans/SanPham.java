@@ -7,6 +7,8 @@ public class SanPham {
 	private String chiTiet;
 	private String hinh;
 	private String maLoaiSP;
+	private String tenLoaiSanPham; 
+	
 	public SanPham(){}
 	public SanPham(String maSP, String tenSP, int gia, String chiTiet, String hinh, String maLoaiSP)
 	{
@@ -65,6 +67,21 @@ public class SanPham {
 		if (maLoaiSP ==null)
 			maLoaiSP = "lsp00";
 		this.maLoaiSP = maLoaiSP;
+	}
+	public String getTenLoaiSanPham() {
+		return tenLoaiSanPham;
+	}
+	public void setTenLoaiSanPham(String tenLoaiSanPham) {
+		this.tenLoaiSanPham = tenLoaiSanPham;
+	}
+	public void OutPrint() {
+	System.out.println("maSP:"+maSP);
+        System.out.println("tenSP:"+tenSP);
+        System.out.println("gia:"+gia);
+		System.out.println("chiTiet:"+chiTiet);
+		System.out.println("hinh:"+hinh);
+		System.out.println("maLoaiSP:"+maLoaiSP);
+		System.out.println("tenLoaiSanPham:"+tenLoaiSanPham);	
 	}
 
 }

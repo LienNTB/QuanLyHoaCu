@@ -3,6 +3,7 @@ package servletsAdmin;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,8 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.SanPham;
+import beans.commons;
+import beans.LoaiSanPham;
 import conn.DBConnection;
 import utils.SanPhamUtils;
+import utils.LoaiSanPhamUtils;
 
 /**
  * Servlet implementation class EditSanPham
@@ -34,8 +38,14 @@ public class EditSanPham extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (!commons.checkAdmin()) 
+		{
+			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			return;
+		}
 		response.setContentType("text/html;charset=UTF-8");
 		Connection conn=null;
+		String errorString = null;
 		try{
 			conn = DBConnection.getConnection();
 		}
@@ -46,25 +56,7 @@ public class EditSanPham extends HttpServlet {
 			e2.printStackTrace();
 		}
 		String idStr=(String)request.getParameter("id");
-		SanPham sp=null;
-		String errorString=null;
-		try{
-			sp=SanPhamUtils.GetSanPhamById(conn,idStr);
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-			errorString=e.getMessage();
-		}
-		if (errorString!=null &&  sp==null)
-		{
-			response.sendRedirect(request.getServletPath()+"/QuanLiSanPham");
-			return;
-		}
-		request.setAttribute("errorString",errorString);
-		request.setAttribute("sanpham",sp);
-		RequestDispatcher rd=request.getServletContext().getRequestDispatcher("/WEB-INF/views/admin/pages/sanPhamView/editSanPhamView.jsp");
-		rd.forward(request,response);
+		goBack(request,response,conn,idStr,errorString);
 
 	}
 
@@ -73,8 +65,15 @@ public class EditSanPham extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		if (!commons.checkAdmin()) 
+		{
+			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			return;
+		}
 		Connection conn =null;
 		String errorString=null;
+		SanPham newSP=null;
+		
 		try{
 			conn=DBConnection.getConnection();
 		}
@@ -86,12 +85,13 @@ public class EditSanPham extends HttpServlet {
 		{
 			e2.printStackTrace();
 		}
-		System.out.println("Ok");
+	
 		String maSP=request.getParameter("maSP");
 		String tenSP=new String (request.getParameter("tenSP").getBytes("ISO-8859-1"),"UTF-8");
 		String giaStr=request.getParameter("gia");
+		String maLoaiSanPham=request.getParameter("maLoaiSanPham");
 		String chiTiet=new String (request.getParameter("chiTiet").getBytes("ISO-8859-1"),"UTF-8");
-		String hinh=null;
+		String hinh=request.getParameter("hinh");
 		
 		int gia=0;
 		try{
@@ -99,28 +99,45 @@ public class EditSanPham extends HttpServlet {
 
 		}
 		catch (Exception e) 
-		{			
+		{					
 			errorString="Sai định dạng giá!";
+			goBack(request, response, conn, maSP, errorString);
 			return;
 		}
-		SanPham sp=new SanPham(maSP, tenSP, gia,chiTiet,hinh);
+		newSP=new SanPham(maSP, tenSP, gia,chiTiet,hinh,maLoaiSanPham);
 		try{
-			SanPhamUtils.UpdateSanPham(conn,sp);
+			SanPhamUtils.UpdateSanPham(conn,newSP);
 		}
 		catch(Exception e){
 			e.printStackTrace();
 			errorString=e.getMessage();
 		}
-		request.setAttribute("errorString",errorString);
-		request.setAttribute("sanpham",sp);
 		if (errorString!=null)
 		{
-			RequestDispatcher rd=request.getServletContext().getRequestDispatcher("/WEB-INF/views/admin/pages/sanPhamView/editSanPhamView.jsp");
-			rd.forward(request,response);
+			goBack(request, response, conn, maSP, errorString);
 		}
 		else{
 			response.sendRedirect(request.getContextPath()+"/QuanLiSanPham");
 		}
 	}
+	protected void goBack(HttpServletRequest request, HttpServletResponse response,Connection conn, String maSP, String errorString) throws ServletException, IOException {
+		SanPham newSP=null;
+		List<LoaiSanPham> lsp=null;
+		try{
+			newSP=SanPhamUtils.GetSanPhamById(conn,maSP);
+			lsp=LoaiSanPhamUtils.getListLoaiSanPham(conn);
+		}
+		catch (SQLException e1)
+		{
+			e1.printStackTrace();
+			errorString=e1.getMessage();
+		}
+		request.setAttribute("errorString",errorString);
+		request.setAttribute("sanpham",newSP);
+		request.setAttribute("loaiSanPham",lsp);
+		RequestDispatcher rd=request.getServletContext().getRequestDispatcher("/WEB-INF/views/admin/pages/sanPhamView/editSanPhamView.jsp");
+		rd.forward(request,response);
+	}
+	
 
 }
