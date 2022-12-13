@@ -11,8 +11,23 @@ public class HoaDon {
 	private String maKhachHang;
 	private Date thoiGianGiaoHang;
 	private boolean trangThaiDonHang;
-	private boolean trangThaiThanhToan;
+	private	boolean trangThaiThanhToan;
 	private boolean trangThaiGiaoHang;
+
+	public HoaDon(){}
+	public HoaDon( String maHoaDon, int tongThanhToan, String diaChiGiaoHang, String maKhachHang, String soDienThoai, Date thoiGianGiaoHang, boolean trangThaiDonHang, boolean trangThaiGiaoHang, boolean trangThaiThanhToan, String ghiChu)
+	{
+		this.maHoaDon = maHoaDon;
+        this.tongThanhToan = tongThanhToan;
+        this.diaChiGiaoHang = diaChiGiaoHang;
+		this.soDienThoai = soDienThoai;
+		this.maKhachHang = maKhachHang;
+		this.thoiGianGiaoHang = thoiGianGiaoHang;
+		this.trangThaiDonHang = trangThaiDonHang;
+		this.trangThaiGiaoHang = trangThaiGiaoHang;
+		this.trangThaiThanhToan = trangThaiThanhToan;
+		this.ghiChu=ghiChu;
+	}
 	public String getMaHoaDon() {
 		return maHoaDon;
 	}
@@ -74,10 +89,11 @@ public class HoaDon {
 		this.maKhachHang = maKhachHang;
 	}
 	public boolean getTrangThaiDonHang() {
-		return trangThaiDonHang;
+		return this.trangThaiDonHang;
 	}
 	public void setTrangThaiDonHang(boolean trangThaiDonHang) {
-		this.trangThaiDonHang = trangThaiDonHang;
+		this.trangThaiDonHang=trangThaiDonHang;
+
 	}
 	public Date getThoiGianGiaoHang() {
 		return thoiGianGiaoHang;
@@ -89,13 +105,45 @@ public class HoaDon {
 		return trangThaiThanhToan;
 	}
 	public void setTrangThaiThanhToan(boolean trangThaiThanhToan) {
-		this.trangThaiThanhToan = trangThaiThanhToan;
+		this.trangThaiThanhToan=trangThaiThanhToan;
 	}
 	public boolean getTrangThaiGiaoHang() {
 		return trangThaiGiaoHang;
 	}
 	public void setTrangThaiGiaoHang(boolean trangThaiGiaoHang) {
-		this.trangThaiGiaoHang = trangThaiGiaoHang;
+		this.trangThaiGiaoHang=trangThaiGiaoHang;
+	}
+	public String meanTrangThaiDonHang()
+	{
+		if (this.trangThaiDonHang)
+			return "Đã duyệt";
+		else
+			return "Chờ xử lí";
+		
+	}
+	public String meanTrangThaiThanhToan()
+	{
+		if (trangThaiThanhToan)
+            return "Đã thanh toán";
+		else
+			return "Chờ thanh toán";
+	}
+	public String meanTrangThaiGiaoHang()
+	{
+		if (trangThaiGiaoHang)
+            return "Đã giao hang";
+		else
+		    return "Chờ giao hàng";
+	}
+	public void OutPrint()
+	{
+		System.out.println("TongThanhToan: " + tongThanhToan);
+		System.out.println("TrangThaiDonHang:"+trangThaiDonHang);
+		System.out.println("TrangThaiThanhToan:"+trangThaiThanhToan);
+		
+		
+		
+		System.out.println("TrangThaiGiaoHang:"+trangThaiGiaoHang);
 	}
 	
 }

@@ -6,27 +6,21 @@
 
   <display-name>QUANLYHOACU</display-name>
   <welcome-file-list>
-  
-<!-- 	<welcome-file>Admin_HomePage</welcome-file> -->
-<!--     <welcome-file>QuanLiSanPham</welcome-file> -->
-<!--     <welcome-file>EditSanPham</welcome-file> -->
-<!--     <welcome-file>ThemSanPham</welcome-file> -->
-<!--     <welcome-file>QuanLiLoaiSanPham</welcome-file> -->
-<!--     <welcome-file>EditLoaiSanPham</welcome-file> -->
-<!--     <welcome-file>ThemLoaiSanPham</welcome-file> -->
-<!--     <welcome-file>QuanLiKhachHang</welcome-file> -->
-<!--     <welcome-file>EditKhachHang</welcome-file> -->
-<!--     <welcome-file>ThemKhachHang</welcome-file> -->
-<!--     <welcome-file>QuanLiDonHang</welcome-file> -->
-<!--     <welcome-file>EditDonHang</welcome-file> -->
-<!--     <welcome-file>ThemDonHang</welcome-file> -->
-    
-    <welcome-file>Store</welcome-file>
-    <welcome-file>HomePage</welcome-file>
-    <welcome-file>CheckOut</welcome-file>
-    <welcome-file>SanPham</welcome-file>
-    <welcome-file>Login</welcome-file>
-    
-  </welcome-file-list>
 
+    <welcome-file>Login</welcome-file>
+    <welcome-file>Admin_HomePage</welcome-file>
+    <welcome-file>QuanLiSanPham</welcome-file>
+    <welcome-file>EditSanPham</welcome-file>
+    <welcome-file>ThemSanPham</welcome-file>
+    <welcome-file>QuanLiLoaiSanPham</welcome-file>
+    <welcome-file>EditLoaiSanPham</welcome-file>
+    <welcome-file>ThemLoaiSanPham</welcome-file>
+    <welcome-file>QuanLiKhachHang</welcome-file>
+    <welcome-file>EditKhachHang</welcome-file>
+    <welcome-file>ThemKhachHang</welcome-file>
+    <welcome-file>QuanLiDonHang</welcome-file>
+    <welcome-file>EditDonHang</welcome-file>
+    <welcome-file>ThemDonHang</welcome-file>
+
+  </welcome-file-list>
 </web-app>

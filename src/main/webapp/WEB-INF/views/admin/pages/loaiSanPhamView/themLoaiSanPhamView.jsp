@@ -7,6 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
+    <script type="text/javascript">
+      function validateForm()
+      {
+        var maLSP=document.forms["createLoaiSPForm"]["maLoaiSanPham"].value;
+        var tenLSP=document.forms["createLoaiSPForm"]["tenLoaiSanPham"].value;
+        if(maLSP=="" || tenLS=="" )
+        {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return false;
+        }
+        return true;
+      
+      }
+      </script>
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -192,41 +206,40 @@
               <div class="card">
                 <div class="card-body">
                   <div class="form-validation">
-                    <form class="form-valide" action="#" method="post">
+                  	<p style="color:red;">${errorString}</p>
+                    <form class="form-valide" method="POST" action="${pageContext.request.contextPath}/ThemLoaiSanPham" name="createLoaiSPForm" onsubmit=" return validateForm();">
                       <div class="form-group row">
                         <label
                           class="col-lg-4 col-form-label"
                           for="val-productTypeId"
-                          >Product Type ID <span class="text-danger">*</span>
+                          >Mã loại sản phẩm <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="productTypeId"
-                            name="productTypeId"
+                            id="maLoaiSanPham"
+                            name="maLoaiSanPham"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-lg-4 col-form-label" for="val-email"
-                          >Product Type Name <span class="text-danger">*</span>
+                          >Tên loại sản phẩm <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="productTypeName"
-                            name="productTypeName"
+                            id="tenLoaiSanPham"
+                            name="tenLoaiSanPham"
                           />
                         </div>
                       </div>
 
                       <div class="form-group row">
                         <div class="col-lg-8 ml-auto">
-                          <button type="submit" class="btn btn-primary">
-                            Thêm
-                          </button>
+                          <input type="submit" class="btn btn-primary" value="Thêm">        
                         </div>
                       </div>
                     </form>

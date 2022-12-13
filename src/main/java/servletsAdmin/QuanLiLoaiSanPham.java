@@ -1,6 +1,10 @@
 package servletsAdmin;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,10 +13,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.LoaiSanPham;
+import beans.commons;
+import conn.DBConnection;
+import utils.LoaiSanPhamUtils;
+
 /**
  * Servlet implementation class QuanLiLoaiSanPham
  */
-@WebServlet("/QuanLiLoaiSanPham")
+@WebServlet(name="/QuanLiLoaiSanPham",urlPatterns= {"/QuanLiLoaiSanPham"})
 public class QuanLiLoaiSanPham extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -28,7 +37,31 @@ public class QuanLiLoaiSanPham extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse respo	nse)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (!commons.checkAdmin()) 
+		{
+			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			return;
+		}
+		Connection conn=null;
+		try {
+			conn = DBConnection.getConnection();
+		}
+		catch (SQLException | ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		List <LoaiSanPham> list = null;;
+		try
+		{
+			list = LoaiSanPhamUtils.getListLoaiSanPham(conn);
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		request.setAttribute("loaiSanPhamlist", list);
 		response.setContentType("text/html;charset=UTF-8");
+		
         RequestDispatcher dispatcher = request.getServletContext()
                 .getRequestDispatcher("/WEB-INF/views/admin/pages/loaiSanPhamView/quanLiLoaiSanPhamView.jsp");
         dispatcher.forward(request, response);

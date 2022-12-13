@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,6 +8,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
+    <script type="text/javascript">
+      function validateForm()
+      {
+        var maNguoiDung=document.forms["editKhachHang"]["maNguoiDung"].value;
+        var tenDangNhap=document.forms["editKhachHang"]["tenDangNhap"].value;
+        var hoTen=document.forms["editKhachHang"]["hoTen"].value;
+        if(maNguoiDung=="" || tenDangNhap=="" || hoTen=="")
+        {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return false;
+        }
+        return true;
+      
+      }
+      </script>
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -192,7 +208,9 @@
               <div class="card">
                 <div class="card-body">
                   <div class="form-validation">
-                    <form class="form-valide" action="#" method="post">
+                  <p style="color:red;">${errorString}</p>
+                    <form class="form-valide" method="post" action="${pageContext.request.contextPath}/EditKhachHang" name ="editKhachHangForm" onsubmit=" return validateForm();">
+                      <input type="hidden" name="maNguoiDung" value="${user.maNguoiDung}">
                       <div class="form-group row">
                         <label
                           class="col-lg-4 col-form-label"
@@ -200,12 +218,9 @@
                           >User ID <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="userId"
-                            name="userId"
-                          />
+                          <label class="col-lg-4 col-form-label" for="val-email"
+                          >${user.maNguoiDung }
+                        </label>
                         </div>
                       </div>
                       <div class="form-group row">
@@ -216,42 +231,59 @@
                           <input
                             type="text"
                             class="form-control"
-                            id="username"
-                            name="username"
+                            id="tenDangNhap"
+                            name="tenDangNhap"
+                            value="${user.tenDangNhap}"
                           />
                         </div>
                       </div>
-                      <div class="form-group row">
+                                            <div class="form-group row">
                         <label class="col-lg-4 col-form-label" for="val-email"
-                          >Date Birth <span class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                          <input
-                            type="date"
-                            class="form-control"
-                            id="username"
-                            name="username"
-                          />
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-lg-4 col-form-label" for="val-email"
-                          >Address<span class="text-danger">*</span>
+                          >Họ và tên <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="username"
-                            name="username"
+                            id="hoTen"
+                            name="hoTen"
+                            value="${user.hoTen}"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Date Birth (MM/dd/yyyy) <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="ngaySinh"
+                            name="ngaySinh"
+                            value="${user.ngaySinh}"
+                  
+                            />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Address
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="diaChi"
+                            name="diaChi"
+                            
+                            value="${user.diaChi}"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
                         <div class="col-lg-8 ml-auto">
-                          <button type="submit" class="btn btn-primary">
-                            Update
-                          </button>
+                          <input type="submit" class="btn btn-primary" value="Cập nhật">
                         </div>
                       </div>
                     </form>

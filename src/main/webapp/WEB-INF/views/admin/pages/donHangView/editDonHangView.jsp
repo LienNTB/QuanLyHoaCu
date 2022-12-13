@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +9,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
+    <script type="text/javascript">
+      function validateForm()
+      {
+        var soDienThoai=document.forms["editHoaDon"]["soDienThoai"].value;
+        var diaChiGiaoHang=document.forms["editHoaDon"]["diaChiGiaoHang"].value;
+        if(soDienThoai=="" ||diaChiGiaoHang=="" )
+        {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return false;
+        }
+        return true;
+      
+      }
+    </script>
     <!-- Favicon icon -->
    <link
       rel="icon"
@@ -194,155 +209,136 @@
               <div class="card">
                 <div class="card-body">
                   <div class="form-validation">
+                    <p style="color:red;">${errorString}</p>
                     <form class="form-valide" action="#" method="post">
+                    <input type="hidden" name="maHoaDon" value="${hoaDon.maHoaDon}" name ="editHoaDon" onsubmit=" return validateForm();">
                       <div class="form-group row">
                         <label class="col-lg-4 col-form-label" for="val-orderId"
-                          >Order ID <span class="text-danger">*</span>
+                          >Mã đơn hàng <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+ 							<label class="col-lg-4 col-form-label" for="val-orderId"
+                          	>${hoaDon.maHoaDon } </label>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Mã khách hàng <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+      								<select name="maKhachHang" id="maKhachHang" >
+                        			<c:forEach var="u" items="${listUser}">
+								    	<option value="${u.maNguoiDung}" <c:if test="${hoaDon.maKhachHang == u.maNguoiDung }">selected</c:if>>${u.maNguoiDung}</option>
+							  		</c:forEach>
+							  	</select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Số điện thoại khách hàng<span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="orderId"
-                            name="orderId"
+                            id="soDienThoai"
+                            name="soDienThoai"
+                            value="${hoaDon.soDienThoai}"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-lg-4 col-form-label" for="val-email"
-                          >Product Name <span class="text-danger">*</span>
+                          >Tổng thanh toán<span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="productName"
-                            name="productName"
+                            id="tongThanhToan"
+                            name="tongThanhToan"
+                            value="${hoaDon.tongThanhToan}"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-lg-4 col-form-label" for="val-email"
-                          >Total Amount<span class="text-danger">*</span>
+                          >Thời gian giao hàng<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="thoiGianGiaoHang"
+                            name="thoiGianGiaoHang"
+                            value="${hoaDon.thoiGianGiaoHang}"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Địa chỉ giao hàng<span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
                             type="text"
                             class="form-control"
-                            id="totalAmount"
-                            name="totalAmount"
+                            id="diaChiGiaoHang"
+                            name="diaChiGiaoHang"
+                            value="${hoaDon.diaChiGiaoHang}"
                           />
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-lg-4 col-form-label" for="val-email"
-                          >Order Address<span class="text-danger">*</span>
+                          >Trạng thái đơn hàng<span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
-                          <input
+                          <select  name="trangThaiDonHang" id="trangThaiDonHang" >
+                            <option value="false" <c:if test="${!hoaDon.trangThaiDonHang}">selected</c:if>>Chờ xử lí</option>
+                            <option value="true" <c:if test="${hoaDon.trangThaiDonHang}">selected</c:if>>Đã đã duyệt</option>
+                           </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Trạng thái giao hàng<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <select  name="trangThaiGiaoHang" id="trangThaiGiaoHang" >
+                            <option value="false" <c:if test="${!hoaDon.trangThaiGiaoHang}">selected</c:if>>Chờ giao hàng</option>
+                            <option value="true" <c:if test="${hoaDon.trangThaiGiaoHang}">selected</c:if>>Đã giao hàng</option>
+                           </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Trạng thái thanh toán<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          <select  name="trangThaiThanhToan" id="trangThaiThanhToan" >
+                                <option value="false" <c:if test="${!hoaDon.trangThaiThanhToan}">selected</c:if>>Chờ thanh toán</option>
+                                <option value="true" <c:if test="${hoaDon.trangThaiThanhToan}">selected</c:if>>Đã thanh toán</option>
+                        </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email"
+                          >Ghi chú<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                         <input
                             type="text"
                             class="form-control"
-                            id="orderAddress"
-                            name="orderAddress"
+                            id="ghiChu"
+                            name="ghiChu"
+                            value="${hoaDon.ghiChu}"
                           />
+          
                         </div>
                       </div>
-                      <div class="form-group row">
-                        <label class="col-lg-4 col-form-label" for="val-email"
-                          >Phone Number<span class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="phoneNumber"
-                            name="phoneNumber"
-                          />
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-lg-4 col-form-label" for="val-email"
-                          >User ID<span class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="UserID"
-                            name="UserID"
-                          />
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-lg-4 col-form-label" for="val-email"
-                          >Order Time<span class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                          <input
-                            type="time"
-                            class="form-control"
-                            id="time"
-                            name="time"
-                          />
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-lg-4 col-form-label" for="val-email"
-                          >Order Status<span class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                          <div class="dropdown custom-dropdown">
-                            <button
-                              type="button"
-                              class="btn btn-sm btn-outline-primary"
-                              data-toggle="dropdown"
-                            >
-                              OrderStatus <i class="fa fa-angle-down m-l-5"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                              <a class="dropdown-item" href="#">Approved</a>
-                              <a class="dropdown-item" href="#">Not Approved</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-lg-4 col-form-label" for="val-email"
-                          >Delivery Status<span class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                          <div class="dropdown custom-dropdown">
-                            <button
-                              type="button"
-                              class="btn btn-sm btn-outline-primary"
-                              data-toggle="dropdown"
-                            >
-                              Delivery Status
-                              <i class="fa fa-angle-down m-l-5"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                              <a class="dropdown-item" href="#"
-                                >Not Delivered</a
-                              >
-                              <a class="dropdown-item" href="#">Delivering</a>
-                              <a class="dropdown-item" href="#">Delivered</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-lg-4 col-form-label" for="val-email"
-                          >Payment Status<span class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="paymentStatus"
-                            name="paymentStatus"
-                          />
-                        </div>
-                      </div>
+                      
+                      
                       <div class="form-group row">
                         <div class="col-lg-8 ml-auto">
                           <button type="submit" class="btn btn-primary">
@@ -358,6 +354,7 @@
           </div>
         </div>
         <!-- #/ container -->
+       
       </div>
       <!--**********************************
             Content body end

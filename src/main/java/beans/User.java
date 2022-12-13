@@ -1,6 +1,8 @@
 package beans;
 
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
 
 public class User {
 	private String maNguoiDung;
@@ -11,15 +13,19 @@ public class User {
 	private String diaChi;
 	private String role;
 	public User() {};
-	public User(String tenDangNhap, String matKhau, String hoTen, java.util.Date birthday, String diaChi)
+	
+	public User(String MaNguoiDung, String tenDangNhap, String matKhau, String hoTen, Date birthday, String diaChi, String role) throws ParseException 
 	{
 		this.tenDangNhap = tenDangNhap;
-		this.maNguoiDung=this.createMaNguoiDung();
+		this.maNguoiDung=MaNguoiDung;
         this.matKhau = matKhau;
         this.hoTen = hoTen;
-		this.ngaySinh = birthday;
+		this.ngaySinh =birthday; 
         this.diaChi = diaChi;
-		this.role="USER";
+		this.role = role;
+	}
+	public User(String parameter, String parameter2, String string, Date dates1, String string2) {
+		// TODO Auto-generated constructor stub
 	}
 	public String getMaNguoiDung() {
 		return maNguoiDung;
@@ -49,7 +55,7 @@ public class User {
 		return ngaySinh;
 	}
 	public void setNgaySinh(Date ngaySinh) {
-		this.ngaySinh = ngaySinh;
+		this.ngaySinh=ngaySinh;
 	}
 	public String getDiaChi() {
 		return diaChi;

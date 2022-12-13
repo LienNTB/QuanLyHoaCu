@@ -9,12 +9,33 @@ import java.util.List;
 
 import beans.HoaDon;
 public class HoaDonUtils {
+    public static List<HoaDon> getListHoaDon(Connection conn) throws SQLException {
+        List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
+        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon");
+        ResultSet rs = pst.executeQuery();
+        while (rs.next()) {
+            HoaDon hoaDon = new HoaDon();
+            hoaDon.setMaHoaDon(rs.getString("MaHoaDon"));
+            hoaDon.setGhiChu(rs.getString("GhiChu"));
+            hoaDon.setTongThanhToan(rs.getInt("TongThanhToan"));
+            hoaDon.setDiaChiGiaoHang(rs.getString("DiaChiGiaoHang"));
+            hoaDon.setSoDienThoai(rs.getString("SoDienThoai"));
+            hoaDon.setMaKhachHang(rs.getString("MaKhachHang"));
+            hoaDon.setTrangThaiDonHang(rs.getBoolean("TrangThaiDonHang"));
+            hoaDon.setThoiGianGiaoHang(rs.getDate("ThoiGianGiaoHang"));
+            hoaDon.setTrangThaiGiaoHang(rs.getBoolean("TrangThaiGiaoHang"));
+            hoaDon.setTrangThaiThanhToan(rs.getBoolean("TrangThaiThanhToan"));
+            hoaDonList.add(hoaDon);
+        }
+        return hoaDonList;
+        
+    }
     public static List<HoaDon> getHoaDonByIdMaKH(Connection conn, String MaKH) throws SQLException 
     {
 
 
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
-        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,, TrangThaiGiaoHang TrangThaiThanhToan from HoaDon where MaKhachHang=?");
+        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,, TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaKhachHang=?");
         pst.setString(1, MaKH);
         ResultSet rs = pst.executeQuery();
         while (rs.next()) 
@@ -80,10 +101,10 @@ public class HoaDonUtils {
         pst.setString(3,hd.getDiaChiGiaoHang());
         pst.setString(4,hd.getSoDienThoai());
         pst.setString(5,hd.getMaKhachHang());
-        pst.setDate(6,(Date) hd.getThoiGianGiaoHang());
-        pst.setBoolean(7,hd.getTrangThaiDonHang());
-        pst.setBoolean(8,hd.getTrangThaiGiaoHang());
-        pst.setBoolean(9,hd.getTrangThaiThanhToan());
+        pst.setBoolean(6,hd.getTrangThaiDonHang());
+        pst.setBoolean(7,hd.getTrangThaiGiaoHang());
+        pst.setBoolean(8,hd.getTrangThaiThanhToan());
+        pst.setDate(9,(Date) hd.getThoiGianGiaoHang());
         pst.setString(10,hd.getMaHoaDon());
         
         pst.executeUpdate();

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,8 +8,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>
-    
+    	Danh mục sản phẩm
     </title>
+    <script type="text/javascript">
+      function ConfirmDialog(id)
+      {
+        var message=confirm("Bạn có chắc muốn xóa sản phẩm này"+" ("+ id  +") không?");
+        if (message)
+          {
+            window.location.href="deleteSanPham?id=" +id
+          }
+        else
+          return false;
+      }
+    </script>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/QUANLYHOACU/static/admin/images/favicon.png" />
     <!-- Custom Stylesheet -->
@@ -199,34 +212,31 @@
                   <h4 class="card-title">QUẢN LÍ SẢN PHẨM</h4>
                   <a href="ThemSanPham">
                     <button type="button" class="btn mb-1 btn-primary">Thêm sản phẩm mới</button>
-                  </a>
+                  </a>  
                   <br/>
                   <br/>
                   <div class="table-responsive">    
                     <table class="table table-bordered verticle-middle">
                       <thead>
                         <tr>
-                          <th scope="col">Product ID</th>
-                          <th scope="col">Product Name</th>
-                          <th scope="col">Price</th>
-                          <th scope="col">Detail</th>
-                          <th scope="col">Image</th>
-                          <th scope="col">Product Type</th>
-                          <th scope="col">Actions</th>
+                        	<th scope="col">Actions</th>
+                        	<th scope="col">Số thứ tự</th>
+	                        <th scope="col">Mã sản phẩm</th>
+	                        <th scope="col">Tên sản phẩm</th>
+	                        <th scope="col">Giá</th>
+	                        <th scope="col">Link hình ảnh</th>
+	                        <th scope="col">Loại sản phẩm</th>
+	                        <th scope="col">Chi tiết</th>
                         </tr>
                       </thead>
                       <tbody>
+                      	<c:forEach var="sp" items="${sanPhamList }" varStatus ="loop" >
                         <tr>
-                          <td>1</td>
-                          <td>Giấy vẽ manga</td>
-                          <td>450.000</td>
-                          <td>Giấy vẽ nhập khẩu từ Đức</td>
-                          <td>fjjpdpfgjfpdgdj</td>
-                          <td>Giấy vẽ</td>
-                          <td >
+
+                          	<td >
                            
                               <a class="action-item"
-                                href="EditSanPham"
+                                href="EditSanPham?id=${sp.maSP }"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Edit"
@@ -235,14 +245,24 @@
                                 ></i> </a
                               >
                               <a
-                                href="#"
+   
+                                href="# "
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Delete"
-                                ><i class="fa fa-close color-danger"></i></a
-                            ></span>
+                                
+                                ><i onclick="{return ConfirmDialog(${sp.maSP});}" class="fa fa-close color-danger"></i></a>
+                         
                           </td>
+                        <td>${loop.index+1 }</td>
+                          	<td>${sp.maSP }</td>
+                          	<td>${sp.tenSP }</td>
+                          	<td>${sp.gia }</td>
+                          	<td>${sp.hinh }</td>
+                          	<td>${sp.tenLoaiSanPham }</td>
+                          	<td>${sp.chiTiet }</td>
                         </tr>
+                        </c:forEach>
                       </tbody>
                     </table>
                   </div>

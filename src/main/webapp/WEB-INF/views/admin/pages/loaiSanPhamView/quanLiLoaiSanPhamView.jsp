@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+  <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Art Store - Admin</title>
-
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -18,6 +19,7 @@
     <!-- Custom Stylesheet -->
     <link href="/QUANLYHOACU/static/admin/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="/QUANLYHOACU/static/admin/css/adminpage.css" />
+
   </head>
 
   <body>
@@ -209,13 +211,14 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <c:forEach var="lsp" items="${loaiSanPhamlist}">
                         <tr>
-                          <td>1</td>
-                          <td>Giấy vẽ</td>
+                          <td>${lsp.maLoaiSP}</td>
+                          <td>${lsp.tenLoaiSanPham}</td>
                           <td >
                            
                               <a class="action-item"
-                                href="EditLoaiSanPham"
+                                href="EditLoaiSanPham?id=${lsp.maLoaiSP }"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Edit"
@@ -224,15 +227,17 @@
                                 ></i> </a
                               >
                               <a
-                                href="#"
+                                href="DeleteLoaiSanPham?id=${lsp.maLoaiSP }"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Delete"
-                                ><i class="fa fa-close color-danger"></i></a
-                            ></span>
+                             ><i class="fa fa-close color-danger"></i></a
+                            >
                           </td>
                         </tr>
+                        </c:forEach>
                       </tbody>
+                      
                     </table>
                   </div>
                 </div>
