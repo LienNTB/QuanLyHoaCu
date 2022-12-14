@@ -9,7 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+     <script type="text/javascript">
+      function validateForm()
+      {
+        console.log("them vao cart")
+    }
+    </script>
     <title>Home</title>
 
     <!-- Google font -->
@@ -398,6 +403,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 
             <div class="row">
               <c:forEach var="sp" items="${sanPhamList}">
+               <form class="form-valide" method="POST" action="${pageContext.request.contextPath}/ThemChiTietHoaDon" onsubmit=" return validateForm()	;">
                 <div class="col-md-4 col-xs-6">
                   <div class="product">
                     <div class="product-img">
@@ -431,12 +437,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
                       </div>
                     </div>
                     <div class="add-to-cart">
-                      <button class="add-to-cart-btn">
-                        <i class="fa fa-shopping-cart"></i> add to cart
-                      </button>
+                        <input
+                        type="submit"
+                        class="fa fa-shopping-cart add-to-cart-btn"
+                        value="ADD TO CART"
+                      />
                     </div>
                   </div>
                 </div>
+                </form>
               </c:forEach>
             </div>
             <!-- /store products -->
