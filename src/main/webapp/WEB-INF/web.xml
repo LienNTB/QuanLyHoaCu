@@ -21,6 +21,7 @@
     <welcome-file>QuanLiDonHang</welcome-file>
     <welcome-file>EditDonHang</welcome-file>
     <welcome-file>ThemDonHang</welcome-file>
-
+    <welcome-file>Cart_HasProduct</welcome-file>
+    <welcome-file>Cart_NoProduct</welcome-file>
   </welcome-file-list>
 </web-app>

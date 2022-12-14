@@ -16,24 +16,24 @@
     />
 
     <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/css/bootstrap.min.css" />
 
     <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="../css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="../css/slick-theme.css" />
+    <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/css/slick-theme.css" />
 
     <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="../css/nouislider.min.css" />
+    <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/css/nouislider.min.css" />
 
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/QUANLYHOACU/static/allUser/css/font-awesome.min.css" />
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="../css/style.css" />
+    <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/css/style.css" />
     <link
       type="text/css"
       rel="stylesheet"
-      href="../css/admin_productManage.css"
+      href="/QUANLYHOACU/static/allUser/css/admin_productManage.css"
     />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -391,12 +391,12 @@
     <!-- /FOOTER -->
 
     <!-- jQuery Plugins -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/nouislider.min.js"></script>
-    <script src="js/jquery.zoom.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="../js/admin_productManage.js"></script>
+    <script src="/QUANLYHOACU/static/allUser/js/jquery.min.js"></script>
+    <script src="/QUANLYHOACU/static/allUser/js/bootstrap.min.js"></script>
+    <script src="/QUANLYHOACU/static/allUser/js/slick.min.js"></script>
+    <script src="/QUANLYHOACU/static/allUser/js/nouislider.min.js"></script>
+    <script src="/QUANLYHOACU/static/allUser/js/jquery.zoom.min.js"></script>
+    <script src="/QUANLYHOACU/static/allUser/js/main.js"></script>
+    <script src="/QUANLYHOACU/static/allUser/js/admin_productManage.js"></script>
   </body>
 </html>
