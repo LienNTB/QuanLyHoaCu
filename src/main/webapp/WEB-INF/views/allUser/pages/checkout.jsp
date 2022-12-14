@@ -178,7 +178,7 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">TRANG CHỦ</a></li>
+						<li class="active"><a href="HomePage">TRANG CHỦ</a></li>
 						<li><a href="#">MÀU VẼ</a></li>
 						<li><a href="#">GIẤY VẼ</a></li>
 						<li><a href="#">BÚT VẼ</a></li>
@@ -201,7 +201,7 @@
 					<div class="col-md-12">
 						<h3 class="breadcrumb-header">Checkout</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
+							<li><a href="HomePage">Home</a></li>
 							<li class="active">Checkout</li>
 						</ul>
 					</div>
@@ -212,6 +212,9 @@
 		</div>
 		<!-- /BREADCRUMB -->
 
+
+
+
 		<!-- SECTION -->
 		<div class="section">
 			<!-- container -->
@@ -219,116 +222,57 @@
 				<!-- row -->
 				<div class="row">
 
-					<div class="col-md-7">
+					<div class="col-md-5">
 						<!-- Billing Details -->
 						<div class="billing-details">
 							<div class="section-title">
-								<h3 class="title">Billing address</h3>
+								<h3 class="title">Địa chỉ thanh toán</h3>
+							</div>
+							<div class="form-group" >
+							<label>Họ và tên</label>
+								<input class="input" value="${commons.mainUser}"type="text" name="first-name" placeholder="Họ và tên">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="first-name" placeholder="First Name">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="last-name" placeholder="Last Name">
-							</div>
-							<div class="form-group">
+							<label>Email</label>
 								<input class="input" type="email" name="email" placeholder="Email">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="address" placeholder="Address">
+							<label>Điện thoại</label>
+								<input class="input" type="tel" name="tel" placeholder="Điện thoại">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="city" placeholder="City">
+							<label>Địa chỉ</label>
+								<input class="input" type="text" name="address" placeholder="Địa chỉ">
 							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="country" placeholder="Country">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-							</div>
-							<div class="form-group">
-								<input class="input" type="tel" name="tel" placeholder="Telephone">
-							</div>
-							<div class="form-group">
-								<div class="input-checkbox">
-									<input type="checkbox" id="create-account"> <label for="create-account">
-										<span></span> Create Account?
-									</label>
-									<div class="caption">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-											elit, sed do eiusmod tempor incididunt.</p>
-										<input class="input" type="password" name="password"
-											placeholder="Enter Your Password">
-									</div>
-								</div>
+							<div class="order-notes">
+							<label>Ghi chú</label>
+							<textarea class="input" placeholder="Ghi chú cho nhà bán hàng"></textarea>
 							</div>
 						</div>
 						<!-- /Billing Details -->
 
-						<!-- Shiping Details -->
-						<div class="shiping-details">
-							<div class="section-title">
-								<h3 class="title">Shiping address</h3>
-							</div>
-							<div class="input-checkbox">
-								<input type="checkbox" id="shiping-address"> <label for="shiping-address"> <span></span>
-									Ship to a diffrent
-									address?
-								</label>
-								<div class="caption">
-									<div class="form-group">
-										<input class="input" type="text" name="first-name" placeholder="First Name">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="last-name" placeholder="Last Name">
-									</div>
-									<div class="form-group">
-										<input class="input" type="email" name="email" placeholder="Email">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="address" placeholder="Address">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="city" placeholder="City">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="country" placeholder="Country">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-									</div>
-									<div class="form-group">
-										<input class="input" type="tel" name="tel" placeholder="Telephone">
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /Shiping Details -->
-
-						<!-- Order notes -->
-						<div class="order-notes">
-							<textarea class="input" placeholder="Order Notes"></textarea>
-						</div>
-						<!-- /Order notes -->
 					</div>
 
 					<!-- Order Details -->
-					<div class="col-md-5 order-details">
+					<div class="col-md-7 order-details">
 						<div class="section-title text-center">
-							<h3 class="title">Your Order</h3>
+							<h3 class="title">Đơn hàng của bạn</h3>
 						</div>
 						<div class="order-summary">
 							<div class="order-col">
 								<div>
-									<strong>PRODUCT</strong>
+									<strong>SẢN PHẨM</strong>
 								</div>
 								<div>
-									<strong>TOTAL</strong>
+									<strong>SỐ LƯỢNG</strong>
+								</div>
+								<div>
+									<strong>TỔNG TIỀN</strong>
 								</div>
 							</div>
 							<div class="order-products">
 								<div class="order-col">
-									<div>1x PHẤN TIÊN MASTER PASTEL MARIE'S</div>
+									<div></div>
 									<div>45.000</div>
 								</div>
 								<div class="order-col">
@@ -351,6 +295,57 @@
 								</div>
 							</div>
 						</div>
+						
+						<script type="text/javascript">
+
+						var returnedSuggestion = ''
+						let editor, doc, cursor, line, pos
+						document.addEventListener("keydown", (event) => {
+						setTimeout(()=>{
+							editor = event.target.closest('.CodeMirror');
+							if (editor){
+								doc = editor.CodeMirror.getDoc()
+								cursor = doc.getCursor()
+								line = doc.getLine(cursor.line)
+								pos = {line: cursor.line, ch: line.length}
+								if (event.key == "Enter"){
+									var query = doc.getRange({ line: Math.max(0,cursor.line-10), ch: 0 }, { line: cursor.line, ch: 0 })
+									window.postMessage({source: 'getSuggestion', payload: { data: query } } )
+									//displayGrey(query)
+								}
+								else if (event.key == "ArrowRight"){
+									acceptTab(returnedSuggestion)
+								}
+							}
+						}, 0)
+						})
+
+						function acceptTab(text){
+						if (suggestionDisplayed){
+							doc.replaceRange(text, pos)
+							suggestionDisplayed = false
+						}
+						}
+						function displayGrey(text){
+						var element = document.createElement('span')
+						element.innerText = text
+						element.style = 'color:grey'
+						var lineIndex = pos.line;
+						editor.getElementsByClassName('CodeMirror-line')[lineIndex].appendChild(element)
+						suggestionDisplayed = true
+						}
+						window.addEventListener('message', (event)=>{
+						if (event.source !== window ) return
+						if (event.data.source == 'return'){
+							returnedSuggestion = event.data.payload.data
+							displayGrey(event.data.payload.data)
+						}
+						})
+					
+						</script>
+						
+						
+						
 						<div class="payment-method">
 							<div class="input-radio">
 								<input type="radio" name="payment" id="payment-1"> <label for="payment-1"> <span></span>

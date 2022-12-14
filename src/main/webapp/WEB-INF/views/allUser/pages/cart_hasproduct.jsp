@@ -28,7 +28,8 @@ pageEncoding="UTF-8"%>
     <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/css/nouislider.min.css" />
 
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="/QUANLYHOACU/static/allUser/css/font-awesome.min.css" />
+     <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom stlylesheet -->
     <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/css/style.css" />
@@ -38,12 +39,6 @@ pageEncoding="UTF-8"%>
       href="/QUANLYHOACU/static/allUser/css/admin_productManage.css"
     />
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
     <!-- HEADER -->
@@ -52,6 +47,7 @@ pageEncoding="UTF-8"%>
       <div id="top-header">
         <div class="container">
           <ul class="header-links pull-left">
+          
             <li>
               <a href="#"><i class="fa fa-phone"></i> +454-54-54-54</a>
             </li>
@@ -86,7 +82,7 @@ pageEncoding="UTF-8"%>
             <div class="col-md-3">
               <div class="header-logo">
                 <a href="#" class="logo">
-                  <img src="./img/logo4.png" alt="" />
+                  <img src="/QUANLYHOACU/static/allUser/./image/logo4.png" width="153" height="70" border="0"  alt="" />
                 </a>
               </div>
             </div>
@@ -214,7 +210,7 @@ pageEncoding="UTF-8"%>
         <div id="responsive-nav">
           <!-- NAV -->
           <ul class="main-nav nav navbar-nav">
-            <li class="active"><a href="#">TRANG CHỦ</a></li>
+            <li class="active"><a href="HomePage">TRANG CHỦ</a></li>
             <li><a href="#">MÀU VẼ</a></li>
             <li><a href="#">GIẤY VẼ</a></li>
             <li><a href="#">BÚT VẼ</a></li>
@@ -287,8 +283,17 @@ pageEncoding="UTF-8"%>
                        </c:forEach>
                       </tbody>
                     </table>
+                   
                   </div>
       </div>
+       <div>
+       <form>
+			<button class="">       
+				<a href="${pageContext.request.contextPath}/CheckOut">Thanh toán
+				<i class="fas fa-money-check-alt"></i> </a>
+			</button>
+		</form>
+       </div>
       <!-- /container -->
     </div>
     <!-- FOOTER -->
