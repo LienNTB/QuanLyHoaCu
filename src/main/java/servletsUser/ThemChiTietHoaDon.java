@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.ChiTietHoaDon;
 import conn.DBConnection;
+import utils.ChiTietHoaDonUtils;
 import utils.HoaDonUtils;
 import utils.userUtils;
 
@@ -34,10 +36,45 @@ public class ThemChiTietHoaDon extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher dispatcher = request.getServletContext()
-                .getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
-        dispatcher.forward(request, response);
+		//response.setContentType("text/html;charset=UTF-8");
+        //RequestDispatcher dispatcher = request.getServletContext()
+        //        .getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
+       // dispatcher.forward(request, response);
+		//response.sendRedirect(request.getContextPath()+"/HomePage");
+		Connection conn=null;
+		String errorString=null;
+		try {
+            conn=DBConnection.getConnection();
+		}
+		catch(SQLException |ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+            e.printStackTrace();
+		}
+		String maSP = request.getParameter("id");
+		ChiTietHoaDon chitietHD = new ChiTietHoaDon();
+		chitietHD.setMaHoaDon(maSP);
+		chitietHD.setMaSP(maSP);
+		chitietHD.setSoLuong(1);
+		chitietHD.setTongPhu(0);
+		try{
+		    ChiTietHoaDonUtils.insertChiTietHoaDon(conn, chitietHD);
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+			errorString=e.getMessage();
+		}
+		if (errorString != null)
+		{
+			request.setAttribute("errorString",errorString);
+			RequestDispatcher dispatcher = request.getServletContext()
+			.getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
+	dispatcher.forward(request, response);
+		}
+		else
+		{
+			response.sendRedirect(request.getContextPath()+"/HomePage");
+		}
 	}
 
 	/**
@@ -53,14 +90,30 @@ public class ThemChiTietHoaDon extends HttpServlet {
 			// TODO Auto-generated catch block
             e.printStackTrace();
 		}
-		String maSP = request.getParameter("maSP");
+		String maSP = request.getParameter("id");
+		ChiTietHoaDon chitietHD = new ChiTietHoaDon();
+		chitietHD.setMaHoaDon(maSP);
+		chitietHD.setMaSP(maSP);
+		chitietHD.setSoLuong(1);
+		chitietHD.setTongPhu(0);
 		try{
-		    HoaDonUtils.insertHoaDon(conn, maSP)
+		    ChiTietHoaDonUtils.insertChiTietHoaDon(conn, chitietHD);
 		}
 		catch (SQLException e)
 		{
 			e.printStackTrace();
 			errorString=e.getMessage();
+		}
+		if (errorString != null)
+		{
+			request.setAttribute("errorString",errorString);
+			RequestDispatcher dispatcher = request.getServletContext()
+			.getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
+	dispatcher.forward(request, response);
+		}
+		else
+		{
+			response.sendRedirect(request.getContextPath()+"/HomePage");
 		}
 	}
 
