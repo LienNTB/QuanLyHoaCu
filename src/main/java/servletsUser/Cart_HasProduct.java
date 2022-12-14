@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.ChiTietHoaDon;
+import beans.commons;
 import conn.DBConnection;
 import utils.ChiTietHoaDonUtils;
 
@@ -37,6 +38,13 @@ public class Cart_HasProduct extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (!commons.isLogin())
+		{
+			System.out.print("Không ổn nữa rồi Đại vương");
+			response.sendRedirect(request.getContextPath()+"/Login");
+			return;
+		}
+			
 		Connection conn = null;
 		try {
 			conn = DBConnection.getConnection();
@@ -45,7 +53,7 @@ public class Cart_HasProduct extends HttpServlet {
 		}
 		List<ChiTietHoaDon> list = null;
 		try {
-			list = ChiTietHoaDonUtils.getChiTietHoaDonByIdMaHD(conn,"DH1");
+			list = ChiTietHoaDonUtils.getChiTietHoaDonByIdMaHD(conn,"cart_"+commons.mainUser.getMaNguoiDung());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

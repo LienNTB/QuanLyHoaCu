@@ -65,5 +65,11 @@ public class HomePage extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	private void setupVariables(Connection conn, HttpServletRequest request) throws  ServletException, IOException {
+		List<SanPham> sanPhamList=null;
+		
+	
+	
+	}
 
 }

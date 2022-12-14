@@ -422,7 +422,7 @@
                     <div class="product-body">
                       <p class="product-category">${sp.maLoaiSP} - ${sp.maSP}</p>
                       <h3 class="product-name">
-                        <a href="#">${sp.tenSP}</a>
+                        <a href="SanPham?id=${sp.maSP}">${sp.tenSP}</a>
                       </h3>
                       <h4 class="product-price">
                         $980.00 <del class="product-old-price">${sp.gia }</del>

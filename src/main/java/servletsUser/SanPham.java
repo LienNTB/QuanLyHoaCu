@@ -63,20 +63,22 @@ public class SanPham extends HttpServlet {
             System.out.print("Lỗi sản phẩm rồi Đại vương!");
             
 		}
-		try
+		if (sp!=null)
 		{
-			spRelated=SanPhamUtils.getListSanPhamRelated(conn,sp.getMaLoaiSP(),4);
-			lsp=LoaiSanPhamUtils.getListLoaiSanPham(conn);
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-            System.out.print("Lỗi rồi Đại vương!");
-		}
-		if (sp==null)
-			System.out.print("Không ổn rồi Đại vương ơi!");
-		else
+			try
+			{
+				spRelated=SanPhamUtils.getListSanPhamRelated(conn,sp,4);
+				lsp=LoaiSanPhamUtils.getListLoaiSanPham(conn);
+			}
+			catch (SQLException e)
+			{
+				e.printStackTrace();
+	            System.out.print("Lỗi rồi Đại vương!");
+			}
 			sp.OutPrint();
+		}
+		else
+			System.out.print("Không ổn rồi Đại vương ơi!");
 		System.out.print(spRelated);
 		request.setAttribute("sanPham",sp);
 		request.setAttribute("spRelated",spRelated);

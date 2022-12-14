@@ -261,7 +261,7 @@ pageEncoding="UTF-8"%>
                         <tr>
                           <th scope="col">Mã Hóa Đơn</th>
                           <th scope="col">Mã SP</th>
-                          <th scope="col">Tên SP</th>
+                        
                           <th scope="col">Số lượng</th>
                           <th scope="col">Giá tiền</th>
                         </tr>
@@ -271,6 +271,7 @@ pageEncoding="UTF-8"%>
                         <tr>
                           <td>${chitiethoadon.maHoaDon}</td>
                           <td>${chitiethoadon.maSP}</td>
+                         
                           <td>${chitiethoadon.soLuong}</td>
                           <td>${chitiethoadon.tongPhu}</td>   
                           <td >  

@@ -64,8 +64,8 @@
 
 							<!-- Cart -->
 							<div class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown"
-									aria-expanded="true"> <i class="fa fa-shopping-cart"></i> <span>Your
+								<a href="Cart_HasProduct" class="dropdown-toggle" data-toggle="dropdown"
+									aria-expanded="true"> <i class="fa fa-shopping-cart" ></i> <span>Your
 										Cart</span>
 									<div class="qty">3</div>
 								</a>
@@ -141,7 +141,7 @@
 			<div id="responsive-nav">
 				<!-- NAV -->
 				<ul class="main-nav nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li class="active"><a href="HomePage">Home</a></li>
 					<li><a href="#">Hot Deals</a></li>
 					<li><a href="#">Categories</a></li>
 					<c:forEach var ="lsp" items="${loaiSanPham }">

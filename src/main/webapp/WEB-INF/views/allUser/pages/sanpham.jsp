@@ -8,9 +8,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+<script type="text/javascript">
+function AddToCart()
+{
+	var id=document.getElementById("id").value;
+	var soluong=document.getElementById("number").value
+	alert("heello")
+	window.location.href="AddToCart?id="+id+"&number="+soluong;
+}
+</script>
 <title>Store</title>
-
 <!-- Google font -->
 <link
 	href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
@@ -93,6 +100,7 @@
 				<!-- /Product thumb imgs -->
 
 				<!-- Product details -->
+				<input type="hidden" name="id" value="${sanPham.maSP}" id="id">
 				<div class="col-md-5">
 					<div class="product-details">
 						<h2 class="product-name">${sanPham.tenSP}</h2>
@@ -128,11 +136,12 @@
 							<div class="qty-label">
 								Số lượng
 								<div class="input-number">
-									<input type="number"> <span class="qty-up">+</span> <span
+								
+									<input id="number" type="number" value="1" min="1" max="10"> <span class="qty-up">+</span> <span
 										class="qty-down">-</span>
 								</div>
 							</div>
-							<button class="add-to-cart-btn">
+							<button class="add-to-cart-btn"  onclick="AddToCart()">
 								<i class="fa fa-shopping-cart"></i> add to cart
 							</button>
 						</div>
@@ -393,7 +402,7 @@
 						<div class="product-body">
 							<p class="product-category">${sp.tenLoaiSanPham}</p>
 							<h3 class="product-name">
-								<a href="#">${sp.tenSP}</a>
+								<a href="SanPham?id=${sp.maSP}	">${sp.tenSP}</a>
 							</h3>
 							<h4 class="product-price">
 								${sp.gia}
@@ -420,7 +429,7 @@
 							</div>
 						</div>
 						<div class="add-to-cart">
-							<button class="add-to-cart-btn">
+							<button class="add-to-cart-btn" onclick="AddToCart()">
 								<i class="fa fa-shopping-cart"></i> add to cart
 							</button>
 						</div>

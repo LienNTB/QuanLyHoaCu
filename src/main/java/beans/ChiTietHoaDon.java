@@ -5,6 +5,14 @@ public class ChiTietHoaDon {
 	private String maSP;
 	private int soLuong;
 	private float tongPhu;
+	public ChiTietHoaDon(){}
+	public ChiTietHoaDon(String maHoaDon, String maSP, int soLuong, float tongPhu)
+	{
+		this.maHoaDon = maHoaDon;
+        this.maSP = maSP;
+        this.soLuong = soLuong;
+        this.tongPhu = tongPhu;
+	}
 	public String getMaHoaDon() {
 		return maHoaDon;
 	}
