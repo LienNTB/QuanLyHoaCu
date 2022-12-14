@@ -1,4 +1,4 @@
-package servletsAdmin;
+package servletsUser;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -12,22 +12,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.SanPham;
-import beans.commons;
+import beans.ChiTietHoaDon;
 import conn.DBConnection;
-import utils.SanPhamUtils;
+import utils.ChiTietHoaDonUtils;
+
+
 
 /**
- * Servlet implementation class QuanLiSanPham
+ * Servlet implementation class Cart_HasProduct
  */
-@WebServlet(name="/QuanLiSanPham",urlPatterns= {"/QuanLiSanPham"})
-public class QuanLiSanPham extends HttpServlet {
+@WebServlet("/Cart_HasProduct")
+public class Cart_HasProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public QuanLiSanPham() {
+    public Cart_HasProduct() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,31 +37,25 @@ public class QuanLiSanPham extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!commons.checkAdmin()) 
-		{
-			response.sendRedirect(request.getContextPath()+"/NotAllow");
-			return;
-		} 
 		Connection conn = null;
-			try {
-				conn = DBConnection.getConnection();
-			} catch (ClassNotFoundException | SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-	       
-	        List<SanPham> list = null;
-	        try {
-	            list = SanPhamUtils.getListSanPham(conn);
-	        } catch (SQLException e) {	
-	            e.printStackTrace();
-	           
-	        }
-	       request.setAttribute("sanPhamList", list);
-	       response.setContentType("text/html;charset=UTF-8");
-	        RequestDispatcher dispatcher = request.getServletContext()
-	                .getRequestDispatcher("/WEB-INF/views/admin/pages/sanPhamView/quanLiSanPhamView.jsp");
-	        dispatcher.forward(request, response);
+		try {
+			conn = DBConnection.getConnection();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		List<ChiTietHoaDon> list = null;
+		try {
+			list = ChiTietHoaDonUtils.getChiTietHoaDonByIdMaHD(conn,"DH1");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		// set attribute
+		request.setAttribute("chitiethoadonList", list);
+		response.setContentType("text/html;charset=UTF-8");
+        RequestDispatcher dispatcher = request.getServletContext()
+                .getRequestDispatcher("/WEB-INF/views/allUser/pages/cart_hasproduct.jsp");
+        dispatcher.forward(request, response);
 	}
 
 	/**

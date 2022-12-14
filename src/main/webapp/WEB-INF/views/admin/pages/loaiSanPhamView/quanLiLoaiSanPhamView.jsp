@@ -4,24 +4,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Art Store - Admin</title>
-	 <script>
-    function testConfirmDialog(id)
-	{
-    	console.log("ok")
-		var message=confirm("Bạn có chắc muốn xóa Loại sản phẩm này "+" ("+ id  +") không?");
-		if (message)
-			{
-			window.location.href="DeleteLoaiSanPham?id=" +id
-			}
-		else
-			return false;
-			
-	}
-	</script>
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -240,12 +227,12 @@
                                 ></i> </a
                               >
                               <a
-                                href="#"
+                                href="DeleteLoaiSanPham?id=${lsp.maLoaiSP }"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Delete"
-                                onclick="testConfirmDialog(${lsp.maLoaiSP});"><i class="fa fa-close color-danger"></i></a
-                            ></span>
+                             ><i class="fa fa-close color-danger"></i></a
+                            >
                           </td>
                         </tr>
                         </c:forEach>

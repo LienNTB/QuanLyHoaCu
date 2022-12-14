@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+  <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,6 +8,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
+    <script type="text/javascript">
+      function validateForm()
+      {
+        var maSP=document.forms["editSanPhamForm"]["maSP"].value;
+        var tenSP=document.forms["editSanPhamForm"]["tenSP"].value;
+        var gia=document.forms["editSanPhamForm"]["gia"].value;
+        var chiTiet=document.forms["editSanPhamForm"]["chiTiet"].value;
+        if(maSP=="" || tenSP=="" || gia=="" || chiTiet=="")
+        {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return false;
+        }
+        return true;
+      
+      }
+      </script>
 
     <!-- Favicon icon -->
     <link
@@ -193,7 +210,9 @@
               <div class="card">
                 <div class="card-body">
                   <div class="form-validation">
-                    <form method="POST" action="${pageContext.request.contextPath}/EditSanPham">
+                    <p style="color:red;">${errorString}</p>
+                    <form method="POST" action="${pageContext.request.contextPath}/EditSanPham" name="editSanPhamForm" onsubmit=" return validateForm();">  
+                      <input type="hidden" name="maSP" value="${sanpham.maSP}">
                       <div class="form-group row">
                         <label
                           class="col-lg-4 col-form-label"
@@ -201,13 +220,8 @@
                           >Mã sản phẩm <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="maSP"
-                            name="maSP"
-                            value="${sanpham.maSP }"
-                          />
+                          <label class="col-lg-4 col-form-label" for="val-maSP"
+                          >${sanpham.maSP} </label><span class="text-danger">*</span>
                         </div>
                       </div>
                       <div class="form-group row">
@@ -242,7 +256,22 @@
                         <label
                           class="col-lg-4 col-form-label"
                           for="val-confirm-password"
-                          >Chi Tiết<span class="text-danger">*</span>
+                          >Loại sản phẩm<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                          		<select name="maLoaiSanPham" id="maLoaiSanPham" >
+                        			<c:forEach var="lsp" items="${ loaiSanPham}">
+								    	<option value="${lsp.maLoaiSP}" <c:if test="${lsp.maLoaiSP == sanpham.maLoaiSP }">selected</c:if>>${lsp.tenLoaiSanPham}</option>
+							  		</c:forEach>
+							  	</select>
+						</div>
+
+                        </div>
+                      <div class="form-group row">
+                        <label
+                          class="col-lg-4 col-form-label"
+                          for="val-confirm-password"
+                          >Chi Tiết
                         </label>
                         <div class="col-lg-6">
                           <input
@@ -252,18 +281,17 @@
                             value="${sanpham.chiTiet }"
                           />
                         </div>
-
                       </div>
                       <div class="form-group row">
                         <label
                           class="col-lg-4 col-form-label"
                           for="val-suggestions"
-                          >Link hình ảnh<span class="text-danger">*</span>
-                        </label>
+                          >Link hình ảnh
+                        </label>	
                         <div class="col-lg-6">
                           <div class="basic-form">
                               <div class="form-group">
-                                <input type="file" class="form-control-file" value="${sanpham.hinh } " />
+                                <input type="text" class="form-control-file" name="hinh" value="${sanpham.hinh }" />
                               </div>
                           </div>
                         </div>

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.LoaiSanPham;
+import beans.commons;
 import conn.DBConnection;
 import utils.LoaiSanPhamUtils;
 
@@ -34,6 +35,11 @@ public class EditLoaiSanPham extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (!commons.checkAdmin()) 
+		{
+			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			return;
+		}
 		Connection conn =null;
 		String id=request.getParameter("id");
 		try{
@@ -62,8 +68,14 @@ public class EditLoaiSanPham extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		if (!commons.checkAdmin()) 
+		{
+			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			return;
+		}
 		response.setContentType("text/html;charset=UTF-8");
 		String errorString = null;
+		LoaiSanPham lsp=null;
 		Connection conn=null;
 		try
 		{
@@ -73,7 +85,9 @@ public class EditLoaiSanPham extends HttpServlet {
 		{
 			e.printStackTrace();
 		}
-		LoaiSanPham lsp=new LoaiSanPham(request.getParameter("maLoaiSP"),new String (request.getParameter("tenLoaiSanPham").getBytes("ISO-8859-1"),"UTF-8"));
+		String maLoaiSP=request.getParameter("maLoaiSP");
+		String tenLoaiSP=new String (request.getParameter("tenLoaiSanPham").getBytes("ISO-8859-1"),"UTF-8");
+		lsp=new LoaiSanPham(maLoaiSP,tenLoaiSP);
 		try{
 			 LoaiSanPhamUtils.updateLoaiSanPham(conn,lsp);
 		}
@@ -82,7 +96,7 @@ public class EditLoaiSanPham extends HttpServlet {
             e.printStackTrace();
 			errorString = e.getMessage();
 		}
-		request.setAttribute("error",errorString);
+		request.setAttribute("errorString",errorString);
 		request.setAttribute("loaiSanPham",lsp);
 
 		if (errorString!=null)

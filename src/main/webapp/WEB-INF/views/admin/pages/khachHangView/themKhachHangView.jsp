@@ -7,6 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Art Store - Admin</title>
+    <script type="text/javascript">
+      function validateForm()
+      {
+        var maNguoiDung=document.forms["createKhachHang"]["maNguoiDung"].value;
+        var tenDangNhap=document.forms["createKhachHang"]["tenDangNhap"].value;
+        var hoTen=document.forms["createKhachHang"]["hoTen"].value;
+        if(maNguoiDung=="" || tenDangNhap=="" || hoTen=="")
+        {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return false;
+        }
+        return true;
+    }
+    </script>
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -193,7 +207,7 @@
                 <div class="card-body">
                   <div class="form-validation">
                   <p style="color:red;">${errorString}</p>
-                    <form class="form-valide" method="POST" action="${pageContext.request.contextPath}/ThemKhachHang">
+                    <form class="form-valide" method="POST" action="${pageContext.request.contextPath}/ThemKhachHang" name ="createKhachHangForm" onsubmit=" return validateForm();">
                       <div class="form-group row">
                         <label
                           class="col-lg-4 col-form-label"
@@ -237,7 +251,7 @@
                        </div>
                       <div class="form-group row">
                         <label class="col-lg-4 col-form-label" for="val-email"
-                          >Date Birth <span class="text-danger">*</span>
+                          >Date Birth (mm/dd/yyyy) <span class="text-danger">*</span>
                         </label>
                         <div class="col-lg-6">
                           <input
@@ -245,6 +259,7 @@
                             class="form-control"
                             id="ngaySinh"
                             name="ngaySinh"
+                            value="2022-01-01"
                           />
                         </div>
                       </div>

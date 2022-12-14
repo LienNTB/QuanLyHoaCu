@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.LoaiSanPham;
+import beans.commons;
 import conn.DBConnection;
 import utils.LoaiSanPhamUtils;
 
@@ -34,7 +35,11 @@ public class ThemLoaiSanPham extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		if (!commons.checkAdmin()) 
+		{
+			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			return;
+		}
 		response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher dispatcher = request.getServletContext()
                 .getRequestDispatcher("/WEB-INF/views/admin/pages/loaiSanPhamView/themLoaiSanPhamView.jsp");
@@ -46,6 +51,11 @@ public class ThemLoaiSanPham extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		if (!commons.checkAdmin()) 
+		{
+			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			return;
+		}
 		Connection conn=null;
 		String errorString=null;
 		try{
@@ -69,7 +79,7 @@ public class ThemLoaiSanPham extends HttpServlet {
 		}
 		if(errorString!=null)
 		{
-			request.setAttribute("error",errorString);
+			request.setAttribute("errorString",errorString);
 			RequestDispatcher dispatcher = request.getServletContext()
 			.getRequestDispatcher("/WEB-INF/views/admin/pages/loaiSanPhamView/themLoaiSanPhamView.jsp");
 	dispatcher.forward(request, response);

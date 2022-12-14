@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import beans.User;
 import conn.DBConnection;
 import utils.userUtils;
-
+import beans.commons;
 /**
  * Servlet implementation class Login
  */
@@ -87,6 +87,7 @@ public class Login extends HttpServlet {
 		else
 		{
 			System.out.println(user.getRole());
+			commons.role=user.getRole();
 			String testAfterLogin_customer="HomePage";
 			String testAfterLogin_admin="Admin_HomePage";
 			if (user.getRole().equals("USER"))

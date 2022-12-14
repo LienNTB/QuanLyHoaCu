@@ -1,6 +1,9 @@
 package servletsUser;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +11,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import conn.DBConnection;
+import utils.SanPhamUtils;
 
 /**
  * Servlet implementation class SanPham
@@ -28,7 +34,47 @@ public class SanPham extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		   response.setContentType("text/html;charset=UTF-8");
+		Connection conn=null;
+		try
+		{
+			conn=DBConnection.getConnection();
+
+		}
+		catch (SQLException | ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		String maSP=request.getParameter("id");
+		List<beans.SanPham> spRelated=null;
+		System.out.print(maSP);	
+		beans.SanPham sp=null;
+		try
+		{
+			sp=SanPhamUtils.GetSanPhamById(conn,maSP);
+		
+		}
+		catch (SQLException e)
+        {
+            e.printStackTrace();
+            System.out.print("Lỗi rồi Đại vương!");
+            
+		}
+		try
+		{
+			spRelated=SanPhamUtils.getListSanPhamRelated(conn,sp.getMaLoaiSP(),4);
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		if (sp==null)
+			System.out.print("Không ổn rồi Đại vương ơi!");
+		else
+			sp.OutPrint();
+		System.out.print(spRelated);
+		request.setAttribute("sanPham",sp);
+		request.setAttribute("spRelated",spRelated);
+		response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/sanpham.jsp");
 	        dispatcher.forward(request, response);

@@ -1,4 +1,6 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+  <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -205,11 +207,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 			<div class="row">
 				<div class="col-md-12">
 					<ul class="breadcrumb-tree">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">All Categories</a></li>
-						<li><a href="#">Accessories</a></li>
-						<li><a href="#">Headphones</a></li>
-						<li class="active">Product name goes here</li>
+						<li><a href="#">Trang chủ</a></li>
+						<li><a href="#">Phân loại</a></li>
+						<li><a href="#">${sanPham.tenLoaiSanPham}</a></li>
+						<li class="active">${sanPham.tenSP}</li>
 					</ul>
 				</div>
 			</div>
@@ -229,19 +230,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 				<div class="col-md-5 col-md-push-2">
 					<div id="product-main-img">
 						<div class="product-preview">
-							<img src="/QUANLYHOACU/static/allUser/./image/product01.png" alt="">
-						</div>
-
-						<div class="product-preview">
-							<img src="/QUANLYHOACU/static/allUser/./image/product03.png" alt="">
-						</div>
-
-						<div class="product-preview">
-							<img src="/QUANLYHOACU/static/allUser/./image/product06.png" alt="">
-						</div>
-
-						<div class="product-preview">
-							<img src="/QUANLYHOACU/static/allUser/./image/product08.png" alt="">
+							<img src="${sanPham.hinh}" alt="">
 						</div>
 					</div>
 				</div>
@@ -251,19 +240,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 				<div class="col-md-2  col-md-pull-5">
 					<div id="product-imgs">
 						<div class="product-preview">
-							<img src="/QUANLYHOACU/static/allUser/./image/product01.png" alt="">
-						</div>
 
-						<div class="product-preview">
-							<img src="/QUANLYHOACU/static/allUser/./image/product03.png" alt="">
-						</div>
-
-						<div class="product-preview">
-							<img src="/QUANLYHOACU/static/allUser/./image/product06.png" alt="">
-						</div>
-
-						<div class="product-preview">
-							<img src="/QUANLYHOACU/static/allUser/./image/product08.png" alt="">
+							<img src="${sanPham.hinh}" alt="">
 						</div>
 					</div>
 				</div>
@@ -272,7 +250,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 				<!-- Product details -->
 				<div class="col-md-5">
 					<div class="product-details">
-						<h2 class="product-name">product name goes here</h2>
+						<h2 class="product-name">${sanPham.tenSP}</h2>
 						<div>
 							<div class="product-rating">
 								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -284,24 +262,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 						</div>
 						<div>
 							<h3 class="product-price">
-								$980.00
-								<del class="product-old-price">$990.00</del>
+								${sanPham.gia}
+								<del class="product-old-price">${sanPham.gia}</del>
 							</h3>
 							<span class="product-available">In Stock</span>
 						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-							sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-							ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>${sanPham.chiTiet}</p>
 
 						<div class="product-options">
-							<label> Size <select class="input-select">
+							<!-- <label> Size <select class="input-select">
 									<option value="0">X</option>
 							</select>
 							</label> <label> Color <select class="input-select">
 									<option value="0">Red</option>
 							</select>
-							</label>
+							</label> -->
 						</div>
 
 						<div class="add-to-cart">
@@ -317,26 +292,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 							</button>
 						</div>
 
-						<ul class="product-btns">
+						<!-- <ul class="product-btns">
 							<li><a href="#"><i class="fa fa-heart-o"></i> add to
 									wishlist</a></li>
 							<li><a href="#"><i class="fa fa-exchange"></i> add to
 									compare</a></li>
-						</ul>
+						</ul> -->
 
 						<ul class="product-links">
 							<li>Category:</li>
-							<li><a href="#">Headphones</a></li>
-							<li><a href="#">Accessories</a></li>
+							<li><a href="#">${sanPham.tenLoaiSanPham }</a></li>
 						</ul>
 
-						<ul class="product-links">
+						<!-- <ul class="product-links">
 							<li>Share:</li>
 							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 							<li><a href="#"><i class="fa fa-envelope"></i></a></li>
-						</ul>
+						</ul> -->
 
 					</div>
 				</div>
@@ -359,14 +333,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 							<div id="tab1" class="tab-pane fade in active">
 								<div class="row">
 									<div class="col-md-12">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-											elit, sed do eiusmod tempor incididunt ut labore et dolore
-											magna aliqua. Ut enim ad minim veniam, quis nostrud
-											exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											consequat. Duis aute irure dolor in reprehenderit in
-											voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-											Excepteur sint occaecat cupidatat non proident, sunt in culpa
-											qui officia deserunt mollit anim id est laborum.</p>
+										<p>Đang cập nhật...</p>
 									</div>
 								</div>
 							</div>
@@ -376,14 +343,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 							<div id="tab2" class="tab-pane fade in">
 								<div class="row">
 									<div class="col-md-12">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-											elit, sed do eiusmod tempor incididunt ut labore et dolore
-											magna aliqua. Ut enim ad minim veniam, quis nostrud
-											exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											consequat. Duis aute irure dolor in reprehenderit in
-											voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-											Excepteur sint occaecat cupidatat non proident, sunt in culpa
-											qui officia deserunt mollit anim id est laborum.</p>
+										<p>Đang cập nhật.</p>
 									</div>
 								</div>
 							</div>
@@ -575,67 +535,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 						<h3 class="title">Related Products</h3>
 					</div>
 				</div>
-
 				<!-- product -->
+				<c:forEach var="sp" items="${spRelated }">
 				<div class="col-md-3 col-xs-6">
 					<div class="product">
 						<div class="product-img">
-							<img src="/QUANLYHOACU/static/allUser/./image/product01.png" alt="">
-							<div class="product-label">
-								<span class="sale">-30%</span>
-							</div>
-						</div>
-						<div class="product-body">
-							<p class="product-category">Category</p>
-							<h3 class="product-name">
-								<a href="#">product name goes here</a>
-							</h3>
-							<h4 class="product-price">
-								$980.00
-								<del class="product-old-price">$990.00</del>
-							</h4>
-							<div class="product-rating"></div>
-							<div class="product-btns">
-								<button class="add-to-wishlist">
-									<i class="fa fa-heart-o"></i><span class="tooltipp">add
-										to wishlist</span>
-								</button>
-								<button class="add-to-compare">
-									<i class="fa fa-exchange"></i><span class="tooltipp">add
-										to compare</span>
-								</button>
-								<button class="quick-view">
-									<i class="fa fa-eye"></i><span class="tooltipp">quick
-										view</span>
-								</button>
-							</div>
-						</div>
-						<div class="add-to-cart">
-							<button class="add-to-cart-btn">
-								<i class="fa fa-shopping-cart"></i> add to cart
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- /product -->
 
-				<!-- product -->
-				<div class="col-md-3 col-xs-6">
-					<div class="product">
-						<div class="product-img">
-							<img src="/QUANLYHOACU/static/allUser/./image/product02.png" alt="">
+							<img src="${sp.hinh}" alt="">
+
 							<div class="product-label">
 								<span class="new">NEW</span>
 							</div>
 						</div>
 						<div class="product-body">
-							<p class="product-category">Category</p>
+							<p class="product-category">${sp.tenLoaiSanPham}</p>
 							<h3 class="product-name">
-								<a href="#">product name goes here</a>
+								<a href="#">${sp.tenSP}</a>
 							</h3>
 							<h4 class="product-price">
-								$980.00
-								<del class="product-old-price">$990.00</del>
+								${sp.gia}
+								<del class="product-old-price">${sp.gia}</del>
 							</h4>
 							<div class="product-rating">
 								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -664,92 +583,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 						</div>
 					</div>
 				</div>
-				<!-- /product -->
 
-				<div class="clearfix visible-sm visible-xs"></div>
+				<!-- <div class="clearfix visible-sm visible-xs"></div> -->
+				</c:forEach>
 
-				<!-- product -->
-				<div class="col-md-3 col-xs-6">
-					<div class="product">
-						<div class="product-img">
-							<img src="/QUANLYHOACU/static/allUser/./image/product03.png" alt="">
-						</div>
-						<div class="product-body">
-							<p class="product-category">Category</p>
-							<h3 class="product-name">
-								<a href="#">product name goes here</a>
-							</h3>
-							<h4 class="product-price">
-								$980.00
-								<del class="product-old-price">$990.00</del>
-							</h4>
-							<div class="product-rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star-o"></i>
-							</div>
-							<div class="product-btns">
-								<button class="add-to-wishlist">
-									<i class="fa fa-heart-o"></i><span class="tooltipp">add
-										to wishlist</span>
-								</button>
-								<button class="add-to-compare">
-									<i class="fa fa-exchange"></i><span class="tooltipp">add
-										to compare</span>
-								</button>
-								<button class="quick-view">
-									<i class="fa fa-eye"></i><span class="tooltipp">quick
-										view</span>
-								</button>
-							</div>
-						</div>
-						<div class="add-to-cart">
-							<button class="add-to-cart-btn">
-								<i class="fa fa-shopping-cart"></i> add to cart
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- /product -->
-
-				<!-- product -->
-				<div class="col-md-3 col-xs-6">
-					<div class="product">
-						<div class="product-img">
-							<img src="/QUANLYHOACU/static/allUser/./image/product04.png" alt="">
-						</div>
-						<div class="product-body">
-							<p class="product-category">Category</p>
-							<h3 class="product-name">
-								<a href="#">product name goes here</a>
-							</h3>
-							<h4 class="product-price">
-								$980.00
-								<del class="product-old-price">$990.00</del>
-							</h4>
-							<div class="product-rating"></div>
-							<div class="product-btns">
-								<button class="add-to-wishlist">
-									<i class="fa fa-heart-o"></i><span class="tooltipp">add
-										to wishlist</span>
-								</button>
-								<button class="add-to-compare">
-									<i class="fa fa-exchange"></i><span class="tooltipp">add
-										to compare</span>
-								</button>
-								<button class="quick-view">
-									<i class="fa fa-eye"></i><span class="tooltipp">quick
-										view</span>
-								</button>
-							</div>
-						</div>
-						<div class="add-to-cart">
-							<button class="add-to-cart-btn">
-								<i class="fa fa-shopping-cart"></i> add to cart
-							</button>
-						</div>
-					</div>
-				</div>
 				<!-- /product -->
 
 			</div>
