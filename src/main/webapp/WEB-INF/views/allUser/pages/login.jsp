@@ -9,13 +9,37 @@
     <title>Art Store</title>
         <link rel="stylesheet" href="/QUANLYHOACU/static/allUser/css/login.css" />
 	<script type="text/javascript">
-      function validateForm()
+      function validateSignUpForm()
       {
-        var soDienThoai=document.forms["editHoaDon"]["soDienThoai"].value;
-        var diaChiGiaoHang=document.forms["editHoaDon"]["diaChiGiaoHang"].value;
-        if(soDienThoai=="" ||diaChiGiaoHang=="" )
+        var username=document.forms["SignUpForm"]["Username"].value;
+        var password=document.forms["SignUpForm"]["Password"].value;
+        var Repassword=document.forms["SignUpForm"]["Repassword"].value;
+        if (username=="" || password=="")
         {
-          alert("Vui lòng nhập đầy đủ thông tin!");
+          alert("Vui lòng nhập tên đăng nhập và mật khẩu");
+          return false;
+        }
+        if (password.length()<=4)
+        {
+          alert("Mật khẩu quá ngắn!");
+                    return false;
+        }
+        if (password!=Repassword)
+        {
+          alert("Mật khẩu và xác nhận mật khẩu không giống nhau!");
+          return false;
+        }
+        return true;
+      
+      }
+      function validateSignInForm()
+      {
+        var username=document.forms["SignInForm"]["Username"].value;
+        var password=document.forms["SignInForm"]["Password"].value;
+  
+        if (username=="" || password=="")
+        {
+          alert("Vui lòng nhập tên đăng nhập và mật khẩu");
           return false;
         }
         return true;
@@ -26,19 +50,19 @@
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="SignUp"  method="post">
+        <form action="SignUp"  method="post" name="SignUpForm" onsubmit="validateSignUpForm()">
           <h1>Create Account</h1>
-          <input type="text" placeholder="Username" name="Username" />
+          <input type="text" placeholder="Username" name="Username"  />
           <input type="password" placeholder="Password" name="Password" />
           <input type="password" placeholder="Retype Password" name="Repassword" />
           <input type="text" placeholder="Name"  name="Name"/>
-          <input type="date" placeholder="Date Birth" name="Birthday" />
+          <input type="date" placeholder="Date Birth" name="Birthday" value="2022-01-01" />
           <input type="text" placeholder="Address" name="Address" />
           <button>Sign Up</button>
         </form>
       </div>
       <div class="form-container sign-in-container" >
-        <form action=${pageContext.request.contextPath}/Login method="post">
+        <form action=${pageContext.request.contextPath}/Login method="post" name="SignInForm" onsubmit="validateSignInForm()">
           <h1>Sign in</h1>
           <input type="text" placeholder="Username" name="Username" />
           <input type="password" placeholder="Password" name="Password" />
