@@ -6,12 +6,17 @@ import java.text.SimpleDateFormat;
 
 public class commons {
 	public static String admin_url="~/admin/";
-	public static User mainUser;
+	public static User mainUser=null;
+	public static String role;
 	public static boolean checkAdmin()
 	{
 		if (mainUser==null)
 			return false;
 		return mainUser.getRole().equals("ADMIN");
+	}
+	public static boolean isLogin()
+	{
+		return mainUser!=null;
 	}
 	
 	public static Date ConvertStringToSQLDate(String dateString)
@@ -26,5 +31,6 @@ public class commons {
 		}
 		return new java.sql.Date(parsed.getTime());
 	}
+	
 	
 }

@@ -257,7 +257,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
                         <tr>
                           <th scope="col">Mã Hóa Đơn</th>
                           <th scope="col">Mã SP</th>
-                          <th scope="col">Tên SP</th>
+                        
                           <th scope="col">Số lượng</th>
                           <th scope="col">Giá tiền</th>
                         </tr>
@@ -267,6 +267,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
                         <tr>
                           <td>${chitiethoadon.maHoaDon}</td>
                           <td>${chitiethoadon.maSP}</td>
+                         
                           <td>${chitiethoadon.soLuong}</td>
                           <td>${chitiethoadon.tongPhu}</td>   
                           <td >  

@@ -26,6 +26,25 @@ public class ChiTietHoaDonUtils
         }
         return result;
     }
+    public static ChiTietHoaDon getChiTietHoaDonByMaHDMaSP(Connection conn, String maHD, String maSP) throws SQLException
+    {
+        String sqlString = "SELECT MaHoaDon, MaSP, SoLuong, TongPhu from ChiTietHoaDon where MaHoaDon=? and MaSP=?";
+        PreparedStatement preparedStatement = conn.prepareStatement(sqlString);
+        preparedStatement.setString(1, maHD);
+        preparedStatement.setString(2, maSP);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if(resultSet.next())
+        {
+            ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
+            chiTietHoaDon.setMaHoaDon(resultSet.getString("MaHoaDon"));
+            chiTietHoaDon.setMaSP(resultSet.getString("MaSP"));
+            chiTietHoaDon.setSoLuong(resultSet.getInt("SoLuong"));
+            chiTietHoaDon.setTongPhu(resultSet.getFloat("TongPhu"));
+            return chiTietHoaDon;
+        }
+        return null;
+        
+    }
     
     public static void insertChiTietHoaDon(Connection conn, ChiTietHoaDon cthd) throws SQLException
     {

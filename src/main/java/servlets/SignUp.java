@@ -55,7 +55,7 @@ public class SignUp extends HttpServlet {
 		String tenDangNhap=request.getParameter("Username");
 		String matKhau=request.getParameter("Password");
 		String hoTen= new String(request.getParameter("Name").getBytes("ISO-8859-1"),"UTF-8");
-		 java.sql.Date NgaySinh = commons.ConvertStringToSQLDate(request.getParameter("ngaySinh"));
+		 java.sql.Date NgaySinh = commons.ConvertStringToSQLDate(request.getParameter("Birthday"));
 		String diaChi=new String(request.getParameter("Address").getBytes("ISO-8859-1"),"UTF-8");
 		try {
 			user = new User(tenDangNhap, tenDangNhap, matKhau,hoTen, NgaySinh, diaChi, "001");

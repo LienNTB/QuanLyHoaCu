@@ -10,10 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
      <script type="text/javascript">
-      function validateForm()
+      function ConfirmDialog(id)
       {
-        console.log("them vao cart")
-    }
+        var message=confirm("Thêm sản phẩm "+ id + " vào giỏ hàng?");
+        if (message)
+          {
+            window.location.href="ThemChiTietHoaDon?id=" +id
+          }
+        else
+          return false;
+        
+      }
     </script>
     <title>Home</title>
 
@@ -403,7 +410,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
 
             <div class="row">
               <c:forEach var="sp" items="${sanPhamList}">
-               <form class="form-valide" method="POST" action="${pageContext.request.contextPath}/ThemChiTietHoaDon" onsubmit=" return validateForm()	;">
+              
                 <div class="col-md-4 col-xs-6">
                   <div class="product">
                     <div class="product-img">
@@ -413,9 +420,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
                       />
                     </div>
                     <div class="product-body">
-                      <p class="product-category">${sp.maLoaiSP}</p>
+                      <p class="product-category">${sp.maLoaiSP} - ${sp.maSP}</p>
                       <h3 class="product-name">
-                        <a href="#">${sp.tenSP}</a>
+                        <a href="SanPham?id=${sp.maSP}">${sp.tenSP}</a>
                       </h3>
                       <h4 class="product-price">
                         $980.00 <del class="product-old-price">${sp.gia }</del>
@@ -436,16 +443,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
                         </button>
                       </div>
                     </div>
-                    <div class="add-to-cart">
-                        <input
-                        type="submit"
-                        class="fa fa-shopping-cart add-to-cart-btn"
-                        value="ADD TO CART"
-                      />
+                     <div class="add-to-cart">
+                      <button class="add-to-cart-btn fa fa-shopping-cart" onclick="{return ConfirmDialog(${sp.maSP});}">
+                        Add to cart
+                      </button>
                     </div>
                   </div>
                 </div>
-                </form>
+             
               </c:forEach>
             </div>
             <!-- /store products -->

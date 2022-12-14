@@ -48,12 +48,13 @@ public class SanPhamUtils
         }   
         return sanPhamList;
     }
-    public static List<SanPham> getListSanPhamRelated(Connection conn, String maLoaiSanPham, int numbers) throws SQLException
+    public static List<SanPham> getListSanPhamRelated(Connection conn, SanPham sp, int numbers) throws SQLException
     {
-        String sqlString = "Select TOP (?) sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham from SanPham sp LEFT JOIN  LoaiSanPham lsp on sp.MaLoaiSP=lsp.MaLoaiSP where sp.MaLoaiSP=? ORDER BY sp.MaSP";
+        String sqlString = "Select TOP (?) sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham from SanPham sp LEFT JOIN  LoaiSanPham lsp on sp.MaLoaiSP=lsp.MaLoaiSP where sp.MaLoaiSP=? and sp.MaSP!=? ORDER BY sp.MaSP";
         PreparedStatement stmt= conn.prepareStatement(sqlString);
         stmt.setInt(1, numbers);
-        stmt.setString(2, maLoaiSanPham);
+        stmt.setString(2,sp.getMaLoaiSP());
+        stmt.setString(3, sp.getMaSP());
         ResultSet rs= stmt.executeQuery();
         List<SanPham> sanPhamList=new ArrayList<>();
         while(rs.next())

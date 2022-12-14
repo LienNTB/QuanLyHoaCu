@@ -87,7 +87,7 @@ public class Login extends HttpServlet {
 		else
 		{
 			System.out.println(user.getRole());
-			commons.role=user.getRole();
+			commons.mainUser=user;
 			String testAfterLogin_customer="HomePage";
 			String testAfterLogin_admin="Admin_HomePage";
 			if (user.getRole().equals("USER"))
