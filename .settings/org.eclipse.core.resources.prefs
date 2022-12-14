@@ -2,4 +2,5 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/admin/pages/homepage.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/admin/pages/sanPhamView/quanLiSanPhamView.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/allUser/pages/cart_hasproduct.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/allUser/pages/homepage.jsp=UTF-8

@@ -114,7 +114,7 @@
                 <!-- /Wishlist -->
 
                 <!-- Cart -->
-                <div class="dropdown">
+                <div class="cart">
                   <a
                     class="dropdown-toggle"
                     data-toggle="dropdown"
