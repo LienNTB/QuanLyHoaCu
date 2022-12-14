@@ -13,7 +13,7 @@ public class SQLServerConnection {
 	        // Database name to access 
 	        String dbName = "QUANLYHOACU"; 
 	        String dbUsername = "sa"; 
-	        String dbPassword = "Mtl@091202"; 
+	        String dbPassword = "123456"; 
 	        String connectionURL = dbURL + ";databaseName=" + dbName+";encrypt=true;trustServerCertificate=true;";
 	        Connection conn = null;
 	        try {

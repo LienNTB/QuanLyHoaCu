@@ -18,43 +18,20 @@
     />
 
     <!-- Bootstrap -->
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="/QUANLYHOACU/static/allUser/./css/bootstrap.min.css"
-    />
+    <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/bootstrap.min.css" />
 
     <!-- Slick -->
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="/QUANLYHOACU/static/allUser/./css/slick.css"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="/QUANLYHOACU/static/allUser/./css/slick-theme.css"
-    />
+    <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/slick-theme.css" />
 
     <!-- nouislider -->
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="/QUANLYHOACU/static/allUser/./css/nouislider.min.css"
-    />
+    <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/nouislider.min.css" />
 
     <!-- Font Awesome Icon -->
-    <link
-      rel="stylesheet"
-      href="/QUANLYHOACU/static/allUser/.//QUANLYHOACU/static/allUser/./css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/font-awesome.min.css" />
 
     <!-- Custom stlylesheet -->
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="/QUANLYHOACU/static/allUser/./css/style.css"
-    />
+    <link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/style.css" />
   </head>
   <body>
     <!-- HEADER -->
@@ -81,6 +58,9 @@
             </li>
             <li>
               <a href="#"><i class="fa fa-user-o"></i> My Account</a>
+            </li>
+            <li>
+              <a href="/QUANLYHOACU/"><i class="fa fa-user-o"></i> Log out</a>
             </li>
           </ul>
         </div>
@@ -655,7 +635,7 @@
 
     <!-- jQuery Plugins -->
     <script src="/QUANLYHOACU/static/allUser/js/jquery.min.js"></script>
-    <script src="/QUANLYHOACU/static/allUser//bootstrap.min.js"></script>
+    <script src="/QUANLYHOACU/static/allUser/js/bootstrap.min.js"></script>
     <script src="/QUANLYHOACU/static/allUser/js/slick.min.js"></script>
     <script src="/QUANLYHOACU/static/allUser/js/nouislider.min.js"></script>
     <script src="/QUANLYHOACU/static/allUser/js/jquery.zoom.min.js"></script>
