@@ -7,12 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Art Store</title>
         <link rel="stylesheet" href="/QUANLYHOACU/static/allUser/css/login.css" />
-
+	<script type="text/javascript">
+      function validateForm()
+      {
+        var soDienThoai=document.forms["editHoaDon"]["soDienThoai"].value;
+        var diaChiGiaoHang=document.forms["editHoaDon"]["diaChiGiaoHang"].value;
+        if(soDienThoai=="" ||diaChiGiaoHang=="" )
+        {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return false;
+        }
+        return true;
+      
+      }
+    </script>
   </head>
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="#">
+        <form action="SignUp"  method="post">
           <h1>Create Account</h1>
           <input type="text" placeholder="Username" name="Username" />
           <input type="password" placeholder="Password" name="Password" />
@@ -23,7 +36,7 @@
           <button>Sign Up</button>
         </form>
       </div>
-      <div class="form-container sign-in-container">
+      <div class="form-container sign-in-container" >
         <form action=${pageContext.request.contextPath}/Login method="post">
           <h1>Sign in</h1>
           <input type="text" placeholder="Username" name="Username" />
