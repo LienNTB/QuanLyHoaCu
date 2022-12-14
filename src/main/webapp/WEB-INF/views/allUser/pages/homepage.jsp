@@ -119,6 +119,7 @@
                     class="dropdown-toggle"
                     data-toggle="dropdown"
                     aria-expanded="true"
+                    href="/QUANLYHOACU/Cart_HasProduct"
                   >
                     <i class="fa fa-shopping-cart"></i>
                     <span>Your Cart</span>
