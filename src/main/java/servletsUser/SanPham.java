@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import conn.DBConnection;
+import utils.LoaiSanPhamUtils;
 import utils.SanPhamUtils;
+
 
 /**
  * Servlet implementation class SanPham
@@ -46,26 +48,30 @@ public class SanPham extends HttpServlet {
 		}
 		String maSP=request.getParameter("id");
 		List<beans.SanPham> spRelated=null;
+		List<beans.LoaiSanPham> lsp=null;
 		System.out.print(maSP);	
 		beans.SanPham sp=null;
 		try
 		{
 			sp=SanPhamUtils.GetSanPhamById(conn,maSP);
 		
+		
 		}
 		catch (SQLException e)
         {
             e.printStackTrace();
-            System.out.print("Lỗi rồi Đại vương!");
+            System.out.print("Lỗi sản phẩm rồi Đại vương!");
             
 		}
 		try
 		{
 			spRelated=SanPhamUtils.getListSanPhamRelated(conn,sp.getMaLoaiSP(),4);
+			lsp=LoaiSanPhamUtils.getListLoaiSanPham(conn);
 		}
 		catch (SQLException e)
 		{
 			e.printStackTrace();
+            System.out.print("Lỗi rồi Đại vương!");
 		}
 		if (sp==null)
 			System.out.print("Không ổn rồi Đại vương ơi!");
@@ -74,6 +80,7 @@ public class SanPham extends HttpServlet {
 		System.out.print(spRelated);
 		request.setAttribute("sanPham",sp);
 		request.setAttribute("spRelated",spRelated);
+		request.setAttribute("loaiSanPham",lsp);
 		response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/sanpham.jsp");
