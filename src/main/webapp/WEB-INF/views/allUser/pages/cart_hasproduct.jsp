@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -257,36 +259,22 @@
                     <table class="table table-bordered verticle-middle">
                       <thead>
                         <tr>
-                          <th scope="col">Product ID</th>
-                          <th scope="col">Product Name</th>
-                          <th scope="col">Price</th>
-                          <th scope="col">Detail</th>
-                          <th scope="col">Image</th>
-                          <th scope="col">Product Type</th>
-                          <th scope="col">Amount</th>
-                          <th scope="col">Actions</th>
+                          <th scope="col">Mã Hóa Đơn</th>
+                          <th scope="col">Mã SP</th>
+                          <th scope="col">Tên SP</th>
+                          <th scope="col">Số lượng</th>
+                          <th scope="col">Giá tiền</th>
                         </tr>
                       </thead>
                       <tbody>
+                       <c:forEach items="${chitiethoadonList}" var="chitiethoadon">
                         <tr>
-                          <td>1</td>
-                          <td>Giấy vẽ manga</td>
-                          <td>450.000</td>
-                          <td>Giấy vẽ nhập khẩu từ Đức</td>
-                          <td>fjjpdpfgjfpdgdj</td>
-                          <td>2</td>
-                          <td>Giấy vẽ</td>
-                          <td >
-                           
-                              <a class="action-item"
-                                href="editsanpham.html"
-                                data-toggle="tooltip"
-                                data-placement="top"
-                                title="Edit"
-                                ><i
-                                  class="fa fa-pencil color-muted m-r-5"
-                                ></i> </a
-                              >
+                          <td>${chitiethoadon.maHoaDon}</td>
+                          <td>${chitiethoadon.maSP}</td>
+                          <td>${chitiethoadon.soLuong}</td>
+                          <td>${chitiethoadon.tongPhu}</td>   
+                          <td >  
+                          <span>
                               <a
                                 href="#"
                                 data-toggle="tooltip"
@@ -296,6 +284,7 @@
                             ></span>
                           </td>
                         </tr>
+                       </c:forEach>
                       </tbody>
                     </table>
                   </div>

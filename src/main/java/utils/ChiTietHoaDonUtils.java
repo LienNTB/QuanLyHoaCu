@@ -12,7 +12,7 @@ public class ChiTietHoaDonUtils
     public static List<ChiTietHoaDon> getChiTietHoaDonByIdMaHD(Connection con, String MaHD) throws SQLException 
     {
         List<ChiTietHoaDon> result = new ArrayList<ChiTietHoaDon>();
-        PreparedStatement preparedStatement = con.prepareStatement("SELECT MaHoaDon, MaSP, SoLuong, TongPhu FROM ChiTietHoaDon WHERE MaHD=?");
+        PreparedStatement preparedStatement = con.prepareStatement("SELECT MaHoaDon, MaSP, SoLuong, TongPhu FROM ChiTietHoaDon WHERE MaHoaDon=?");
         preparedStatement.setString(1, MaHD);
         ResultSet resultSet = preparedStatement.executeQuery();
         while(resultSet.next())
@@ -26,6 +26,7 @@ public class ChiTietHoaDonUtils
         }
         return result;
     }
+    
     public static void insertChiTietHoaDon(Connection conn, ChiTietHoaDon cthd) throws SQLException
     {
         PreparedStatement ps =conn.prepareStatement("INSERT INTO ChiTietHoaDon VALUES (?,?,?,?)");
