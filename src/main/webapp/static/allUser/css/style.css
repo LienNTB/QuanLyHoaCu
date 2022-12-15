@@ -2269,3 +2269,15 @@ textarea.input {
 .cart:hover {
   cursor: pointer;
 }
+.checkout-btn {
+  margin: 10px 10px;
+  background-color: #d10024;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 150px;
+  text-align: center;
+}

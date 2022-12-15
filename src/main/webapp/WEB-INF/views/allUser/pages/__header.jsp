@@ -29,7 +29,7 @@
 					<!-- LOGO -->
 					<div class="col-md-3">
 						<div class="header-logo">
-							<a href="#" class="logo"> <img src="./img/logo.png" alt="">
+							<a href="#" class="logo"> <img src="/QUANLYHOACU/static/allUser/image/logo4.png" alt="">
 							</a>
 						</div>
 					</div>
