@@ -42,16 +42,13 @@ public class HomePage extends HttpServlet {
 			} catch (ClassNotFoundException | SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
+				response.sendRedirect(request.getContextPath()+"/Login");
+				return;
 			}
 	       
-	        List<SanPham> list = null;
-	        try {
-	            list = SanPhamUtils.getListSanPham(conn);
-	        } catch (SQLException e) {	
-	            e.printStackTrace();
-	           
-	        }
-	       request.setAttribute("sanPhamList", list);
+
+	      setupVariables(conn,request,response);
+	      servletsUser.common.setUpForHeader(conn,request,response);
 	       response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
@@ -65,11 +62,49 @@ public class HomePage extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-	private void setupVariables(Connection conn, HttpServletRequest request) throws  ServletException, IOException {
-		List<SanPham> sanPhamList=null;
+	private void setupVariables(Connection conn, HttpServletRequest request,  HttpServletResponse response) throws  ServletException, IOException {
+		int index_page=1;
+		int SPperPage=20;
+		int maxPage=1;
+		try
+		{
+			index_page=Integer.parseInt(request.getParameter("index"));
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		try
+		{
+			index_page=Integer.parseInt(request.getParameter("ppp"));
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		List<SanPham> list = null;
+	
+		List <SanPham> forwardList=null;
+		List <SanPham> bestSeller=null;
+		try {
+			list = SanPhamUtils.getListSanPham(conn);
+			bestSeller=SanPhamUtils.getBestSeller(conn,4);
+		} catch (SQLException e) {	
+			e.printStackTrace();	
+		}
 		
-	
-	
+		maxPage=list.size()/maxPage+1;
+		index_page=Math.min(index_page, maxPage);
+		if (index_page<=1)
+			forwardList=list.subList(0, SPperPage);
+		else
+			forwardList=list.subList((index_page-1)*SPperPage,Math.min( (index_page)*SPperPage,list.size()));
+		request.setAttribute("sanPhamList", forwardList);
+		request.setAttribute("maxPage",maxPage);
+		request.setAttribute("index",index_page);
+		request.setAttribute("bestSeller",bestSeller);
+		
+		
 	}
 
 }

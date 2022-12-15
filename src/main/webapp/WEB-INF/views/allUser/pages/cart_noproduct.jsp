@@ -54,7 +54,5 @@
 	<!-- FOOTER -->
 	<jsp:include page="__footer.jsp"></jsp:include>
 	<!-- /FOOTER -->
-
-
 </body>
 </html>

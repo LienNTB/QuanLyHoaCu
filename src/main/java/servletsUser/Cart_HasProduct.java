@@ -22,7 +22,7 @@ import utils.ChiTietHoaDonUtils;
 /**
  * Servlet implementation class Cart_HasProduct
  */
-@WebServlet("/Cart_HasProduct")
+@WebServlet(name="/Cart_HasProduct",urlPatterns= {"/Cart_HasProduct"})
 public class Cart_HasProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -57,13 +57,23 @@ public class Cart_HasProduct extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+		servletsUser.common.setUpForHeader(conn, request, response);
 		// set attribute
-		request.setAttribute("chitiethoadonList", list);
-		response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher dispatcher = request.getServletContext()
-                .getRequestDispatcher("/WEB-INF/views/allUser/pages/cart_hasproduct.jsp");
-        dispatcher.forward(request, response);
+		if (list.size()==0)
+		{
+	        RequestDispatcher dispatcher = request.getServletContext()
+	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/cart_noproduct.jsp");
+	        dispatcher.forward(request, response);
+			
+		}
+		else
+		{
+			request.setAttribute("chitiethoadonList", list);
+			response.setContentType("text/html;charset=UTF-8");
+	        RequestDispatcher dispatcher = request.getServletContext()
+	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/cart_hasproduct.jsp");
+	        dispatcher.forward(request, response);
+		}
 	}
 
 	/**
