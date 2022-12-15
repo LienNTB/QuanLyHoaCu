@@ -12,10 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.LoaiSanPham;
 import beans.SanPham;
 import conn.DBConnection;
-import utils.LoaiSanPhamUtils;
 import utils.SanPhamUtils;
 
 /**
@@ -49,7 +47,8 @@ public class HomePage extends HttpServlet {
 			}
 	       
 
-	      setupVariables(conn,request);
+	      setupVariables(conn,request,response);
+	      servletsUser.common.setUpForHeader(conn,request,response);
 	       response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
@@ -63,9 +62,9 @@ public class HomePage extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-	private void setupVariables(Connection conn, HttpServletRequest request) throws  ServletException, IOException {
+	private void setupVariables(Connection conn, HttpServletRequest request,  HttpServletResponse response) throws  ServletException, IOException {
 		int index_page=1;
-		int SPperPage=10;
+		int SPperPage=20;
 		int maxPage=1;
 		try
 		{
@@ -75,29 +74,35 @@ public class HomePage extends HttpServlet {
 		{
 			e.printStackTrace();
 		}
+		try
+		{
+			index_page=Integer.parseInt(request.getParameter("ppp"));
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 		List<SanPham> list = null;
-		List<LoaiSanPham> lsp=null;
+	
 		List <SanPham> forwardList=null;
+		List <SanPham> bestSeller=null;
 		try {
 			list = SanPhamUtils.getListSanPham(conn);
+			bestSeller=SanPhamUtils.getBestSeller(conn,4);
 		} catch (SQLException e) {	
 			e.printStackTrace();	
 		}
-		try{
-			lsp = LoaiSanPhamUtils.getListLoaiSanPham(conn);
-		}
-		catch(SQLException e){
-            e.printStackTrace();
-        }
+		
+		maxPage=list.size()/maxPage+1;
+		index_page=Math.min(index_page, maxPage);
 		if (index_page<=1)
 			forwardList=list.subList(0, SPperPage);
 		else
 			forwardList=list.subList((index_page-1)*SPperPage,Math.min( (index_page)*SPperPage,list.size()));
-		maxPage=list.size()/maxPage+1;
 		request.setAttribute("sanPhamList", forwardList);
-		request.setAttribute("lsp", lsp);
 		request.setAttribute("maxPage",maxPage);
 		request.setAttribute("index",index_page);
+		request.setAttribute("bestSeller",bestSeller);
 		
 		
 	}

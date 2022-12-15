@@ -143,50 +143,22 @@
             <!-- aside Widget -->
             <div class="aside">
               <h3 class="aside-title">Top selling</h3>
-              <div class="product-widget">
-                <div class="product-img">
-                  <img src="./img/10.jpeg" alt="" />
-                </div>
-                <div class="product-body">
-                  <p class="product-category">Category</p>
-                  <h3 class="product-name">
-                    <a href="#">product name goes here</a>
-                  </h3>
-                  <h4 class="product-price">
-                    $980.00 <del class="product-old-price">$990.00</del>
-                  </h4>
-                </div>
-              </div>
-
-              <div class="product-widget">
-                <div class="product-img">
-                  <img src="./img/3.jpeg" alt="" />
-                </div>
-                <div class="product-body">
-                  <p class="product-category">Category</p>
-                  <h3 class="product-name">
-                    <a href="#">product name goes here</a>
-                  </h3>
-                  <h4 class="product-price">
-                    $980.00 <del class="product-old-price">$990.00</del>
-                  </h4>
-                </div>
-              </div>
-
-              <div class="product-widget">
-                <div class="product-img">
-                  <img src="./img/7.jpeg" alt="" />
-                </div>
-                <div class="product-body">
-                  <p class="product-category">Category</p>
-                  <h3 class="product-name">
-                    <a href="#">product name goes here</a>
-                  </h3>
-                  <h4 class="product-price">
-                    $980.00 <del class="product-old-price">$990.00</del>
-                  </h4>
-                </div>
-              </div>
+              <c:forEach var="bsr" items="${bestSeller}">
+	              <div class="product-widget">
+	                <div class="product-img">
+	                  <img src="${bsr.hinh }" alt="" />
+	                </div>
+	                <div class="product-body">
+	                  <p class="product-category">${bsr.tenLoaiSanPham}</p>
+	                  <h3 class="product-name">
+	                    <a href="#">${bsr.tenSP }</a>
+	                  </h3>
+	                  <h4 class="product-price">
+	                    ${bsr.gia } <del class="product-old-price">${bsr.gia }</del>
+	                  </h4>
+	                </div>
+	              </div>
+              </c:forEach>
             </div>
             <!-- /aside Widget -->
           </div>
@@ -207,7 +179,7 @@
 
                 <label>
                   Show:
-                  <select class="input-select">
+                  <select class="input-select" >
                     <option value="0">20</option>
                     <option value="1">50</option>
                   </select>

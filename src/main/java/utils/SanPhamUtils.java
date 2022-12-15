@@ -29,6 +29,28 @@ public class SanPhamUtils
         }   
         return sanPhamList;
     }
+    public static List<SanPham> getBestSeller( Connection conn, int numbers) throws SQLException
+    {
+        String sqlString="select  sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham, tk.SALEQTY from SanPham as sp,LoaiSanPham lsp, (SELECT TOP (?)  sp.MaSP, SUM(cthd.SoLuong) SALEQTY  FROM SanPham AS sp INNER JOIN ChiTietHoaDon AS cthd  ON sp.MaSP = cthd.MaSP GROUP BY sp.MaSP) as tk where sp.maSP=tk.MaSP and sp.MaLoaiSP=lsp.MaLoaiSP order by tk.SALEQTY DESC";
+        PreparedStatement stmt= conn.prepareStatement(sqlString);
+        stmt.setInt(1,numbers);
+        ResultSet rs= stmt.executeQuery();
+        List<SanPham> sanPhamList=new ArrayList<>();
+        while(rs.next())
+        {
+            SanPham sanPham= new SanPham();
+            sanPham.setMaSP(rs.getString("MaSP"));
+            sanPham.setTenSP(rs.getString("TenSP"));
+            sanPham.setGia(rs.getInt("Gia"));
+            sanPham.setChiTiet(rs.getString("ChiTiet"));
+            sanPham.setHinh(rs.getString("Hinh"));
+            sanPham.setMaLoaiSP(rs.getString("MaLoaiSP"));
+            sanPham.setTenLoaiSanPham(rs.getString("TenLoaiSanPham"));
+            sanPhamList.add(sanPham);
+        }   
+        return sanPhamList;
+            
+    }
     public static List<SanPham> getListSanPhamWithoutMaLSP(Connection conn) throws SQLException 
     {
         String sqlString = "Select sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh, sp.TenLoaiSanPham from SanPham sp ";
@@ -122,5 +144,6 @@ public class SanPhamUtils
         stmt.setString(1, sanPham);
         stmt.executeUpdate();
     }
+    
 
 }

@@ -1,25 +1,29 @@
 package servletsUser;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.LoaiSanPham;
+import utils.LoaiSanPhamUtils;
+
 /**
- * Servlet implementation class Cart_NoProduct
+ * Servlet implementation class common
  */
-@WebServlet(name="/Cart_NoProduct", urlPatterns= {"/Cart_NoProduct"})
-public class Cart_NoProduct extends HttpServlet {
+public class common extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Cart_NoProduct() {
+    public common() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,11 +31,16 @@ public class Cart_NoProduct extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher dispatcher = request.getServletContext()
-                .getRequestDispatcher("/WEB-INF/views/allUser/pages/cart_noproduct.jsp");
-        dispatcher.forward(request, response);
+	public static void setUpForHeader(Connection conn, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		List<LoaiSanPham> lsp=null;
+		try{
+			lsp = LoaiSanPhamUtils.getListLoaiSanPham(conn);
+		}
+		catch(SQLException e){
+            e.printStackTrace();
+        }
+		request.setAttribute("loaiSanPham", lsp);
 	}
 
 	/**
