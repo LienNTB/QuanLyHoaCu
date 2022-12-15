@@ -47,7 +47,7 @@ public class AddToCart extends HttpServlet {
 		ChiTietHoaDon cthd=null;
 		SanPham sanpham=null;
 		String maSP=request.getParameter("id");
-		int soLuong=0;
+		int soLuong=1;
 		try
 		{
 			conn=DBConnection.getConnection();
@@ -61,6 +61,7 @@ public class AddToCart extends HttpServlet {
 		
 		try{
 			soLuong=Integer.parseInt(request.getParameter("number"));
+			
 		}
 		catch(Exception e){
            e.printStackTrace();

@@ -36,6 +36,7 @@ public class common extends HttpServlet {
 		List<LoaiSanPham> lsp=null;
 		try{
 			lsp = LoaiSanPhamUtils.getListLoaiSanPham(conn);
+			
 		}
 		catch(SQLException e){
             e.printStackTrace();

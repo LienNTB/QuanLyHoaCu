@@ -13,8 +13,9 @@
 							Stonecoal Road</a></li>
 				</ul>
 				<ul class="header-links pull-right">
-					<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+					
 					<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+					<li><a href="/QUANLYHOACU/"><i class="fa fa-logout-o"></i> Log out</a></li>
 				</ul>
 			</div>
 		</div>
@@ -29,7 +30,7 @@
 					<!-- LOGO -->
 					<div class="col-md-3">
 						<div class="header-logo">
-							<a href="#" class="logo"> <img src="./img/logo.png" alt="">
+							<a href="/QUANLYHOACU/HomePage" class="logo"> <img src="/QUANLYHOACU/static/allUser/image/logo4.png" alt="">
 							</a>
 						</div>
 					</div>
@@ -141,9 +142,8 @@
 			<div id="responsive-nav">
 				<!-- NAV -->
 				<ul class="main-nav nav navbar-nav">
-					<li class="active"><a href="HomePage">Home</a></li>
-					<li><a href="#">Hot Deals</a></li>
-					<li><a href="#">Categories</a></li>
+					<li class="active"><a href="/QUANLYHOACU/HomePage">Home</a></li>
+					<li><a href="/QUANLYHOACU/HomePage">Hot Deals</a></li>
 					<c:forEach var ="lsp" items="${loaiSanPham }">
 					<li><a href="#">${lsp.tenLoaiSanPham }</a></li>
 					</c:forEach>

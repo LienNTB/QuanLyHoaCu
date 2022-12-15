@@ -59,6 +59,7 @@
           <div id="aside" class="col-md-3">
             <!-- aside Widget -->
             <div class="aside">
+<<<<<<< HEAD
               <!-- <h3 class="aside-title">Categories</h3> -->
             	
               <!-- <div class="checkbox-filter">
@@ -116,6 +117,21 @@
                   </label>
                 </div>
               </div> -->
+=======
+              <h3 class="aside-title">Categories</h3>
+              <div class="checkbox-filter">
+                <c:forEach var="lsp" items="${loaiSanPham}">
+                  <div class="input-checkbox">
+                    <input type="checkbox" id="category-1" />
+                    <label for="category-1">
+                      <span></span>
+                      ${lsp.tenLoaiSanPham}
+                      <small>(${lsp.SLTrongKho})</small>
+                    </label>
+                  </div>
+                </c:forEach>
+              </div>
+>>>>>>> origin/ban-Huong-Cuteee-thu-2
             </div>
             <!-- /aside Widget -->
 
