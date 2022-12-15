@@ -206,7 +206,7 @@
 
         <div class="container-fluid">
           <div class="row">
-            <div class="product-mng col-lg-13">
+            <div class="product-mng col-lg-12">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">QUẢN LÍ SẢN PHẨM</h4>
@@ -224,9 +224,9 @@
 	                        <th scope="col">Mã sản phẩm</th>
 	                        <th scope="col">Tên sản phẩm</th>
 	                        <th scope="col">Giá</th>
-	                        <th scope="col">Link hình ảnh</th>
 	                        <th scope="col">Loại sản phẩm</th>
 	                        <th scope="col">Chi tiết</th>
+	                        <th scope="col">Link hình ảnh</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -258,9 +258,9 @@
                           	<td>${sp.maSP }</td>
                           	<td>${sp.tenSP }</td>
                           	<td>${sp.gia }</td>
-                          	<td>${sp.hinh }</td>
                           	<td>${sp.tenLoaiSanPham }</td>
                           	<td>${sp.chiTiet }</td>
+                          	<td>${sp.hinh }</td>
                         </tr>
                         </c:forEach>
                       </tbody>

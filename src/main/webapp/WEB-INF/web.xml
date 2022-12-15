@@ -27,5 +27,6 @@
     <welcome-file>Cart_NoProduct</welcome-file>
     <welcome-file>ThemChiTietHoaDon</welcome-file>
     <welcome-file>ThanhToan</welcome-file>
+    <welcome-file>AddToCart</welcome-file>
   </welcome-file-list>
 </web-app>

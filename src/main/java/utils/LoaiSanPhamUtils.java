@@ -15,6 +15,7 @@ public class LoaiSanPhamUtils
     {
         List<LoaiSanPham> loaiSanPhamList = new ArrayList<LoaiSanPham>();
         PreparedStatement stmt = null;
+        PreparedStatement stmt2 = null;
         ResultSet rs = null;
         stmt = conn.prepareStatement("SELECT MaLoaiSP, TenLoaiSanPham FROM LoaiSanPham");
         rs = stmt.executeQuery();
@@ -22,6 +23,11 @@ public class LoaiSanPhamUtils
         {
             LoaiSanPham loaiSanPham = new LoaiSanPham();
             loaiSanPham.setMaLoaiSP(rs.getString("MaLoaiSP"));
+           /*stmt2 = conn.prepareStatement("select count(SanPham.MaSP) as 'SLTrongKho' from SanPham where SanPham.MaLoaiSP = ?");
+            stmt2.setString(1, loaiSanPham.getMaLoaiSP());
+            ResultSet rs2 = null;
+            rs2 = stmt2.executeQuery();
+            loaiSanPham.setSLTrongKho(rs2.getInt("SLTrongKho"));*/
             loaiSanPham.setTenLoaiSanPham(rs.getString("TenLoaiSanPham"));
             loaiSanPhamList.add(loaiSanPham);
         }
