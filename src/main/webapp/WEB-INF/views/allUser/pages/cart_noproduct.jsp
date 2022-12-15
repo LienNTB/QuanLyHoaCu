@@ -61,7 +61,7 @@
           <div class="col-md-12">
             <h3 class="breadcrumb-header">Giỏ hàng</h3>
             <ul class="breadcrumb-tree">
-              <li><a href="#">Trang chủ</a></li>
+              <li><a href="/QUANLYHOACU/HomePage">Trang chủ</a></li>
               <li class="active">Giỏ hàng</li>
             </ul>
           </div>
@@ -77,7 +77,7 @@
       <!-- container -->
       <div class="container">
         <div class="nocart-container">
-          <img src="./img/empty_cart.png" />
+          <img src="/QUANLYHOACU/static/allUser/./image/empty_cart.png" />
           <br />
           <div>Không có sản phẩm nào trong giỏ hàng của bạn.</div>
           <div class="shopping-btn"><a href="HomePage">Tiếp tục mua hàng</a></div>

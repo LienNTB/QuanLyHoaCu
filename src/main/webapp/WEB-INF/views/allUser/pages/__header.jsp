@@ -29,7 +29,7 @@
 					<!-- LOGO -->
 					<div class="col-md-3">
 						<div class="header-logo">
-							<a href="#" class="logo"> <img src="/QUANLYHOACU/static/allUser/image/logo4.png" alt="">
+							<a href="/QUANLYHOACU/HomePage" class="logo"> <img src="/QUANLYHOACU/static/allUser/image/logo4.png" alt="">
 							</a>
 						</div>
 					</div>
@@ -141,9 +141,8 @@
 			<div id="responsive-nav">
 				<!-- NAV -->
 				<ul class="main-nav nav navbar-nav">
-					<li class="active"><a href="HomePage">Home</a></li>
-					<li><a href="#">Hot Deals</a></li>
-					<li><a href="#">Categories</a></li>
+					<li class="active"><a href="/QUANLYHOACU/HomePage">Home</a></li>
+					<li><a href="/QUANLYHOACU/HomePage">Hot Deals</a></li>
 					<c:forEach var ="lsp" items="${loaiSanPham }">
 					<li><a href="#">${lsp.tenLoaiSanPham }</a></li>
 					</c:forEach>
