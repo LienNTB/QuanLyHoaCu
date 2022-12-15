@@ -88,8 +88,8 @@ public class AddToCart extends HttpServlet {
 			cthd.setSoLuong(cthd.getSoLuong()+soLuong);
 			cthd.setTongPhu(cthd.getSoLuong()*((beans.SanPham) sanpham).getGia());
 			try{
-				ChiTietHoaDonUtils.deleteChiTietHoaDon(conn,cthd);
-				ChiTietHoaDonUtils.insertChiTietHoaDon(conn,cthd);
+				
+				ChiTietHoaDonUtils.updateChiTietHoaDon(conn,cthd);
 			}
 			catch(SQLException esql){
                 esql.printStackTrace();

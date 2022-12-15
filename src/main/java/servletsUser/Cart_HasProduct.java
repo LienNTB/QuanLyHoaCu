@@ -22,7 +22,7 @@ import utils.ChiTietHoaDonUtils;
 /**
  * Servlet implementation class Cart_HasProduct
  */
-@WebServlet("/Cart_HasProduct")
+@WebServlet(name="/Cart_HasProduct",urlPatterns= {"/Cart_HasProduct"})
 public class Cart_HasProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.LoaiSanPham;
 import beans.SanPham;
 import conn.DBConnection;
+import utils.LoaiSanPhamUtils;
 import utils.SanPhamUtils;
 
 /**
@@ -42,16 +44,12 @@ public class HomePage extends HttpServlet {
 			} catch (ClassNotFoundException | SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
+				response.sendRedirect(request.getContextPath()+"/Login");
+				return;
 			}
 	       
-	        List<SanPham> list = null;
-	        try {
-	            list = SanPhamUtils.getListSanPham(conn);
-	        } catch (SQLException e) {	
-	            e.printStackTrace();
-	           
-	        }
-	       request.setAttribute("sanPhamList", list);
+
+	      setupVariables(conn,request);
 	       response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
@@ -66,10 +64,42 @@ public class HomePage extends HttpServlet {
 		doGet(request, response);
 	}
 	private void setupVariables(Connection conn, HttpServletRequest request) throws  ServletException, IOException {
-		List<SanPham> sanPhamList=null;
+		int index_page=1;
+		int SPperPage=10;
+		int maxPage=1;
+		try
+		{
+			index_page=Integer.parseInt(request.getParameter("index"));
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		List<SanPham> list = null;
+		List<LoaiSanPham> lsp=null;
+		List <SanPham> forwardList=null;
+		try {
+			list = SanPhamUtils.getListSanPham(conn);
+		} catch (SQLException e) {	
+			e.printStackTrace();	
+		}
+		try{
+			lsp = LoaiSanPhamUtils.getListLoaiSanPham(conn);
+		}
+		catch(SQLException e){
+            e.printStackTrace();
+        }
+		if (index_page<=1)
+			forwardList=list.subList(0, SPperPage);
+		else
+			forwardList=list.subList((index_page-1)*SPperPage,Math.min( (index_page)*SPperPage,list.size()));
+		maxPage=list.size()/maxPage+1;
+		request.setAttribute("sanPhamList", forwardList);
+		request.setAttribute("lsp", lsp);
+		request.setAttribute("maxPage",maxPage);
+		request.setAttribute("index",index_page);
 		
-	
-	
+		
 	}
 
 }
