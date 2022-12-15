@@ -66,6 +66,7 @@ public class HomePage extends HttpServlet {
 		int index_page=1;
 		int SPperPage=20;
 		int maxPage=1;
+	
 		try
 		{
 			index_page=Integer.parseInt(request.getParameter("index"));
@@ -103,8 +104,7 @@ public class HomePage extends HttpServlet {
 		request.setAttribute("maxPage",maxPage);
 		request.setAttribute("index",index_page);
 		request.setAttribute("bestSeller",bestSeller);
-		
-		
+		request.setAttribute("isHomePage", false);
 	}
 
 }
