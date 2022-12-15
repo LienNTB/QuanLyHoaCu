@@ -52,10 +52,10 @@
       <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
+      <div class="nav-header">
         <div class="brand-logo">
           <a href="homepage.html">
-            <img src="./images/logo.png" alt="" />
+            <img src="/QUANLYHOACU/static/admin/images/logo.png" alt="" />
           </a>
         </div>
       </div>
@@ -76,14 +76,14 @@
           <div class="header-left"></div>
           <div class="header-right">
             <ul class="clearfix">
-              <li class="icons dropdown">{Username}</li>
+              <li class="icons dropdown">Admin</li>
               <li class="icons dropdown">
                 <div
                   class="user-img c-pointer position-relative"
                   data-toggle="dropdown"
                 >
                   <span class="activity active"></span>
-                  <img src="images/user/1.png" height="40" width="40" alt="" />
+                  <img src="/QUANLYHOACU/static/admin/images/admin.png" height="40" width="40" alt="" />
                 </div>
                 <div
                   class="drop-down dropdown-profile animated fadeIn dropdown-menu"

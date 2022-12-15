@@ -7,19 +7,17 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>
-    	Danh mục sản phẩm
-    </title>
+    <title>Danh mục sản phẩm </title>
+    
     <script type="text/javascript">
       function ConfirmDialog(id)
       {
-        var message=confirm("Bạn có chắc muốn xóa sản phẩm này"+" ("+ id  +") không?");
-        if (message)
-          {
-            window.location.href="deleteSanPham?id=" +id
-          }
-        else
+        var message=confirm("Bạn có chắc muốn xóa sản phẩm không?");
+        if (result) {
+          window.location.href = "deleteSanPham?id=" + id;
+        } else {
           return false;
+        }
       }
     </script>
     <!-- Favicon icon -->
@@ -64,10 +62,10 @@
       <!--**********************************
             Nav header start
         ***********************************-->
-       <div class="nav-header">
+      <div class="nav-header">
         <div class="brand-logo">
           <a href="homepage.html">
-            <img src="./images/logo.png" alt="" />
+            <img src="/QUANLYHOACU/static/admin/images/logo.png" alt="" />
           </a>
         </div>
       </div>
@@ -90,14 +88,14 @@
           </div>
           <div class="header-right">
             <ul class="clearfix">
-              <li class="icons dropdown">{Username}</li>
+              <li class="icons dropdown">Admin</li>
               <li class="icons dropdown">
                 <div
                   class="user-img c-pointer position-relative"
                   data-toggle="dropdown"
                 >
                   <span class="activity active"></span>
-                  <img src="images/user/1.png" height="40" width="40" alt="" />
+                  <img src="/QUANLYHOACU/static/admin/images/admin.png" height="40" width="40" alt="" />
                 </div>
                 <div
                   class="drop-down dropdown-profile animated fadeIn dropdown-menu"
@@ -245,13 +243,11 @@
                                 ></i> </a
                               >
                               <a
-   
                                 href="# "
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Delete"
-                                
-                                ><i onclick="{return ConfirmDialog(${sp.maSP});}" class="fa fa-close color-danger"></i></a>
+                                onclick="ConfirmDialog(${sp.maSP});" class="fa fa-close color-danger"></a>
                          
                           </td>
                         <td>${loop.index+1 }</td>

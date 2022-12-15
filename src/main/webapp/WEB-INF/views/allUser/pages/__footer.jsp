@@ -49,7 +49,7 @@
 						<p>Giảng viên hướng dẫn: Ths. Trương Thị Khánh Dịp</p>
 						<p>Nhóm sinh viên thực hiện: Phạm Quỳnh Hương, Nguyễn Thị Bích
 							Liên, Nguyễn Ngọc Phát</p>
-						<br></br>
+
 						<ul class="footer-links">
 							<li><a href="#"><i class="fa fa-map-marker"></i>1 Vo Van
 									Ngan</a></li>
@@ -63,16 +63,10 @@
 					<div class="footer">
 						<h3 class="footer-title">Danh mục sản phẩm</h3>
 						<ul class="footer-links">
-<%-- 						<jsp:useBean id="loaiSanPham" type="beans.LoaiSanPham"/> --%>
 							<c:forEach var="lsp" items="${loaiSanPham}">
 								<li><a href="#">${lsp.tenLoaiSanPham}</a></li>
 							</c:forEach>
-							<li><a href="#">MÀU VẼ</a></li>
-							<li><a href="#">GIẤY VẼ</a></li>
-							<li><a href="#">BÚT VẼ</a></li>
-							<li><a href="#">PHÁC THẢO</a></li>
-							<li><a href="#">DỤNG CỤ BỔ TRỢ</a></li>
-							<li><a href="#">VĂN PHÒNG PHẨM</a></li>
+		
 						</ul>
 					</div>
 				</div>
