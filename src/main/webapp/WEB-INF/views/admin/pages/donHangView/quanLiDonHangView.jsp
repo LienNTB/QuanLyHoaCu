@@ -193,7 +193,7 @@
 
         <div class="container-fluid">
           <div class="row">
-            <div class="product-mng col-lg-6">
+            <div class="product-mng col-lg-13">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">QUẢN LÍ ĐƠN HÀNG</h4>

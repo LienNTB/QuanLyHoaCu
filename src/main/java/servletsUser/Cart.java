@@ -1,8 +1,6 @@
 package servletsUser;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,21 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.User;
-import conn.DBConnection;
-import utils.userUtils;
 
 /**
- * Servlet implementation class Store
+ * Servlet implementation class Cart
  */
-@WebServlet("/Store")
-public class Store extends HttpServlet {
+@WebServlet(name="/Cart", urlPatterns= {"/Cart"})
+public class Cart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Store() {
+    public Cart() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,7 +32,7 @@ public class Store extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher dispatcher = request.getServletContext()
-                .getRequestDispatcher("/WEB-INF/views/allUser/pages/store.jsp");
+                .getRequestDispatcher("/WEB-INF/views/allUser/pages/cart.jsp");
         dispatcher.forward(request, response);
 	}
 
@@ -46,7 +41,6 @@ public class Store extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 		doGet(request, response);
 	}
 

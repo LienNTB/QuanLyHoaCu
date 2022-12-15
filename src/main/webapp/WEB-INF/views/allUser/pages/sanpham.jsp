@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-  <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,39 +21,13 @@ function AddToCart()
 }
 </script>
 <title>Store</title>
-<!-- Google font -->
-<link
-	href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
-	rel="stylesheet">
-
-<!-- Bootstrap -->
-<link type="text/css" rel="stylesheet"
-	href="/QUANLYHOACU/static/allUser/./css/bootstrap.min.css" />
-
-<!-- Slick -->
-<link type="text/css" rel="stylesheet"
-	href="/QUANLYHOACU/static/allUser/./css/slick.css" />
-<link type="text/css" rel="stylesheet"
-	href="/QUANLYHOACU/static/allUser/./css/slick-theme.css" />
-
-<!-- nouislider -->
-<link type="text/css" rel="stylesheet"
-	href="/QUANLYHOACU/static/allUser/./css/nouislider.min.css" />
-
-<!-- Font Awesome Icon -->
-<link rel="stylesheet"
-	href="/QUANLYHOACU/static/allUser/./css/font-awesome.min.css">
-
-<!-- Custom stlylesheet -->
-<link type="text/css" rel="stylesheet"
-	href="/QUANLYHOACU/static/allUser/./css/style.css" />
 
 </head>
+
 <body>
 	<!-- HEADER -->
-<%@ include file="__header.jsp" %>
-	<!-- /HEADER -->
-
+	<jsp:include page="__header.jsp"></jsp:include>
+	<!-- HEADER -->
 
 	<!-- BREADCRUMB -->
 	<div id="breadcrumb" class="section">
@@ -139,12 +113,12 @@ function AddToCart()
 							<div class="qty-label">
 								Số lượng
 								<div class="input-number">
-								
-									<input id="number" type="number" value="1" min="1" max="10"> <span class="qty-up">+</span> <span
-										class="qty-down">-</span>
+
+									<input id="number" type="number" value="1" min="1" max="10">
+									<span class="qty-up">+</span> <span class="qty-down">-</span>
 								</div>
 							</div>
-							<button class="add-to-cart-btn"  onclick="AddToCart()">
+							<button class="add-to-cart-btn" onclick="AddToCart()">
 								<i class="fa fa-shopping-cart"></i> add to cart
 							</button>
 						</div>
@@ -394,51 +368,51 @@ function AddToCart()
 				</div>
 				<!-- product -->
 				<c:forEach var="sp" items="${spRelated }">
-				<div class="col-md-3 col-xs-6">
-					<div class="product">
-						<div class="product-img">
-							<img src="${sp.hinh}" alt="">
-							<div class="product-label">
-								<span class="new">NEW</span>
+					<div class="col-md-3 col-xs-6">
+						<div class="product">
+							<div class="product-img">
+								<img src="${sp.hinh}" alt="">
+								<div class="product-label">
+									<span class="new">NEW</span>
+								</div>
 							</div>
-						</div>
-						<div class="product-body">
-							<p class="product-category">${sp.tenLoaiSanPham}</p>
-							<h3 class="product-name">
-								<a href="SanPham?id=${sp.maSP}	">${sp.tenSP}</a>
-							</h3>
-							<h4 class="product-price">
-								${sp.gia}
-								<del class="product-old-price">${sp.gia}</del>
-							</h4>
-							<div class="product-rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i>
+							<div class="product-body">
+								<p class="product-category">${sp.tenLoaiSanPham}</p>
+								<h3 class="product-name">
+									<a href="SanPham?id=${sp.maSP}	">${sp.tenSP}</a>
+								</h3>
+								<h4 class="product-price">
+									${sp.gia}
+									<del class="product-old-price">${sp.gia}</del>
+								</h4>
+								<div class="product-rating">
+									<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+										class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+										class="fa fa-star"></i>
+								</div>
+								<div class="product-btns">
+									<button class="add-to-wishlist">
+										<i class="fa fa-heart-o"></i><span class="tooltipp">add
+											to wishlist</span>
+									</button>
+									<button class="add-to-compare">
+										<i class="fa fa-exchange"></i><span class="tooltipp">add
+											to compare</span>
+									</button>
+									<button class="quick-view">
+										<i class="fa fa-eye"></i><span class="tooltipp">quick
+											view</span>
+									</button>
+								</div>
 							</div>
-							<div class="product-btns">
-								<button class="add-to-wishlist">
-									<i class="fa fa-heart-o"></i><span class="tooltipp">add
-										to wishlist</span>
-								</button>
-								<button class="add-to-compare">
-									<i class="fa fa-exchange"></i><span class="tooltipp">add
-										to compare</span>
-								</button>
-								<button class="quick-view">
-									<i class="fa fa-eye"></i><span class="tooltipp">quick
-										view</span>
+							<div class="add-to-cart">
+								<button class="add-to-cart-btn" onclick="AddToCart()">
+									<i class="fa fa-shopping-cart"></i> add to cart
 								</button>
 							</div>
-						</div>
-						<div class="add-to-cart">
-							<button class="add-to-cart-btn" onclick="AddToCart()">
-								<i class="fa fa-shopping-cart"></i> add to cart
-							</button>
 						</div>
 					</div>
-				</div>
-				<!-- <div class="clearfix visible-sm visible-xs"></div> -->
+					<!-- <div class="clearfix visible-sm visible-xs"></div> -->
 				</c:forEach>
 				<!-- /product -->
 
@@ -451,16 +425,8 @@ function AddToCart()
 
 
 	<!-- FOOTER -->
-	<%@ include file="__footer.jsp" %>
+	<jsp:include page="__footer.jsp"></jsp:include>
 	<!-- /FOOTER -->
-
-	<!-- jQuery Plugins -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/nouislider.min.js"></script>
-	<script src="js/jquery.zoom.min.js"></script>
-	<script src="js/main.js"></script>
 
 </body>
 </html>
