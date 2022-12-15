@@ -12,9 +12,12 @@
 function AddToCart()
 {
 	var id=document.getElementById("id").value;
-	var soluong=document.getElementById("number").value
-	alert("heello")
+	var soluong=document.getElementById("number").value;
+	var message=confirm("Thêm sản phẩm "+ id + " vào giỏ hàng?");
+	if(message) {		
+	alert("Thêm vào giỏ hàng thành công!")
 	window.location.href="AddToCart?id="+id+"&number="+soluong;
+	}
 }
 </script>
 <title>Store</title>
@@ -39,7 +42,7 @@ function AddToCart()
 
 <!-- Font Awesome Icon -->
 <link rel="stylesheet"
-	href="/QUANLYHOACU/static/allUser/.//QUANLYHOACU/static/allUser/./css/font-awesome.min.css">
+	href="/QUANLYHOACU/static/allUser/./css/font-awesome.min.css">
 
 <!-- Custom stlylesheet -->
 <link type="text/css" rel="stylesheet"
