@@ -18,77 +18,71 @@
 	<jsp:include page="__header.jsp"></jsp:include>
 	<!-- HEADER -->
 
-	<!-- BREADCRUMB -->
-	<div id="breadcrumb" class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<div class="col-md-12">
-					<h3 class="breadcrumb-header">Giỏ hàng</h3>
-					<ul class="breadcrumb-tree">
-						<li><a href="#">Trang chủ</a></li>
-						<li class="active">Giỏ hàng</li>
-					</ul>
-				</div>
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /BREADCRUMB -->
+    <!-- BREADCRUMB -->
+    <div id="breadcrumb" class="section">
+      <!-- container -->
+      <div class="container">
+        <!-- row -->
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="breadcrumb-header">Giỏ hàng</h3>
+            <ul class="breadcrumb-tree">
+              <li><a href="#">Trang chủ</a></li>
+              <li class="active">Giỏ hàng</li>
+            </ul>
+          </div>
+        </div>
+        <!-- /row -->
+      </div>
+      <!-- /container -->
+    </div>
+    <!-- /BREADCRUMB -->
 
-	<!-- SECTION -->
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<div class="hashascart-container">
-				<div class="table-responsive">
-					<table class="table table-bordered verticle-middle">
-						<thead>
-							<tr>
-								<th scope="col">Mã Hóa Đơn</th>
-								<th scope="col">Mã SP</th>
-
-								<th scope="col">Số lượng</th>
-								<th scope="col">Giá tiền</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach items="${chitiethoadonList}" var="chitiethoadon">
-								<tr>
-									<td>${chitiethoadon.maHoaDon}</td>
-									<td>${chitiethoadon.maSP}</td>
-
-									<td>${chitiethoadon.soLuong}</td>
-									<td>${chitiethoadon.tongPhu}</td>
-									<td><span> <a href="#" data-toggle="tooltip"
-											data-placement="top" title="Delete"><i
-												class="fa fa-close color-danger"></i></a></span></td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-
-				</div>
-			</div>
-			<div>
-				<form>
-					<button class="">
-						<a href="${pageContext.request.contextPath}/CheckOut">Thanh
-							toán <i class="fas fa-money-check-alt"></i>
-						</a>
-					</button>
-				</form>
-			</div>
-			<!-- /container -->
-		</div>
-	</div>
-	<!-- /SECTION -->
-
-	<!-- FOOTER -->
-	<jsp:include page="__footer.jsp"></jsp:include>
-	<!-- /FOOTER -->
-</body>
+    <!-- SECTION -->
+    <div class="section">
+      <!-- container -->
+      <div class="container">
+        <div class="hashascart-container">
+           <div class="table-responsive">    
+                    <table class="table table-bordered verticle-middle">
+                      <thead>
+                        <tr>
+                          <th scope="col">Mã Hóa Đơn</th>
+                          <th scope="col">Mã SP</th>
+                        
+                          <th scope="col">Số lượng</th>
+                          <th scope="col">Giá tiền</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       <c:forEach items="${chitiethoadonList}" var="chitiethoadon">
+                        <tr>
+                          <td>${chitiethoadon.maHoaDon}</td>
+                          <td>${chitiethoadon.maSP}</td>
+                         
+                          <td>${chitiethoadon.soLuong}</td>
+                          <td>${chitiethoadon.tongPhu}</td>   
+                          <td >  
+                          <span>
+                              <a
+                                href="#"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Delete"
+                                ><i class="fa fa-close color-danger"></i></a
+                            ></span>
+                          </td>
+                        </tr>
+                       </c:forEach>
+                      </tbody>
+                    </table>
+                  </div>
+                  <a href="/ThanhToan"><div class="checkout-btn">Thanh toán</div></a>
+      </div>
+      <!-- /container -->
+    </div>
+    <!-- FOOTER -->
+	<%@include file="__footer.jsp" %>
+    <!-- /FOOTER -->
 
 </html>

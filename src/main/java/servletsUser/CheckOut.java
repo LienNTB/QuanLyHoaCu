@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CheckOut
  */
-@WebServlet("/CheckOut")
+@WebServlet("/ThanhToan")
 public class CheckOut extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,7 +31,7 @@ public class CheckOut extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher dispatcher = request.getServletContext()
-                .getRequestDispatcher("/WEB-INF/views/allUser/pages/checkout.jsp");
+                .getRequestDispatcher("/WEB-INF/views/allUser/pages/thanhtoan.jsp");
         dispatcher.forward(request, response);
 	}
 

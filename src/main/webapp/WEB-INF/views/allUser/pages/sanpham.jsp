@@ -9,15 +9,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <script type="text/javascript">
-	function AddToCart() {
-		var id = document.getElementById("id").value;
-		var soluong = document.getElementById("number").value
-		alert("heello")
-		window.location.href = "AddToCart?id=" + id + "&number=" + soluong;
+function AddToCart()
+{
+	var id=document.getElementById("id").value;
+	var soluong=document.getElementById("number").value;
+	var message=confirm("Thêm sản phẩm "+ id + " vào giỏ hàng?");
+	if(message) {		
+	alert("Thêm vào giỏ hàng thành công!")
+	window.location.href="AddToCart?id="+id+"&number="+soluong;
 	}
+}
 </script>
 <title>Store</title>
-<!-- Google font -->
 
 </head>
 

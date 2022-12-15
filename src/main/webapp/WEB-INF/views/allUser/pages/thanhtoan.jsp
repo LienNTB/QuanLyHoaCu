@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 	<!DOCTYPE html>
 	<html lang="en">
@@ -530,12 +532,12 @@
 		<!-- /FOOTER -->
 
 		<!-- jQuery Plugins -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/slick.min.js"></script>
-		<script src="js/nouislider.min.js"></script>
-		<script src="js/jquery.zoom.min.js"></script>
-		<script src="js/main.js"></script>
+		<script src="/QUANLYHOACU/static/allUser/js/jquery.min.js"></script>
+		<script src="/QUANLYHOACU/static/allUser/js/bootstrap.min.js"></script>
+		<script src="/QUANLYHOACU/static/allUser/js/slick.min.js"></script>
+		<script src="/QUANLYHOACU/static/allUser/js/nouislider.min.js"></script>
+		<script src="/QUANLYHOACU/static/allUser/js/jquery.zoom.min.js"></script>
+		<script src="/QUANLYHOACU/static/allUser/js/main.js"></script>
 
 	</body>
 
