@@ -3,6 +3,7 @@ package beans;
 public class LoaiSanPham {
 	private String maLoaiSP;
 	private String tenLoaiSanPham;
+	private int SLTrongKho;
 	public LoaiSanPham() {};
 	public LoaiSanPham(String maLoaiSanPham, String tenLoaiSanPham) {
 		this.maLoaiSP=maLoaiSanPham;
@@ -19,6 +20,12 @@ public class LoaiSanPham {
 	}
 	public void setTenLoaiSanPham(String tenLoaiSanPham) {
 		this.tenLoaiSanPham = tenLoaiSanPham;
+	}
+	public int getSLTrongKho() {
+		return SLTrongKho;
+	}
+	public void setSLTrongKho(int sLTrongKho) {
+		SLTrongKho = sLTrongKho;
 	}
 
 }
