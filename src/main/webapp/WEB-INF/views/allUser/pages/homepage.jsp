@@ -59,8 +59,9 @@
           <div id="aside" class="col-md-3">
             <!-- aside Widget -->
             <div class="aside">
-              <h3 class="aside-title">Categories</h3>
-              <div class="checkbox-filter">
+              <!-- <h3 class="aside-title">Categories</h3> -->
+            	
+              <!-- <div class="checkbox-filter">
                 <div class="input-checkbox">
                   <input type="checkbox" id="category-1" />
                   <label for="category-1">
@@ -114,12 +115,12 @@
                     <small>(740)</small>
                   </label>
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- /aside Widget -->
 
             <!-- aside Widget -->
-            <div class="aside">
+            <!-- <div class="aside">
               <h3 class="aside-title">Price</h3>
               <div class="price-filter">
                 <div id="price-slider"></div>
@@ -135,31 +136,31 @@
                   <span class="qty-down">-</span>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- /aside Widget -->
 
             <!-- /aside Widget -->
 
             <!-- aside Widget -->
-            <div class="aside">
-              <h3 class="aside-title">Top selling</h3>
-              <c:forEach var="bsr" items="${bestSeller}">
-	              <div class="product-widget">
-	                <div class="product-img">
-	                  <img src="${bsr.hinh }" alt="" />
-	                </div>
-	                <div class="product-body">
-	                  <p class="product-category">${bsr.tenLoaiSanPham}</p>
-	                  <h3 class="product-name">
-	                    <a href="#">${bsr.tenSP }</a>
-	                  </h3>
-	                  <h4 class="product-price">
-	                    ${bsr.gia } <del class="product-old-price">${bsr.gia }</del>
-	                  </h4>
-	                </div>
-	              </div>
-              </c:forEach>
-            </div>
+              <div class="aside">
+                <h3 class="aside-title">Top selling</h3>
+                <c:forEach var="bsr" items="${bestSeller}">
+                  <div class="product-widget">
+                    <div class="product-img">
+                      <img src="${bsr.hinh }" alt="" />
+                    </div>
+                    <div class="product-body">
+                      <p class="product-category">${bsr.tenLoaiSanPham}</p>
+                      <h3 class="product-name">
+                        <a href="#">${bsr.tenSP }</a>
+                      </h3>
+                      <h4 class="product-price">
+                        ${bsr.gia } <del class="product-old-price">${bsr.gia }</del>
+                      </h4>
+                    </div>
+                  </div>
+                </c:forEach>
+              </div>
             <!-- /aside Widget -->
           </div>
           <!-- /ASIDE -->
