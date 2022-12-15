@@ -5,6 +5,9 @@ public class ChiTietHoaDon {
 	private String maSP;
 	private int soLuong;
 	private float tongPhu;
+	private String tenSP;
+	private int gia;// GIÁ CỦA SẢN PHẨM
+	
 	public ChiTietHoaDon(){}
 	public ChiTietHoaDon(String maHoaDon, String maSP, int soLuong, float tongPhu)
 	{
@@ -36,6 +39,18 @@ public class ChiTietHoaDon {
 	}
 	public void setTongPhu(float tongPhu) {
 		this.tongPhu = tongPhu;
+	}
+	public String getTenSP() {
+		return tenSP;
+	}
+	public void setTenSP(String tenSP) {
+		this.tenSP = tenSP;
+	}
+	public int getGia() {
+		return gia;
+	}
+	public void setGia(int gia) {
+		this.gia = gia;
 	}
 
 }

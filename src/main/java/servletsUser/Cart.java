@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Cart
  */
-@WebServlet(name="/Cart", urlPatterns= {"/Cart"})
+//@WebServlet(name="/Cart", urlPatterns= {"/Cart"})
 public class Cart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

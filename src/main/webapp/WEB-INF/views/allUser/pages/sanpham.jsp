@@ -114,7 +114,7 @@ function AddToCart()
 								Số lượng
 								<div class="input-number">
 
-									<input id="number" type="number" value="1" min="1" max="10">
+									<input name="number" id="number" type="number" value="1" min="1" max="10">
 									<span class="qty-up">+</span> <span class="qty-down">-</span>
 								</div>
 							</div>
