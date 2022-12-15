@@ -42,6 +42,7 @@ public class common extends HttpServlet {
             e.printStackTrace();
         }
 		request.setAttribute("loaiSanPham", lsp);
+		request.setAttribute("nav_active", "HomePage");
 	}
 
 	/**
@@ -51,5 +52,4 @@ public class common extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

@@ -77,7 +77,7 @@
                       </tbody>
                     </table>
                   </div>
-                  <a href="/ThanhToan"><div class="checkout-btn">Thanh toán</div></a>
+                  <a href="ThanhToan"><div class="checkout-btn">Thanh toán</div></a>
       </div>
       <!-- /container -->
     </div>
