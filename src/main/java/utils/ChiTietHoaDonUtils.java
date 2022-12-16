@@ -76,12 +76,24 @@ public class ChiTietHoaDonUtils
         ps.setString(2, cthd.getMaSP());
         ps.executeUpdate();
     }
+    public static void deleteChiTietHoaDonById(Connection conn, String maHD) throws SQLException 
+    {
+        PreparedStatement ps = conn.prepareStatement("DELETE FROM ChiTietHoaDon where MaHoaDon=?");
+        ps.setString(1,maHD);
+        ps.executeUpdate();
+    }
     public static void deleteCart(Connection conn, String maNguoiDung) throws SQLException
     {
     	String id="cart_"+maNguoiDung;
-        PreparedStatement ps = conn.prepareStatement("DELETE FROM ChiTietHoaDon where MaHoaDon=?");
-        ps.setString(1,id);
+        deleteChiTietHoaDonById(conn, id);
+
+    }
+    public static void changeMaCTHD(Connection conn, String oldString, String newString ) throws SQLException {
+        PreparedStatement ps = conn.prepareStatement("UPDATE ChiTietHoaDon SET MaHoaDon=? WHERE MaHoaDon=?");
+        ps.setString(1, newString);
+        ps.setString(2, oldString);
         ps.executeUpdate();
     }
+    
 }
 

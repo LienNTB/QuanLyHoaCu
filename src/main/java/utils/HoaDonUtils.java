@@ -117,6 +117,14 @@ public class HoaDonUtils {
         pst.executeUpdate();
     
     }
+    public static int getTongThanhToan(Connection conn, String maHD) throws SQLException {
+        PreparedStatement pst = conn.prepareStatement("select sum(TongPhu) as TongThanhToan from ChiTietHoaDon where MaHoaDon=?");
+        pst.setString(1, maHD);
+        ResultSet rs = pst.executeQuery();
+        if (rs.next())
+            return rs.getInt("TongThanhToan");
+        return 0;
+    }
     
 
 }
