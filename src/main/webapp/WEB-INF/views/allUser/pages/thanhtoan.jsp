@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -13,7 +13,20 @@ pageEncoding="UTF-8"%>
 
 		<title>Check Out</title>
 
-
+		<script type="text/javascript">
+			function validate()
+			{
+				var hoTen=document.forms["order"]["hoTen"].value;
+				var soDienThoai=document.forms["order"]["soDienThoai"].value;
+				var diaChi=document.forms["order"]["diaChi"].value;
+				if (soDienThoai==""||hoTen==""||diaChi=="")
+				{
+					alert("Vui lòng nhập đầy đủ thông tin!")
+					return false;
+				}
+				return true;
+			}
+		</script>
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
@@ -39,162 +52,9 @@ pageEncoding="UTF-8"%>
 
 	<body>
 		<!-- HEADER -->
-		<header>
-			<!-- TOP HEADER -->
-			<div id="top-header">
-				<div class="container">
-					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i>
-								email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734
-								Stonecoal Road</a></li>
-					</ul>
-					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- /TOP HEADER -->
-
-			<!-- MAIN HEADER -->
-			<div id="header">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<!-- LOGO -->
-						<div class="col-md-3">
-							<div class="header-logo">
-								<a href="#" class="logo"> <img src="/QUANLYHOACU/static/allUser/./image/logo4.png"
-										alt="" width="153" height="70" border="0">
-								</a>
-							</div>
-						</div>
-						<!-- /LOGO -->
-
-						<!-- SEARCH BAR -->
-						<div class="col-md-6">
-							<div class="header-search">
-								<form>
-									<select class="input-select">
-										<option value="0">All Categories</option>
-										<option value="1">Category 01</option>
-										<option value="1">Category 02</option>
-									</select> <input class="input" placeholder="Search here">
-									<button class="search-btn">Search</button>
-								</form>
-							</div>
-						</div>
-						<!-- /SEARCH BAR -->
-
-						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
-							<div class="header-ctn">
-								<!-- Wishlist -->
-								<div>
-									<a href="#"> <i class="fa fa-heart-o"></i> <span>Your
-											Wishlist</span>
-										<div class="qty">2</div>
-									</a>
-								</div>
-								<!-- /Wishlist -->
-
-								<!-- Cart -->
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"> <i
-											class="fa fa-shopping-cart"></i> <span>Your
-											Cart</span>
-										<div class="qty">3</div>
-									</a>
-									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="/QUANLYHOACU/static/allUser/./image/product01.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">
-														<a href="#">product name goes here</a>
-													</h3>
-													<h4 class="product-price">
-														<span class="qty">1x</span>$980.00
-													</h4>
-												</div>
-												<button class="delete">
-													<i class="fa fa-close"></i>
-												</button>
-											</div>
-
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="/QUANLYHOACU/static/allUser/./image/product02.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name">
-														<a href="#">product name goes here</a>
-													</h3>
-													<h4 class="product-price">
-														<span class="qty">3x</span>$980.00
-													</h4>
-												</div>
-												<button class="delete">
-													<i class="fa fa-close"></i>
-												</button>
-											</div>
-										</div>
-										<div class="cart-summary">
-											<small>3 Item(s) selected</small>
-											<h5>SUBTOTAL: $2940.00</h5>
-										</div>
-										<div class="cart-btns">
-											<a href="#">View Cart</a> <a href="#">Checkout <i
-													class="fa fa-arrow-circle-right"></i></a>
-										</div>
-									</div>
-								</div>
-								<!-- /Cart -->
-
-								<!-- Menu Toogle -->
-								<div class="menu-toggle">
-									<a href="#"> <i class="fa fa-bars"></i> <span>Menu</span>
-									</a>
-								</div>
-								<!-- /Menu Toogle -->
-							</div>
-						</div>
-						<!-- /ACCOUNT -->
-					</div>
-					<!-- row -->
-				</div>
-				<!-- container -->
-			</div>
-			<!-- /MAIN HEADER -->
-		</header>
+		<%@include file="__header.jsp"%>
 		<!-- /HEADER -->
 
-		<!-- NAVIGATION -->
-		<nav id="navigation">
-			<!-- container -->
-			<div class="container">
-				<!-- responsive-nav -->
-				<div id="responsive-nav">
-					<!-- NAV -->
-					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">TRANG CHỦ</a></li>
-						<li><a href="#">MÀU VẼ</a></li>
-						<li><a href="#">GIẤY VẼ</a></li>
-						<li><a href="#">BÚT VẼ</a></li>
-						<li><a href="#">PHÁC THẢO</a></li>
-						<li><a href="#">DỤNG CỤ BỔ TRỢ</a></li>
-						<li><a href="#">VĂN PHÒNG PHẨM</a></li>
-					</ul>
-					<!-- /responsive-nav -->
-				</div>
-				<!-- /container -->
-		</nav>
-		<!-- /NAVIGATION -->
 
 		<!-- BREADCRUMB -->
 		<div id="breadcrumb" class="section">
@@ -205,7 +65,7 @@ pageEncoding="UTF-8"%>
 					<div class="col-md-12">
 						<h3 class="breadcrumb-header">Checkout</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
+							<li><a href="HomePage">Home</a></li>
 							<li class="active">Checkout</li>
 						</ul>
 					</div>
@@ -216,187 +76,175 @@ pageEncoding="UTF-8"%>
 		</div>
 		<!-- /BREADCRUMB -->
 
+
+
+
 		<!-- SECTION -->
 		<div class="section">
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
-				<div class="row">
-
-					<div class="col-md-7">
-						<!-- Billing Details -->
-						<div class="billing-details">
-							<div class="section-title">
-								<h3 class="title">Billing address</h3>
+				<input type="hidden" name="tongTien" value="${tongTien}">
+				<form name="order" action="ThanhToan" method="post" onsubmit="return validate();">
+					<div class="row">
+	
+						<div class="col-md-5">
+							<!-- Billing Details -->
+							<div class="billing-details">
+								<div class="section-title">
+									<h3 class="title">Địa chỉ thanh toán</h3>
+								</div>
+								<div class="form-group" >
+								<label>Họ và tên</label>
+									<input class="input" value="${commons.mainUser.hoTen}"type="text" name="hoTen" placeholder="Họ và tên">
+								</div>
+				
+								<div class="form-group">
+								<label>Điện thoại</label>
+									<input class="input" type="tel" name="soDienThoai" placeholder="Điện thoại">
+								</div>
+								<div class="form-group">
+								<label>Địa chỉ</label>
+									<input class="input" type="text" name="diaChi" placeholder="Địa chỉ">
+								</div>
+								<div class="order-notes">
+								<label>Ghi chú</label>
+								<textarea name="ghiChu" class="input" placeholder="Ghi chú cho nhà bán hàng"></textarea>
+								</div>
 							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="first-name" placeholder="First Name">
+							<!-- /Billing Details -->
+	
+						</div>
+	
+						<!-- Order Details -->
+						<div class="col-md-7 order-details">
+							<div class="section-title text-center">
+								<h3 class="title">Đơn hàng của bạn</h3>
 							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="last-name" placeholder="Last Name">
+							<div class="order-summary">
+								<div class="order-col">
+									<div>
+										<strong>SẢN PHẨM</strong>
+									</div>
+									<div>
+										<strong>SỐ LƯỢNG</strong>
+									</div>
+									<div>
+										<strong>TỔNG TIỀN</strong>
+									</div>
+								</div>
+								<c:forEach var ="cthd" items="${ chiTietHoaDon}">
+									<div class="order-products">
+										<div class="order-col">
+											<div>${cthd.tenSP}</div>
+											<div>${cthd.soLuong}</div>
+											<div>${cthd.tongPhu }</div>
+											
+										</div>
+									</div>
+								</c:forEach>
+								<div class="order-col">
+									<div>Shiping</div>
+									<div>
+										<strong>FREE</strong>
+									</div>
+								</div>
+								<div class="order-col">
+									<div>
+										<strong>TOTAL</strong>
+									</div>
+									<div>
+										<strong class="order-total">${tongTien}</strong>
+									</div>
+								</div>
 							</div>
-							<div class="form-group">
-								<input class="input" type="email" name="email" placeholder="Email">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="address" placeholder="Address">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="city" placeholder="City">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="country" placeholder="Country">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-							</div>
-							<div class="form-group">
-								<input class="input" type="tel" name="tel" placeholder="Telephone">
-							</div>
-							<div class="form-group">
-								<div class="input-checkbox">
-									<input type="checkbox" id="create-account"> <label for="create-account">
-										<span></span> Create Account?
+							
+							<!-- <script type="text/javascript">
+	
+							var returnedSuggestion = ''
+							let editor, doc, cursor, line, pos
+							document.addEventListener("keydown", (event) => {
+							setTimeout(()=>{
+								editor = event.target.closest('.CodeMirror');
+								if (editor){
+									doc = editor.CodeMirror.getDoc()
+									cursor = doc.getCursor()
+									line = doc.getLine(cursor.line)
+									pos = {line: cursor.line, ch: line.length}
+									if (event.key == "Enter"){
+										var query = doc.getRange({ line: Math.max(0,cursor.line-10), ch: 0 }, { line: cursor.line, ch: 0 })
+										window.postMessage({source: 'getSuggestion', payload: { data: query } } )
+										//displayGrey(query)
+									}
+									else if (event.key == "ArrowRight"){
+										acceptTab(returnedSuggestion)
+									}
+								}
+							}, 0)
+							})
+	
+							function acceptTab(text){
+							if (suggestionDisplayed){
+								doc.replaceRange(text, pos)
+								suggestionDisplayed = false
+							}
+							}
+							function displayGrey(text){
+							var element = document.createElement('span')
+							element.innerText = text
+							element.style = 'color:grey'
+							var lineIndex = pos.line;
+							editor.getElementsByClassName('CodeMirror-line')[lineIndex].appendChild(element)
+							suggestionDisplayed = true
+							}
+							window.addEventListener('message', (event)=>{
+							if (event.source !== window ) return
+							if (event.data.source == 'return'){
+								returnedSuggestion = event.data.payload.data
+								displayGrey(event.data.payload.data)
+							}
+							})
+						
+							</script>
+							
+							
+							
+							<div class="payment-method">
+								<div class="input-radio">
+									<input type="radio" name="payment" id="payment-1"> <label for="payment-1"> <span></span>
+										Chuyển khoản trực tiếp
 									</label>
 									<div class="caption">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-											elit, sed do eiusmod tempor incididunt.</p>
-										<input class="input" type="password" name="password"
-											placeholder="Enter Your Password">
+										<p>Chuyển khoản trực tiếp.</p>
 									</div>
 								</div>
-							</div>
-						</div>
-						<!-- /Billing Details -->
-
-						<!-- Shiping Details -->
-						<div class="shiping-details">
-							<div class="section-title">
-								<h3 class="title">Shiping address</h3>
+								<div class="input-radio">
+									<input type="radio" name="payment" id="payment-2"> <label for="payment-2"> <span></span>
+										Thanh toán séc
+									</label>
+									<div class="caption">
+										<p>Thanh toán séc.</p>
+									</div>
+								</div>
+								<div class="input-radio">
+									<input type="radio" name="payment" id="payment-3"> <label for="payment-3"> <span></span>
+										Paypal
+									</label>
+									<div class="caption">
+										<p>Paypal.</p>
+									</div>
+								</div>
 							</div>
 							<div class="input-checkbox">
-								<input type="checkbox" id="shiping-address"> <label for="shiping-address"> <span></span>
-									Ship to a diffrent
-									address?
+								<input type="checkbox" id="terms"> <label for="terms">
+									<span></span> Tôi đã đọc và đồng ý với <a href="#">các chính sách và điều kiện</a>
 								</label>
-								<div class="caption">
-									<div class="form-group">
-										<input class="input" type="text" name="first-name" placeholder="First Name">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="last-name" placeholder="Last Name">
-									</div>
-									<div class="form-group">
-										<input class="input" type="email" name="email" placeholder="Email">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="address" placeholder="Address">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="city" placeholder="City">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="country" placeholder="Country">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-									</div>
-									<div class="form-group">
-										<input class="input" type="tel" name="tel" placeholder="Telephone">
-									</div>
-								</div>
-							</div>
+							</div> -->
+							<input type=submit value="Đặt hàng" class="primary-btn order-submit"/>
 						</div>
-						<!-- /Shiping Details -->
-
-						<!-- Order notes -->
-						<div class="order-notes">
-							<textarea class="input" placeholder="Order Notes"></textarea>
-						</div>
-						<!-- /Order notes -->
+						<!-- /Order Details -->
 					</div>
-
-					<!-- Order Details -->
-					<div class="col-md-5 order-details">
-						<div class="section-title text-center">
-							<h3 class="title">Your Order</h3>
-						</div>
-						<div class="order-summary">
-							<div class="order-col">
-								<div>
-									<strong>PRODUCT</strong>
-								</div>
-								<div>
-									<strong>TOTAL</strong>
-								</div>
-							</div>
-							<div class="order-products">
-								<div class="order-col">
-									<div>1x PHẤN TIÊN MASTER PASTEL MARIE'S</div>
-									<div>45.000</div>
-								</div>
-								<div class="order-col">
-									<div>2x PHẤN TIÊN MASTER PASTEL MARIE'S</div>
-									<div>45.000</div>
-								</div>
-							</div>
-							<div class="order-col">
-								<div>Shiping</div>
-								<div>
-									<strong>FREE</strong>
-								</div>
-							</div>
-							<div class="order-col">
-								<div>
-									<strong>TOTAL</strong>
-								</div>
-								<div>
-									<strong class="order-total">90.000</strong>
-								</div>
-							</div>
-						</div>
-						<div class="payment-method">
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-1"> <label for="payment-1"> <span></span>
-									Direct Bank Transfer
-								</label>
-								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna
-										aliqua.</p>
-								</div>
-							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-2"> <label for="payment-2"> <span></span>
-									Cheque Payment
-								</label>
-								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna
-										aliqua.</p>
-								</div>
-							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-3"> <label for="payment-3"> <span></span>
-									Paypal System
-								</label>
-								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna
-										aliqua.</p>
-								</div>
-							</div>
-						</div>
-						<div class="input-checkbox">
-							<input type="checkbox" id="terms"> <label for="terms">
-								<span></span> I've read and accept the <a href="#">terms &
-									conditions</a>
-							</label>
-						</div>
-						<a href="#" class="primary-btn order-submit">Place order</a>
-					</div>
-					<!-- /Order Details -->
-				</div>
+				</form>
 				<!-- /row -->
 			</div>
 			<!-- /container -->

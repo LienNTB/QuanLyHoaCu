@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.io.*,java.util.*" %>
+<%@ page import="javax.servlet.*,java.text.*" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,7 +61,7 @@
         ***********************************-->
       <div class="nav-header">
         <div class="brand-logo">
-          <a href="homepage.html">
+          <a href="Admin_HomePage">
             <img src="/QUANLYHOACU/static/admin/images/logo.png" alt="" />
           </a>
         </div>
@@ -81,14 +83,14 @@
           <div class="header-left"></div>
           <div class="header-right">
             <ul class="clearfix">
-              <li class="icons dropdown">{Username}</li>
+              <li class="icons dropdown">Admin</li>
               <li class="icons dropdown">
                 <div
                   class="user-img c-pointer position-relative"
                   data-toggle="dropdown"
                 >
                   <span class="activity active"></span>
-                  <img src="images/user/1.png" height="40" width="40" alt="" />
+                  <img src="/QUANLYHOACU/static/admin/images/admin.png" height="40" width="40" alt="" />
                 </div>
                 <div
                   class="drop-down dropdown-profile animated fadeIn dropdown-menu"
@@ -189,7 +191,7 @@
                   <h3 class="card-title text-white">Tổng số hóa đơn</h3>
                   <div class="d-inline-block">
                     <h2 class="text-white">4565</h2>
-                    <p class="text-white mb-0">Jan - March 2019</p>
+                    <p class="text-white mb-0">Tháng 9 - Tháng 12 2022</p>
                   </div>
                   <span class="float-right display-5 opacity-5"
                     ><i class="fa fa-shopping-cart"></i
@@ -203,7 +205,7 @@
                   <h3 class="card-title text-white">Tổng doanh thu</h3>
                   <div class="d-inline-block">
                     <h2 class="text-white">$ 8541</h2>
-                    <p class="text-white mb-0">Jan - March 2019</p>
+                    <p class="text-white mb-0">Tháng 9 - Tháng 12 2022</p>
                   </div>
                   <span class="float-right display-5 opacity-5"
                     ><i class="fa fa-money"></i
@@ -217,7 +219,7 @@
                   <h3 class="card-title text-white">Số lượng sản phẩm</h3>
                   <div class="d-inline-block">
                     <h2 class="text-white">4565</h2>
-                    <p class="text-white mb-0">Jan - March 2019</p>
+                    <p class="text-white mb-0">Tháng 9 - Tháng 12 2022</p>
                   </div>
                   <span class="float-right display-5 opacity-5"
                     ><i class="fa fa-users"></i
@@ -226,7 +228,7 @@
               </div>
             </div>
             <div class="revenue">
-              <div class="revenue-item col-lg-3 col-sm-6">
+              <div class="revenue-item col-lg-4 col-sm-6">
                 <div class="card gradient-4">
                   <div class="card-body">
                     <h3 class="card-title text-white">
@@ -234,17 +236,16 @@
                     </h3>
                     <div class="d-inline-block">
                       <h2 class="text-white">99%</h2>
-                      <p class="text-white mb-0">Jan - March 2019</p>
+                      <p class="text-white mb-0">${dateTimeNow}
+					</p>
                     </div>
                     <span class="float-right display-5 opacity-5"
                       ><i class="fa fa-heart"></i
                     ></span>
                   </div>
-                  <input type="date" id="birthday" name="birthday" />
-                  <input type="submit" />
                 </div>
               </div>
-              <div class="revenue-item col-lg-3 col-sm-6">
+              <div class="revenue-item col-lg-4 col-sm-6">
                 <div class="card gradient-4">
                   <div class="card-body">
                     <h3 class="card-title text-white">
@@ -252,14 +253,12 @@
                     </h3>
                     <div class="d-inline-block">
                       <h2 class="text-white">99%</h2>
-                      <p class="text-white mb-0">Jan - March 2019</p>
+                      <p class="text-white mb-0">Tháng 12 - 2022</p>
                     </div>
                     <span class="float-right display-5 opacity-5"
                       ><i class="fa fa-heart"></i
                     ></span>
                   </div>
-                  <input type="month" id="birthday" name="birthday" />
-                  <input type="submit" />
                 </div>
               </div>
             </div>

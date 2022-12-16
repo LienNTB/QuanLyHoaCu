@@ -1,6 +1,10 @@
 package servletsAdmin;
-
+import java.io.*;
+import java.util.*;
+import javax.servlet.*;
+import java.text.*;
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,6 +39,12 @@ public class Admin_HomePage extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/NotAllow");
 			return;
 		}
+		var today = new Date();
+		var dateMonth = today.getMonth();
+		var date = new Date(System.currentTimeMillis());
+		System.out.print(date);
+		request.setAttribute("dateTimeNow", date);
+		request.setAttribute("month", dateMonth);
 	        RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/admin/pages/homepage.jsp");
 	        dispatcher.forward(request, response);

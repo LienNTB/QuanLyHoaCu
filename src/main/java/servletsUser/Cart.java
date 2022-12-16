@@ -9,17 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
- * Servlet implementation class CheckOut
+ * Servlet implementation class Cart
  */
-@WebServlet("/ThanhToan")
-public class CheckOut extends HttpServlet {
+//@WebServlet(name="/Cart", urlPatterns= {"/Cart"})
+public class Cart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CheckOut() {
+    public Cart() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +32,7 @@ public class CheckOut extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher dispatcher = request.getServletContext()
-                .getRequestDispatcher("/WEB-INF/views/allUser/pages/thanhtoan.jsp");
+                .getRequestDispatcher("/WEB-INF/views/allUser/pages/cart.jsp");
         dispatcher.forward(request, response);
 	}
 

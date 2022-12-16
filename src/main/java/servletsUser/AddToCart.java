@@ -65,8 +65,6 @@ public class AddToCart extends HttpServlet {
 		}
 		catch(Exception e){
            e.printStackTrace();
-		   response.sendRedirect(request.getContextPath()+"/SanPham?id="+maSP);
-           return;
 		}
 		
 		try
