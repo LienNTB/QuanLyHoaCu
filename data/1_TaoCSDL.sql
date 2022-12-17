@@ -268,6 +268,7 @@ alter table [dbo].[HoaDon]
 	add constraint FK_UserAndOrder
 	foreign key (MaKhachHang) 
 	REFERENCES [dbo].[NguoiDung](MaNguoiDung)
+Go
 
 CREATE TRIGGER newHoaDon_NewUser ON NguoiDung
 
