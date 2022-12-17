@@ -32,11 +32,7 @@ public class ChiTietHoaDonUtils
     public static List<ChiTietHoaDon> getChiTietHoaDonFromCart(Connection con) throws SQLException 
     {
         List<ChiTietHoaDon> result = new ArrayList<ChiTietHoaDon>();
-        PreparedStatement preparedStatement = con.prepareStatement("select cthd.MaHoaDon, cthd.MaSP,cthd.SoLuong,cthd.TongPhu,\r\n"
-        		+ "[dbo].getTenSP_ByMaSP(cthd.MaSP) as tenSP,\r\n"
-        		+ "[dbo].getPrice_ByMaSP(cthd.MaSP) as Gia\r\n"
-        		+ "from ChiTietHoaDon cthd inner join HoaDon on cthd.MaHoaDon = HoaDon.MaHoaDon\r\n"
-        		+ "and HoaDon.TrangThaiDonHang = 0 and HoaDon.MaKhachHang = ?");
+        PreparedStatement preparedStatement = con.prepareStatement("exec getCartList ?");
         String userID = commons.mainUser.getMaNguoiDung();
         preparedStatement.setString(1, userID);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -49,6 +45,8 @@ public class ChiTietHoaDonUtils
             chiTietHoaDon.setTongPhu(resultSet.getFloat("TongPhu"));
             chiTietHoaDon.setTenSP(resultSet.getString("tenSP"));
             chiTietHoaDon.setGia(resultSet.getInt("Gia"));
+            chiTietHoaDon.setHinh(resultSet.getString("Hinh"));
+            chiTietHoaDon.setLoaiSP(resultSet.getString("loaiSP"));
             result.add(chiTietHoaDon);
         }
         return result;

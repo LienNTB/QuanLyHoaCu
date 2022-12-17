@@ -47,29 +47,34 @@
                     <table class="table table-bordered verticle-middle">
                       <thead>
                         <tr>
+                          <th scope="col"></th>
                           <th scope="col">Mã Hóa Đơn</th>
-                          <th scope="col">Mã SP</th>
-                        
+                          <th scope="col">Tên Sản Phẩm</th>
+                          <th scope="col">Loại Sản Phẩm</th>                        
                           <th scope="col">Số lượng</th>
                           <th scope="col">Giá tiền</th>
                         </tr>
                       </thead>
                       <tbody>
                        <c:forEach items="${chitiethoadonList}" var="chitiethoadon">
-                        <tr>
+                        <tr >
+                          <td><img src="${chitiethoadon.hinh}"
+                            style="width:100px" alt=""></td>
                           <td>${chitiethoadon.maHoaDon}</td>
-                          <td>${chitiethoadon.maSP}</td>
+                          <td>${chitiethoadon.tenSP}</td>
                          
-                          <td>${chitiethoadon.soLuong}</td>
-                          <td>${chitiethoadon.tongPhu}</td>   
+                          <td>${chitiethoadon.loaiSP}</td>
+                          <td>${chitiethoadon.soLuong}</td>  
+                          <td>${chitiethoadon.gia} đ</td>    
                           <td >  
+                          
                           <span>
                               <a
                                 href="#"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Delete"
-                                ><i class="fa fa-close color-danger"></i></a
+                                >Delete <t/><i class="fa fa-close color-danger"></i></a
                             ></span>
                           </td>
                         </tr>
@@ -78,6 +83,7 @@
                     </table>
                   </div>
                   <a href="ThanhToan"><div class="checkout-btn">Thanh toán</div></a>
+      </div>
       </div>
       <!-- /container -->
     </div>
