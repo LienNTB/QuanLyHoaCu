@@ -87,6 +87,7 @@ public class ThanhToan extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("deprecation")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		if (!commons.isLogin())
@@ -107,16 +108,6 @@ public class ThanhToan extends HttpServlet {
 		String diaChiGiaoHang="";
 		String SoDienThoai="";
 		int tongTien=0;
-		try
-		{
-			tongTien=Integer.parseInt(request.getParameter("tongTien"));
-			
-		}
-		catch (NumberFormatException e)
-		{
-			e.printStackTrace();
-			
-		}
 		
 		try{
 			ghiChu=new String(request.getParameter("ghiChu").getBytes("ISO-8859-1"),"UTF-8");
@@ -129,13 +120,15 @@ public class ThanhToan extends HttpServlet {
 			e.printStackTrace();
 		}
 
-
-		HoaDon hd=new HoaDon( "DH."+commons.mainUser.getMaNguoiDung()+"."+new SimpleDateFormat("mmssyyyyMMdd").format(Calendar.getInstance().getTime()), tongTien,diaChiGiaoHang, commons.mainUser.getMaNguoiDung(), SoDienThoai, new Date(2023,01,01), false,false, false, ghiChu);
+		String newMaHD= "DH."+commons.mainUser.getMaNguoiDung()+"."+new SimpleDateFormat("mmssyyyyMMdd").format(Calendar.getInstance().getTime());
+		HoaDon hd=new HoaDon(newMaHD, tongTien,diaChiGiaoHang, commons.mainUser.getMaNguoiDung(), SoDienThoai, new Date(2023,01,01), false,false, false, ghiChu);
 		
 		try
 		{
+			ChiTietHoaDonUtils.changeMaCTHD(conn,"cart_"+commons.mainUser.getMaNguoiDung(),newMaHD );
+			tongTien= HoaDonUtils.getTongThanhToan(conn,newMaHD );
+			hd.setTongThanhToan(tongTien);
 			HoaDonUtils.insertHoaDon(conn,hd);
-			ChiTietHoaDonUtils.deleteCart(conn,commons.mainUser.getMaNguoiDung());
 		}
 		catch(SQLException e)
 				{
