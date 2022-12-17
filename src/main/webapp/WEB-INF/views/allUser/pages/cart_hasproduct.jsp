@@ -66,7 +66,7 @@
                           
                           <span>
                               <a
-                                href="#"
+                                href="DeleteFromCart?id=${chitiethoadon.maSP}"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Delete"
