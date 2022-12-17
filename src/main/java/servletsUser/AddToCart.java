@@ -47,10 +47,12 @@ public class AddToCart extends HttpServlet {
 		ChiTietHoaDon cthd=null;
 		SanPham sanpham=null;
 		String maSP=request.getParameter("id");
-		int soLuong=1;
+		String userID = commons.mainUser.getMaNguoiDung();
+		int soLuong=Integer.parseInt(request.getParameter("number"));
 		try
 		{
 			conn=DBConnection.getConnection();
+			SanPhamUtils.AddSanPhamToCart(conn, maSP, soLuong);
 		}
 		catch (SQLException | ClassNotFoundException e)
 		{
@@ -59,56 +61,7 @@ public class AddToCart extends HttpServlet {
 			return;
 		}
 		
-		try{
-			soLuong=Integer.parseInt(request.getParameter("number"));
-			
-		}
-		catch(Exception e){
-           e.printStackTrace();
-		}
 		
-		try
-		{
-			cthd=ChiTietHoaDonUtils.getChiTietHoaDonByMaHDMaSP(conn, "cart_"+commons.mainUser.getMaNguoiDung(),maSP);
-			sanpham=SanPhamUtils.GetSanPhamById(conn,maSP);
-			sanpham.OutPrint();
-		}
-		catch(SQLException esql) {
-			esql.printStackTrace();
-		}
-
-		if (sanpham==null)
-		{
-			response.sendRedirect(request.getContextPath()+"/Login");
-			return;
-		}
-		if (cthd!=null)
-		{
-			cthd.setSoLuong(cthd.getSoLuong()+soLuong);
-			cthd.setTongPhu(cthd.getSoLuong()*((beans.SanPham) sanpham).getGia());
-			try{
-				
-				ChiTietHoaDonUtils.updateChiTietHoaDon(conn,cthd);
-			}
-			catch(SQLException esql){
-                esql.printStackTrace();
-			}
-		}
-		else
-		{
-
-			cthd=new ChiTietHoaDon("cart_"+commons.mainUser.getMaNguoiDung(),maSP, soLuong, soLuong*sanpham.getGia());
-			try{
-				ChiTietHoaDonUtils.insertChiTietHoaDon(conn,cthd);
-			}
-			catch (SQLException esql)
-			{
-				esql.printStackTrace();
-				response.sendRedirect(request.getContextPath()+"/SanPham?id="+maSP);
-				return;
-			}
-
-		}
 		response.sendRedirect(request.getContextPath()+"/Cart_HasProduct");
 	}
 

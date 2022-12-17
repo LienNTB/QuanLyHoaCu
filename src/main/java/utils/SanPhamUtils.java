@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import beans.SanPham;
+import beans.commons;
 public class SanPhamUtils 
 {
     public static List<SanPham> getListSanPham(Connection conn) throws SQLException 
@@ -135,6 +136,16 @@ public class SanPhamUtils
             return sanPham;
         }
         return null;
+    }
+    public static void AddSanPhamToCart(Connection conn, String maSP, int soluong) throws SQLException 
+    {
+    	String sqlString="exec AddToCart_Proc ?,?,?";
+    	PreparedStatement stmt= conn.prepareStatement(sqlString);
+    	String userID = commons.mainUser.getMaNguoiDung();
+    	stmt.setString(1,userID);
+    	stmt.setString(2,maSP);
+    	stmt.setInt(3, soluong);
+    	stmt.executeUpdate();
     }
     public static void InsertSanPham(Connection conn, SanPham sanPham) throws SQLException 
     {

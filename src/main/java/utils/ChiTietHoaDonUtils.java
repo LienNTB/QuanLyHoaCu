@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import beans.ChiTietHoaDon;
+import beans.commons;
 public class ChiTietHoaDonUtils 
 {
     public static List<ChiTietHoaDon> getChiTietHoaDonByIdMaHD(Connection con, String MaHD) throws SQLException 
@@ -23,6 +24,30 @@ public class ChiTietHoaDonUtils
             chiTietHoaDon.setSoLuong(resultSet.getInt("SoLuong"));
             chiTietHoaDon.setTongPhu(resultSet.getFloat("TongPhu"));
             chiTietHoaDon.setTenSP(resultSet.getString("TenSP"));
+            chiTietHoaDon.setGia(resultSet.getInt("Gia"));
+            result.add(chiTietHoaDon);
+        }
+        return result;
+    }
+    public static List<ChiTietHoaDon> getChiTietHoaDonFromCart(Connection con) throws SQLException 
+    {
+        List<ChiTietHoaDon> result = new ArrayList<ChiTietHoaDon>();
+        PreparedStatement preparedStatement = con.prepareStatement("select cthd.MaHoaDon, cthd.MaSP,cthd.SoLuong,cthd.TongPhu,\r\n"
+        		+ "[dbo].getTenSP_ByMaSP(cthd.MaSP) as tenSP,\r\n"
+        		+ "[dbo].getPrice_ByMaSP(cthd.MaSP) as Gia\r\n"
+        		+ "from ChiTietHoaDon cthd inner join HoaDon on cthd.MaHoaDon = HoaDon.MaHoaDon\r\n"
+        		+ "and HoaDon.TrangThaiDonHang = 0 and HoaDon.MaKhachHang = ?");
+        String userID = commons.mainUser.getMaNguoiDung();
+        preparedStatement.setString(1, userID);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while(resultSet.next())
+        {
+            ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
+            chiTietHoaDon.setMaHoaDon(resultSet.getString("MaHoaDon"));
+            chiTietHoaDon.setMaSP(resultSet.getString("MaSP"));
+            chiTietHoaDon.setSoLuong(resultSet.getInt("SoLuong"));
+            chiTietHoaDon.setTongPhu(resultSet.getFloat("TongPhu"));
+            chiTietHoaDon.setTenSP(resultSet.getString("tenSP"));
             chiTietHoaDon.setGia(resultSet.getInt("Gia"));
             result.add(chiTietHoaDon);
         }

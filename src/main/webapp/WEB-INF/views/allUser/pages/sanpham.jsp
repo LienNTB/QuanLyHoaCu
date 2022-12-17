@@ -17,6 +17,7 @@ function AddToCart()
 	if(message) {		
 	alert("Thêm vào giỏ hàng thành công!")
 	window.location.href="AddToCart?id="+id+"&number="+soluong;
+	alert(soluong);
 	}
 }
 </script>
