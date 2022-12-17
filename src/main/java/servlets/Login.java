@@ -88,7 +88,7 @@ public class Login extends HttpServlet {
 		{
 			System.out.println(user.getRole());
 			commons.mainUser=user;
-			String testAfterLogin_customer="HomePage";
+			String testAfterLogin_customer="defaultHomePage";
 			String testAfterLogin_admin="Admin_HomePage";
 			if (user.getRole().equals("USER"))
 				response.sendRedirect(request.getContextPath()+"/"+testAfterLogin_customer);

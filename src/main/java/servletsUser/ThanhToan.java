@@ -58,23 +58,17 @@ public class ThanhToan extends HttpServlet {
 			e.printStackTrace();
 		}
 		List<ChiTietHoaDon> cthdList=null;
+		float tong=0;
 		try
 		{
 			cthdList=ChiTietHoaDonUtils.getChiTietHoaDonByIdMaHD(conn,"cart_"+commons.mainUser.getMaNguoiDung());
+			tong=HoaDonUtils.getTongThanhToan(conn,"cart_"+commons.mainUser.getMaNguoiDung());
 		}
 		catch(SQLException e)
         {
             e.printStackTrace();
 		}
 		System.out.print(cthdList.size());
-		float tong=0;
-		if (cthdList.size()!=0)
-		{
-			for (ChiTietHoaDon c : cthdList)
-			{
-				tong=tong+c.getTongPhu();
-			}
-		}
 		request.setAttribute("tongTien",tong);
 		request.setAttribute("chiTietHoaDon",cthdList);
 		

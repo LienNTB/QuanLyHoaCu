@@ -122,27 +122,32 @@ pageEncoding="UTF-8"%>
 								<h3 class="title">Đơn hàng của bạn</h3>
 							</div>
 							<div class="order-summary">
-								<div class="order-col">
-									<div>
-										<strong>SẢN PHẨM</strong>
-									</div>
-									<div>
-										<strong>SỐ LƯỢNG</strong>
-									</div>
-									<div>
-										<strong>TỔNG TIỀN</strong>
-									</div>
-								</div>
-								<c:forEach var ="cthd" items="${ chiTietHoaDon}">
-									<div class="order-products">
-										<div class="order-col">
-											<div>${cthd.tenSP}</div>
-											<div>${cthd.soLuong}</div>
-											<div>${cthd.tongPhu }</div>
-											
-										</div>
-									</div>
-								</c:forEach>
+								<table>
+									<tr class="order-col">
+										<th>
+											<strong>SẢN PHẨM</strong>
+										</th>
+										<th>
+											<strong>SỐ LƯỢNG</strong>
+										</th>
+										<th>
+											<strong>TỔNG TIỀN</strong>
+										</th>
+									
+									</tr>
+									<tr>
+										<c:forEach var ="cthd" items="${ chiTietHoaDon}">
+											<tr class="order-products">
+												<div class="order-col">
+													<div>${cthd.tenSP}</div>
+													<div>${cthd.soLuong}</div>
+													<div>${cthd.tongPhu }</div>
+													
+												</div>
+											</div>
+										</c:forEach>
+									</tr>
+								</table>
 								<div class="order-col">
 									<div>Shiping</div>
 									<div>

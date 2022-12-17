@@ -59,7 +59,7 @@ public class Cart_HasProduct extends HttpServlet {
 		}
 		servletsUser.common.setUpForHeader(conn, request, response);
 		// set attribute
-		if (list.size()==0)
+		if (list==null)
 		{
 	        RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/cart_noproduct.jsp");

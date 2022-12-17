@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.LoaiSanPham;
+import conn.DBConnection;
 import utils.LoaiSanPhamUtils;
 
 /**
@@ -52,4 +53,6 @@ public class common extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	
+	
 }

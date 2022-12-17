@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.SanPham;
+import beans.commons;
 import conn.DBConnection;
 import utils.SanPhamUtils;
 
@@ -60,7 +61,7 @@ public class HomePage extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 	private void setupVariables(Connection conn, HttpServletRequest request,  HttpServletResponse response) throws  ServletException, IOException {
 		int index_page=1;
@@ -75,35 +76,43 @@ public class HomePage extends HttpServlet {
 		{
 			e.printStackTrace();
 		}
-		try
-		{
-			index_page=Integer.parseInt(request.getParameter("ppp"));
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
 		List<SanPham> list = null;
 	
 		List <SanPham> forwardList=null;
 		List <SanPham> bestSeller=null;
 		try {
-			list = SanPhamUtils.getListSanPham(conn);
-			bestSeller=SanPhamUtils.getBestSeller(conn,4);
+			if (commons.homePage.getChedo()==0)
+			{
+				list = SanPhamUtils.getListSanPham(conn);
+				bestSeller=SanPhamUtils.getBestSeller(conn,4);
+				
+			}
+			else
+			{
+				list=SanPhamUtils.getListSanPhamByMaLSPandDataInput(conn,commons.homePage.getMaLSP(), commons.homePage.getDataInput());
+				bestSeller=SanPhamUtils.getBestSellerByLSP(conn,4,commons.homePage.getMaLSP());
+			}
+		
 		} catch (SQLException e) {	
 			e.printStackTrace();	
 		}
-		
-		maxPage=list.size()/maxPage+1;
+		System.out.print(list.size());
+		SPperPage=Math.min(list.size(), SPperPage);
+		maxPage=list.size()/SPperPage+1;
 		index_page=Math.min(index_page, maxPage);
 		if (index_page<=1)
 			forwardList=list.subList(0, SPperPage);
 		else
 			forwardList=list.subList((index_page-1)*SPperPage,Math.min( (index_page)*SPperPage,list.size()));
+		if (commons.homePage.getChedo()==0 || commons.homePage.getMaLSP().equals("%%"))
+			request.setAttribute("defaulLSPFind", "lsp00");
+		else
+			request.setAttribute("defaulLSPFind", commons.homePage.getMaLSP());
 		request.setAttribute("sanPhamList", forwardList);
 		request.setAttribute("maxPage",maxPage);
 		request.setAttribute("index",index_page);
 		request.setAttribute("bestSeller",bestSeller);
+	
 		request.setAttribute("isHomePage", false);
 	}
 

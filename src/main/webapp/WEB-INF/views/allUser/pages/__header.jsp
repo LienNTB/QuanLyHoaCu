@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!-- Google font -->
 <link
 	href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
@@ -58,7 +57,7 @@
 				<!-- LOGO -->
 				<div class="col-md-3">
 					<div class="header-logo">
-						<a href="#" class="logo"> <img
+						<a href="defaultHomePage" class="logo"> <img
 							src="/QUANLYHOACU/static/allUser/./image/logo4.png" width="153"
 							height="70" border="0" alt="">
 						</a>
@@ -67,20 +66,20 @@
 				<!-- /LOGO -->
 
 				<!-- SEARCH BAR -->
-				<div class="col-md-6">
-					<div class="header-search">
-						<form>
-							<select class="input-select" name="loaiSanPhamFind">
-								<option value="0">Tất cả các loại</option>
-								<c:forEach var="lsp" items="${loaiSanPham}">
-									<option value="${lsp.maLoaiSP}">${lsp.tenLoaiSanPham}</option>
-								</c:forEach>
-							</select> <input class="input" placeholder="Nhập sản phẩm cần tìm">
-							<button class="search-btn">Tìm kiếm</button>
 
-						</form>
+					<div class="col-md-6">
+						<div class="header-search">
+							<form action="FindProduct" method="post">
+								<select class="input-select" name="loaiSanPhamFind">
+										<c:forEach var="lsp" items="${loaiSanPham}">
+											<option value="${lsp.maLoaiSP}" <c:if test="${lsp.maLoaiSP.equals(defaulLSPFind)}">selected</c:if>>${lsp.tenLoaiSanPham}</option>
+									</c:forEach>
+								</select> <input name="inputFind" class="input" placeholder="Nhập sản phẩm cần tìm">
+								<button class="search-btn">Tìm kiếm</button>
+	
+							</form>
+						</div>
 					</div>
-				</div>
 				<!-- /SEARCH BAR -->
 
 				<!-- ACCOUNT -->
@@ -123,10 +122,8 @@
 		<div id="responsive-nav">
 			<!-- NAV -->
 			<ul class="main-nav nav navbar-nav">
-				<li class="active"><a href="HomePage">TRANG CHỦ</a></li>
-				<li><a href="#">Hot Deals</a></li>
 				<c:forEach var="lsp" items="${loaiSanPham}">
-					<li><a href="#">${lsp.tenLoaiSanPham }</a></li>
+					<li  <c:if test="${lsp.maLoaiSP.equals(defaulLSPFind)}">class="active"</c:if>><a href="FindProduct?loaiSanPhamFind=${lsp.maLoaiSP }">${lsp.tenLoaiSanPham }</a></li>
 				</c:forEach>
 			</ul>
 			<!-- /NAV -->

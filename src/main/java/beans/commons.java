@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 public class commons {
 	public static String admin_url="~/admin/";
 	public static User mainUser=null;
+	public static HomePage homePage=new HomePage(0);
 	public static String role;
 	public static boolean checkAdmin()
 	{
