@@ -64,7 +64,7 @@
                           <td>${chitiethoadon.tenSP}</td>
                          
                           <td>${chitiethoadon.loaiSP}</td>
-                          <td>${chitiethoadon.soLuong}</td>  
+                          <td>${chitiethoadon.tongPhu}</td>  
                           <td>${chitiethoadon.gia} đ</td>    
                           <td >  
                           
