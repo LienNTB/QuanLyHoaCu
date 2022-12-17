@@ -61,7 +61,7 @@ public class ThanhToan extends HttpServlet {
 		float tong=0;
 		try
 		{
-			cthdList=ChiTietHoaDonUtils.getChiTietHoaDonByIdMaHD(conn,"cart_"+commons.mainUser.getMaNguoiDung());
+			cthdList=ChiTietHoaDonUtils.getChiTietHoaDonByMaHD(conn,"cart_"+commons.mainUser.getMaNguoiDung());
 			tong=HoaDonUtils.getTongThanhToan(conn,"cart_"+commons.mainUser.getMaNguoiDung());
 		}
 		catch(SQLException e)
@@ -119,10 +119,10 @@ public class ThanhToan extends HttpServlet {
 		
 		try
 		{
-			ChiTietHoaDonUtils.changeMaCTHD(conn,"cart_"+commons.mainUser.getMaNguoiDung(),newMaHD );
-			tongTien= HoaDonUtils.getTongThanhToan(conn,newMaHD );
+			tongTien= HoaDonUtils.getTongThanhToan(conn,"cart_"+commons.mainUser.getMaNguoiDung() );
 			hd.setTongThanhToan(tongTien);
 			HoaDonUtils.insertHoaDon(conn,hd);
+			ChiTietHoaDonUtils.changeMaCTHD(conn,"cart_"+commons.mainUser.getMaNguoiDung(),newMaHD );
 		}
 		catch(SQLException e)
 				{
@@ -130,10 +130,11 @@ public class ThanhToan extends HttpServlet {
 					response.sendRedirect(request.getContextPath()+"/ThanhToan?");
 		            return;
 				}
-				response.setContentType("text/html;charset=UTF-8");
-				RequestDispatcher dispatcher = request.getServletContext()
-						.getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
-				dispatcher.forward(request, response);
+		servletsUser.common.setUpForHeader(conn,request,response);
+		response.setContentType("text/html;charset=UTF-8");
+		RequestDispatcher dispatcher = request.getServletContext()
+				.getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
+		dispatcher.forward(request, response);
 		
 	}
 

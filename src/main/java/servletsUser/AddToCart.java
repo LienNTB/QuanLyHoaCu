@@ -11,9 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.ChiTietHoaDon;
+import beans.HoaDon;
 import beans.commons;
 import conn.DBConnection;
 import utils.ChiTietHoaDonUtils;
+import utils.HoaDonUtils;
 import utils.SanPhamUtils;
 import beans.SanPham;
 
@@ -44,15 +46,13 @@ public class AddToCart extends HttpServlet {
 			return;
 		}
 		Connection conn=null;
-		ChiTietHoaDon cthd=null;
-		SanPham sanpham=null;
+		String maHD="cart_"+commons.mainUser.getMaNguoiDung();
 		String maSP=request.getParameter("id");
-		String userID = commons.mainUser.getMaNguoiDung();
 		int soLuong=Integer.parseInt(request.getParameter("number"));
 		try
 		{
 			conn=DBConnection.getConnection();
-			SanPhamUtils.AddSanPhamToCart(conn, maSP, soLuong);
+			// SanPhamUtils.AddToCart(conn, maSP, soLuong);
 		}
 		catch (SQLException | ClassNotFoundException e)
 		{
@@ -60,8 +60,49 @@ public class AddToCart extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/SanPham?id="+maSP);
 			return;
 		}
+		// tạo Chi Tiết Hóa Đơn
+		ChiTietHoaDon cthd=null;
+		SanPham sp=null;
+		// kiểm tra xem sản phẩm đã có trong cart chưa
 		
-		
+		try {
+            cthd=ChiTietHoaDonUtils.getChiTietHoaDonByMaHDMaSP(conn,maHD, maSP);
+			sp=SanPhamUtils.GetSanPhamById(conn,maSP);
+			
+		}
+		catch (SQLException e) {
+            e.printStackTrace();
+        }
+		///nếu sản phẩm không có thì quay lại trang chủ
+		if(sp==null)
+        {
+            response.sendRedirect(request.getContextPath()+"/defaultHomePage");
+            return;
+        }
+		//// nếu sản phẩm chưa có trong cart thì thêm vào cart
+		if (cthd==null)
+		{
+			cthd=new ChiTietHoaDon (maHD, maSP, soLuong, soLuong*sp.getGia());
+			try
+			{
+				ChiTietHoaDonUtils.insertChiTietHoaDon(conn,cthd);
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		else //nếu đã có trong cart thì cập nhật số lượnng
+		{
+			cthd.setSoLuong(cthd.getSoLuong()+soLuong);
+			cthd.setTongPhu(cthd.getSoLuong()*sp.getGia());
+			try {
+				ChiTietHoaDonUtils.updateChiTietHoaDon(conn,cthd);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		response.sendRedirect(request.getContextPath()+"/Cart_HasProduct");
 	}
 

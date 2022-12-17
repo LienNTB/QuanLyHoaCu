@@ -406,11 +406,11 @@ function AddToCart()
 									</button>
 								</div>
 							</div>
-							<div class="add-to-cart">
+							<!-- <div class="add-to-cart">
 								<button class="add-to-cart-btn" onclick="AddToCart()">
 									<i class="fa fa-shopping-cart"></i> add to cart
 								</button>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<!-- <div class="clearfix visible-sm visible-xs"></div> -->

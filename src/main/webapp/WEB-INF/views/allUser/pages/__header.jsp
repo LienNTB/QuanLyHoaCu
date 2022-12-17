@@ -86,18 +86,18 @@
 				<div class="col-md-3 clearfix">
 					<div class="header-ctn">
 						<!-- Wishlist -->
-						<div>
+						<!-- <div>
 							<a href="#"> <i class="fa fa-heart-o"></i> <span>Yêu thích</span>
 								<div class="qty">2</div>
 							</a>
-						</div>
+						</div> -->
 						<!-- /Wishlist -->
 
 						<!-- Cart -->
 						<div class="dropdown">
 							<a href="Cart_HasProduct"> 
 								<i class="fa fa-shopping-cart"></i> <span>Giỏ hàng</span>
-								<div class="qty">3</div>
+								<div class="qty">${gioHang.size()}</div>
 							</a>
 						</div>
 						<!-- /Cart -->

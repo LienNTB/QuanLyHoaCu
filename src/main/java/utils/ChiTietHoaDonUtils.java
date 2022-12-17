@@ -10,10 +10,10 @@ import beans.ChiTietHoaDon;
 import beans.commons;
 public class ChiTietHoaDonUtils 
 {
-    public static List<ChiTietHoaDon> getChiTietHoaDonByIdMaHD(Connection con, String MaHD) throws SQLException 
+    public static List<ChiTietHoaDon> getChiTietHoaDonByMaHD(Connection con, String MaHD) throws SQLException 
     {
         List<ChiTietHoaDon> result = new ArrayList<ChiTietHoaDon>();
-        PreparedStatement preparedStatement = con.prepareStatement("SELECT hd.MaHoaDon, hd.MaSP, hd.SoLuong, hd.TongPhu,sp.TenSP, sp.Gia  FROM ChiTietHoaDon hd, SanPham sp WHERE hd.MaHoaDon=?  and sp.MaSP=hd.MaSP");
+        PreparedStatement preparedStatement = con.prepareStatement("SELECT hd.MaHoaDon, hd.MaSP, hd.SoLuong, hd.TongPhu,sp.TenSP, sp.Gia,sp.Hinh FROM ChiTietHoaDon hd, SanPham sp WHERE hd.MaHoaDon=?  and sp.MaSP=hd.MaSP");
         preparedStatement.setString(1, MaHD);
         ResultSet resultSet = preparedStatement.executeQuery();
         while(resultSet.next())
@@ -25,10 +25,12 @@ public class ChiTietHoaDonUtils
             chiTietHoaDon.setTongPhu(resultSet.getFloat("TongPhu"));
             chiTietHoaDon.setTenSP(resultSet.getString("TenSP"));
             chiTietHoaDon.setGia(resultSet.getInt("Gia"));
+            chiTietHoaDon.setHinh(resultSet.getString("Hinh"));
             result.add(chiTietHoaDon);
         }
         return result;
     }
+
     public static List<ChiTietHoaDon> getChiTietHoaDonFromCart(Connection con) throws SQLException 
     {
         List<ChiTietHoaDon> result = new ArrayList<ChiTietHoaDon>();

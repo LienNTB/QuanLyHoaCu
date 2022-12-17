@@ -53,7 +53,8 @@ public class Cart_HasProduct extends HttpServlet {
 		}
 		List<ChiTietHoaDon> list = null;
 		try {
-			list = ChiTietHoaDonUtils.getChiTietHoaDonFromCart(conn);
+			// list = ChiTietHoaDonUtils.getChiTietHoaDonFromCart(conn);
+			list=ChiTietHoaDonUtils.getChiTietHoaDonByMaHD(conn, "cart_"+commons.mainUser.getMaNguoiDung());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

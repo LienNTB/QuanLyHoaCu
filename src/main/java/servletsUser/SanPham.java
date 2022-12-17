@@ -79,9 +79,9 @@ public class SanPham extends HttpServlet {
 		else
 			System.out.print("Không ổn rồi Đại vương ơi!");
 		System.out.print(spRelated);
-		servletsUser.common.setUpForHeader(conn,request,response);
 		request.setAttribute("sanPham",sp);
 		request.setAttribute("spRelated",spRelated);
+		servletsUser.common.setUpForHeader(conn,request,response);
 		response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/sanpham.jsp");

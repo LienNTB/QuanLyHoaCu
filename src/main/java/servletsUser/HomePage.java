@@ -98,12 +98,16 @@ public class HomePage extends HttpServlet {
 		}
 		System.out.print(list.size());
 		SPperPage=Math.min(list.size(), SPperPage);
-		maxPage=list.size()/SPperPage+1;
-		index_page=Math.min(index_page, maxPage);
-		if (index_page<=1)
-			forwardList=list.subList(0, SPperPage);
-		else
-			forwardList=list.subList((index_page-1)*SPperPage,Math.min( (index_page)*SPperPage,list.size()));
+
+		if (SPperPage>=1)
+		{
+			maxPage=list.size()/SPperPage+1;
+			index_page=Math.min(index_page, maxPage);
+			if (index_page<=1)
+				forwardList=list.subList(0, SPperPage);
+			else
+				forwardList=list.subList((index_page-1)*SPperPage,Math.min( (index_page)*SPperPage,list.size()));
+		}
 		if (commons.homePage.getChedo()==0 || commons.homePage.getMaLSP().equals("%%"))
 			request.setAttribute("defaulLSPFind", "lsp00");
 		else

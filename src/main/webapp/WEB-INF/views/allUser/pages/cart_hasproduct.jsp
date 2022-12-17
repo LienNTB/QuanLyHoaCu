@@ -48,9 +48,7 @@
                       <thead>
                         <tr>
                           <th scope="col"></th>
-                          <th scope="col">Mã Hóa Đơn</th>
-                          <th scope="col">Tên Sản Phẩm</th>
-                          <th scope="col">Loại Sản Phẩm</th>                        
+                          <th scope="col">Tên Sản Phẩm</th>                      
                           <th scope="col">Số lượng</th>
                           <th scope="col">Giá tiền</th>
                         </tr>
@@ -60,12 +58,10 @@
                         <tr >
                           <td><img src="${chitiethoadon.hinh}"
                             style="width:100px" alt=""></td>
-                          <td>${chitiethoadon.maHoaDon}</td>
                           <td>${chitiethoadon.tenSP}</td>
-                         
-                          <td>${chitiethoadon.loaiSP}</td>
+                 
                           <td>${chitiethoadon.soLuong}</td>  
-                          <td>${chitiethoadon.tongPhu} đ</td>    
+                          <td>${chitiethoadon.tongPhu}</td>    
                           <td >  
                           
                           <span>

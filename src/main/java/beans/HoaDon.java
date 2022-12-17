@@ -1,6 +1,6 @@
 	package beans;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class HoaDon {
 	private String maHoaDon;
@@ -13,8 +13,21 @@ public class HoaDon {
 	private boolean trangThaiDonHang;
 	private	boolean trangThaiThanhToan;
 	private boolean trangThaiGiaoHang;
-
+	
 	public HoaDon(){}
+	public void  createCart (String maNguoiDung)
+	{
+		this.maHoaDon ="cart_"+maNguoiDung ;
+        this.tongThanhToan = 0;
+        this.diaChiGiaoHang = "NI";
+		this.soDienThoai = "NI";
+		this.maKhachHang = maNguoiDung;
+		this.thoiGianGiaoHang = new Date(2023,01,01);
+		this.trangThaiDonHang = false;
+		this.trangThaiGiaoHang = false;
+		this.trangThaiThanhToan = false;
+		this.ghiChu="NI";
+	}
 	public HoaDon( String maHoaDon, int tongThanhToan, String diaChiGiaoHang, String maKhachHang, String soDienThoai, Date thoiGianGiaoHang, boolean trangThaiDonHang, boolean trangThaiGiaoHang, boolean trangThaiThanhToan, String ghiChu)
 	{
 		this.maHoaDon = maHoaDon;
