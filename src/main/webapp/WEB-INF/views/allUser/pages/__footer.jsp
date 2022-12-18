@@ -63,10 +63,9 @@
 					<div class="footer">
 						<h3 class="footer-title">Danh mục sản phẩm</h3>
 						<ul class="footer-links">
-							<c:forEach var="lsp" items="${loaiSanPham}">
-								<li><a href="#">${lsp.tenLoaiSanPham}</a></li>
-							</c:forEach>
-		
+						<c:forEach var="lsp" items="${loaiSanPham}">
+							<li><a href="FindProduct?loaiSanPhamFind=${lsp.maLoaiSP }">${lsp.tenLoaiSanPham}</a></li>
+						</c:forEach>
 						</ul>
 					</div>
 				</div>
@@ -91,7 +90,7 @@
 						<h3 class="footer-title">DỊCH VỤ</h3>
 						<ul class="footer-links">
 							<li><a href="#">Tài khoản của bạn</a></li>
-							<li><a href="#">Xem giỏ hàng</a></li>
+							<li><a href="Cart">Xem giỏ hàng</a></li>
 							<li><a href="#">Danh sách yêu thích</a></li>
 							<li><a href="#">Theo dõi đơn hàng</a></li>
 							<li><a href="#">Trợ giúp</a></li>
