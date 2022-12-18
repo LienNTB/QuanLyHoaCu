@@ -95,7 +95,7 @@
 
 						<!-- Cart -->
 						<div class="dropdown">
-							<a href="Cart_HasProduct"> 
+							<a href="Cart"> 
 								<i class="fa fa-shopping-cart"></i> <span>Giỏ hàng</span>
 								<div class="qty">${gioHang.size()}</div>
 							</a>

@@ -15,9 +15,7 @@ function AddToCart()
 	var soluong=document.getElementById("number").value;
 	var message=confirm("Thêm sản phẩm "+ id + " vào giỏ hàng?");
 	if(message) {		
-	alert("Thêm vào giỏ hàng thành công!")
 	window.location.href="AddToCart?id="+id+"&number="+soluong;
-	alert(soluong);
 	}
 }
 </script>

@@ -103,7 +103,7 @@ public class AddToCart extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		response.sendRedirect(request.getContextPath()+"/Cart_HasProduct");
+		response.sendRedirect(request.getContextPath()+"/Cart");
 	}
 
 	/**
