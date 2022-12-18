@@ -79,8 +79,10 @@ public class Login extends HttpServlet {
 				errorString=e.getMessage();
 			}
 		}
+		request.setAttribute("loginError", errorString);
 		if (hasError)
 		{
+			
 			RequestDispatcher dispatcher= this.getServletContext().getRequestDispatcher("/WEB-INF/views/allUser/pages/login.jsp");
 			dispatcher.forward(request,response);
 		}

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,6 +48,11 @@
     </script>
   </head>
   <body>
+  	<c:if test="${not empty loginError}">
+	    <script type="text/javascript">
+		         alert("${loginError}");
+	    </script>
+	</c:if>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
         <form action="SignUp"  method="post" name="SignUpForm" onsubmit="validateSignUpForm()">
