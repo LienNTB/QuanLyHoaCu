@@ -60,21 +60,11 @@ public class Cart extends HttpServlet {
 		}
 		servletsUser.common.setUpForHeader(conn, request, response);
 		// set attribute
-		if (list==null)
-		{
-	        RequestDispatcher dispatcher = request.getServletContext()
-	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/cart.jsp");
-	        dispatcher.forward(request, response);
-			
-		}
-		else
-		{
-			request.setAttribute("chitiethoadonList", list);
-			response.setContentType("text/html;charset=UTF-8");
-	        RequestDispatcher dispatcher = request.getServletContext()
-	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/cart.jsp");
-	        dispatcher.forward(request, response);
-		}
+		request.setAttribute("chitiethoadonList", list);
+		response.setContentType("text/html;charset=UTF-8");
+        RequestDispatcher dispatcher = request.getServletContext()
+                .getRequestDispatcher("/WEB-INF/views/allUser/pages/cart.jsp");
+        dispatcher.forward(request, response);
 	}
 
 	/**
