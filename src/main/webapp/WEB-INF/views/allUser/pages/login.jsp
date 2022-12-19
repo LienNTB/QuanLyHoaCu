@@ -48,9 +48,9 @@
     </script>
   </head>
   <body>
-  	<c:if test="${not empty loginError}">
+  	<c:if test="${not empty notification}">
 	    <script type="text/javascript">
-		         alert("${loginError}");
+		         alert("${notification}");
 	    </script>
 	</c:if>
     <div class="container" id="container">
@@ -71,7 +71,7 @@
           <h1>Sign in</h1>
           <input type="text" placeholder="Username" name="Username" />
           <input type="password" placeholder="Password" name="Password" />
-          <a href="#">Forgot your password?</a>
+          <a href="DoiMatKhau">Đổi mật khẩu</a>
           <button>Sign In</button>
         </form>
       </div>

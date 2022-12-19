@@ -12,13 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.User;
+import beans.commons;
 import conn.DBConnection;
 import utils.userUtils;
 
 /**
  * Servlet implementation class Profile
  */
-@WebServlet("/Profile")
+@WebServlet(name="/Profile",urlPatterns= {"/Profile"})
 public class Profile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,21 +35,24 @@ public class Profile extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (!servletsUser.common.preCheckLogin(request,response))
+			return;
 		Connection conn = null;
 		try {
 			conn = DBConnection.getConnection();
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}	
-		String userID =request.getParameter("id");
-		User user = new User();
+		//sẵn tiện refesh thông tin người dùng
+		String userID =commons.mainUser.getMaNguoiDung();
 		try {
-			user = userUtils.getUserById(conn, userID);
+			commons.mainUser = userUtils.getUserById(conn, userID);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		request.setAttribute("user",user);
+		servletsUser.common.setUpForHeader(conn,request,response);
+		request.setAttribute("user",commons.mainUser);
 		RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/profile.jsp");
 	        dispatcher.forward(request, response);

@@ -80,7 +80,7 @@ public class Login extends HttpServlet {
 				errorString=e.getMessage();
 			}
 		}
-		request.setAttribute("loginError", errorString);
+		request.setAttribute("notification", errorString);
 		if (hasError)
 		{
 			

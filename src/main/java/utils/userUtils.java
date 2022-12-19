@@ -104,6 +104,13 @@ public class userUtils {
         stmt.executeUpdate();
 
     }
+    public static void updateMatKhau(Connection conn, User user) throws SQLException {
+        PreparedStatement stmt=conn.prepareStatement("UPDATE NguoiDung SET MatKhau=? where MaNguoiDung=?");
+        stmt.setString(1,user.getMatKhau());
+        stmt.setString(2,user.getMaNguoiDung());
+        stmt.executeUpdate();
+        
+    }
 
 
 }

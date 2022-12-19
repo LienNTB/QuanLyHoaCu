@@ -46,29 +46,14 @@
     <![endif]-->
   </head>
   <body>
+    <c:if test="${not empty notification}">
+	    <script type="text/javascript">
+		         alert("${notification}");
+	    </script>
+	</c:if>
     <!-- HEADER -->
    <%@ include file="__header.jsp" %>
     <!-- /HEADER -->
-
-    <!-- NAVIGATION -->
-    <nav id="navigation">
-      <!-- container -->
-      <div class="container">
-        <!-- responsive-nav -->
-        <div id="responsive-nav">
-          <!-- NAV -->
-          <ul class="main-nav nav navbar-nav">
-            <li class="active"><a href="#">Trang chủ</a></li>
-            <li><a href="#">Quản lí sản phẩm</a></li>
-            <li><a href="#">Quản lí hóa đơn</a></li>
-          </ul>
-          <!-- /NAV -->
-        </div>
-        <!-- /responsive-nav -->
-      </div>
-      <!-- /container -->
-    </nav>
-    <!-- /NAVIGATION -->
 
     <!-- BREADCRUMB -->
     <div id="breadcrumb" class="section">
@@ -79,7 +64,7 @@
           <div class="col-md-12">
             <h3 class="breadcrumb-header">User Profile</h3>
             <ul class="breadcrumb-tree">
-              <li><a href="#">Trang chủ</a></li>
+              <li><a href="defaultHomePage">Trang chủ</a></li>
               <li class="active">User Profile</li>
             </ul>
           </div>
@@ -93,55 +78,32 @@
     <!-- SECTION -->
     <div class="section">
       <!-- container -->
+
       <div class="container user-info">
+      <form action="capNhatThongTin" method="post">
         <div>
-          <label class="desc" id="title1" for="Field1">User ID:</label>
-          <div>
-            <input
-              id="Field1"
-              name="Field1"
-              type="text"
-              class="field text fn"
-              value="${user.maNguoiDung}"
-              size="8"
-              tabindex="1"
-            />
-          </div>
+          <label class="desc" id="title3" for="Field3">Tên đăng nhập: <a  style="color:red;">${user.tenDangNhap }</a> </label>
+         
         </div>
         <div>
-          <label class="desc" id="title3" for="Field3">Username: </label>
+          <label class="desc" id="title3" for="Field3">Họ tên:</label>
           <div>
             <input
-              id="Field3"
-              name="Field3"
+              name="hoTen"
               type="text"
               spellcheck="false"
-              value="${user.tenDangNhap}"
+              value="${user.hoTen}"
               maxlength="255"
               tabindex="3"
             />
           </div>
         </div>
         <div>
-          <label class="desc" id="title3" for="Field3"> Password: </label>
+          <label class="desc" id="title3" for="Field3">Ngày sinh:</label>
           <div>
             <input
-              id="Field4"
-              name="Field3"
-              type="password"
-              spellcheck="false"
-              value="${user.matKhau}"
-              maxlength="255"
-              tabindex="3"
-            />
-          </div>
-        </div>
-        <div>
-          <label class="desc" id="title3" for="Field3">Date of Birth:</label>
-          <div>
-            <input
-              id="Field4"
-              name="Field3"
+  
+              name="ngaySinh"
               type="date"
               spellcheck="false"
               value="${user.ngaySinh}"
@@ -151,12 +113,12 @@
           </div>
         </div>
         <div>
-          <label class="desc" id="title3" for="Field3">User Address: </label>
+          <label class="desc" id="title3" for="Field3">Địa chỉ: </label>
           <div>
             <input
-              id="Field4"
-              name="Field3"
-              type="email"
+    
+              name="diaChi"
+              type="text"
               spellcheck="false"
               value="${user.diaChi}"
               maxlength="255"
@@ -164,6 +126,12 @@
             />
           </div>
         </div>
+        <br></br>
+        <div>	
+			<button><a>Cập nhật</a></button>
+        </div>
+      </form>
+		<button><a href="DoiMatKhau">Đổi mật khẩu</a></button>
       </div>
       <!-- /container -->
     </div>
