@@ -13,6 +13,7 @@ public class HoaDon {
 	private boolean trangThaiDonHang;
 	private	boolean trangThaiThanhToan;
 	private boolean trangThaiGiaoHang;
+	private String hoten;
 	
 	public HoaDon(){}
 	public void  createCart (String maNguoiDung)
@@ -157,6 +158,12 @@ public class HoaDon {
 		
 		
 		System.out.println("TrangThaiGiaoHang:"+trangThaiGiaoHang);
+	}
+	public String getHoten() {
+		return hoten;
+	}
+	public void setHoten(String hoten) {
+		this.hoten = hoten;
 	}
 	
 }

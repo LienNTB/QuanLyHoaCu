@@ -67,6 +67,7 @@ public class Login extends HttpServlet {
 			}
 			try{
 				user=userUtils.findUser(conn,username,password);
+				
 				if (user == null){
 					hasError = true;
 					errorString="Username or password is invalid.";

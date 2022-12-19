@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import beans.HoaDon;
+import beans.commons;
 public class HoaDonUtils {
     public static List<HoaDon> getListHoaDon(Connection conn) throws SQLException {
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
@@ -30,13 +31,15 @@ public class HoaDonUtils {
         return hoaDonList;
         
     }
-    public static List<HoaDon> getHoaDonByIdMaKH(Connection conn, String MaKH) throws SQLException 
+    public static List<HoaDon> getHoaDonByIdMaKH(Connection conn) throws SQLException 
     {
 
 
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
-        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,, TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaKhachHang=?");
-        pst.setString(1, MaKH);
+        String maKH = commons.mainUser.getMaNguoiDung();
+        System.out.println(maKH);
+        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaKhachHang=?");
+        pst.setString(1, maKH);
         ResultSet rs = pst.executeQuery();
         while (rs.next()) 
         {
@@ -56,7 +59,8 @@ public class HoaDonUtils {
         return hoaDonList;
     }
     public static HoaDon getHoaDonById (Connection conn, String MaHD) throws SQLException {
-        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang, TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaHoaDon=?");
+        PreparedStatement pst = conn.prepareStatement("select * from HoaDon inner join NguoiDung on HoaDon.MaKhachHang = NguoiDung.MaNguoiDung\r\n"
+        		+ "and HoaDon.MaHoaDon = ?");
         pst.setString(1, MaHD);
         ResultSet rs = pst.executeQuery();
         if (rs.next())
@@ -72,6 +76,7 @@ public class HoaDonUtils {
             hoaDon.setTrangThaiDonHang(rs.getBoolean("TrangThaiDonHang"));
             hoaDon.setTrangThaiGiaoHang(rs.getBoolean("TrangThaiGiaoHang"));
             hoaDon.setTrangThaiThanhToan(rs.getBoolean("TrangThaiThanhToan"));
+            hoaDon.setHoten(rs.getString("HoTen"));
             return hoaDon;
         }
         return null;

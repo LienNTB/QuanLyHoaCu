@@ -84,25 +84,36 @@
 
 				<!-- ACCOUNT -->
 				<div class="col-md-3 clearfix">
-					<div class="header-ctn">
-						<!-- Wishlist -->
-						<!-- <div>
-							<a href="#"> <i class="fa fa-heart-o"></i> <span>Yêu thích</span>
-								<div class="qty">2</div>
-							</a>
-						</div> -->
-						<!-- /Wishlist -->
+              <div class="header-ctn">
+                <!-- Wishlist -->
+                <div>
+                  <a href="/QUANLYHOACU/TheoDoiDonHang">
+                    <i class="fa fa-archive" aria-hidden="true"></i>
+                    <span>Đơn mua</span>
+                    <div class="qty">2</div>
+                  </a>
+                </div>
+                <!-- /Wishlist -->
 
-						<!-- Cart -->
-						<div class="dropdown">
+                <!-- Cart -->
+               <div class="dropdown">
 							<a href="Cart"> 
 								<i class="fa fa-shopping-cart"></i> <span>Giỏ hàng</span>
 								<div class="qty">${gioHang.size()}</div>
 							</a>
 						</div>
-						<!-- /Cart -->
-					</div>
-				</div>
+                <!-- /Cart -->
+
+                <!-- Menu Toogle -->
+                <div class="menu-toggle">
+                  <a href="#">
+                    <i class="fa fa-bars"></i>
+                    <span>Menu</span>
+                  </a>
+                </div>
+                <!-- /Menu Toogle -->
+              </div>
+            </div>
 				<!-- /ACCOUNT -->
 				
 
