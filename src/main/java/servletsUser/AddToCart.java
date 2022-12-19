@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,12 +40,8 @@ public class AddToCart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		if (!commons.isLogin())
-		{
-			System.out.print("Không ổn nữa rồi Đại vương");
-			response.sendRedirect(request.getContextPath()+"/Login");
+		if (!servletsUser.common.preCheckLogin(request,response))
 			return;
-		}
 		Connection conn=null;
 		String maHD="cart_"+commons.mainUser.getMaNguoiDung();
 		String maSP=request.getParameter("id");

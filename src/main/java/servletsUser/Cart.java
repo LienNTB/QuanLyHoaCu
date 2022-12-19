@@ -38,13 +38,8 @@ public class Cart extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!commons.isLogin())
-		{
-			System.out.print("Không ổn nữa rồi Đại vương");
-			response.sendRedirect(request.getContextPath()+"/Login");
+		if (!servletsUser.common.preCheckLogin(request,response))
 			return;
-		}
-			
 		Connection conn = null;
 		try {
 			conn = DBConnection.getConnection();

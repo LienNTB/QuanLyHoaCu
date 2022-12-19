@@ -56,7 +56,7 @@
           <div class="col-md-12">
             <h3 class="breadcrumb-header">Chi tiết hoá đơn</h3>
             <ul class="breadcrumb-tree">
-              <li><a href="#">Trang chủ</a></li>
+              <li><a href="defaultHomePage">Trang chủ</a></li>
               <li class="active">Chi tiết hóa đơn</li>
             </ul>
           </div>
@@ -70,21 +70,17 @@
     <!-- SECTION -->
     <div class="section">
       <!-- container -->
-      <% String hoten = request.getParameter("hoten"); %>
-      <% String diachi = request.getParameter("diachi"); %>
-      <% String sdt = request.getParameter("sdt"); %>
-      <% String tongtien = request.getParameter("tongtien"); %>
       <div class="container">
         <div class="hoadon-info">
           <label for="">Địa chỉ nhận hàng</label>
           <div class="hoadon-info-item">
-            Người nhận: ${hoten}
+            Người nhận: ${hoaDonMain.hoten}
           </div>
           <div class="hoadon-info-item">
-            Địa chỉ: ${diachi}
+            Địa chỉ: ${hoaDonMain.diaChiGiaoHang}
           </div>
            <div class="hoadon-info-item">
-            Số điện thoại: ${sdt}
+            Số điện thoại: ${hoaDonMain.soDienThoai}
           </div>
         </div>
         <br/>
@@ -101,7 +97,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                       <c:forEach items="${chitiethoadonList}" var="chitiethoadon">
+                       <c:forEach items="${chitiethoadonListMain}" var="chitiethoadon">
 	                        <tr >
 	                          <td><img src="${chitiethoadon.hinh}"
 	                            style="width:100px" alt=""></td>
@@ -112,7 +108,7 @@
 	                       </c:forEach>
                       </tbody>
                     </table>
-                    <label>Thành tiền: ${tongtien} đ</label>
+                    <label>Thành tiền: ${hoaDonMain.tongThanhToan} đ</label>
                     <br/><br/>
                   </div>
                 

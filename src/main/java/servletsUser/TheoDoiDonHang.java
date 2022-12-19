@@ -38,6 +38,8 @@ public class TheoDoiDonHang extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (!servletsUser.common.preCheckLogin(request,response))
+			return;
 		Connection conn=null;
 		try {
 			conn = DBConnection.getConnection();
@@ -47,18 +49,23 @@ public class TheoDoiDonHang extends HttpServlet {
 			e.printStackTrace();
 		}
 		List <HoaDon> list = null;;
-		
+		String mode=request.getParameter("mode");
+		if (mode==null)
+		{
+			mode="tatca";
+		}
 		try
 		{
-			list = HoaDonUtils.getHoaDonByIdMaKH(conn);
+			list = HoaDonUtils.getHoaDonByIdMaKH(conn, commons.mainUser.getMaNguoiDung());
 		}
 		catch (SQLException e)
 		{
 			e.printStackTrace();
 		}
+		request.setAttribute("mode",mode);
 		request.setAttribute("hoadonList", list);
 		response.setContentType("text/html;charset=UTF-8");
-		
+		servletsUser.common.setUpForHeader(conn,request,response);
         RequestDispatcher dispatcher = request.getServletContext()
                 .getRequestDispatcher("/WEB-INF/views/allUser/pages/theodoidonhang.jsp");
         dispatcher.forward(request, response);

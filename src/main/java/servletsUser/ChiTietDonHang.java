@@ -38,12 +38,8 @@ public class ChiTietDonHang extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!commons.isLogin())
-		{
-			System.out.print("Không ổn nữa rồi Đại vương");
-			response.sendRedirect(request.getContextPath()+"/Login");
+		if (!servletsUser.common.preCheckLogin(request,response))
 			return;
-		}
 			
 		Connection conn = null;
 		try {
@@ -59,7 +55,7 @@ public class ChiTietDonHang extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		servletsUser.common.setUpForHeader(conn, request, response);
+
 		
 		HoaDon hd = new HoaDon();
 		try {
@@ -68,17 +64,10 @@ public class ChiTietDonHang extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String hoten = hd.getHoten();
-		String diachi = hd.getDiaChiGiaoHang();
-		String sdt = hd.getSoDienThoai();
-		int tongtien = hd.getTongThanhToan();
-		// set attribute
-		request.setAttribute("chitiethoadonList", list);
-		request.setAttribute("hoten",hoten);
-		request.setAttribute("diachi",diachi);
-		request.setAttribute("sdt",sdt);
-		request.setAttribute("tongtien",tongtien);
+		servletsUser.common.setUpForHeader(conn, request, response);
 		response.setContentType("text/html;charset=UTF-8");
+		request.setAttribute("hoaDonMain",hd);
+		request.setAttribute("chitiethoadonListMain", list);
         RequestDispatcher dispatcher = request.getServletContext()
                 .getRequestDispatcher("/WEB-INF/views/allUser/pages/chitietdonhang.jsp");
         dispatcher.forward(request, response);

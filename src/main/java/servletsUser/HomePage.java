@@ -67,15 +67,15 @@ public class HomePage extends HttpServlet {
 		int index_page=1;
 		int SPperPage=20;
 		int maxPage=1;
-	
-		try
-		{
-			index_page=Integer.parseInt(request.getParameter("index"));
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
+		if (request.getParameter("index")!=null)
+			try
+			{
+				index_page=Integer.parseInt(request.getParameter("index"));
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
 		List<SanPham> list = null;
 	
 		List <SanPham> forwardList=null;

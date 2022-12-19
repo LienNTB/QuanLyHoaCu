@@ -90,7 +90,7 @@
                   <a href="/QUANLYHOACU/TheoDoiDonHang">
                     <i class="fa fa-archive" aria-hidden="true"></i>
                     <span>Đơn mua</span>
-                    <div class="qty">2</div>
+                    <div class="qty">${hoaDon.size() }</div>
                   </a>
                 </div>
                 <!-- /Wishlist -->

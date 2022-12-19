@@ -52,15 +52,16 @@
 	                          <th scope="col">Tên Sản Phẩm</th>                      
 	                          <th scope="col">Số lượng</th>
 	                          <th scope="col">Giá tiền</th>
+	                          <th scope="col"></th>
 	                        </tr>
 	                      </thead>
 	                      <tbody>
 	                       <c:forEach items="${chitiethoadonList}" var="chitiethoadon">
 	                        <tr >
+							
 	                          <td><img src="${chitiethoadon.hinh}"
 	                            style="width:100px" alt=""></td>
 	                          <td>${chitiethoadon.tenSP}</td>
-	                 
 	                          <td>${chitiethoadon.soLuong}</td>  
 	                          <td>${chitiethoadon.tongPhu}</td>    
 	                          <td >  

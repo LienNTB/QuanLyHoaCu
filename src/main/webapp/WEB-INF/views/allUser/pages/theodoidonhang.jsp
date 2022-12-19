@@ -68,7 +68,7 @@
           <div class="col-md-12">
             <h3 class="breadcrumb-header">Theo dõi đơn hàng</h3>
             <ul class="breadcrumb-tree">
-              <li><a href="#">Trang chủ</a></li>
+              <li><a href="defaultHomePage">Trang chủ</a></li>
               <li class="active">Theo dõi đơn hàng</li>
             </ul>
           </div>
@@ -86,28 +86,29 @@
         <div class="hashascart-container">
            <div class="table-responsive">     
                     <ul class="hoadon-status">
-                      <a href="/tatca"class="hoadon-status-item">Tất cả</a>
-                      <a href="/daduyet" class="hoadon-status-item">Đã duyệt</a>
-                      <a href="/choxuli" class="hoadon-status-item">Chờ xử lí</a>
-                      <a href="/dathanhtoan" class="hoadon-status-item">Đã thanh toán</a>
-                      <a href="/chothanhtoan" class="hoadon-status-item">Chờ thanh toán</a>
-                      <a href="/dagiaohang" class="hoadon-status-item">Đã giao hàng</a>
-                      <a href="/chogiaohang" class="hoadon-status-item">Chờ giao hàng</a>
+                      <a href="TheoDoiDonHang?mode=tatca" class="hoadon-status-item">Tất cả</a>
+                      <a href="TheoDoiDonHang?mode=daduyet" class="hoadon-status-item">Đã duyệt</a>
+                      <a href="TheoDoiDonHang?mode=choxuli" class="hoadon-status-item">Chờ xử lí</a>
+                      <a href="TheoDoiDonHang?mode=dathanhtoan" class="hoadon-status-item">Đã thanh toán</a>
+                      <a href="TheoDoiDonHang?mode=chothanhtoan" class="hoadon-status-item">Chờ thanh toán</a>
+                      <a href="TheoDoiDonHang?mode=dagiaohang" class="hoadon-status-item">Đã giao hàng</a>
+                      <a href="TheoDoiDonHang?mode=chogiaohang" class="hoadon-status-item">Chờ giao hàng</a>
                     </ul> 
+    
                     <table class="table table-bordered verticle-middle">
                       <thead>
                         <tr>
-                 
+                 		
+                          <th scope="col"></th>
                           <th scope="col">Mã Hóa Đơn</th>
                           <th scope="col">Mã khách hàng</th>
-                          <th scope="col">Ghi chú</th>
                           <th scope="col">Tổng thanh toán</th>
                           <th scope="col">Địa chỉ giao hàng</th>                        
                           <th scope="col">Thời gian giao hàng</th>
                           <th scope="col">Trạng thái đơn hàng</th>
                           <th scope="col">Trạng thái giao hàng</th>
                           <th scope="col">Trạng thái thanh toán</th>
-                          <th scope="col"></th>
+                          <th scope="col">Ghi chú</th>
                          
                   
                         </tr>
@@ -116,19 +117,21 @@
 
                          
                        <c:forEach items="${hoadonList}" var="hd">
-                        <tr >
-                          <td>${hd.maHoaDon}</td>
-                          <td>${hd.maKhachHang}</td>                        
-                          <td>${hd.ghiChu}</td>
-                          <td>${hd.tongThanhToan}</td>   
-                          <td>${hd.diaChiGiaoHang}</td>   
-                          <td>${hd.thoiGianGiaoHang}</td>   
-                          <td>${hd.trangThaiDonHang}</td>   
-                          <td>${hd.trangThaiGiaoHang}</td>   
-                          <td>${hd.trangThaiThanhToan}</td>   
-                          <td><a href="/QUANLYHOACU/ChiTietDonHang?id=${hd.maHoaDon}">Chi tiết</a></td>   
-                         
-                        </tr>
+	                       <c:if test="${mode=='tatca' || (mode=='daduyet' && hd.trangThaiDonHang==true) || (mode=='choxuli' && hd.trangThaiDonHang==false) || (mode=='dathanhtoan' && hd.trangThaiThanhToan==true) || (mode=='chothanhtoan' && hd.trangThaiThanhToan==false)  || (mode=='dagiaohang' && hd.trangThaiGiaoHang==true) || (mode=='chogiaohang' && hd.trangThaiGiaoHang==false)   }">
+		                        <tr >
+		                          <td><a href="/QUANLYHOACU/ChiTietDonHang?id=${hd.maHoaDon}" >Chi tiết</a></td>   
+		                          <td>${hd.maHoaDon}</td>
+		                          <td>${hd.maKhachHang}</td>                        
+		                          <td>${hd.tongThanhToan}</td>   
+		                          <td>${hd.diaChiGiaoHang}</td>   
+		                          <td>${hd.thoiGianGiaoHang}</td>   
+		                          <td>${hd.meanTrangThaiDonHang()}</td>   
+		                          <td>${hd.meanTrangThaiGiaoHang()}</td>   
+		                          <td>${hd.meanTrangThaiThanhToan()}</td>   
+		                          <td>${hd.ghiChu}</td>
+		                         
+		                        </tr>
+                          	</c:if>
                        </c:forEach>
                       </tbody>
                     </table>

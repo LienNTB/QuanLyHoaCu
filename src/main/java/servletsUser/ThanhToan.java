@@ -42,18 +42,13 @@ public class ThanhToan extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		if (!commons.isLogin())
-		{
-			response.sendRedirect(request.getContextPath()+"/Login");
-			return;
-		}
+		servletsUser.common.preCheckLogin(request,response);
 		Connection conn=null;
 		try
 		{
 			conn=DBConnection.getConnection();
-
 		}
-		catch(SQLException | ClassNotFoundException e)
+		catch (SQLException | ClassNotFoundException e)
 		{
 			e.printStackTrace();
 		}
@@ -69,6 +64,7 @@ public class ThanhToan extends HttpServlet {
             e.printStackTrace();
 		}
 		System.out.print(cthdList.size());
+		servletsUser.common.setUpForHeader(conn,request,response);
 		request.setAttribute("tongTien",tong);
 		request.setAttribute("chiTietHoaDon",cthdList);
 		
@@ -84,11 +80,8 @@ public class ThanhToan extends HttpServlet {
 	@SuppressWarnings("deprecation")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		if (!commons.isLogin())
-        {
-            response.sendRedirect(request.getContextPath()+"/Login");
-            return;
-        }
+		if (!servletsUser.common.preCheckLogin(request,response))
+			return;
 		Connection conn=null;
 		try
 		{

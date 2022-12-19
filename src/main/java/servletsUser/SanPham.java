@@ -60,7 +60,7 @@ public class SanPham extends HttpServlet {
 		catch (SQLException e)
         {
             e.printStackTrace();
-            System.out.print("Lỗi sản phẩm rồi Đại vương!");
+            System.out.print("Sản phẩm bị gì rồi kìa Đại vương!");
             
 		}
 		if (sp!=null)
@@ -72,12 +72,12 @@ public class SanPham extends HttpServlet {
 			catch (SQLException e)
 			{
 				e.printStackTrace();
-	            System.out.print("Lỗi rồi Đại vương!");
+	            System.out.print("Lấy sản phẩm có liên quan hông được rồi Đại vương!");
 			}
 			sp.OutPrint();
 		}
 		else
-			System.out.print("Không ổn rồi Đại vương ơi!");
+			System.out.print("Hỏng thấy sản phẩm, Đại vương ơi!");
 		System.out.print(spRelated);
 		request.setAttribute("sanPham",sp);
 		request.setAttribute("spRelated",spRelated);

@@ -12,7 +12,7 @@ import beans.commons;
 public class HoaDonUtils {
     public static List<HoaDon> getListHoaDon(Connection conn) throws SQLException {
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
-        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon");
+        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaHoaDon like 'DH.%'");
         ResultSet rs = pst.executeQuery();
         while (rs.next()) {
             HoaDon hoaDon = new HoaDon();
@@ -31,15 +31,15 @@ public class HoaDonUtils {
         return hoaDonList;
         
     }
-    public static List<HoaDon> getHoaDonByIdMaKH(Connection conn) throws SQLException 
+    public static List<HoaDon> getHoaDonByIdMaKH(Connection conn, String maKH) throws SQLException 
     {
 
 
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
-        String maKH = commons.mainUser.getMaNguoiDung();
-        System.out.println(maKH);
-        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaKhachHang=?");
+
+        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaKhachHang=? and MaHoaDon !=?");
         pst.setString(1, maKH);
+        pst.setString(2, "cart_"+maKH);
         ResultSet rs = pst.executeQuery();
         while (rs.next()) 
         {
@@ -59,7 +59,7 @@ public class HoaDonUtils {
         return hoaDonList;
     }
     public static HoaDon getHoaDonById (Connection conn, String MaHD) throws SQLException {
-        PreparedStatement pst = conn.prepareStatement("select * from HoaDon inner join NguoiDung on HoaDon.MaKhachHang = NguoiDung.MaNguoiDung\r\n"
+        PreparedStatement pst = conn.prepareStatement("select * from HoaDon, NguoiDung where HoaDon.MaKhachHang = NguoiDung.MaNguoiDung\r\n"
         		+ "and HoaDon.MaHoaDon = ?");
         pst.setString(1, MaHD);
         ResultSet rs = pst.executeQuery();

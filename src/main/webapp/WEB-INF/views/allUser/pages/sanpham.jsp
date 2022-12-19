@@ -24,6 +24,7 @@ function AddToCart()
 </head>
 
 <body>
+
 	<!-- HEADER -->
 	<jsp:include page="__header.jsp"></jsp:include>
 	<!-- HEADER -->
