@@ -41,7 +41,7 @@
 			</ul>
 			<ul class="header-links pull-right">
 				<li><a href="#"><i class="fa fa-dollar"></i>VND</a></li>
-				<li><a href="#"><i class="fa fa-user-o"></i>Tài khoản của tôi</a></li>
+				<li><a href="/QUANLYHOACU/Profile?id=${userID}"><i class="fa fa-user-o"></i>Tài khoản của tôi</a></li>
 				<li><a href="/QUANLYHOACU/"><i class="fa fa-logout-o"></i> Log out</a></li>
 			</ul>
 		</div>

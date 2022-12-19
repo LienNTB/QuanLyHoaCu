@@ -30,5 +30,6 @@
     <welcome-file>AddToCart</welcome-file>
     <welcome-file>TheoDoiDonHang</welcome-file>
     <welcome-file>ChiTietDonHang</welcome-file>
+    <welcome-file>Profile</welcome-file>
   </welcome-file-list>
 </web-app>

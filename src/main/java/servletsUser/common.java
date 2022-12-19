@@ -57,6 +57,7 @@ public class common extends HttpServlet {
 		request.setAttribute("loaiSanPham", lsp);
 		request.setAttribute("hoaDon", order);
 		request.setAttribute("gioHang", cart);
+		request.setAttribute("userID", commons.mainUser.getMaNguoiDung());
 	}
 
 	/**
