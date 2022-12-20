@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import beans.User;
 import beans.commons;
 import conn.DBConnection;
+import utils.LoaiSanPhamUtils;
 import utils.userUtils;
 
 /**
@@ -52,13 +53,24 @@ public class QuanLiKhachHang extends HttpServlet {
 			e.printStackTrace();
 		}
 		List<User> users = new ArrayList<User>();
-		try
-		{
-			users=userUtils.getListUser(conn);
+		String text=request.getParameter("text");
+		
+		if(text != null) {
+			try {
+				users=userUtils.getListUserBySearch(conn,text);
+			} catch (SQLException e) {	
+				e.printStackTrace();
+			}
 		}
-		catch (SQLException e)
-        {
-            e.printStackTrace();
+		else {
+			try
+			{
+				users=userUtils.getListUser(conn);
+			}
+			catch (SQLException e)
+	        {
+	            e.printStackTrace();
+			}
 		}
 		request.setAttribute("users", users);
 		response.setContentType("text/html;charset=UTF-8");

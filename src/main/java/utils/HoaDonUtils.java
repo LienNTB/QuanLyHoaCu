@@ -31,6 +31,30 @@ public class HoaDonUtils {
         return hoaDonList;
         
     }
+    public static List<HoaDon> getListHoaDonBySearch(Connection conn, String text) throws SQLException {
+        List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
+        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang,\r\n"
+        		+ "ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaHoaDon like 'DH.%'\r\n"
+        		+ "and HoaDon.MaHoaDon like '%"+text+"%' or HoaDon.DiaChiGiaoHang like '%"+text+"%' or HoaDon.MaKhachHang like '%"+text+"%'\r\n"
+        		+ "or HoaDon.SoDienThoai like '%"+text+"%' or HoaDon.TongThanhToan like '%"+text+"%'");
+        ResultSet rs = pst.executeQuery();
+        while (rs.next()) {
+            HoaDon hoaDon = new HoaDon();
+            hoaDon.setMaHoaDon(rs.getString("MaHoaDon"));
+            hoaDon.setGhiChu(rs.getString("GhiChu"));
+            hoaDon.setTongThanhToan(rs.getInt("TongThanhToan"));
+            hoaDon.setDiaChiGiaoHang(rs.getString("DiaChiGiaoHang"));
+            hoaDon.setSoDienThoai(rs.getString("SoDienThoai"));
+            hoaDon.setMaKhachHang(rs.getString("MaKhachHang"));
+            hoaDon.setTrangThaiDonHang(rs.getBoolean("TrangThaiDonHang"));
+            hoaDon.setThoiGianGiaoHang(rs.getDate("ThoiGianGiaoHang"));
+            hoaDon.setTrangThaiGiaoHang(rs.getBoolean("TrangThaiGiaoHang"));
+            hoaDon.setTrangThaiThanhToan(rs.getBoolean("TrangThaiThanhToan"));
+            hoaDonList.add(hoaDon);
+        }
+        return hoaDonList;
+        
+    }
     public static List<HoaDon> getHoaDonByIdMaKH(Connection conn, String maKH) throws SQLException 
     {
 

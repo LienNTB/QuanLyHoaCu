@@ -48,13 +48,25 @@ public class QuanLiSanPham extends HttpServlet {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+			String text=request.getParameter("text");
 	       
 	        List<SanPham> list = null;
-	        try {
-	            list = SanPhamUtils.getListSanPham(conn);
-	        } catch (SQLException e) {	
-	            e.printStackTrace();
-	           
+	       
+	        if(text!=null) {	        	
+	        	try {
+	        		list = SanPhamUtils.getListSanPhamBySearch(conn,text);
+	        	} catch (SQLException e) {	
+	        		e.printStackTrace();
+	        		
+	        	}
+	        }
+	        else {
+	        	 try {
+	 	            list = SanPhamUtils.getListSanPham(conn);
+	 	        } catch (SQLException e) {	
+	 	            e.printStackTrace();
+	 	           
+	 	        }
 	        }
 	       request.setAttribute("sanPhamList", list);
 	       response.setContentType("text/html;charset=UTF-8");

@@ -19,6 +19,10 @@
           return false;
         }
       }
+      function handleSearch() {
+          var text = document.getElementById("search").value;
+          window.location.href = "QuanLiSanPham?text=" + text;
+        }
     </script>
     
   </head>
@@ -52,6 +56,10 @@
                   <a href="ThemSanPham">
                     <button type="button" class="btn mb-1 btn-primary">Thêm sản phẩm mới</button>
                   </a>  
+                  <div class="input-area">
+                     <input type="text" class="form-control input-default" id="search" placeholder="Input Default">
+                     <button type="button" class="btn mb-1 btn-primary" onclick="handleSearch()">Tìm kiếm</button>
+                   </div>
                   <br/>
                   <br/>
                   <div class="table-responsive">    

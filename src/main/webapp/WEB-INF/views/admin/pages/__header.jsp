@@ -108,7 +108,7 @@
                         >
                       </li>
                       <li>
-                        <a href="page-login.html"
+                        <a href="/QUANLYHOACU/"
                           ><i class="icon-key"></i> <span>Logout</span></a
                         >
                       </li>

@@ -9,7 +9,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
        <title>Art Store - Admin</title>
   </head>
-
+   <script type="text/javascript">
+   function handleSearch() {
+       var text = document.getElementById("search").value;
+       window.location.href = "QuanLiDonHang?text=" + text;
+     }
+    </script>
   <body>
       <jsp:include page="/WEB-INF/views/admin/pages/__header.jsp"/>
 
@@ -40,6 +45,10 @@
                   <a href="ThemDonHang">
                     <button type="button" class="btn mb-1 btn-primary">Thêm đơn hàng mới</button>
                   </a>
+                 <div class="input-area">
+                     <input type="text" class="form-control input-default" id="search" placeholder="Input Default">
+                     <button type="button" class="btn mb-1 btn-primary" onclick="handleSearch()">Tìm kiếm</button>
+                   </div>
                   <br/>
                   <br/>
                   <div class="table-responsive">    

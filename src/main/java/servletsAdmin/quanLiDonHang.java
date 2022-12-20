@@ -16,6 +16,7 @@ import beans.HoaDon;
 import beans.commons;
 import conn.DBConnection;
 import utils.HoaDonUtils;
+import utils.LoaiSanPhamUtils;
 
 /**
  * Servlet implementation class quanLiDonHang
@@ -50,13 +51,25 @@ public class quanLiDonHang extends HttpServlet {
 			e.printStackTrace();
 		}
 		List <HoaDon> list = null;
-		try
-		{
-			list = HoaDonUtils.getListHoaDon(conn);
+		String text=request.getParameter("text");
+		
+		if(text != null) {
+			try {
+				list = HoaDonUtils.getListHoaDonBySearch(conn,text);
+			} catch (SQLException e) {	
+				e.printStackTrace();
+				
+			}
 		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
+		else {
+			try
+			{
+				list = HoaDonUtils.getListHoaDon(conn);
+			}
+			catch (SQLException e)
+			{
+				e.printStackTrace();
+			}
 		}
 		request.setAttribute("hoaDonList", list);
 		response.setContentType("text/html;charset=UTF-8");
