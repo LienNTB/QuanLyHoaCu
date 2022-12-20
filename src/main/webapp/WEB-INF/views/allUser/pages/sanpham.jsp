@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <script type="text/javascript">
+
 function AddToCart()
 {
 	var id=document.getElementById("id").value;
@@ -18,6 +19,24 @@ function AddToCart()
 	window.location.href="AddToCart?id="+id+"&number="+soluong;
 	}
 }
+function qtyUpClick()
+{ 
+	var number=parseInt(document.getElementById("number").value);
+	number+=1
+	document.getElementById("number").value=number;
+}
+function qtyDownClick()
+{ 
+	var number=parseInt(document.getElementById("number").value);
+	
+	if (number>1)
+	{
+		number-=1
+		document.getElementById("number").value=number;
+	}
+}
+
+
 </script>
 <title>Store</title>
 
@@ -37,9 +56,8 @@ function AddToCart()
 			<div class="row">
 				<div class="col-md-12">
 					<ul class="breadcrumb-tree">
-						<li><a href="HomePage">Trang chủ</a></li>
-						<li><a href="#">Phân loại</a></li>
-						<li><a href="#">${sanPham.tenLoaiSanPham}</a></li>
+						<li><a href="defaultHomePage">Trang chủ</a></li>
+						<li><a href="FindProduct?loaiSanPhamFind=${sanPham.maLoaiSP }">${sanPham.tenLoaiSanPham}</a></li>
 						<li class="active">${sanPham.tenSP}</li>
 					</ul>
 				</div>
@@ -114,8 +132,8 @@ function AddToCart()
 								Số lượng
 								<div class="input-number">
 
-									<input name="number" id="number" type="number" value="1" min="1" max="10">
-									<span class="qty-up">+</span> <span class="qty-down">-</span>
+									<input name="number" id="number" type="number" value="1" >
+									<span onclick="qtyUpClick()" class="qty-up">+</span> <span onclick="qtyDownClick()" class="qty-down">-</span>
 								</div>
 							</div>
 							<button class="add-to-cart-btn" onclick="AddToCart()">
@@ -132,7 +150,7 @@ function AddToCart()
 
 						<ul class="product-links">
 							<li>Category:</li>
-							<li><a href="#">${sanPham.tenLoaiSanPham }</a></li>
+							<li><a href="FindProduct?loaiSanPhamFind=${sanPham.maLoaiSP }">${sanPham.tenLoaiSanPham }</a></li>
 						</ul>
 
 						<!-- <ul class="product-links">

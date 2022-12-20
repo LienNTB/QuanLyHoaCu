@@ -37,12 +37,12 @@
 			<ul class="header-links pull-left">
 				<li><a href="#"><i class="fa fa-phone"></i> +454-54-54-54</a></li>
 				<li><a href="#"><i class="fa fa-envelope-o"></i>quanlihoacu@email.com</a></li>
-				<li><a href="#"><i class="fa fa-map-marker"></i>1 Vo Van Ngan</a></li>
+				<li><a href="https://goo.gl/maps/sciaNCokcAQo3Mnt5	"><i class="fa fa-map-marker"></i>1 Vo Van Ngan</a></li>
 			</ul>
 			<ul class="header-links pull-right">
 				<li><a href="#"><i class="fa fa-dollar"></i>VND</a></li>
 				<li><a href="/QUANLYHOACU/Profile"><i class="fa fa-user-o"></i>Tài khoản của tôi</a></li>
-				<li><a href="/QUANLYHOACU/"><i class="fa fa-logout-o"></i> Log out</a></li>
+				<li><a href="/QUANLYHOACU/DangXuat"><i class="fa fa-logout-o"></i> Đăng xuất</a></li>
 			</ul>
 		</div>
 	</div>

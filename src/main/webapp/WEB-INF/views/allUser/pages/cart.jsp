@@ -62,7 +62,7 @@
 	                          <td><img src="${chitiethoadon.hinh}"
 	                            style="width:100px" alt=""></td>
 	                          <td>${chitiethoadon.tenSP}</td>
-	                          <td>${chitiethoadon.soLuong}</td>  
+	                          <td>${chitiethoadon.soLuong}</td> 
 	                          <td>${chitiethoadon.tongPhu}</td>    
 	                          <td >  
 	                          
