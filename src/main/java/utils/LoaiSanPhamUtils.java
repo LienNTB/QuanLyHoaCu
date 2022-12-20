@@ -23,11 +23,22 @@ public class LoaiSanPhamUtils
         {
             LoaiSanPham loaiSanPham = new LoaiSanPham();
             loaiSanPham.setMaLoaiSP(rs.getString("MaLoaiSP"));
-           /*stmt2 = conn.prepareStatement("select count(SanPham.MaSP) as 'SLTrongKho' from SanPham where SanPham.MaLoaiSP = ?");
-            stmt2.setString(1, loaiSanPham.getMaLoaiSP());
-            ResultSet rs2 = null;
-            rs2 = stmt2.executeQuery();
-            loaiSanPham.setSLTrongKho(rs2.getInt("SLTrongKho"));*/
+            loaiSanPham.setTenLoaiSanPham(rs.getString("TenLoaiSanPham"));
+            loaiSanPhamList.add(loaiSanPham);
+        }
+        return loaiSanPhamList;
+    }
+    public static List<LoaiSanPham> getListLoaiSanPhamBySearch(Connection conn, String text) throws SQLException 
+    {
+        List<LoaiSanPham> loaiSanPhamList = new ArrayList<LoaiSanPham>();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        stmt = conn.prepareStatement("SELECT MaLoaiSP, TenLoaiSanPham FROM LoaiSanPham where LoaiSanPham.MaLoaiSP like '%"+text+"%' or LoaiSanPham.TenLoaiSanPham like '%"+text+"%'");
+        rs = stmt.executeQuery();
+        while (rs.next())
+        {
+            LoaiSanPham loaiSanPham = new LoaiSanPham();
+            loaiSanPham.setMaLoaiSP(rs.getString("MaLoaiSP"));
             loaiSanPham.setTenLoaiSanPham(rs.getString("TenLoaiSanPham"));
             loaiSanPhamList.add(loaiSanPham);
         }

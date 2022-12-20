@@ -29,6 +29,26 @@ public class userUtils {
         }
         return userList;
     }
+    public static List<User> getListUserBySearch(Connection conn, String text) throws SQLException {
+        PreparedStatement ps = conn.prepareStatement("SELECT MaNguoiDung, TenDangNhap, HoTen, MatKhau, NgaySinh, DiaChi, RoleID FROM NguoiDung where RoleID='001'\r\n"
+        		+ "and NguoiDung.MaNguoiDung like '%"+text+"%' or NguoiDung.HoTen like N'%"+text+"%' or NguoiDung.DiaChi like N'%"+text+"%'\r\n"
+        		+ "or NguoiDung.NgaySinh like '%"+text+"%' or NguoiDung.TenDangNhap like '%"+text+"%'\r\n"
+        		+ "");
+        ResultSet rs = ps.executeQuery();
+        List<User> userList = new ArrayList<User>();
+        while (rs.next()) {
+            User user = new User();
+            user.setMaNguoiDung(rs.getString("MaNguoiDung"));
+            user.setTenDangNhap(rs.getString("TenDangNhap"));
+            user.setHoTen(rs.getString("HoTen"));
+            user.setMatKhau(rs.getString("MatKhau"));
+            user.setNgaySinh(rs.getDate("NgaySinh"));
+            user.setDiaChi(rs.getString("DiaChi"));
+            user.setRole(rs.getString("RoleID"));
+            userList.add(user);
+        }
+        return userList;
+    }
     public static User findUser(Connection conn, String username, String password) throws SQLException {
         String sql="Select u.MaNguoiDung, u.TenDangNhap, u.HoTen, u.MatKhau, u.NgaySinh, u.DiaChi, r.RoleName from NguoiDung u, ROLE r where u.TenDangNhap=? and u.MatKhau=? and u.RoleID=r.RoleID";
         PreparedStatement stmt = conn.prepareStatement(sql);

@@ -30,6 +30,34 @@ public class SanPhamUtils
         }   
         return sanPhamList;
     }
+    public static List<SanPham> getListSanPhamBySearch(Connection conn,String text) throws SQLException 
+    {
+    	String sqlString = "Select sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham from SanPham sp \r\n"
+    			+ "inner join LoaiSanPham lsp on sp.MaLoaiSP=lsp.MaLoaiSP \r\n"
+    			+ "and sp.MaSP LIKE ?\r\n"
+    			+ "ORDER BY sp.MaSP";
+    	 PreparedStatement stmt = conn.prepareStatement("Select sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham from SanPham sp \r\n"
+     			+ "inner join LoaiSanPham lsp on sp.MaLoaiSP=lsp.MaLoaiSP \r\n"
+     			+ "and sp.MaSP LIKE '%"+text+"%' or sp.TenSP LIKE N'%"+text+"%' or lsp.TenLoaiSanPham LIKE N'%"+text+"%'"
+     			+ "ORDER BY sp.MaSP");
+    	
+         ResultSet rs= stmt.executeQuery();
+         List<SanPham> sanPhamList=new ArrayList<>();
+         System.out.print(sqlString);
+         while(rs.next())
+         {
+             SanPham sanPham= new SanPham();
+             sanPham.setMaSP(rs.getString("MaSP"));
+             sanPham.setTenSP(rs.getString("TenSP"));
+             sanPham.setGia(rs.getInt("Gia"));
+             sanPham.setChiTiet(rs.getString("ChiTiet"));
+             sanPham.setHinh(rs.getString("Hinh"));
+             sanPham.setMaLoaiSP(rs.getString("MaLoaiSP"));
+             sanPham.setTenLoaiSanPham(rs.getString("TenLoaiSanPham"));
+             sanPhamList.add(sanPham);
+         }   
+         return sanPhamList;
+    }
     public static List<SanPham> getListSanPhamByMaLSPandDataInput(Connection conn, String maLSP, String input) throws SQLException
     {
         PreparedStatement stmt = conn.prepareStatement("Select sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham from SanPham sp LEFT JOIN  LoaiSanPham lsp on sp.MaLoaiSP=lsp.MaLoaiSP where sp.MaLoaiSP like ?  and sp.tenSP like ? ORDER BY sp.MaSP");

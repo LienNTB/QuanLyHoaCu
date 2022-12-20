@@ -21,3 +21,14 @@
 .action-item {
   padding: 0 10px;
 }
+.input-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.input-area button {
+  margin-left: 10px;
+}
+

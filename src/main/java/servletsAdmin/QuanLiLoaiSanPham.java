@@ -50,14 +50,27 @@ public class QuanLiLoaiSanPham extends HttpServlet {
 		{
 			e.printStackTrace();
 		}
-		List <LoaiSanPham> list = null;;
-		try
-		{
-			list = LoaiSanPhamUtils.getListLoaiSanPham(conn);
+		List <LoaiSanPham> list = null;
+		// thanh tìm kiếm
+		String text=request.getParameter("text");
+		
+		if(text != null) {
+			try {
+				list = LoaiSanPhamUtils.getListLoaiSanPhamBySearch(conn, text);
+			} catch (SQLException e) {	
+				e.printStackTrace();
+				
+			}
 		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
+		else {
+			try
+			{
+				list = LoaiSanPhamUtils.getListLoaiSanPham(conn);
+			}
+			catch (SQLException e)
+			{
+				e.printStackTrace();
+			}
 		}
 		request.setAttribute("loaiSanPhamlist", list);
 		response.setContentType("text/html;charset=UTF-8");
