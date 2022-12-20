@@ -7,7 +7,8 @@ public class SanPham {
 	private String chiTiet;
 	private String hinh;
 	private String maLoaiSP;
-	private String tenLoaiSanPham; 
+	private String tenLoaiSanPham;
+	private boolean daXoa=false;
 	
 	public SanPham(){}
 	public SanPham(String maSP, String tenSP, int gia, String chiTiet, String hinh, String maLoaiSP)
@@ -82,6 +83,12 @@ public class SanPham {
 		System.out.println("hinh:"+hinh);
 		System.out.println("maLoaiSP:"+maLoaiSP);
 		System.out.println("tenLoaiSanPham:"+tenLoaiSanPham);	
+	}
+	public boolean getDaXoa() {
+		return daXoa;
+	}
+	public void setDaXoa(boolean daXoa) {
+		this.daXoa = daXoa;
 	}
 
 }

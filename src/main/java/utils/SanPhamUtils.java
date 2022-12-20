@@ -12,7 +12,7 @@ public class SanPhamUtils
 {
     public static List<SanPham> getListSanPham(Connection conn) throws SQLException 
     {
-        String sqlString = "Select sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham from SanPham sp LEFT JOIN  LoaiSanPham lsp on sp.MaLoaiSP=lsp.MaLoaiSP  ORDER BY sp.MaSP";
+        String sqlString = "Select sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham, sp.DaXoa from SanPham sp LEFT JOIN  LoaiSanPham lsp on sp.MaLoaiSP=lsp.MaLoaiSP  ORDER BY sp.MaSP";
         PreparedStatement stmt= conn.prepareStatement(sqlString);
         ResultSet rs= stmt.executeQuery();
         List<SanPham> sanPhamList=new ArrayList<>();
@@ -26,6 +26,7 @@ public class SanPhamUtils
             sanPham.setHinh(rs.getString("Hinh"));
             sanPham.setMaLoaiSP(rs.getString("MaLoaiSP"));
             sanPham.setTenLoaiSanPham(rs.getString("TenLoaiSanPham"));
+            sanPham.setDaXoa(rs.getBoolean("DaXoa"));
             sanPhamList.add(sanPham);
         }   
         return sanPhamList;
@@ -225,7 +226,14 @@ public class SanPhamUtils
     }
     public static void DeleteSanPham(Connection conn, String sanPham) throws SQLException
     {
-        String sqlString = "DELETE FROM SanPham WHERE MaSP=?";
+        String sqlString = "UPDATE SanPham set DaXoa=1 WHERE MaSP=?";
+        PreparedStatement stmt= conn.prepareStatement(sqlString);
+        stmt.setString(1, sanPham);
+        stmt.executeUpdate();
+    }
+    public static void unDeleteSanPham(Connection conn, String sanPham) throws SQLException
+    {
+        String sqlString = "UPDATE SanPham set DaXoa=0 WHERE MaSP=?";
         PreparedStatement stmt= conn.prepareStatement(sqlString);
         stmt.setString(1, sanPham);
         stmt.executeUpdate();

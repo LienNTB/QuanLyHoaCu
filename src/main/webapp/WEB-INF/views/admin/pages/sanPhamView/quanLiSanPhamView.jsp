@@ -60,8 +60,8 @@
                      <input type="text" class="form-control input-default" id="search" placeholder="Input Default">
                      <button type="button" class="btn mb-1 btn-primary" onclick="handleSearch()">Tìm kiếm</button>
                    </div>
-                  <br/>
-                  <br/>
+					<br/>
+		
                   <div class="table-responsive">    
                     <table class="table table-bordered verticle-middle">
                       <thead>
@@ -91,12 +91,22 @@
                                   class="fa fa-pencil color-muted m-r-5"
                                 ></i> </a
                               >
+                              <c:if  test="${sp.getDaXoa() }">
                               <a
-                                href="# "
+                                href="ChangDeleteStatus?object=sanpham&&id=${sp.maSP }&&mode=${sp.daXoa}"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="UnDelete"
+                                onclick="ConfirmDialog(${sp.maSP});" class="fa fa-close color-danger"></a>
+                               </c:if>
+                              <c:if  test="${!sp.getDaXoa() }">
+                              <a
+                                href="ChangDeleteStatus?object=sanpham&&id=${sp.maSP }&&mode=${sp.daXoa}"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Delete"
-                                onclick="ConfirmDialog(${sp.maSP});" class="fa fa-close color-danger"></a>
+                                 class="fa fa-close color-danger"></a>
+                               </c:if>
                          
                           </td>
                         <td>${loop.index+1 }</td>

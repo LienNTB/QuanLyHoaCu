@@ -83,6 +83,22 @@
                                   class="fa fa-pencil color-muted m-r-5"
                                 ></i> </a
                               >
+                              <c:if  test="${user.getDaXoa() }">
+                              <a
+                                href="ChangDeleteStatus?object=nguoidung&&id=${user.maNguoiDung }&&mode=${user.daXoa}"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="UnDelete"
+                                 class="fa fa-close color-danger"></a>
+                               </c:if>
+                              <c:if  test="${!user.getDaXoa() }">
+                              <a
+                                href="ChangDeleteStatus?object=nguoidung&&id=${user.maNguoiDung }&&mode=${user.daXoa}"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Delete"
+                                 class="fa fa-close color-danger"></a>
+                               </c:if>
      
                           </td>
                         </tr>

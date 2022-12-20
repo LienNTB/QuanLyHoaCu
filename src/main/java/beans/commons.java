@@ -10,6 +10,10 @@ public class commons {
 	public static User mainUser=null;
 	public static HomePage homePage=new HomePage(0);
 	public static String role;
+	public static String locSanPham="tatca";
+	public static String locLoaiSanPham="tatca";
+	public static String locNguoiDung="tatca";
+	public static String locDonHang="tatca";
 	public static boolean checkAdmin()
 	{
 		if (mainUser==null)

@@ -72,6 +72,14 @@ public class Login extends HttpServlet {
 					hasError = true;
 					errorString="Username or password is invalid.";
 				}
+				else
+				{
+					if (user.getDaXoa())
+					{
+						hasError=true;
+						errorString="Tài khoản đã bị khóa!";
+					}
+				}
 			}
 			catch (SQLException e)
 			{

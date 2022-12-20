@@ -82,7 +82,22 @@
                                   class="fa fa-pencil color-muted m-r-5"
                                 ></i> </a
                               >
-                              
+                              <c:if  test="${dh.getDaXoa() }">
+                              <a
+                                href="ChangDeleteStatus?object=hoadon&&id=${dh.maHoaDon }&&mode=${dh.daXoa}"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="UnDelete"
+                                 class="fa fa-close color-danger"></a>
+                               </c:if>
+                              <c:if  test="${!dh.getDaXoa() }">
+                              <a
+                                href="ChangDeleteStatus?object=hoadon&&id=${dh.maHoaDon }&&mode=${dh.daXoa}"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Delete"
+                                 class="fa fa-close color-danger"></a>
+                               </c:if>
                             </td>
                           <td>${loop.index+1}</td>
                           <td>${dh.maHoaDon}</td>

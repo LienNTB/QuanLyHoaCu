@@ -12,6 +12,7 @@ public class User {
 	private Date ngaySinh;
 	private String diaChi;
 	private String role;
+	private boolean daXoa=false;
 	public User() {};
 	
 	public User(String MaNguoiDung, String tenDangNhap, String matKhau, String hoTen, Date birthday, String diaChi, String role) throws ParseException 
@@ -84,6 +85,16 @@ public class User {
 		String maNguoiDung;
 		maNguoiDung = this.tenDangNhap;
         return maNguoiDung;
+	}
+
+
+
+	public boolean getDaXoa() {
+		return daXoa;
+	}
+
+	public void setDaXoa(boolean daXoa) {
+		this.daXoa = daXoa;
 	}
 	
 

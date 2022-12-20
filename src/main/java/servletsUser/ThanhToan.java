@@ -107,7 +107,7 @@ public class ThanhToan extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		String newMaHD= "DH."+commons.mainUser.getMaNguoiDung()+"."+new SimpleDateFormat("mmssyyyyMMdd").format(Calendar.getInstance().getTime());
+		String newMaHD= "DH."+commons.mainUser.getMaNguoiDung()+"."+new SimpleDateFormat("yyyyMMddhhmmss").format(Calendar.getInstance().getTime());
 		HoaDon hd=new HoaDon(newMaHD, tongTien,diaChiGiaoHang, commons.mainUser.getMaNguoiDung(), SoDienThoai, new Date(2023,01,01), false,false, false, ghiChu);
 		
 		try

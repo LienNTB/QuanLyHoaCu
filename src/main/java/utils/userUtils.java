@@ -13,7 +13,7 @@ import beans.User;
 
 public class userUtils {
     public static List<User> getListUser(Connection conn) throws SQLException {
-        PreparedStatement ps = conn.prepareStatement("SELECT MaNguoiDung, TenDangNhap, HoTen, MatKhau, NgaySinh, DiaChi, RoleID FROM NguoiDung where RoleID='001'");
+        PreparedStatement ps = conn.prepareStatement("SELECT MaNguoiDung, TenDangNhap, HoTen, MatKhau, NgaySinh, DiaChi, RoleID, DaXoa FROM NguoiDung where RoleID='001'");
         ResultSet rs = ps.executeQuery();
         List<User> userList = new ArrayList<User>();
         while (rs.next()) {
@@ -25,12 +25,13 @@ public class userUtils {
             user.setNgaySinh(rs.getDate("NgaySinh"));
             user.setDiaChi(rs.getString("DiaChi"));
             user.setRole(rs.getString("RoleID"));
+            user.setDaXoa(rs.getBoolean("DaXoa"));
             userList.add(user);
         }
         return userList;
     }
     public static List<User> getListUserBySearch(Connection conn, String text) throws SQLException {
-        PreparedStatement ps = conn.prepareStatement("SELECT MaNguoiDung, TenDangNhap, HoTen, MatKhau, NgaySinh, DiaChi, RoleID FROM NguoiDung where RoleID='001'\r\n"
+        PreparedStatement ps = conn.prepareStatement("SELECT MaNguoiDung, TenDangNhap, HoTen, MatKhau, NgaySinh, DiaChi, RoleID, DaXoa FROM NguoiDung where RoleID='001'\r\n"
         		+ "and NguoiDung.MaNguoiDung like '%"+text+"%' or NguoiDung.HoTen like N'%"+text+"%' or NguoiDung.DiaChi like N'%"+text+"%'\r\n"
         		+ "or NguoiDung.NgaySinh like '%"+text+"%' or NguoiDung.TenDangNhap like '%"+text+"%'\r\n"
         		+ "");
@@ -45,12 +46,13 @@ public class userUtils {
             user.setNgaySinh(rs.getDate("NgaySinh"));
             user.setDiaChi(rs.getString("DiaChi"));
             user.setRole(rs.getString("RoleID"));
+            user.setDaXoa(rs.getBoolean("DaXoa"));
             userList.add(user);
         }
         return userList;
     }
     public static User findUser(Connection conn, String username, String password) throws SQLException {
-        String sql="Select u.MaNguoiDung, u.TenDangNhap, u.HoTen, u.MatKhau, u.NgaySinh, u.DiaChi, r.RoleName from NguoiDung u, ROLE r where u.TenDangNhap=? and u.MatKhau=? and u.RoleID=r.RoleID";
+        String sql="Select u.MaNguoiDung, u.TenDangNhap, u.HoTen, u.MatKhau, u.NgaySinh, u.DiaChi, r.RoleName, u.DaXoa from NguoiDung u, ROLE r where u.TenDangNhap=? and u.MatKhau=? and u.RoleID=r.RoleID";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setString(1,username);
         stmt.setString(2,password);
@@ -64,12 +66,13 @@ public class userUtils {
             user.setNgaySinh(rs.getDate("NgaySinh"));
             user.setDiaChi(rs.getString("DiaChi"));
             user.setRole(rs.getString("RoleName"));
+            user.setDaXoa(rs.getBoolean("DaXoa"));
             return user;
         }    
         return null;
     }
     public static User getUserById(Connection conn, String userID) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("SELECT MaNguoiDung, TenDangNhap, HoTen, MatKhau, NgaySinh, DiaChi, RoleID FROM NguoiDung where  MaNguoiDung=?");
+        PreparedStatement stmt = conn.prepareStatement("SELECT MaNguoiDung, TenDangNhap, HoTen, MatKhau, NgaySinh, DiaChi, RoleID, DaXoa FROM NguoiDung where  MaNguoiDung=?");
         stmt.setString(1,userID);
         ResultSet rs = stmt.executeQuery();
         if (rs.next()) {
@@ -81,6 +84,7 @@ public class userUtils {
             user.setNgaySinh(rs.getDate("NgaySinh"));
             user.setDiaChi(rs.getString("DiaChi"));
             user.setRole(rs.getString("RoleID"));
+            user.setDaXoa(rs.getBoolean("DaXoa"));
             return user;
         }
         return null;
@@ -130,6 +134,16 @@ public class userUtils {
         stmt.setString(2,user.getMaNguoiDung());
         stmt.executeUpdate();
         
+    }
+    public static void deleteUser(Connection conn, String MaNguoiDung) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("Update NguoiDung set DaXoa=1 WHERE MaNguoiDung=?");
+        stmt.setString(1,MaNguoiDung);
+        stmt.executeUpdate();
+    }
+    public static void undeleteUser(Connection conn, String MaNguoiDung) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("Update NguoiDung set DaXoa=0 WHERE MaNguoiDung=?");
+        stmt.setString(1,MaNguoiDung);
+        stmt.executeUpdate();
     }
 
 

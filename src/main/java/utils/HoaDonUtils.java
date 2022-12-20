@@ -12,7 +12,7 @@ import beans.commons;
 public class HoaDonUtils {
     public static List<HoaDon> getListHoaDon(Connection conn) throws SQLException {
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
-        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaHoaDon like 'DH.%'");
+        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan, DaXoa from HoaDon where MaHoaDon like 'DH.%'");
         ResultSet rs = pst.executeQuery();
         while (rs.next()) {
             HoaDon hoaDon = new HoaDon();
@@ -26,6 +26,7 @@ public class HoaDonUtils {
             hoaDon.setThoiGianGiaoHang(rs.getDate("ThoiGianGiaoHang"));
             hoaDon.setTrangThaiGiaoHang(rs.getBoolean("TrangThaiGiaoHang"));
             hoaDon.setTrangThaiThanhToan(rs.getBoolean("TrangThaiThanhToan"));
+            hoaDon.setDaXoa(rs.getBoolean("DaXoa"));
             hoaDonList.add(hoaDon);
         }
         return hoaDonList;
@@ -61,7 +62,7 @@ public class HoaDonUtils {
 
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
 
-        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaKhachHang=? and MaHoaDon !=?");
+        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaKhachHang=? and MaHoaDon !=? ORDER BY MaHoaDon DESC");
         pst.setString(1, maKH);
         pst.setString(2, "cart_"+maKH);
         ResultSet rs = pst.executeQuery();
@@ -107,7 +108,7 @@ public class HoaDonUtils {
 
     }
     public static void insertHoaDon(Connection conn, HoaDon hd) throws SQLException {
-        PreparedStatement pst = conn.prepareStatement("INSERT INTO HoaDon VALUES (?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement pst = conn.prepareStatement("INSERT INTO HoaDon VALUES (?,?,?,?,?,?,?,?,?,?,?)");
 
         pst.setString(1,hd.getMaHoaDon());
         pst.setString(2,hd.getGhiChu());
@@ -119,6 +120,7 @@ public class HoaDonUtils {
         pst.setBoolean(8,hd.getTrangThaiDonHang());
         pst.setBoolean(9,hd.getTrangThaiGiaoHang());
         pst.setBoolean(10,hd.getTrangThaiThanhToan());
+        pst.setBoolean(11,false);
         
         pst.executeUpdate();
     }
@@ -141,8 +143,15 @@ public class HoaDonUtils {
     }
     public static void deleteHoaDon (Connection conn, String hd) throws SQLException
     {
-        PreparedStatement pst = conn.prepareStatement("DELETE FROM HoaDon WHERE MaHoaDon=?");
+        PreparedStatement pst = conn.prepareStatement("UPDATE HoaDon set DaXoa= 1 WHERE MaHoaDon=?");
         pst.setString(1, hd);
+        pst.executeUpdate();
+    
+    }
+    public static void undeleteHoaDon (Connection conn, String hd) throws SQLException
+    {
+        PreparedStatement pst = conn.prepareStatement("UPDATE HoaDon set DaXoa= 0 WHERE MaHoaDon=?");
+        pst.setString(1, hd);   
         pst.executeUpdate();
     
     }

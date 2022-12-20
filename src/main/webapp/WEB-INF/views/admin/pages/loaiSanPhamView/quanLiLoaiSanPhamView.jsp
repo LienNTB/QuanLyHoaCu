@@ -71,22 +71,22 @@
                           <td>${lsp.tenLoaiSanPham}</td>
                           <td >
                            
-                              <a class="action-item"
-                                href="EditLoaiSanPham?id=${lsp.maLoaiSP }"
+                              <c:if  test="${lsp.getDaXoa() }">
+                              <a
+                                href="ChangDeleteStatus?object=loaisanpham&&id=${lsp.maLoaiSP }&&mode=${lsp.daXoa}"
                                 data-toggle="tooltip"
                                 data-placement="top"
-                                title="Edit"
-                                ><i
-                                  class="fa fa-pencil color-muted m-r-5"
-                                ></i> </a
-                              >
+                                title="UnDelete"
+                                class="fa fa-close color-danger"></a>
+                               </c:if>
+                              <c:if  test="${!lsp.getDaXoa() }">
                               <a
-                                href="DeleteLoaiSanPham?id=${lsp.maLoaiSP }"
+                                href="ChangDeleteStatus?object=loaisanpham&&id=${lsp.maLoaiSP }&&mode=${lsp.daXoa}"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Delete"
-                             ><i class="fa fa-close color-danger"></i></a
-                            >
+                                 class="fa fa-close color-danger"></a>
+                               </c:if>
                           </td>
                         </tr>
                         </c:forEach>

@@ -17,13 +17,14 @@ public class LoaiSanPhamUtils
         PreparedStatement stmt = null;
         PreparedStatement stmt2 = null;
         ResultSet rs = null;
-        stmt = conn.prepareStatement("SELECT MaLoaiSP, TenLoaiSanPham FROM LoaiSanPham");
+        stmt = conn.prepareStatement("SELECT MaLoaiSP, TenLoaiSanPham, DaXoa FROM LoaiSanPham");
         rs = stmt.executeQuery();
         while (rs.next())
         {
             LoaiSanPham loaiSanPham = new LoaiSanPham();
             loaiSanPham.setMaLoaiSP(rs.getString("MaLoaiSP"));
             loaiSanPham.setTenLoaiSanPham(rs.getString("TenLoaiSanPham"));
+            loaiSanPham.setDaXoa(rs.getBoolean("DaXoa"));
             loaiSanPhamList.add(loaiSanPham);
         }
         return loaiSanPhamList;
@@ -85,7 +86,14 @@ public class LoaiSanPhamUtils
     public static void deleteLoaiSanPham(Connection connection, String MaLoaiSP) throws SQLException
     {
         PreparedStatement stmt = null;
-        stmt = connection.prepareStatement("DELETE FROM LoaiSanPham WHERE MaLoaiSP=?");
+        stmt = connection.prepareStatement("UPDATE LoaiSanPham SET DaXoa=1 WHERE MaLoaiSP=?");
+        stmt.setString(1, MaLoaiSP);
+        stmt.executeUpdate();
+    }
+    public static void undeleteLoaiSanPham(Connection connection, String MaLoaiSP) throws SQLException
+    {
+        PreparedStatement stmt = null;
+        stmt = connection.prepareStatement("UPDATE LoaiSanPham SET DaXoa=0 WHERE MaLoaiSP=?");
         stmt.setString(1, MaLoaiSP);
         stmt.executeUpdate();
     }
