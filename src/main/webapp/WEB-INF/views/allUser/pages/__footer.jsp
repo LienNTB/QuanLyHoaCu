@@ -20,7 +20,7 @@
 						</button>
 					</form>
 					<ul class="newsletter-follow">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://www.facebook.com/profile.php?id=100086994803693"><i class="fa fa-facebook"></i></a></li>
 						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
 						<li><a href="#"><i class="fa fa-github"></i></a></li>
@@ -89,7 +89,7 @@
 					<div class="footer">
 						<h3 class="footer-title">DỊCH VỤ</h3>
 						<ul class="footer-links">
-							<li><a href="#">Tài khoản của bạn</a></li>
+							<li><a href="Profile">Tài khoản của bạn</a></li>
 							<li><a href="Cart">Xem giỏ hàng</a></li>
 							<li><a href="#">Danh sách yêu thích</a></li>
 							<li><a href="TheoDoiDonHang">Theo dõi đơn hàng</a></li>
