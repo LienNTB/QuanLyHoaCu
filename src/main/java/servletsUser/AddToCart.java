@@ -46,6 +46,12 @@ public class AddToCart extends HttpServlet {
 		String maHD="cart_"+commons.mainUser.getMaNguoiDung();
 		String maSP=request.getParameter("id");
 		int soLuong=Integer.parseInt(request.getParameter("number"));
+		if (soLuong <1) // cố tình can thiệp sâu hơn vào html
+		{
+			response.sendRedirect(request.getContextPath()+"/Login");
+			System.out.print("Nó phá web kìa Đại vương!");
+			return;
+		}
 		try
 		{
 			conn=DBConnection.getConnection();

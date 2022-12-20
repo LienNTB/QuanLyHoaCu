@@ -128,10 +128,10 @@
         </div>
         <br></br>
         <div>	
-			<button><a>Cập nhật</a></button>
+			<button type="submit" class="primary-btn"><a>Cập nhật</a></button>
+			<button class="primary-btn"><a href="DoiMatKhau">Đổi mật khẩu</a></button>
         </div>
       </form>
-		<button><a href="DoiMatKhau">Đổi mật khẩu</a></button>
       </div>
       <!-- /container -->
     </div>
