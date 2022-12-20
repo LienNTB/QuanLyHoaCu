@@ -202,6 +202,11 @@ public class SanPhamUtils
         stmt.setString(1, sanPham);
         stmt.executeUpdate();
     }
-    
+    public static int getTongSoSanPham(Connection conn) throws SQLException {
+    	PreparedStatement pst = conn.prepareStatement("select count(MaSP) as TongSanPham from SanPham");
+    	ResultSet rs = pst.executeQuery();
+    	if(rs.next()) return rs.getInt("TongSanPham");
+    	return 0;
+    }
 
 }

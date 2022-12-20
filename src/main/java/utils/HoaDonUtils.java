@@ -130,6 +130,17 @@ public class HoaDonUtils {
             return rs.getInt("TongThanhToan");
         return 0;
     }
-    
+    public static int getTongSoHoaDon(Connection conn) throws SQLException {
+    	PreparedStatement pst = conn.prepareStatement("select count(MaHoaDon) as TongSoHoaDon from HoaDon where MaHoaDon like '%DH.USER%'");
+    	ResultSet rs = pst.executeQuery();
+    	if(rs.next()) return rs.getInt("TongSoHoaDon");
+    	return 0;
+    }
+    public static int getTongDoanhThu(Connection conn) throws SQLException {
+    	PreparedStatement pst = conn.prepareStatement("select sum(TongThanhToan) as TongDoanhThu from HoaDon where HoaDon.TrangThaiDonHang = 1");
+    	ResultSet rs = pst.executeQuery();
+    	if(rs.next()) return rs.getInt("TongDoanhThu");
+    	return 0;
+    }
 
 }

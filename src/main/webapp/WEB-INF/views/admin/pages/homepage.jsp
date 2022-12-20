@@ -26,7 +26,7 @@
                 <div class="card-body">
                   <h3 class="card-title text-white">Tổng số hóa đơn</h3>
                   <div class="d-inline-block">
-                    <h2 class="text-white">4565</h2>
+                    <h2 class="text-white">${tongHoaDon}</h2>
                     <p class="text-white mb-0">Tháng 9 - Tháng 12 2022</p>
                   </div>
                   <span class="float-right display-5 opacity-5"
@@ -40,7 +40,7 @@
                 <div class="card-body">
                   <h3 class="card-title text-white">Tổng doanh thu</h3>
                   <div class="d-inline-block">
-                    <h2 class="text-white">$ 8541</h2>
+                    <h2 class="text-white"> ${tongDoanhThu} </h2>
                     <p class="text-white mb-0">Tháng 9 - Tháng 12 2022</p>
                   </div>
                   <span class="float-right display-5 opacity-5"
@@ -54,7 +54,7 @@
                 <div class="card-body">
                   <h3 class="card-title text-white">Số lượng sản phẩm</h3>
                   <div class="d-inline-block">
-                    <h2 class="text-white">4565</h2>
+                    <h2 class="text-white">${tongSanPham}</h2>
                     <p class="text-white mb-0">Tháng 9 - Tháng 12 2022</p>
                   </div>
                   <span class="float-right display-5 opacity-5"
