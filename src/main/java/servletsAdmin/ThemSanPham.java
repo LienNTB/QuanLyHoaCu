@@ -16,6 +16,7 @@ import beans.LoaiSanPham;
 import beans.SanPham;
 import beans.commonBeans;
 import conn.DBConnection;
+import servletsUser.commonServlets;
 import utils.LoaiSanPhamUtils;
 import utils.SanPhamUtils;
 
@@ -121,13 +122,16 @@ public class ThemSanPham extends HttpServlet {
 		}
 		catch(Exception e){
 			e.printStackTrace();
-			errorString=e.getMessage();
+			errorString=commonServlets.filterErrorFromDatabase(e.getMessage());
 		}
-		request.setAttribute("errorString",errorString);
+		request.setAttribute("notification",errorString);
 		request.setAttribute("sanpham",newSP);
 		if (errorString!=null)
 		{
-			response.sendRedirect(request.getContextPath()+"/ThemSanPham");
+			request.setAttribute("notification",errorString);
+			RequestDispatcher dispatcher = request.getServletContext()
+			.getRequestDispatcher("/WEB-INF/views/admin/pages/sanPhamView/themSanPhamView.jsp");
+	dispatcher.forward(request, response);
 		}
 		else{
 			response.sendRedirect(request.getContextPath()+"/QuanLiSanPham");

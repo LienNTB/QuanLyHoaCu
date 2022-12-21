@@ -60,8 +60,8 @@ public class HoaDonUtils {
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
         PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang,\r\n"
         		+ "ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaHoaDon like 'DH.%'\r\n"
-        		+ "and HoaDon.MaHoaDon like '%"+text+"%' or HoaDon.DiaChiGiaoHang like '%"+text+"%' or HoaDon.MaKhachHang like '%"+text+"%'\r\n"
-        		+ "or HoaDon.SoDienThoai like '%"+text+"%' or HoaDon.TongThanhToan like '%"+text+"%'");
+        		+ "and (HoaDon.MaHoaDon like '%"+text+"%' or HoaDon.DiaChiGiaoHang like '%"+text+"%' or HoaDon.MaKhachHang like '%"+text+"%'\r\n"
+        		+ "or HoaDon.SoDienThoai like '%"+text+"%' or HoaDon.TongThanhToan like '%"+text+"%')");
         ResultSet rs = pst.executeQuery();
         while (rs.next()) {
             HoaDon hoaDon = new HoaDon();

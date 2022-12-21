@@ -39,6 +39,7 @@ public class commonServlets extends HttpServlet {
 	 */
 	public static void setUpForHeader(Connection conn, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		List<LoaiSanPham> lsp=null;
 		List<ChiTietHoaDon> cart=new ArrayList<ChiTietHoaDon>();
 		List<HoaDon> order=new ArrayList<HoaDon>();
@@ -48,6 +49,7 @@ public class commonServlets extends HttpServlet {
 			{
 				cart=ChiTietHoaDonUtils.getChiTietHoaDonByMaHD(conn, "cart_"+commonBeans.mainUser.getMaNguoiDung());
 				order= HoaDonUtils.getHoaDonByIdMaKH(conn, commonBeans.mainUser.getMaNguoiDung());
+				request.setAttribute("userID", commonBeans.mainUser.getMaNguoiDung());
 			}
 			
 		}
@@ -57,7 +59,6 @@ public class commonServlets extends HttpServlet {
 		request.setAttribute("loaiSanPham", lsp);
 		request.setAttribute("hoaDon", order);
 		request.setAttribute("gioHang", cart);
-		request.setAttribute("userID", commonBeans.mainUser.getMaNguoiDung());
 	}
 
 	/**
@@ -83,6 +84,10 @@ public class commonServlets extends HttpServlet {
 
 		if (error.contains("Cannot insert duplicate key in object 'dbo.NguoiDung'"))
 			return "Tên đăng nhập đã tồn tại!";
+		else if (error.contains("Cannot insert duplicate key in object 'dbo.SanPham'"))
+			return "Mã sản phẩm đã tồn tại đã tồn tại!";
+		else if (error.contains("Cannot insert duplicate key in object 'dbo.LoaiSanPham'"))
+			return "Mã loại sản phẩm đã tồn tại đã tồn tại!";
 		return "Chưa filter: "+error;
 	}
 	

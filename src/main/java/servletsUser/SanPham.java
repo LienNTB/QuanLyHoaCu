@@ -63,29 +63,40 @@ public class SanPham extends HttpServlet {
             System.out.print("Sản phẩm bị gì rồi kìa Đại vương!");
             
 		}
+		servletsUser.commonServlets.setUpForHeader(conn,request,response);
 		if (sp!=null)
 		{
-			try
+			if (!sp.getDaXoa())
 			{
-				spRelated=SanPhamUtils.getListSanPhamRelated(conn,sp,4);
+				try
+				{
+					spRelated=SanPhamUtils.getListSanPhamRelated(conn,sp,4);
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+		            System.out.print("Lấy sản phẩm có liên quan hông được rồi Đại vương!");
+				}
+				sp.OutPrint();
+	
+				System.out.print(spRelated);
+					request.setAttribute("sanPham",sp);
+					request.setAttribute("spRelated",spRelated);
+					response.setContentType("text/html;charset=UTF-8");
+				        RequestDispatcher dispatcher = request.getServletContext()
+				                .getRequestDispatcher("/WEB-INF/views/allUser/pages/sanpham.jsp");
+				        dispatcher.forward(request, response);
 			}
-			catch (SQLException e)
-			{
-				e.printStackTrace();
-	            System.out.print("Lấy sản phẩm có liên quan hông được rồi Đại vương!");
-			}
-			sp.OutPrint();
+		
 		}
 		else
+		{
 			System.out.print("Hỏng thấy sản phẩm, Đại vương ơi!");
-		System.out.print(spRelated);
-		request.setAttribute("sanPham",sp);
-		request.setAttribute("spRelated",spRelated);
-		servletsUser.commonServlets.setUpForHeader(conn,request,response);
-		response.setContentType("text/html;charset=UTF-8");
-	        RequestDispatcher dispatcher = request.getServletContext()
-	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/sanpham.jsp");
+			request.setAttribute("notfication","Không tìm thấy sản phẩm");
+			RequestDispatcher dispatcher = request.getServletContext()
+	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
 	        dispatcher.forward(request, response);
+		}
 	}
 
 	/**

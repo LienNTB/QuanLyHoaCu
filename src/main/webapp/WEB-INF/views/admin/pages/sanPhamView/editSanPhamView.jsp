@@ -29,6 +29,7 @@
   </head>
 
   <body>
+  
      <jsp:include page="/WEB-INF/views/admin/pages/__header.jsp"/>
 
       <!--**********************************

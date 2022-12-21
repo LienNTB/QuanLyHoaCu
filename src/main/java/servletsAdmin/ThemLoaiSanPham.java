@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import beans.LoaiSanPham;
 import beans.commonBeans;
 import conn.DBConnection;
+import servletsUser.commonServlets;
 import utils.LoaiSanPhamUtils;
 
 /**
@@ -75,11 +76,11 @@ public class ThemLoaiSanPham extends HttpServlet {
 		}
 		catch(SQLException e)
         {
-			errorString = e.getMessage();
+			errorString=commonServlets.filterErrorFromDatabase(e.getMessage());
 		}
 		if(errorString!=null)
 		{
-			request.setAttribute("errorString",errorString);
+			request.setAttribute("notification",errorString);
 			RequestDispatcher dispatcher = request.getServletContext()
 			.getRequestDispatcher("/WEB-INF/views/admin/pages/loaiSanPhamView/themLoaiSanPhamView.jsp");
 	dispatcher.forward(request, response);

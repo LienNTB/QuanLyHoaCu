@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import beans.User;
 import beans.commonBeans;
 import conn.DBConnection;
+import servletsUser.commonServlets;
 import utils.userUtils;
 
 /**
@@ -80,7 +81,7 @@ public class ThemKhachHang extends HttpServlet {
 			user = new User(MaNguoiDung, TenDangNhap, MatKhau,HoTen, NgaySinh, DiaChi, RoleID);
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			errorString=commonServlets.filterErrorFromDatabase(e1.getMessage());
 		}
 		user.OutPrint();
 		try{
@@ -93,7 +94,7 @@ public class ThemKhachHang extends HttpServlet {
 		}
 		if (errorString != null)
 		{
-			request.setAttribute("errorString",errorString);
+			request.setAttribute("notification",errorString);
 			RequestDispatcher dispatcher = request.getServletContext()
 			.getRequestDispatcher("/WEB-INF/views/admin/pages/khachHangView/themKhachHangView.jsp");
 	dispatcher.forward(request, response);

@@ -195,7 +195,7 @@ public class SanPhamUtils
     }
     public static SanPham GetSanPhamById(Connection conn, String maSP) throws SQLException
     {
-        String sqlString = "Select sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham from SanPham sp LEFT JOIN  LoaiSanPham lsp on sp.MaLoaiSP=lsp.MaLoaiSP where sp.MaSP=? ORDER BY sp.MaSP";
+        String sqlString = "Select sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, sp.DaXoa, lsp.TenLoaiSanPham from SanPham sp LEFT JOIN  LoaiSanPham lsp on sp.MaLoaiSP=lsp.MaLoaiSP where sp.MaSP=? ORDER BY sp.MaSP";
         PreparedStatement stmt= conn.prepareStatement(sqlString);
         stmt.setString(1, maSP);
         ResultSet rs= stmt.executeQuery();
@@ -209,6 +209,7 @@ public class SanPhamUtils
             sanPham.setHinh(rs.getString("Hinh"));
             sanPham.setMaLoaiSP(rs.getString("MaLoaiSP"));
             sanPham.setTenLoaiSanPham(rs.getString("TenLoaiSanPham"));
+            sanPham.setDaXoa(rs.getBoolean("DaXoa"));
             return sanPham;
         }
         return null;
