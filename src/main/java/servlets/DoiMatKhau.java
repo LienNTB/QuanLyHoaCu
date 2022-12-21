@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.User;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.userUtils;
 
@@ -36,7 +36,7 @@ public class DoiMatKhau extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setAttribute("user", commons.mainUser);
+		request.setAttribute("user", commonBeans.mainUser);
 	       response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/doiMatKhau.jsp");
@@ -92,7 +92,7 @@ public class DoiMatKhau extends HttpServlet {
 		}
 		if (hasError)
 		{
-			request.setAttribute("user", commons.mainUser);
+			request.setAttribute("user", commonBeans.mainUser);
 			request.setAttribute("notification", notification);
 		       response.setContentType("text/html;charset=UTF-8");
 		        RequestDispatcher dispatcher = request.getServletContext()
@@ -102,7 +102,7 @@ public class DoiMatKhau extends HttpServlet {
 		else
 		{
 			notification="Đổi mật khẩu thành công";
-			if (commons.mainUser==null)
+			if (commonBeans.mainUser==null)
 			{
 				request.setAttribute("notification", notification);
 			       response.setContentType("text/html;charset=UTF-8");
@@ -112,14 +112,26 @@ public class DoiMatKhau extends HttpServlet {
 			}
 			else
 			{
-				commons.mainUser=user;
+				commonBeans.mainUser=user;
 				request.setAttribute("notification", notification);
-				request.setAttribute("user", user);
-				servletsUser.common.setUpForHeader(conn,request,response);
-			       response.setContentType("text/html;charset=UTF-8");
-			        RequestDispatcher dispatcher = request.getServletContext()
-			                .getRequestDispatcher("/WEB-INF/views/allUser/pages/profile.jsp");
-			        dispatcher.forward(request, response);
+				if (commonBeans.mainUser.getRole().equals("USER"))
+				{
+					request.setAttribute("user", user);
+					servletsUser.commonServlets.setUpForHeader(conn,request,response);
+				       response.setContentType("text/html;charset=UTF-8");
+				        RequestDispatcher dispatcher = request.getServletContext()
+				                .getRequestDispatcher("/WEB-INF/views/allUser/pages/profile.jsp");
+				        dispatcher.forward(request, response);
+				}
+				else if (commonBeans.mainUser.getRole().equals("ADMIN"))
+				{
+					request.setAttribute("user", user);
+					servletsUser.commonServlets.setUpForHeader(conn,request,response);
+				       response.setContentType("text/html;charset=UTF-8");
+				        RequestDispatcher dispatcher = request.getServletContext()
+				                .getRequestDispatcher("/WEB-INF/views/admin/pages/homepage.jsp");
+				        dispatcher.forward(request, response);
+				}
 			}
 		}
 	}

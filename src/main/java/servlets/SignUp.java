@@ -15,8 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.User;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
+import servletsUser.commonServlets;
 import utils.userUtils;
 
 /**
@@ -52,10 +53,11 @@ public class SignUp extends HttpServlet {
 		// TODO Auto-generated method stub
 		String error=null;
 		User user=null;
+		boolean hasError=false;
 		String tenDangNhap=request.getParameter("Username");
 		String matKhau=request.getParameter("Password");
 		String hoTen= new String(request.getParameter("Name").getBytes("ISO-8859-1"),"UTF-8");
-		 java.sql.Date NgaySinh = commons.ConvertStringToSQLDate(request.getParameter("Birthday"));
+		 java.sql.Date NgaySinh = commonBeans.ConvertStringToSQLDate(request.getParameter("Birthday"));
 		String diaChi=new String(request.getParameter("Address").getBytes("ISO-8859-1"),"UTF-8");
 		try {
 			user = new User(tenDangNhap, tenDangNhap, matKhau,hoTen, NgaySinh, diaChi, "001");
@@ -76,12 +78,19 @@ public class SignUp extends HttpServlet {
 		}
 		try{
 			userUtils.insertUser(conn, user);
+			
 		}
 		catch (SQLException e)
-		{
-			error=e.getMessage();
+		{	
+			hasError=true;
+			error=commonServlets.filterErrorFromDatabase(e.getMessage());
+			
 		}
-		request.setAttribute("errorString", error);
+		if (!hasError)
+		{
+			error="Tạo tài khoản thành công";
+		}
+		request.setAttribute("notification", error);
 		RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/WEB-INF/views/allUser/pages/login.jsp");
 		dispatcher.forward(request, response);
 

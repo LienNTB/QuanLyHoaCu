@@ -5,7 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class commons {
+public class commonBeans {
 	public static String admin_url="~/admin/";
 	public static User mainUser=null;
 	public static HomePage homePage=new HomePage(0);

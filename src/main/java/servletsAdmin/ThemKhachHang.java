@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.User;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.userUtils;
 
@@ -38,9 +38,9 @@ public class ThemKhachHang extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
-			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			response.sendRedirect(request.getContextPath()+"/Login");
 			return;
 		}
 		response.setContentType("text/html;charset=UTF-8");
@@ -54,9 +54,9 @@ public class ThemKhachHang extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
-			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			response.sendRedirect(request.getContextPath()+"/Login");
 			return;
 		}
 		Connection conn=null;
@@ -71,7 +71,7 @@ public class ThemKhachHang extends HttpServlet {
 		String MaNguoiDung= request.getParameter("maNguoiDung");
 		String TenDangNhap= request.getParameter("tenDangNhap"); //
 	    String HoTen= new String(request.getParameter("hoTen").getBytes("ISO-8859-1"),"UTF-8");
-        java.sql.Date NgaySinh = commons.ConvertStringToSQLDate(request.getParameter("ngaySinh"));  
+        java.sql.Date NgaySinh = commonBeans.ConvertStringToSQLDate(request.getParameter("ngaySinh"));  
 		String DiaChi= new String(request.getParameter("diaChi").getBytes("ISO-8859-1"),"UTF-8");
 	    String MatKhau="123";
 		String RoleID="001";

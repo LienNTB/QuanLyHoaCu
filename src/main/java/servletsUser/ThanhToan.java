@@ -20,7 +20,7 @@ import utils.ChiTietHoaDonUtils;
 import utils.HoaDonUtils;
 import beans.ChiTietHoaDon;
 import beans.HoaDon;
-import beans.commons;
+import beans.commonBeans;
 
 /**
  * Servlet implementation class CheckOut
@@ -42,7 +42,7 @@ public class ThanhToan extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		servletsUser.common.preCheckLogin(request,response);
+		servletsUser.commonServlets.preCheckLogin(request,response);
 		Connection conn=null;
 		try
 		{
@@ -56,15 +56,15 @@ public class ThanhToan extends HttpServlet {
 		float tong=0;
 		try
 		{
-			cthdList=ChiTietHoaDonUtils.getChiTietHoaDonByMaHD(conn,"cart_"+commons.mainUser.getMaNguoiDung());
-			tong=HoaDonUtils.getTongThanhToan(conn,"cart_"+commons.mainUser.getMaNguoiDung());
+			cthdList=ChiTietHoaDonUtils.getChiTietHoaDonByMaHD(conn,"cart_"+commonBeans.mainUser.getMaNguoiDung());
+			tong=HoaDonUtils.getTongThanhToan(conn,"cart_"+commonBeans.mainUser.getMaNguoiDung());
 		}
 		catch(SQLException e)
         {
             e.printStackTrace();
 		}
 		System.out.print(cthdList.size());
-		servletsUser.common.setUpForHeader(conn,request,response);
+		servletsUser.commonServlets.setUpForHeader(conn,request,response);
 		request.setAttribute("tongTien",tong);
 		request.setAttribute("chiTietHoaDon",cthdList);
 		
@@ -80,7 +80,7 @@ public class ThanhToan extends HttpServlet {
 	@SuppressWarnings("deprecation")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		if (!servletsUser.common.preCheckLogin(request,response))
+		if (!servletsUser.commonServlets.preCheckLogin(request,response))
 			return;
 		Connection conn=null;
 		try
@@ -107,15 +107,15 @@ public class ThanhToan extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		String newMaHD= "DH."+commons.mainUser.getMaNguoiDung()+"."+new SimpleDateFormat("yyyyMMddhhmmss").format(Calendar.getInstance().getTime());
-		HoaDon hd=new HoaDon(newMaHD, tongTien,diaChiGiaoHang, commons.mainUser.getMaNguoiDung(), SoDienThoai, new Date(2023,01,01), false,false, false, ghiChu);
+		String newMaHD= "DH."+commonBeans.mainUser.getMaNguoiDung()+"."+new SimpleDateFormat("yyyyMMddhhmmss").format(Calendar.getInstance().getTime());
+		HoaDon hd=new HoaDon(newMaHD, tongTien,diaChiGiaoHang, commonBeans.mainUser.getMaNguoiDung(), SoDienThoai, new Date(2023,01,01), false,false, false, ghiChu);
 		
 		try
 		{
-			tongTien= HoaDonUtils.getTongThanhToan(conn,"cart_"+commons.mainUser.getMaNguoiDung() );
+			tongTien= HoaDonUtils.getTongThanhToan(conn,"cart_"+commonBeans.mainUser.getMaNguoiDung() );
 			hd.setTongThanhToan(tongTien);
 			HoaDonUtils.insertHoaDon(conn,hd);
-			ChiTietHoaDonUtils.changeMaCTHD(conn,"cart_"+commons.mainUser.getMaNguoiDung(),newMaHD );
+			ChiTietHoaDonUtils.changeMaCTHD(conn,"cart_"+commonBeans.mainUser.getMaNguoiDung(),newMaHD );
 		}
 		catch(SQLException e)
 				{
@@ -123,7 +123,7 @@ public class ThanhToan extends HttpServlet {
 					response.sendRedirect(request.getContextPath()+"/ThanhToan?");
 		            return;
 				}
-		servletsUser.common.setUpForHeader(conn,request,response);
+		servletsUser.commonServlets.setUpForHeader(conn,request,response);
 		response.setContentType("text/html;charset=UTF-8");
 		RequestDispatcher dispatcher = request.getServletContext()
 				.getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");

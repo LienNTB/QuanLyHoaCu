@@ -57,6 +57,8 @@
                   <div class="form-validation">
                     <p style="color:red;">${errorString}</p>
                     <form method="POST" action="${pageContext.request.contextPath}/EditSanPham" name="editSanPhamForm" onsubmit=" return validateForm();">  
+                      	<img id="showImage" src="${sanpham.hinh }"
+	                            style="width:100px" alt="">
                       <input type="hidden" name="maSP" value="${sanpham.maSP}">
                       <div class="form-group row">
                         <label
@@ -138,6 +140,7 @@
                               <div class="form-group">
                                 <input type="text" class="form-control-file" name="hinh" value="${sanpham.hinh }" />
                               </div>
+                               
                           </div>
                         </div>
                       </div>

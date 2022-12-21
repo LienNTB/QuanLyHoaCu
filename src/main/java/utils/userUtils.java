@@ -30,6 +30,26 @@ public class userUtils {
         }
         return userList;
     }
+    public static List<User> getListUserByDeletedStatus(Connection conn, boolean status) throws SQLException {
+        PreparedStatement ps = conn.prepareStatement("SELECT MaNguoiDung, TenDangNhap, HoTen, MatKhau, NgaySinh, DiaChi, RoleID, DaXoa FROM NguoiDung where RoleID='001' and DaXoa=?");
+        ps.setBoolean(1,status);
+        ResultSet rs = ps.executeQuery();
+        List<User> userList = new ArrayList<User>();
+        while (rs.next()) {
+            User user = new User();
+            user.setMaNguoiDung(rs.getString("MaNguoiDung"));
+            user.setTenDangNhap(rs.getString("TenDangNhap"));
+            user.setHoTen(rs.getString("HoTen"));
+            user.setMatKhau(rs.getString("MatKhau"));
+            user.setNgaySinh(rs.getDate("NgaySinh"));
+            user.setDiaChi(rs.getString("DiaChi"));
+            user.setRole(rs.getString("RoleID"));
+            user.setDaXoa(rs.getBoolean("DaXoa"));
+            userList.add(user);
+        }
+        return userList;
+
+    }
     public static List<User> getListUserBySearch(Connection conn, String text) throws SQLException {
         PreparedStatement ps = conn.prepareStatement("SELECT MaNguoiDung, TenDangNhap, HoTen, MatKhau, NgaySinh, DiaChi, RoleID, DaXoa FROM NguoiDung where RoleID='001'\r\n"
         		+ "and NguoiDung.MaNguoiDung like '%"+text+"%' or NguoiDung.HoTen like N'%"+text+"%' or NguoiDung.DiaChi like N'%"+text+"%'\r\n"

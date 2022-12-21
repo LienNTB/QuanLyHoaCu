@@ -19,7 +19,7 @@
           alert("Vui lòng nhập tên đăng nhập và mật khẩu");
           return false;
         }
-        if (password.length()<=4)
+        if (password.length<=4)
         {
           alert("Mật khẩu quá ngắn!");
                     return false;
@@ -55,7 +55,7 @@
 	</c:if>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="SignUp"  method="post" name="SignUpForm" onsubmit="validateSignUpForm()">
+        <form action="SignUp"  method="post" name="SignUpForm" onsubmit=" return validateSignUpForm();">
           <h1>Create Account</h1>
           <input type="text" placeholder="Username" name="Username"  />
           <input type="password" placeholder="Password" name="Password" />
@@ -67,7 +67,7 @@
         </form>
       </div>
       <div class="form-container sign-in-container" >
-        <form action=${pageContext.request.contextPath}/Login method="post" name="SignInForm" onsubmit="validateSignInForm()">
+        <form action=${pageContext.request.contextPath}/Login method="post" name="SignInForm" onsubmit="return validateSignInForm()">
           <h1>Sign in</h1>
           <input type="text" placeholder="Username" name="Username" />
           <input type="password" placeholder="Password" name="Password" />

@@ -14,6 +14,10 @@
        var text = document.getElementById("search").value;
        window.location.href = "QuanLiDonHang?text=" + text;
      }
+   function handleFilter() {
+       var text = document.getElementById("filter").value;
+       window.location.href = "Loc?obj=hoadon&&status="+text;
+     }
     </script>
   <body>
       <jsp:include page="/WEB-INF/views/admin/pages/__header.jsp"/>
@@ -42,13 +46,16 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">QUẢN LÍ ĐƠN HÀNG</h4>
-                  <a href="ThemDonHang">
-                    <button type="button" class="btn mb-1 btn-primary">Thêm đơn hàng mới</button>
-                  </a>
                  <div class="input-area">
                      <input type="text" class="form-control input-default" id="search" placeholder="Input Default">
                      <button type="button" class="btn mb-1 btn-primary" onclick="handleSearch()">Tìm kiếm</button>
                    </div>
+                   <select  name="filter" id="filter" >
+                            <option value="2" <c:if test="${status.equals('2')}">selected</c:if>>Tất cả</option>
+                            <option value="0" <c:if test="${status.equals('0')}">selected</c:if>>Còn hiển thị</option>
+							<option value="1" <c:if test="${status.equals('1')}">selected</c:if>>Đã xóa</option>	                    
+                    </select>
+                     <button type="button" class="btn mb-1 btn-primary" onclick="handleFilter()">Lọc</button>
                   <br/>
                   <br/>
                   <div class="table-responsive">    
@@ -100,7 +107,7 @@
                                </c:if>
                             </td>
                           <td>${loop.index+1}</td>
-                          <td>${dh.maHoaDon}</td>
+                          <td><a <c:if  test="${dh.getDaXoa() }">style="color:red"</c:if>>${dh.maHoaDon}</a></td>
                           <td>${dh.maKhachHang}</td>
                           <td>${dh.soDienThoai}</td>
                           <td>${dh.tongThanhToan}</td>

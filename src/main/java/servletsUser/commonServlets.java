@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import beans.ChiTietHoaDon;
 import beans.HoaDon;
 import beans.LoaiSanPham;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.ChiTietHoaDonUtils;
 import utils.HoaDonUtils;
@@ -23,13 +23,13 @@ import utils.LoaiSanPhamUtils;
 /**
  * Servlet implementation class common
  */
-public class common extends HttpServlet {
+public class commonServlets extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public common() {
+    public commonServlets() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,11 +43,11 @@ public class common extends HttpServlet {
 		List<ChiTietHoaDon> cart=new ArrayList<ChiTietHoaDon>();
 		List<HoaDon> order=new ArrayList<HoaDon>();
 		try{
-			lsp = LoaiSanPhamUtils.getListLoaiSanPham(conn);
-			if (beans.commons.isLogin())
+			lsp = LoaiSanPhamUtils.getListLoaiSanPhamByDeletedStatus(conn,false);
+			if (beans.commonBeans.isLogin())
 			{
-				cart=ChiTietHoaDonUtils.getChiTietHoaDonByMaHD(conn, "cart_"+commons.mainUser.getMaNguoiDung());
-				order= HoaDonUtils.getHoaDonByIdMaKH(conn, commons.mainUser.getMaNguoiDung());
+				cart=ChiTietHoaDonUtils.getChiTietHoaDonByMaHD(conn, "cart_"+commonBeans.mainUser.getMaNguoiDung());
+				order= HoaDonUtils.getHoaDonByIdMaKH(conn, commonBeans.mainUser.getMaNguoiDung());
 			}
 			
 		}
@@ -57,7 +57,7 @@ public class common extends HttpServlet {
 		request.setAttribute("loaiSanPham", lsp);
 		request.setAttribute("hoaDon", order);
 		request.setAttribute("gioHang", cart);
-		request.setAttribute("userID", commons.mainUser.getMaNguoiDung());
+		request.setAttribute("userID", commonBeans.mainUser.getMaNguoiDung());
 	}
 
 	/**
@@ -70,13 +70,20 @@ public class common extends HttpServlet {
 
 	public static boolean preCheckLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
 		// TODO Auto-generated method stub
-		if (!beans.commons.isLogin())
+		if (!beans.commonBeans.isLogin())
 		{
 			System.out.print("Nó chưa đăng nhập, Đại vương ơi!");
 			response.sendRedirect(request.getContextPath()+"/Login");
 			return false;
 		}
 		return true;
+	}
+	public static String filterErrorFromDatabase(String error)
+	{
+
+		if (error.contains("Cannot insert duplicate key in object 'dbo.NguoiDung'"))
+			return "Tên đăng nhập đã tồn tại!";
+		return "Chưa filter: "+error;
 	}
 	
 	

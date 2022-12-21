@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import beans.User;
 import conn.DBConnection;
 import utils.userUtils;
-import beans.commons;
+import beans.commonBeans;
 
 /**
  * Servlet implementation class EditKhachHang
@@ -37,9 +37,9 @@ public class EditKhachHang extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
-			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			response.sendRedirect(request.getContextPath()+"/Login");
 			return;
 		}
 		Connection conn=null;
@@ -75,7 +75,7 @@ public class EditKhachHang extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
 			response.sendRedirect(request.getContextPath()+"/NotAllow");
 			return;
@@ -92,7 +92,7 @@ public class EditKhachHang extends HttpServlet {
 		String MaNguoiDung= request.getParameter("maNguoiDung");
 		String TenDangNhap= request.getParameter("tenDangNhap"); //
 	    String HoTen= new String (request.getParameter("hoTen").getBytes("ISO-8859-1"),"UTF-8");
-        java.sql.Date NgaySinh = commons.ConvertStringToSQLDate(request.getParameter("ngaySinh"));  
+        java.sql.Date NgaySinh = commonBeans.ConvertStringToSQLDate(request.getParameter("ngaySinh"));  
 		String DiaChi= new String (request.getParameter("diaChi").getBytes("ISO-8859-1"),"UTF-8");
 	    String MatKhau="123";
 		String RoleID="001";

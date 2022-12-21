@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.HoaDon;
 import beans.LoaiSanPham;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.HoaDonUtils;
 import utils.LoaiSanPhamUtils;
@@ -38,7 +38,7 @@ public class TheoDoiDonHang extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!servletsUser.common.preCheckLogin(request,response))
+		if (!servletsUser.commonServlets.preCheckLogin(request,response))
 			return;
 		Connection conn=null;
 		try {
@@ -56,7 +56,7 @@ public class TheoDoiDonHang extends HttpServlet {
 		}
 		try
 		{
-			list = HoaDonUtils.getHoaDonByIdMaKH(conn, commons.mainUser.getMaNguoiDung());
+			list = HoaDonUtils.getHoaDonByIdMaKH(conn, commonBeans.mainUser.getMaNguoiDung());
 		}
 		catch (SQLException e)
 		{
@@ -65,7 +65,7 @@ public class TheoDoiDonHang extends HttpServlet {
 		request.setAttribute("mode",mode);
 		request.setAttribute("hoadonList", list);
 		response.setContentType("text/html;charset=UTF-8");
-		servletsUser.common.setUpForHeader(conn,request,response);
+		servletsUser.commonServlets.setUpForHeader(conn,request,response);
         RequestDispatcher dispatcher = request.getServletContext()
                 .getRequestDispatcher("/WEB-INF/views/allUser/pages/theodoidonhang.jsp");
         dispatcher.forward(request, response);

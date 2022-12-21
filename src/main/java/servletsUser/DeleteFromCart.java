@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.ChiTietHoaDon;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.ChiTietHoaDonUtils;
 
@@ -35,6 +35,8 @@ public class DeleteFromCart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		if (!servletsUser.commonServlets.preCheckLogin(request,response))
+			return;
 		Connection conn=null;
 		try{
 			conn=DBConnection.getConnection();
@@ -44,7 +46,7 @@ public class DeleteFromCart extends HttpServlet {
 			e.printStackTrace();
 		}
 		String maSP=request.getParameter("id");
-		ChiTietHoaDon cthd=new ChiTietHoaDon("cart_"+commons.mainUser.getMaNguoiDung(),maSP, 0,0);
+		ChiTietHoaDon cthd=new ChiTietHoaDon("cart_"+commonBeans.mainUser.getMaNguoiDung(),maSP, 0,0);
 		try{
 			ChiTietHoaDonUtils.deleteChiTietHoaDon(conn,cthd);
 		}

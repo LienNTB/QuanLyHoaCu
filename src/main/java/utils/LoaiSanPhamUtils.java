@@ -29,6 +29,25 @@ public class LoaiSanPhamUtils
         }
         return loaiSanPhamList;
     }
+    public static List<LoaiSanPham> getListLoaiSanPhamByDeletedStatus(Connection conn, boolean status) throws SQLException 
+    {
+        List<LoaiSanPham> loaiSanPhamList = new ArrayList<LoaiSanPham>();
+        PreparedStatement stmt = null;
+        PreparedStatement stmt2 = null;
+        ResultSet rs = null;
+        stmt = conn.prepareStatement("SELECT MaLoaiSP, TenLoaiSanPham, DaXoa FROM LoaiSanPham where DaXoa=?");
+        stmt.setBoolean(1, status);
+        rs = stmt.executeQuery();
+        while (rs.next())
+        {
+            LoaiSanPham loaiSanPham = new LoaiSanPham();
+            loaiSanPham.setMaLoaiSP(rs.getString("MaLoaiSP"));
+            loaiSanPham.setTenLoaiSanPham(rs.getString("TenLoaiSanPham"));
+            loaiSanPham.setDaXoa(rs.getBoolean("DaXoa"));
+            loaiSanPhamList.add(loaiSanPham);
+        }
+        return loaiSanPhamList;
+    }
     public static List<LoaiSanPham> getListLoaiSanPhamBySearch(Connection conn, String text) throws SQLException 
     {
         List<LoaiSanPham> loaiSanPhamList = new ArrayList<LoaiSanPham>();

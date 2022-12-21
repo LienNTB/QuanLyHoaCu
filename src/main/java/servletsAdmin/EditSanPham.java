@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.SanPham;
-import beans.commons;
+import beans.commonBeans;
 import beans.LoaiSanPham;
 import conn.DBConnection;
 import utils.SanPhamUtils;
@@ -38,7 +38,7 @@ public class EditSanPham extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
 			response.sendRedirect(request.getContextPath()+"/NotAllow");
 			return;
@@ -65,9 +65,9 @@ public class EditSanPham extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
-			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			response.sendRedirect(request.getContextPath()+"/Login");
 			return;
 		}
 		Connection conn =null;

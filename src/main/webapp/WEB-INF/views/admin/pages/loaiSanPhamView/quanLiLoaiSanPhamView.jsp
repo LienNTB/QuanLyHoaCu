@@ -16,6 +16,10 @@
           var text = document.getElementById("search").value;
           window.location.href = "QuanLiLoaiSanPham?text=" + text;
         }
+      function handleFilter() {
+          var text = document.getElementById("filter").value;
+          window.location.href = "Loc?obj=loaisanpham&&status="+text;
+        }
     </script>
   </head>
 
@@ -53,6 +57,12 @@
                      <input type="text" class="form-control input-default" id="search" placeholder="Input Default">
                      <button type="button" class="btn mb-1 btn-primary" onclick="handleSearch()">Tìm kiếm</button>
                    </div>
+                    <select  name="filter" id="filter" >
+                            <option value="2" <c:if test="${status.equals('2')}">selected</c:if>>Tất cả</option>
+                            <option value="0" <c:if test="${status.equals('0')}">selected</c:if>>Còn hiển thị</option>
+							<option value="1" <c:if test="${status.equals('1')}">selected</c:if>>Đã xóa</option>	                    
+                    </select>
+                     <button type="button" class="btn mb-1 btn-primary" onclick="handleFilter()">Lọc</button>
                   <br/>
                   <br />
                   <div class="table-responsive">
@@ -67,7 +77,7 @@
                       <tbody>
                       <c:forEach var="lsp" items="${loaiSanPhamlist}">
                         <tr>
-                          <td>${lsp.maLoaiSP}</td>
+                          <td><a <c:if  test="${lsp.getDaXoa() }">style="color:red"</c:if>>${lsp.maLoaiSP}</a></td>
                           <td>${lsp.tenLoaiSanPham}</td>
                           <td >
                            

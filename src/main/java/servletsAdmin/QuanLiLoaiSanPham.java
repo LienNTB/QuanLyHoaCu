@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.LoaiSanPham;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.LoaiSanPhamUtils;
 
@@ -37,9 +37,9 @@ public class QuanLiLoaiSanPham extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse respo	nse)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
-			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			response.sendRedirect(request.getContextPath()+"/Login");
 			return;
 		}
 		Connection conn=null;

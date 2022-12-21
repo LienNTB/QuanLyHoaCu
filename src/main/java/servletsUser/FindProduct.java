@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 
 /**
@@ -59,10 +59,10 @@ public class FindProduct extends HttpServlet {
 			maLSP="%%";
 		}
 		System.out.print(maLSP);
-		commons.homePage.setChedo(mode);
-		commons.homePage.setMaLSP(maLSP);
-		commons.homePage.setDataInput(dataInput);
-		commons.homePage.setSttTrang(1);
+		commonBeans.homePage.setChedo(mode);
+		commonBeans.homePage.setMaLSP(maLSP);
+		commonBeans.homePage.setDataInput(dataInput);
+		commonBeans.homePage.setSttTrang(1);
 		System.out.println("Giờ tới homepage nè Đại vương");
 		response.sendRedirect(request.getContextPath()+"/HomePage");
 	}

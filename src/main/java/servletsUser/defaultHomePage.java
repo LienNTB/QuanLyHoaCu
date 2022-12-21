@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.commons;
+import beans.commonBeans;
 
 /**
  * Servlet implementation class defaultHomePage
@@ -29,7 +29,7 @@ public class defaultHomePage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		commons.homePage.setChedo(0);	
+		commonBeans.homePage.setChedo(0);	
 		response.sendRedirect(request.getContextPath()+"/HomePage");
 	}
 

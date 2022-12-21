@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import beans.HoaDon;
-import beans.commons;
+import beans.commonBeans;
 public class HoaDonUtils {
     public static List<HoaDon> getListHoaDon(Connection conn) throws SQLException {
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
@@ -32,6 +32,30 @@ public class HoaDonUtils {
         return hoaDonList;
         
     }
+    public static List<HoaDon> getListHoaDonByDeletedStatus(Connection conn, boolean status) throws SQLException {
+        List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
+        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan, DaXoa from HoaDon where DaXoa=? and MaHoaDon like 'DH.%'");
+        pst.setBoolean(1,status);
+        ResultSet rs = pst.executeQuery();
+        while (rs.next()) {
+            HoaDon hoaDon = new HoaDon();
+            hoaDon.setMaHoaDon(rs.getString("MaHoaDon"));
+            hoaDon.setGhiChu(rs.getString("GhiChu"));
+            hoaDon.setTongThanhToan(rs.getInt("TongThanhToan"));
+            hoaDon.setDiaChiGiaoHang(rs.getString("DiaChiGiaoHang"));
+            hoaDon.setSoDienThoai(rs.getString("SoDienThoai"));
+            hoaDon.setMaKhachHang(rs.getString("MaKhachHang"));
+            hoaDon.setTrangThaiDonHang(rs.getBoolean("TrangThaiDonHang"));
+            hoaDon.setThoiGianGiaoHang(rs.getDate("ThoiGianGiaoHang"));
+            hoaDon.setTrangThaiGiaoHang(rs.getBoolean("TrangThaiGiaoHang"));
+            hoaDon.setTrangThaiThanhToan(rs.getBoolean("TrangThaiThanhToan"));
+            hoaDon.setDaXoa(rs.getBoolean("DaXoa"));
+            hoaDonList.add(hoaDon);
+        }
+        return hoaDonList;
+        
+    }
+    
     public static List<HoaDon> getListHoaDonBySearch(Connection conn, String text) throws SQLException {
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
         PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang,\r\n"
@@ -62,7 +86,7 @@ public class HoaDonUtils {
 
         List<HoaDon> hoaDonList = new ArrayList<HoaDon>();
 
-        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaKhachHang=? and MaHoaDon !=? ORDER BY MaHoaDon DESC");
+        PreparedStatement pst = conn.prepareStatement("select MaHoaDon, GhiChu, TongThanhToan, DiaChiGiaoHang, SoDienThoai,MaKhachHang,TrangThaiDonHang, ThoiGianGiaoHang,TrangThaiGiaoHang, TrangThaiThanhToan from HoaDon where MaKhachHang=? and MaHoaDon !=? and DaXoa=0 ORDER BY MaHoaDon DESC");
         pst.setString(1, maKH);
         pst.setString(2, "cart_"+maKH);
         ResultSet rs = pst.executeQuery();

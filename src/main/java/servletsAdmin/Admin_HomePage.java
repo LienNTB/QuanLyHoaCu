@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.User;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.HoaDonUtils;
 import utils.SanPhamUtils;
@@ -48,9 +48,9 @@ public class Admin_HomePage extends HttpServlet {
 			e.printStackTrace();
 		}
 		response.setContentType("text/html;charset=UTF-8");
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
-			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			response.sendRedirect(request.getContextPath()+"/Login");
 			return;
 		}
 		var today = new Date();

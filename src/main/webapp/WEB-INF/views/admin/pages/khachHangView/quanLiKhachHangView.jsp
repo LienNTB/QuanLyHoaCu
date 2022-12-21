@@ -15,6 +15,10 @@
      var text = document.getElementById("search").value;
      window.location.href = "QuanLiKhachHang?text=" + text;
    }
+ function handleFilter() {
+     var text = document.getElementById("filter").value;
+     window.location.href = "Loc?obj=nguoidung&&status="+text;
+   }
     </script>
   <body>
       <jsp:include page="/WEB-INF/views/admin/pages/__header.jsp"/>
@@ -50,6 +54,12 @@
                      <input type="text" class="form-control input-default" id="search" placeholder="Input Default">
                      <button type="button" class="btn mb-1 btn-primary" onclick="handleSearch()">Tìm kiếm</button>
                    </div>
+                    <select  name="filter" id="filter" >
+                            <option value="2" <c:if test="${status.equals('2')}">selected</c:if>>Tất cả</option>
+                            <option value="0" <c:if test="${status.equals('0')}">selected</c:if>>Còn hiển thị</option>
+							<option value="1" <c:if test="${status.equals('1')}">selected</c:if>>Đã xóa</option>	                    
+                    </select>
+                     <button type="button" class="btn mb-1 btn-primary" onclick="handleFilter()">Lọc</button>
                   <br/>
                   <br/>
                   <div class="table-responsive">    
@@ -67,7 +77,7 @@
                       <tbody>
                       <c:forEach var="user" items="${users}">
                         <tr>
-                          	<td>${user.maNguoiDung}</td>
+                          	<td><a <c:if  test="${user.getDaXoa() }">style="color:red"</c:if>>${user.maNguoiDung}</a></td>
                           	<td>${user.tenDangNhap}</td>
                         	<td>${user.hoTen}</td>
                           	<td>${user.ngaySinh}</td>

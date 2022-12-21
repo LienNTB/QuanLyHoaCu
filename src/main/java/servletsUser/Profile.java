@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.User;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.userUtils;
 
@@ -35,7 +35,7 @@ public class Profile extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!servletsUser.common.preCheckLogin(request,response))
+		if (!servletsUser.commonServlets.preCheckLogin(request,response))
 			return;
 		Connection conn = null;
 		try {
@@ -44,15 +44,15 @@ public class Profile extends HttpServlet {
 			e.printStackTrace();
 		}	
 		//sẵn tiện refesh thông tin người dùng
-		String userID =commons.mainUser.getMaNguoiDung();
+		String userID =commonBeans.mainUser.getMaNguoiDung();
 		try {
-			commons.mainUser = userUtils.getUserById(conn, userID);
+			commonBeans.mainUser = userUtils.getUserById(conn, userID);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		servletsUser.common.setUpForHeader(conn,request,response);
-		request.setAttribute("user",commons.mainUser);
+		servletsUser.commonServlets.setUpForHeader(conn,request,response);
+		request.setAttribute("user",commonBeans.mainUser);
 		RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/profile.jsp");
 	        dispatcher.forward(request, response);

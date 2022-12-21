@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.ChiTietHoaDon;
 import beans.HoaDon;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.ChiTietHoaDonUtils;
 import utils.HoaDonUtils;
@@ -40,10 +40,10 @@ public class AddToCart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		if (!servletsUser.common.preCheckLogin(request,response))
+		if (!servletsUser.commonServlets.preCheckLogin(request,response))
 			return;
 		Connection conn=null;
-		String maHD="cart_"+commons.mainUser.getMaNguoiDung();
+		String maHD="cart_"+commonBeans.mainUser.getMaNguoiDung();
 		String maSP=request.getParameter("id");
 		int soLuong=Integer.parseInt(request.getParameter("number"));
 		if (soLuong <1) // cố tình can thiệp sâu hơn vào html

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.ChiTietHoaDon;
 import beans.HoaDon;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.ChiTietHoaDonUtils;
 import utils.HoaDonUtils;
@@ -38,7 +38,7 @@ public class ChiTietDonHang extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!servletsUser.common.preCheckLogin(request,response))
+		if (!servletsUser.commonServlets.preCheckLogin(request,response))
 			return;
 			
 		Connection conn = null;
@@ -64,7 +64,7 @@ public class ChiTietDonHang extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		servletsUser.common.setUpForHeader(conn, request, response);
+		servletsUser.commonServlets.setUpForHeader(conn, request, response);
 		response.setContentType("text/html;charset=UTF-8");
 		request.setAttribute("hoaDonMain",hd);
 		request.setAttribute("chitiethoadonListMain", list);

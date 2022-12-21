@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.SanPham;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.SanPhamUtils;
 
@@ -49,7 +49,7 @@ public class HomePage extends HttpServlet {
 	       
 
 	      setupVariables(conn,request,response);
-	      servletsUser.common.setUpForHeader(conn,request,response);
+	      servletsUser.commonServlets.setUpForHeader(conn,request,response);
 	       response.setContentType("text/html;charset=UTF-8");
 	        RequestDispatcher dispatcher = request.getServletContext()
 	                .getRequestDispatcher("/WEB-INF/views/allUser/pages/homepage.jsp");
@@ -81,16 +81,16 @@ public class HomePage extends HttpServlet {
 		List <SanPham> forwardList=null;
 		List <SanPham> bestSeller=null;
 		try {
-			if (commons.homePage.getChedo()==0)
+			if (commonBeans.homePage.getChedo()==0)
 			{
-				list = SanPhamUtils.getListSanPham(conn);
+				list = SanPhamUtils.getSanPhamListByDeletedStatus(conn,false);
 				bestSeller=SanPhamUtils.getBestSeller(conn,4);
 				
 			}
 			else
 			{
-				list=SanPhamUtils.getListSanPhamByMaLSPandDataInput(conn,commons.homePage.getMaLSP(), commons.homePage.getDataInput());
-				bestSeller=SanPhamUtils.getBestSellerByLSP(conn,4,commons.homePage.getMaLSP());
+				list=SanPhamUtils.getListSanPhamByMaLSPandDataInput(conn,commonBeans.homePage.getMaLSP(), commonBeans.homePage.getDataInput());
+				bestSeller=SanPhamUtils.getBestSellerByLSP(conn,4,commonBeans.homePage.getMaLSP());
 			}
 		
 		} catch (SQLException e) {	
@@ -108,10 +108,10 @@ public class HomePage extends HttpServlet {
 			else
 				forwardList=list.subList((index_page-1)*SPperPage,Math.min( (index_page)*SPperPage,list.size()));
 		}
-		if (commons.homePage.getChedo()==0 || commons.homePage.getMaLSP().equals("%%"))
+		if (commonBeans.homePage.getChedo()==0 || commonBeans.homePage.getMaLSP().equals("%%"))
 			request.setAttribute("defaulLSPFind", "lsp00");
 		else
-			request.setAttribute("defaulLSPFind", commons.homePage.getMaLSP());
+			request.setAttribute("defaulLSPFind", commonBeans.homePage.getMaLSP());
 		request.setAttribute("sanPhamList", forwardList);
 		request.setAttribute("maxPage",maxPage);
 		request.setAttribute("index",index_page);

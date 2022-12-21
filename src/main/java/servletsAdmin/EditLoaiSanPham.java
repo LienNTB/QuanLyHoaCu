@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.LoaiSanPham;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.LoaiSanPhamUtils;
 
@@ -35,9 +35,9 @@ public class EditLoaiSanPham extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
-			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			response.sendRedirect(request.getContextPath()+"/Login");
 			return;
 		}
 		Connection conn =null;
@@ -68,7 +68,7 @@ public class EditLoaiSanPham extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
 			response.sendRedirect(request.getContextPath()+"/NotAllow");
 			return;

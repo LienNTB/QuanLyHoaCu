@@ -23,6 +23,11 @@
           var text = document.getElementById("search").value;
           window.location.href = "QuanLiSanPham?text=" + text;
         }
+      function handleFilter() {
+          var text = document.getElementById("filter").value;
+          window.location.href = "Loc?obj=sanpham&&status="+text;
+        }
+      
     </script>
     
   </head>
@@ -60,6 +65,12 @@
                      <input type="text" class="form-control input-default" id="search" placeholder="Input Default">
                      <button type="button" class="btn mb-1 btn-primary" onclick="handleSearch()">Tìm kiếm</button>
                    </div>
+                    <select  name="filter" id="filter" >
+                            <option value="2" <c:if test="${status.equals('2')}">selected</c:if>>Tất cả</option>
+                            <option value="0" <c:if test="${status.equals('0')}">selected</c:if>>Còn hiển thị</option>
+							<option value="1" <c:if test="${status.equals('1')}">selected</c:if>>Đã xóa</option>	                    
+                    </select>
+                     <button type="button" class="btn mb-1 btn-primary" onclick="handleFilter()">Lọc</button>
 					<br/>
 		
                   <div class="table-responsive">    
@@ -87,6 +98,7 @@
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Edit"
+                                
                                 ><i
                                   class="fa fa-pencil color-muted m-r-5"
                                 ></i> </a
@@ -97,7 +109,7 @@
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="UnDelete"
-                                onclick="ConfirmDialog(${sp.maSP});" class="fa fa-close color-danger"></a>
+                                 class="fa fa-close color-danger"></a>
                                </c:if>
                               <c:if  test="${!sp.getDaXoa() }">
                               <a
@@ -110,7 +122,7 @@
                          
                           </td>
                         <td>${loop.index+1 }</td>
-                          	<td>${sp.maSP }</td>
+                          	<td><a <c:if  test="${sp.getDaXoa() }">style="color:red"</c:if>>${sp.maSP }</a></td>
                           	<td>${sp.tenSP }</td>
                           	<td>${sp.gia }</td>
                           	<td>${sp.tenLoaiSanPham }</td>

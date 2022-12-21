@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import beans.ChiTietHoaDon;
-import beans.commons;
+import beans.commonBeans;
 public class ChiTietHoaDonUtils 
 {
     public static List<ChiTietHoaDon> getChiTietHoaDonByMaHD(Connection con, String MaHD) throws SQLException 
@@ -35,7 +35,7 @@ public class ChiTietHoaDonUtils
     {
         List<ChiTietHoaDon> result = new ArrayList<ChiTietHoaDon>();
         PreparedStatement preparedStatement = con.prepareStatement("exec getCartList ?");
-        String userID = commons.mainUser.getMaNguoiDung();
+        String userID = commonBeans.mainUser.getMaNguoiDung();
         preparedStatement.setString(1, userID);
         ResultSet resultSet = preparedStatement.executeQuery();
         while(resultSet.next())

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import beans.HoaDon;
 import beans.LoaiSanPham;
 import beans.User;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.HoaDonUtils;
 import utils.userUtils;
@@ -37,7 +37,7 @@ public class EditDonHang extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
 			response.sendRedirect(request.getContextPath()+"/NotAllow");
 			return;
@@ -79,9 +79,9 @@ public class EditDonHang extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		if (!commons.checkAdmin()) 
+		if (!commonBeans.checkAdmin()) 
 		{
-			response.sendRedirect(request.getContextPath()+"/NotAllow");
+			response.sendRedirect(request.getContextPath()+"/Login");
 			return;
 		}
 		// TODO Auto-generated method stub
@@ -99,7 +99,7 @@ public class EditDonHang extends HttpServlet {
 		String diaChiGiaoHang=new String(request.getParameter("diaChiGiaoHang").getBytes("ISO-8859-1"),"UTF-8");
 		String maKhachHang=request.getParameter("maKhachHang");
 		String soDienThoai = request.getParameter("soDienThoai"); 
-		java.sql.Date thoiGianGiaoHang = commons.ConvertStringToSQLDate(request.getParameter("thoiGianGiaoHang"));
+		java.sql.Date thoiGianGiaoHang = commonBeans.ConvertStringToSQLDate(request.getParameter("thoiGianGiaoHang"));
 		Boolean trangThaiDonHang =Boolean.parseBoolean( request.getParameter("trangThaiDonHang"));
 		Boolean trangThaiGiaoHang=Boolean.parseBoolean( request.getParameter("trangThaiGiaoHang"));
 		Boolean trangThaiThanhToan=Boolean.parseBoolean( request.getParameter("trangThaiThanhToan"));

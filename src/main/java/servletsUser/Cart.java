@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.ChiTietHoaDon;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.ChiTietHoaDonUtils;
 
@@ -38,7 +38,7 @@ public class Cart extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!servletsUser.common.preCheckLogin(request,response))
+		if (!servletsUser.commonServlets.preCheckLogin(request,response))
 			return;
 		Connection conn = null;
 		try {
@@ -49,11 +49,11 @@ public class Cart extends HttpServlet {
 		List<ChiTietHoaDon> list = null;
 		try {
 			// list = ChiTietHoaDonUtils.getChiTietHoaDonFromCart(conn);
-			list=ChiTietHoaDonUtils.getChiTietHoaDonByMaHD(conn, "cart_"+commons.mainUser.getMaNguoiDung());
+			list=ChiTietHoaDonUtils.getChiTietHoaDonByMaHD(conn, "cart_"+commonBeans.mainUser.getMaNguoiDung());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		servletsUser.common.setUpForHeader(conn, request, response);
+		servletsUser.commonServlets.setUpForHeader(conn, request, response);
 		// set attribute
 		request.setAttribute("chitiethoadonList", list);
 		response.setContentType("text/html;charset=UTF-8");

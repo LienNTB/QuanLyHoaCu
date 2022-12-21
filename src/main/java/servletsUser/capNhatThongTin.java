@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.User;
-import beans.commons;
+import beans.commonBeans;
 import conn.DBConnection;
 import utils.userUtils;
 
@@ -45,7 +45,7 @@ public class capNhatThongTin extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		if (!servletsUser.common.preCheckLogin(request,response))
+		if (!servletsUser.commonServlets.preCheckLogin(request,response))
 			return;
 		Connection conn=null;
 		String errorString=null;
@@ -56,14 +56,14 @@ public class capNhatThongTin extends HttpServlet {
         {
             e.printStackTrace();
 		}
-		String MaNguoiDung= commons.mainUser.getMaNguoiDung();
-		String TenDangNhap= commons.mainUser.getTenDangNhap(); 
+		String MaNguoiDung= commonBeans.mainUser.getMaNguoiDung();
+		String TenDangNhap= commonBeans.mainUser.getTenDangNhap(); 
 		
 	    String HoTen= new String (request.getParameter("hoTen").getBytes("ISO-8859-1"),"UTF-8");
-        java.sql.Date NgaySinh = commons.ConvertStringToSQLDate(request.getParameter("ngaySinh"));  
+        java.sql.Date NgaySinh = commonBeans.ConvertStringToSQLDate(request.getParameter("ngaySinh"));  
 		String DiaChi= new String (request.getParameter("diaChi").getBytes("ISO-8859-1"),"UTF-8");
-	    String MatKhau=commons.mainUser.getMatKhau();
-		String RoleID=commons.mainUser.getRole();
+	    String MatKhau=commonBeans.mainUser.getMatKhau();
+		String RoleID=commonBeans.mainUser.getRole();
 		User user = null;
 		try {
 			user = new User(MaNguoiDung, TenDangNhap, MatKhau,HoTen, NgaySinh, DiaChi, RoleID);
@@ -90,7 +90,7 @@ public class capNhatThongTin extends HttpServlet {
 		}
 		if (errorString!=null)
 		{
-			commons.mainUser=user;
+			commonBeans.mainUser=user;
 		}
 		else
 		{
@@ -99,7 +99,7 @@ public class capNhatThongTin extends HttpServlet {
 		
 		request.setAttribute("user",user);
 		request.setAttribute("notification",errorString);
-		servletsUser.common.setUpForHeader(conn,request,response);
+		servletsUser.commonServlets.setUpForHeader(conn,request,response);
 		RequestDispatcher dispatcher = request.getServletContext()
 			.getRequestDispatcher("/WEB-INF/views/allUser/pages/profile.jsp");
 	dispatcher.forward(request, response);

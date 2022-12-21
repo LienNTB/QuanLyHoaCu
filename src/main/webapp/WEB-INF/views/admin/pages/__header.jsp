@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+ <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -88,28 +88,14 @@
                   <div class="dropdown-content-body">
                     <ul>
                       <li>
-                        <a href="app-profile.html"
-                          ><i class="icon-user"></i> <span>Profile</span></a
+                        <a href="/QUANLYHOACU/DoiMatKhau"
+                          ><i class="icon-user"></i> <span>Đổi mật khẩu</span></a
                         >
                       </li>
+                 
                       <li>
-                        <a href="javascript:void()">
-                          <i class="icon-envelope-open"></i> <span>Inbox</span>
-                          <div class="badge gradient-3 badge-pill gradient-1">
-                            3
-                          </div>
-                        </a>
-                      </li>
-
-                      <hr class="my-2" />
-                      <li>
-                        <a href="page-lock.html"
-                          ><i class="icon-lock"></i> <span>Lock Screen</span></a
-                        >
-                      </li>
-                      <li>
-                        <a href="/QUANLYHOACU/"
-                          ><i class="icon-key"></i> <span>Logout</span></a
+                        <a href="/QUANLYHOACU/DangXuat"
+                          ><i class="icon-key"></i> <span>Đăng xuất</span></a
                         >
                       </li>
                     </ul>
@@ -120,6 +106,11 @@
           </div>
         </div>
       </div>
+      <c:if test="${not empty notification}">
+	    <script type="text/javascript">
+		         alert("${notification}");
+	    </script>
+	</c:if>
       <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
