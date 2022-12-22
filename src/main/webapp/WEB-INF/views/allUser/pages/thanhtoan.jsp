@@ -1,170 +1,173 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> 
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-	<!DOCTYPE html>
-	<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>Check Out</title>
+<title>Check Out</title>
 
-		<script type="text/javascript">
-			function validate()
-			{
-				var hoTen=document.forms["order"]["hoTen"].value;
-				var soDienThoai=document.forms["order"]["soDienThoai"].value;
-				var diaChi=document.forms["order"]["diaChi"].value;
-				if (soDienThoai==""||hoTen==""||diaChi=="")
-				{
-					alert("Vui lòng nhập đầy đủ thông tin!")
-					return false;
-				}
-				return true;
-			}
-		</script>
-		<!-- Google font -->
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+<script type="text/javascript">
+	function validate() {
+		var hoTen = document.forms["order"]["hoTen"].value;
+		var soDienThoai = document.forms["order"]["soDienThoai"].value;
+		var diaChi = document.forms["order"]["diaChi"].value;
+		if (soDienThoai == "" || hoTen == "" || diaChi == "") {
+			alert("Vui lòng nhập đầy đủ thông tin!")
+			return false;
+		}
+		return true;
+	}
+</script>
+<!-- Google font -->
+<link
+	href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
+	rel="stylesheet">
 
-		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/bootstrap.min.css" />
-
-
-		<!-- Slick -->
-		<link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/slick.css" />
-		<link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/slick-theme.css" />
-
-		<!-- nouislider -->
-		<link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/nouislider.min.css" />
-
-		<!-- Font Awesome Icon -->
-		<link rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="/QUANLYHOACU/static/allUser/./css/style.css" />
-
-	</head>
-
-	<body>
-		<!-- HEADER -->
-		<%@include file="__header.jsp"%>
-		<!-- /HEADER -->
+<!-- Bootstrap -->
+<link type="text/css" rel="stylesheet"
+	href="/QUANLYHOACU/static/allUser/./css/bootstrap.min.css" />
 
 
-		<!-- BREADCRUMB -->
-		<div id="breadcrumb" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Checkout</h3>
-						<ul class="breadcrumb-tree">
-							<li><a href="HomePage">Home</a></li>
-							<li class="active">Checkout</li>
-						</ul>
-					</div>
+<!-- Slick -->
+<link type="text/css" rel="stylesheet"
+	href="/QUANLYHOACU/static/allUser/./css/slick.css" />
+<link type="text/css" rel="stylesheet"
+	href="/QUANLYHOACU/static/allUser/./css/slick-theme.css" />
+
+<!-- nouislider -->
+<link type="text/css" rel="stylesheet"
+	href="/QUANLYHOACU/static/allUser/./css/nouislider.min.css" />
+
+<!-- Font Awesome Icon -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Custom stlylesheet -->
+<link type="text/css" rel="stylesheet"
+	href="/QUANLYHOACU/static/allUser/./css/style.css" />
+
+</head>
+
+<body>
+	<!-- HEADER -->
+	<%@include file="__header.jsp"%>
+	<!-- /HEADER -->
+
+
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb" class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="breadcrumb-header">Checkout</h3>
+					<ul class="breadcrumb-tree">
+						<li><a href="HomePage">Home</a></li>
+						<li class="active">Checkout</li>
+					</ul>
 				</div>
-				<!-- /row -->
 			</div>
-			<!-- /container -->
+			<!-- /row -->
 		</div>
-		<!-- /BREADCRUMB -->
+		<!-- /container -->
+	</div>
+	<!-- /BREADCRUMB -->
 
 
 
 
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<input type="hidden" name="tongTien" value="${tongTien}">
-				<form name="order" action="ThanhToan" method="post" onsubmit="return validate();">
-					<div class="row">
-	
-						<div class="col-md-5">
-							<!-- Billing Details -->
-							<div class="billing-details">
-								<div class="section-title">
-									<h3 class="title">Địa chỉ thanh toán</h3>
-								</div>
-								<div class="form-group" >
-								<label>Họ và tên</label>
-									<input class="input" value="${commons.mainUser.hoTen}"type="text" name="hoTen" placeholder="Họ và tên">
-								</div>
-				
-								<div class="form-group">
-								<label>Điện thoại</label>
-									<input class="input" type="tel" name="soDienThoai" placeholder="Điện thoại">
-								</div>
-								<div class="form-group">
-								<label>Địa chỉ</label>
-									<input class="input" type="text" name="diaChi" placeholder="Địa chỉ">
-								</div>
-								<div class="order-notes">
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<input type="hidden" name="tongTien" value="${tongTien}">
+			<form name="order" action="ThanhToan" method="post"
+				onsubmit="return validate();">
+				<div class="row">
+
+					<div class="col-md-5">
+						<!-- Billing Details -->
+						<div class="billing-details">
+							<div class="section-title">
+								<h3 class="title">Địa chỉ thanh toán</h3>
+							</div>
+							<div class="form-group">
+								<label>Họ và tên</label> <input class="input"
+									value="${user.hoTen}" type="text" name="hoTen"
+									placeholder="Họ và tên">
+							</div>
+
+							<div class="form-group">
+								<label>Điện thoại</label> <input class="input" type="tel"
+									name="soDienThoai" placeholder="Điện thoại">
+							</div>
+							<div class="form-group">
+								<label>Địa chỉ</label> <input class="input" type="text"
+									value="${user.diaChi}"name="diaChi" placeholder="Địa chỉ">
+							</div>
+							<div class="order-notes">
 								<label>Ghi chú</label>
-								<textarea name="ghiChu" class="input" placeholder="Ghi chú cho nhà bán hàng"></textarea>
-								</div>
+								<textarea name="ghiChu" class="input"
+									placeholder="Ghi chú cho nhà bán hàng"></textarea>
 							</div>
-							<!-- /Billing Details -->
-	
 						</div>
-	
-						<!-- Order Details -->
-						<div class="col-md-7 order-details">
-							<div class="section-title text-center">
-								<h3 class="title">Đơn hàng của bạn</h3>
-							</div>
-							<div class="order-summary">
-								<table>
-									<tr class="order-col">
-										<th>
-											<strong>SẢN PHẨM</strong>
-										</th>
-										<th>
-											<strong>SỐ LƯỢNG</strong>
-										</th>
-										<th>
-											<strong>TỔNG TIỀN</strong>
-										</th>
-									
-									</tr>
-									<tr>
-										<c:forEach var ="cthd" items="${ chiTietHoaDon}">
-											<tr class="order-products">
-												<div class="order-col">
-													<div>${cthd.tenSP}</div>
-													<div>${cthd.soLuong}</div>
-													<div>${cthd.tongPhu }</div>
-													
-												</div>
+						<!-- /Billing Details -->
+
+					</div>
+
+					<!-- Order Details -->
+					<div class="col-md-7 order-details">
+						<div class="section-title text-center">
+							<h3 class="title">Đơn hàng của bạn</h3>
+						</div>
+						<div class="order-summary">
+							<table>
+							<div class="order-products">
+								<div class="order-col">
+									<div><strong>SẢN PHẨM</strong></div>
+									<div style="text-align: right"><strong>SỐ LƯỢNG</strong></div>
+									<div><strong>TỔNG TIỀN</strong></div>
+								</div>
+								</div>
+								<div>
+									<c:forEach var="cthd" items="${ chiTietHoaDon}">
+										<div class="order-products">
+											<div class="order-col">
+												<div>${cthd.tenSP}</div>
+												<div>${cthd.soLuong}</div>
+												<div>${cthd.tongPhu }</div>
 											</div>
-										</c:forEach>
-									</tr>
-								</table>
-								<div class="order-col">
-									<div>Shiping</div>
-									<div>
-										<strong>FREE</strong>
-									</div>
+										</div>
+									</c:forEach>
 								</div>
-								<div class="order-col">
-									<div>
-										<strong>TOTAL</strong>
-									</div>
-									<div>
-										<strong class="order-total">${tongTien}</strong>
-									</div>
+							</table>
+							<div class="order-col">
+								<div>Shiping</div>
+								<div>
+									<strong>FREE</strong>
 								</div>
 							</div>
-							
-							<!-- <script type="text/javascript">
+							<div class="order-col">
+								<div>
+									<strong>TOTAL</strong>
+								</div>
+								<div>
+									<strong class="order-total">${tongTien}</strong>
+								</div>
+							</div>
+						</div>
+
+						<!-- <script type="text/javascript">
 	
 							var returnedSuggestion = ''
 							let editor, doc, cursor, line, pos
@@ -245,61 +248,31 @@ pageEncoding="UTF-8"%>
 									<span></span> Tôi đã đọc và đồng ý với <a href="#">các chính sách và điều kiện</a>
 								</label>
 							</div> -->
-							<input type=submit value="Đặt hàng" class="primary-btn order-submit"/>
-						</div>
-						<!-- /Order Details -->
+						<input type=submit value="Đặt hàng"
+							class="primary-btn order-submit" />
 					</div>
-				</form>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
-
-		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="newsletter">
-							<p>
-								Sign Up for the <strong>NEWSLETTER</strong>
-							</p>
-							<form>
-								<input class="input" type="email" placeholder="Enter Your Email">
-								<button class="newsletter-btn">
-									<i class="fa fa-envelope"></i> Subscribe
-								</button>
-							</form>
-							<ul class="newsletter-follow">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-							</ul>
-						</div>
-					</div>
+					<!-- /Order Details -->
 				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
+			</form>
+			<!-- /row -->
 		</div>
-		<!-- /NEWSLETTER -->
+		<!-- /container -->
+	</div>
+	<!-- /SECTION -->
 
-		<!-- FOOTER -->
-		<%@include file="__footer.jsp" %>
-		<!-- /FOOTER -->
 
-		<!-- jQuery Plugins -->
-		<script src="/QUANLYHOACU/static/allUser/js/jquery.min.js"></script>
-		<script src="/QUANLYHOACU/static/allUser/js/bootstrap.min.js"></script>
-		<script src="/QUANLYHOACU/static/allUser/js/slick.min.js"></script>
-		<script src="/QUANLYHOACU/static/allUser/js/nouislider.min.js"></script>
-		<script src="/QUANLYHOACU/static/allUser/js/jquery.zoom.min.js"></script>
-		<script src="/QUANLYHOACU/static/allUser/js/main.js"></script>
+	<!-- FOOTER -->
+	<%@include file="__footer.jsp"%>
+	<!-- /FOOTER -->
 
-	</body>
+	<!-- jQuery Plugins -->
+	<script src="/QUANLYHOACU/static/allUser/js/jquery.min.js"></script>
+	<script src="/QUANLYHOACU/static/allUser/js/bootstrap.min.js"></script>
+	<script src="/QUANLYHOACU/static/allUser/js/slick.min.js"></script>
+	<script src="/QUANLYHOACU/static/allUser/js/nouislider.min.js"></script>
+	<script src="/QUANLYHOACU/static/allUser/js/jquery.zoom.min.js"></script>
+	<script src="/QUANLYHOACU/static/allUser/js/main.js"></script>
 
-	</html>
+</body>
+
+</html>

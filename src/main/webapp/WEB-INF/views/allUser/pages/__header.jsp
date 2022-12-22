@@ -37,12 +37,15 @@
 			<ul class="header-links pull-left">
 				<li><a href="#"><i class="fa fa-phone"></i> +454-54-54-54</a></li>
 				<li><a href="#"><i class="fa fa-envelope-o"></i>quanlihoacu@email.com</a></li>
-				<li><a href="https://goo.gl/maps/sciaNCokcAQo3Mnt5	"><i class="fa fa-map-marker"></i>1 Vo Van Ngan</a></li>
+				<li><a href="https://goo.gl/maps/sciaNCokcAQo3Mnt5	"><i
+						class="fa fa-map-marker"></i>1 Vo Van Ngan</a></li>
 			</ul>
 			<ul class="header-links pull-right">
 				<li><a href="#"><i class="fa fa-dollar"></i>VND</a></li>
-				<li><a href="/QUANLYHOACU/Profile"><i class="fa fa-user-o"></i>Tài khoản của tôi</a></li>
-				<li><a href="/QUANLYHOACU/DangXuat"><i class="fa fa-logout-o"></i> Đăng xuất</a></li>
+				<li><a href="/QUANLYHOACU/Profile"><i class="fa fa-user-o"></i>Tài
+						khoản của tôi</a></li>
+				<li><a href="/QUANLYHOACU/DangXuat"><i
+						class="fa fa-logout-o"></i> Đăng xuất</a></li>
 			</ul>
 		</div>
 	</div>
@@ -67,59 +70,60 @@
 
 				<!-- SEARCH BAR -->
 
-					<div class="col-md-6">
-						<div class="header-search">
-							<form action="FindProduct" method="post">
-								<select class="input-select" name="loaiSanPhamFind">
-										<c:forEach var="lsp" items="${loaiSanPham}">
-											<option value="${lsp.maLoaiSP}" <c:if test="${lsp.maLoaiSP.equals(defaulLSPFind)}">selected</c:if>>${lsp.tenLoaiSanPham}</option>
-									</c:forEach>
-								</select> <input name="inputFind" class="input" placeholder="Nhập sản phẩm cần tìm">
-								<button class="search-btn">Tìm kiếm</button>
-	
-							</form>
-						</div>
+				<div class="col-md-6">
+					<div class="header-search">
+						<form action="FindProduct" method="post">
+							<select class="input-select" name="loaiSanPhamFind">
+								<c:forEach var="lsp" items="${loaiSanPham}">
+									<option value="${lsp.maLoaiSP}"
+										<c:if test="${lsp.maLoaiSP.equals(defaulLSPFind)}">selected</c:if>
+										>${lsp.tenLoaiSanPham}</option>
+								</c:forEach>
+							</select> <input name="inputFind" class="input"
+								placeholder="Nhập sản phẩm cần tìm">
+							<button class="search-btn">Tìm kiếm</button>
+
+						</form>
 					</div>
+				</div>
 				<!-- /SEARCH BAR -->
 
 				<!-- ACCOUNT -->
 				<div class="col-md-3 clearfix">
-              <div class="header-ctn">
-                <!-- Wishlist -->
-                <div>
-                  <a href="/QUANLYHOACU/TheoDoiDonHang">
-                    <i class="fa fa-archive" aria-hidden="true"></i>
-                    <span>Đơn mua</span>
-                    <div class="qty">${hoaDon.size() }</div>
-                  </a>
-                </div>
-                <!-- /Wishlist -->
+					<div class="header-ctn">
+						<!-- Wishlist -->
+						<div>
+							<a href="/QUANLYHOACU/TheoDoiDonHang"> <i
+								class="fa fa-archive" aria-hidden="true"></i> <span>Đơn
+									mua</span>
+								<div class="qty">${hoaDon.size() }</div>
+							</a>
+						</div>
+						<!-- /Wishlist -->
 
-                <!-- Cart -->
-               <div class="dropdown">
-							<a href="Cart"> 
-								<i class="fa fa-shopping-cart"></i> <span>Giỏ hàng</span>
+						<!-- Cart -->
+						<div class="dropdown">
+							<a href="Cart"> <i class="fa fa-shopping-cart"></i> <span>Giỏ
+									hàng</span>
 								<div class="qty">${gioHang.size()}</div>
 							</a>
 						</div>
-                <!-- /Cart -->
+						<!-- /Cart -->
 
-                <!-- Menu Toogle -->
-                <div class="menu-toggle">
-                  <a href="#">
-                    <i class="fa fa-bars"></i>
-                    <span>Menu</span>
-                  </a>
-                </div>
-                <!-- /Menu Toogle -->
-              </div>
-            </div>
+						<!-- Menu Toogle -->
+						<div class="menu-toggle">
+							<a href="#"> <i class="fa fa-bars"></i> <span>Menu</span>
+							</a>
+						</div>
+						<!-- /Menu Toogle -->
+					</div>
+				</div>
 				<!-- /ACCOUNT -->
-				
+
 
 			</div>
 			<!-- row -->
-			
+
 		</div>
 		<!-- container -->
 	</div>
@@ -134,7 +138,9 @@
 			<!-- NAV -->
 			<ul class="main-nav nav navbar-nav">
 				<c:forEach var="lsp" items="${loaiSanPham}">
-					<li  <c:if test="${lsp.maLoaiSP.equals(defaulLSPFind)}">class="active"</c:if>><a href="FindProduct?loaiSanPhamFind=${lsp.maLoaiSP }">${lsp.tenLoaiSanPham }</a></li>
+					<li
+						<c:if test="${lsp.maLoaiSP.equals(defaulLSPFind)}">class="active"</c:if>><a
+						href="FindProduct?loaiSanPhamFind=${lsp.maLoaiSP}">${lsp.tenLoaiSanPham }</a></li>
 				</c:forEach>
 			</ul>
 			<!-- /NAV -->
