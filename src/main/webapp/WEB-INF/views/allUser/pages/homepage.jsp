@@ -153,7 +153,7 @@
 		                <div class="product-body">
 		                  <p class="product-category">${bsr.tenLoaiSanPham}</p>
 		                  <h3 class="product-name">
-		                    <a href="#">${bsr.tenSP }</a>
+		                    <a href="SanPham?id=${bsr.maSP}">${bsr.tenSP }</a>
 		                  </h3>
 		                  <h4 class="product-price">
 		                    ${bsr.gia } <del class="product-old-price">${bsr.gia }</del>
