@@ -309,30 +309,7 @@ VALUES
 GO
 
 
-
-INSERT INTO [dbo].[NguoiDung]
-
-( -- Columns to insert data into
-
- [MaNguoiDung], [TenDangNhap],[HoTen], [MatKhau],[RoleID]
-
-)
-
-VALUES
-
-( -- First row: values for the columns in the list above
-
- 'test_user','ngocphat',N'Bồ Bé Mèo','ngocphat','001'
-
-)
-
-
-
 -- Add more rows here
-
-GO
-
-update NguoiDung set  HoTen=N'Bồ Bé Mèo'  where MaNguoiDung='test_user';
 
 INSERT INTO [dbo].[NguoiDung]
 
@@ -356,7 +333,9 @@ VALUES
 
 GO
 
+INSERT INTO [dbo].[NguoiDung] (MaNguoiDung, TenDangNhap,MatKhau,HoTen,NgaySinh,DiaChi ,RoleID) VALUES ('USER01','iamNgocPhat','123',N'Nguyễn Ngọc Phát','2002-07-12',N'Quận 2','001')
 
+ GO
 
 INSERT INTO [dbo].[NguoiDung] (MaNguoiDung, TenDangNhap,MatKhau,HoTen,NgaySinh,DiaChi ,RoleID) VALUES ('USER02','quynhhuong2','123',N'Nguyễn Ngọc o','2002-07-12',N'Quận 2','001')
 
@@ -438,37 +417,6 @@ INSERT INTO [dbo].[NguoiDung] (MaNguoiDung, TenDangNhap,MatKhau,HoTen,NgaySinh,D
 
 -- Insert rows into table 'LoaiSanPham' in schema '[dbo]'
 
-INSERT INTO [dbo].[LoaiSanPham]
-
-( -- Columns to insert data into
-
- [MaLoaiSP], [TenLoaiSanPham]
-
-)
-
-VALUES
-
-( -- First row: values for the columns in the list above
-
-    'test_lsp01','LoaiSanPham01'
-
-),
-
-( -- Second row: values for the columns in the list above
-
-    'test_lsp02','LoaiSanPham02'
-
-),
-
-(
-
-    'test_lsp03','LoaiSanPham03'
-
-)
-
--- Add more rows here
-
-GO
 
 
 

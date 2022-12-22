@@ -107,7 +107,12 @@ public class SanPhamUtils
     }
     public static List<SanPham> getBestSeller( Connection conn, int numbers) throws SQLException
     {
-        String sqlString="select  sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham, tk.SALEQTY from SanPham as sp,LoaiSanPham lsp, (SELECT TOP (?)  sp.MaSP, SUM(cthd.SoLuong) SALEQTY  FROM SanPham AS sp INNER JOIN ChiTietHoaDon AS cthd  ON sp.MaSP = cthd.MaSP GROUP BY sp.MaSP) as tk where sp.DaXoa=0 and sp.maSP=tk.MaSP and sp.MaLoaiSP=lsp.MaLoaiSP order by tk.SALEQTY DESC";
+        String sqlString="select TOP (?) sp.DaXoa,  sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham, tk.SALEQTY from SanPham as sp,LoaiSanPham lsp,\r\n"
+        		+ " (SELECT  sp.MaSP, SUM(cthd.SoLuong) SALEQTY \r\n"
+        		+ "        FROM SanPham AS sp INNER JOIN ChiTietHoaDon AS cthd \r\n"
+        		+ "          ON sp.MaSP = cthd.MaSP GROUP BY sp.MaSP) as tk\r\n"
+        		+ "        where sp.DaXoa=0 and sp.maSP=tk.MaSP and sp.MaLoaiSP=lsp.MaLoaiSP  \r\n"
+        		+ "        order by tk.SALEQTY DESC";
         PreparedStatement stmt= conn.prepareStatement(sqlString);
         stmt.setInt(1,numbers);
         ResultSet rs= stmt.executeQuery();
@@ -130,7 +135,12 @@ public class SanPhamUtils
     
     public static List<SanPham> getBestSellerByLSP( Connection conn, int numbers, String lsp) throws SQLException
     {
-        String sqlString="select  sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham, tk.SALEQTY from SanPham as sp,LoaiSanPham lsp, (SELECT TOP (?)  sp.MaSP, SUM(cthd.SoLuong) SALEQTY  FROM SanPham AS sp INNER JOIN ChiTietHoaDon AS cthd  ON sp.MaSP = cthd.MaSP GROUP BY sp.MaSP) as tk where sp.DaXoa=0 and sp.maSP=tk.MaSP and sp.MaLoaiSP=lsp.MaLoaiSP and lsp.MaLoaiSP like ? order by tk.SALEQTY DESC";
+        String sqlString="select TOP (?) sp.DaXoa,  sp.MaSP, sp.TenSP, sp.Gia, sp.ChiTiet, sp.Hinh,sp.MaLoaiSP, lsp.TenLoaiSanPham, tk.SALEQTY from SanPham as sp,LoaiSanPham lsp,\r\n"
+        		+ " (SELECT  sp.MaSP, SUM(cthd.SoLuong) SALEQTY \r\n"
+        		+ "        FROM SanPham AS sp INNER JOIN ChiTietHoaDon AS cthd \r\n"
+        		+ "          ON sp.MaSP = cthd.MaSP GROUP BY sp.MaSP) as tk\r\n"
+        		+ "        where sp.DaXoa=0 and sp.maSP=tk.MaSP and sp.MaLoaiSP=lsp.MaLoaiSP and lsp.MaLoaiSP like ? \r\n"
+        		+ "        order by tk.SALEQTY DESC";
         PreparedStatement stmt= conn.prepareStatement(sqlString);
         stmt.setInt(1,numbers);
         stmt.setString(2, lsp);

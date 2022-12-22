@@ -16,7 +16,7 @@
 	       var username=document.forms["ChangePasswordForm"]["Username"].value;
 	       var oldpassword=document.forms["ChangePasswordForm"]["oldPassword"].value;
 	       var newPassword=document.forms["ChangePasswordForm"]["newPassword"].value;
-	       var reNewPassword=document.forms["ChangePasswordForm"]["reNewRepassword"].value;
+	       var reNewPassword=document.forms["ChangePasswordForm"]["reNewPassword"].value;
 	       if (username=="" || oldPassword=="" || newPassword=="" || reNewPassword=="")
 	       {
 	         alert("Vui lòng nhập đầy đủ thông tin")
