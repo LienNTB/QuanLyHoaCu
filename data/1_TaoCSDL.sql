@@ -249,6 +249,7 @@ alter table [dbo].[HoaDon]
 	foreign key (MaKhachHang) 
 	REFERENCES [dbo].[NguoiDung](MaNguoiDung)
 
+go
 CREATE TRIGGER newHoaDon_NewUser ON NguoiDung
 
 FOR INSERT
