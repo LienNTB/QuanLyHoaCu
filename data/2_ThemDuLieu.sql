@@ -160,6 +160,8 @@ INSERT INTO [dbo].[NguoiDung] (MaNguoiDung, TenDangNhap,MatKhau,HoTen,NgaySinh,D
 
  GO
 
+
+
 -- Insert rows into table 'LoaiSanPham' in schema '[dbo]'
 
 INSERT INTO [dbo].[LoaiSanPham]
@@ -1591,3 +1593,2338 @@ VALUES
 -- Add more rows here
 
 GO
+
+/*
+Tạo Hóa Đơn
+*/
+
+INSERT INTO [dbo].[HoaDon] (MaHoaDon, GhiChu,TongThanhToan,DiaChiGiaoHang,SoDienThoai,MaKhachHang,TrangThaiDonHang,TrangThaiGiaoHang,TrangThaiThanhToan) VALUES 
+
+('DH.USER020.20221221072850',N'Đây là ghi chú của đơn hàng 1',455000,N'Đây là địa chỉ giao hàng của đơn số 1','0387439537','USER019', 1,1,0),
+
+('DH.USER016.20221221074813',N'Đây là ghi chú của đơn hàng 2',560000,N'Đây là địa chỉ giao hàng của đơn số 2','0385007600','USER019', 1,1,1),
+
+('DH.USER01.20221221082592',N'Đây là ghi chú của đơn hàng 3',965000,N'Đây là địa chỉ giao hàng của đơn số 3','0383169311','USER06', 0,1,0),
+
+('DH.USER01.20221221092542',N'Đây là ghi chú của đơn hàng 4',835000,N'Đây là địa chỉ giao hàng của đơn số 4','0383523856','USER03', 1,1,1),
+
+('DH.USER017.20221221093950',N'Đây là ghi chú của đơn hàng 5',750000,N'Đây là địa chỉ giao hàng của đơn số 5','0382951357','USER02', 1,0,1),
+
+('DH.USER012.20221221120685',N'Đây là ghi chú của đơn hàng 6',745000,N'Đây là địa chỉ giao hàng của đơn số 6','0384485629','USER01', 0,1,1),
+
+('DH.USER020.20221221091594',N'Đây là ghi chú của đơn hàng 7',925000,N'Đây là địa chỉ giao hàng của đơn số 7','0387323590','USER013', 1,1,0),
+
+('DH.USER012.20221221138944',N'Đây là ghi chú của đơn hàng 8',540000,N'Đây là địa chỉ giao hàng của đơn số 8','0387156382','USER08', 1,0,0),
+
+('DH.USER010.20221221114986',N'Đây là ghi chú của đơn hàng 9',940000,N'Đây là địa chỉ giao hàng của đơn số 9','0381120058','USER010', 0,0,0),
+
+('DH.USER015.20221221085468',N'Đây là ghi chú của đơn hàng 10',740000,N'Đây là địa chỉ giao hàng của đơn số 10','0388037891','USER010', 0,1,0),
+
+('DH.USER020.20221221105180',N'Đây là ghi chú của đơn hàng 11',780000,N'Đây là địa chỉ giao hàng của đơn số 11','0387468467','USER018', 1,1,0),
+
+('DH.USER016.20221221080000',N'Đây là ghi chú của đơn hàng 12',960000,N'Đây là địa chỉ giao hàng của đơn số 12','0388241850','USER04', 0,1,0),
+
+('DH.USER05.20221221082198',N'Đây là ghi chú của đơn hàng 13',305000,N'Đây là địa chỉ giao hàng của đơn số 13','0381740095','USER018', 0,0,0),
+
+('DH.USER01.20221221168075',N'Đây là ghi chú của đơn hàng 14',360000,N'Đây là địa chỉ giao hàng của đơn số 14','0388577681','USER04', 0,0,1),
+
+('DH.USER09.20221221077176',N'Đây là ghi chú của đơn hàng 15',435000,N'Đây là địa chỉ giao hàng của đơn số 15','0382458385','USER014', 1,0,1),
+
+('DH.USER09.20221221075985',N'Đây là ghi chú của đơn hàng 16',705000,N'Đây là địa chỉ giao hàng của đơn số 16','0386045814','USER018', 1,0,1),
+
+('DH.USER018.20221221214786',N'Đây là ghi chú của đơn hàng 17',600000,N'Đây là địa chỉ giao hàng của đơn số 17','0386544297','USER02', 1,0,0),
+
+('DH.USER01.20221221111542',N'Đây là ghi chú của đơn hàng 18',760000,N'Đây là địa chỉ giao hàng của đơn số 18','0381582275','USER019', 1,1,1),
+
+('DH.USER013.20221221145768',N'Đây là ghi chú của đơn hàng 19',480000,N'Đây là địa chỉ giao hàng của đơn số 19','0386673167','USER018', 0,1,1),
+
+('DH.USER03.20221221124473',N'Đây là ghi chú của đơn hàng 20',1000000,N'Đây là địa chỉ giao hàng của đơn số 20','0382515690','USER03', 0,0,0),
+
+('DH.USER019.20221221179210',N'Đây là ghi chú của đơn hàng 21',275000,N'Đây là địa chỉ giao hàng của đơn số 21','0387749644','USER01', 1,1,0),
+
+('DH.USER08.20221221172474',N'Đây là ghi chú của đơn hàng 22',870000,N'Đây là địa chỉ giao hàng của đơn số 22','0381845801','USER06', 0,0,1),
+
+('DH.USER04.20221221282004',N'Đây là ghi chú của đơn hàng 23',650000,N'Đây là địa chỉ giao hàng của đơn số 23','0386561112','USER01', 0,0,0),
+
+('DH.USER05.20221221150222',N'Đây là ghi chú của đơn hàng 24',860000,N'Đây là địa chỉ giao hàng của đơn số 24','0384646196','USER08', 1,0,0),
+
+('DH.USER01.20221221246610',N'Đây là ghi chú của đơn hàng 25',285000,N'Đây là địa chỉ giao hàng của đơn số 25','0384536937','USER016', 1,0,1),
+
+('DH.USER012.20221221315025',N'Đây là ghi chú của đơn hàng 26',920000,N'Đây là địa chỉ giao hàng của đơn số 26','0385286181','USER08', 1,1,1),
+
+('DH.USER020.20221221288624',N'Đây là ghi chú của đơn hàng 27',650000,N'Đây là địa chỉ giao hàng của đơn số 27','0388003619','USER03', 1,1,0),
+
+('DH.USER09.20221221158278',N'Đây là ghi chú của đơn hàng 28',940000,N'Đây là địa chỉ giao hàng của đơn số 28','0382404421','USER06', 1,0,0),
+
+('DH.USER012.20221221304354',N'Đây là ghi chú của đơn hàng 29',375000,N'Đây là địa chỉ giao hàng của đơn số 29','0385787353','USER02', 0,0,0),
+
+('DH.USER019.20221221110202',N'Đây là ghi chú của đơn hàng 30',910000,N'Đây là địa chỉ giao hàng của đơn số 30','0381503423','USER03', 0,0,1),
+
+('DH.USER09.20221221357130',N'Đây là ghi chú của đơn hàng 31',930000,N'Đây là địa chỉ giao hàng của đơn số 31','0381640473','USER01', 1,1,0),
+
+('DH.USER014.20221221117118',N'Đây là ghi chú của đơn hàng 32',715000,N'Đây là địa chỉ giao hàng của đơn số 32','0381512061','USER05', 0,1,0),
+
+('DH.USER07.20221221173906',N'Đây là ghi chú của đơn hàng 33',670000,N'Đây là địa chỉ giao hàng của đơn số 33','0386093562','USER011', 1,0,0),
+
+('DH.USER07.20221221098755',N'Đây là ghi chú của đơn hàng 34',650000,N'Đây là địa chỉ giao hàng của đơn số 34','0387872590','USER012', 1,0,0),
+
+('DH.USER019.20221221084206',N'Đây là ghi chú của đơn hàng 35',775000,N'Đây là địa chỉ giao hàng của đơn số 35','0387584520','USER04', 1,0,0),
+
+('DH.USER018.20221221227235',N'Đây là ghi chú của đơn hàng 36',745000,N'Đây là địa chỉ giao hàng của đơn số 36','0382849101','USER017', 1,0,0),
+
+('DH.USER014.20221221335686',N'Đây là ghi chú của đơn hàng 37',930000,N'Đây là địa chỉ giao hàng của đơn số 37','0385952511','USER018', 1,0,0),
+
+('DH.USER01.20221221352940',N'Đây là ghi chú của đơn hàng 38',965000,N'Đây là địa chỉ giao hàng của đơn số 38','0383410468','USER012', 0,1,0),
+
+('DH.USER014.20221221259240',N'Đây là ghi chú của đơn hàng 39',500000,N'Đây là địa chỉ giao hàng của đơn số 39','0387026449','USER011', 0,0,1),
+
+('DH.USER018.20221221293707',N'Đây là ghi chú của đơn hàng 40',275000,N'Đây là địa chỉ giao hàng của đơn số 40','0389456221','USER09', 0,1,1),
+
+('DH.USER015.20221221232490',N'Đây là ghi chú của đơn hàng 41',935000,N'Đây là địa chỉ giao hàng của đơn số 41','0385755066','USER015', 1,1,1),
+
+('DH.USER09.20221221384819',N'Đây là ghi chú của đơn hàng 42',490000,N'Đây là địa chỉ giao hàng của đơn số 42','0389095546','USER08', 0,1,0),
+
+('DH.USER014.20221221083938',N'Đây là ghi chú của đơn hàng 43',595000,N'Đây là địa chỉ giao hàng của đơn số 43','0382530388','USER017', 1,1,0),
+
+('DH.USER016.20221221136189',N'Đây là ghi chú của đơn hàng 44',980000,N'Đây là địa chỉ giao hàng của đơn số 44','0389347479','USER01', 1,1,0),
+
+('DH.USER015.20221221213298',N'Đây là ghi chú của đơn hàng 45',935000,N'Đây là địa chỉ giao hàng của đơn số 45','0386651608','USER04', 0,1,1),
+
+('DH.USER01.20221221084955',N'Đây là ghi chú của đơn hàng 46',705000,N'Đây là địa chỉ giao hàng của đơn số 46','0389421247','USER04', 1,0,0),
+
+('DH.USER02.20221221431604',N'Đây là ghi chú của đơn hàng 47',335000,N'Đây là địa chỉ giao hàng của đơn số 47','0383247151','USER013', 1,1,0),
+
+('DH.USER07.20221221153737',N'Đây là ghi chú của đơn hàng 48',795000,N'Đây là địa chỉ giao hàng của đơn số 48','0389284717','USER06', 0,0,1),
+
+('DH.USER08.20221221477298',N'Đây là ghi chú của đơn hàng 49',950000,N'Đây là địa chỉ giao hàng của đơn số 49','0385083127','USER011', 1,1,1),
+
+('DH.USER017.20221221453825',N'Đây là ghi chú của đơn hàng 50',795000,N'Đây là địa chỉ giao hàng của đơn số 50','0388929019','USER010', 0,1,1)
+
+/*
+Tạo  Chi Tiêt hóa đơn
+*/
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER020.20221221072850','SP0001',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221074813','SP0001',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221074813','SP000119',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221074813','SP000151',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221074813','SP00065',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221074813','SP000130',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221074813','SP00059',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221074813','SP000199',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221082592','SP0001',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221082592','SP000138',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221082592','SP000209',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221082592','SP000187',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221092542','SP0001',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221092542','SP00058',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221092542','SP00021',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221092542','SP000288',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221092542','SP000257',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221092542','SP000320',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221092542','SP00095',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221092542','SP000253',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221093950','SP0001',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221093950','SP000270',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221093950','SP000128',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221093950','SP000143',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221093950','SP000260',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221093950','SP000282',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221093950','SP000146',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221093950','SP00074',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221093950','SP00093',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221093950','SP000232',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221120685','SP0001',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221120685','SP00035',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221120685','SP000120',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221120685','SP000172',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221120685','SP000292',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221120685','SP00087',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER020.20221221091594','SP0001',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER020.20221221091594','SP0002',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER020.20221221091594','SP00027',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221138944','SP0001',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221138944','SP00094',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221138944','SP00075',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221138944','SP000263',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221138944','SP000171',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221138944','SP000270',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221138944','SP000235',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER010.20221221114986','SP0001',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER010.20221221114986','SP000317',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER010.20221221114986','SP000289',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER010.20221221114986','SP000241',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER010.20221221114986','SP000112',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER015.20221221085468','SP0001',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER015.20221221085468','SP000195',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER015.20221221085468','SP00039',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER015.20221221085468','SP000271',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER015.20221221085468','SP000286',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER020.20221221105180','SP0001',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER020.20221221105180','SP00042',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221080000','SP0001',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221080000','SP000108',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221080000','SP000255',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221080000','SP000183',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221080000','SP000116',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221080000','SP000266',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221080000','SP000245',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221082198','SP0001',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221082198','SP000161',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221082198','SP000319',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221082198','SP00030',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221082198','SP00082',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221082198','SP00045',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221082198','SP000102',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221082198','SP000323',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221082198','SP000112',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221168075','SP0001',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221168075','SP000316',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221168075','SP000288',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221168075','SP00088',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221168075','SP000311',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221168075','SP000289',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221168075','SP000242',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221077176','SP0001',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221077176','SP00033',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221077176','SP000215',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221077176','SP000307',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221077176','SP00093',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221077176','SP0002',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221077176','SP000322',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221077176','SP000242',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221077176','SP000222',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221077176','SP000135',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221075985','SP0001',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221075985','SP00020',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221075985','SP000114',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221075985','SP00030',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221075985','SP00044',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221075985','SP000167',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221075985','SP000166',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221075985','SP000119',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221075985','SP000246',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221214786','SP0001',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221214786','SP00016',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221214786','SP00085',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221111542','SP0001',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221111542','SP00068',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221111542','SP000158',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221111542','SP000281',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221111542','SP00062',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221111542','SP000185',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221111542','SP000156',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221111542','SP000301',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER013.20221221145768','SP0001',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER013.20221221145768','SP000186',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER013.20221221145768','SP000113',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER013.20221221145768','SP000172',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER013.20221221145768','SP000320',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER013.20221221145768','SP000254',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER013.20221221145768','SP000141',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER03.20221221124473','SP0001',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER03.20221221124473','SP00035',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER03.20221221124473','SP00024',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER03.20221221124473','SP00046',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER03.20221221124473','SP000302',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER03.20221221124473','SP000156',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221179210','SP0001',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221179210','SP000296',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221179210','SP00054',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221179210','SP00018',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221179210','SP000278',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221179210','SP000165',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER08.20221221172474','SP0001',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER04.20221221282004','SP0001',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER04.20221221282004','SP000213',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221150222','SP0001',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221150222','SP00045',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER05.20221221150222','SP00025',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221246610','SP0001',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221246610','SP000113',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221246610','SP00011',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221246610','SP000260',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221315025','SP0001',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER020.20221221288624','SP0001',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER020.20221221288624','SP00043',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER020.20221221288624','SP00073',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221158278','SP0001',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221158278','SP000219',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221158278','SP00034',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221158278','SP000151',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221158278','SP00018',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221304354','SP0001',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER012.20221221304354','SP00010',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221110202','SP0001',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221110202','SP000267',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221110202','SP000111',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221110202','SP000116',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221110202','SP00054',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221110202','SP000105',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221110202','SP000113',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221110202','SP00056',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221110202','SP000242',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221357130','SP0001',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221357130','SP00028',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221357130','SP000293',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221357130','SP000152',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221357130','SP000112',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221357130','SP000190',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221357130','SP000192',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221117118','SP0001',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221117118','SP00096',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221117118','SP000214',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221117118','SP000227',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221117118','SP000140',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221117118','SP000247',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER07.20221221173906','SP0001',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER07.20221221173906','SP000295',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER07.20221221098755','SP0001',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER07.20221221098755','SP00056',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER07.20221221098755','SP000295',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER07.20221221098755','SP00071',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER07.20221221098755','SP000278',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER07.20221221098755','SP000144',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER07.20221221098755','SP000108',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221084206','SP0001',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER019.20221221084206','SP000126',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221227235','SP0001',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221227235','SP000137',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221227235','SP000279',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221227235','SP00079',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221227235','SP00022',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221227235','SP000218',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221227235','SP00045',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221227235','SP000256',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221227235','SP000235',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221227235','SP000305',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221335686','SP0001',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221335686','SP0009',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221335686','SP000225',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221335686','SP000296',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221352940','SP0001',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221352940','SP000182',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221352940','SP000252',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221352940','SP000160',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221352940','SP00092',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221352940','SP000226',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221352940','SP000262',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221259240','SP0001',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221259240','SP00023',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221293707','SP0001',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221293707','SP00090',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221293707','SP00036',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221293707','SP00075',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221293707','SP000165',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221293707','SP000201',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221293707','SP00091',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER018.20221221293707','SP0006',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER015.20221221232490','SP0001',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER015.20221221232490','SP000301',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER015.20221221232490','SP000197',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER015.20221221232490','SP000112',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221384819','SP0001',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221384819','SP000320',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221384819','SP00083',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER09.20221221384819','SP00047',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221083938','SP0001',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER014.20221221083938','SP000228',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221136189','SP0001',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221136189','SP000288',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221136189','SP000304',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221136189','SP000211',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221136189','SP00055',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221136189','SP000275',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER016.20221221136189','SP000164',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER015.20221221213298','SP0001',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER015.20221221213298','SP000101',1,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER01.20221221084955','SP0001',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER02.20221221431604','SP0001',5,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER02.20221221431604','SP000158',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER02.20221221431604','SP000198',6,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER02.20221221431604','SP000129',4,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER02.20221221431604','SP000114',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER02.20221221431604','SP00036',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER02.20221221431604','SP00030',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER02.20221221431604','SP000266',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER07.20221221153737','SP0001',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER07.20221221153737','SP000141',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER08.20221221477298','SP0001',3,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER08.20221221477298','SP000304',10,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER08.20221221477298','SP00053',2,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER08.20221221477298','SP000321',8,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER08.20221221477298','SP00080',9,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221453825','SP0001',7,0) 
+
+ GO 
+
+INSERT INTO [dbo].[ChiTietHoaDon] VALUES('DH.USER017.20221221453825','SP000121',7,0)
+
+/*
+update tongphu
+*/
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER020.20221221072850' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER020.20221221072850' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221074813' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221074813' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221074813' and cthd.MaSP='SP000119' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221074813' and  MaSP='SP000119'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221074813' and cthd.MaSP='SP000151' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221074813' and  MaSP='SP000151'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221074813' and cthd.MaSP='SP00065' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221074813' and  MaSP='SP00065'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221074813' and cthd.MaSP='SP000130' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221074813' and  MaSP='SP000130'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221074813' and cthd.MaSP='SP00059' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221074813' and  MaSP='SP00059'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221074813' and cthd.MaSP='SP000199' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221074813' and  MaSP='SP000199'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221082592' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221082592' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221082592' and cthd.MaSP='SP000138' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221082592' and  MaSP='SP000138'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221082592' and cthd.MaSP='SP000209' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221082592' and  MaSP='SP000209'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221082592' and cthd.MaSP='SP000187' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221082592' and  MaSP='SP000187'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221092542' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221092542' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221092542' and cthd.MaSP='SP00058' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221092542' and  MaSP='SP00058'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221092542' and cthd.MaSP='SP00021' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221092542' and  MaSP='SP00021'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221092542' and cthd.MaSP='SP000288' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221092542' and  MaSP='SP000288'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221092542' and cthd.MaSP='SP000257' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221092542' and  MaSP='SP000257'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221092542' and cthd.MaSP='SP000320' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221092542' and  MaSP='SP000320'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221092542' and cthd.MaSP='SP00095' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221092542' and  MaSP='SP00095'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221092542' and cthd.MaSP='SP000253' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221092542' and  MaSP='SP000253'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221093950' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221093950' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221093950' and cthd.MaSP='SP000270' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221093950' and  MaSP='SP000270'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221093950' and cthd.MaSP='SP000128' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221093950' and  MaSP='SP000128'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221093950' and cthd.MaSP='SP000143' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221093950' and  MaSP='SP000143'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221093950' and cthd.MaSP='SP000260' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221093950' and  MaSP='SP000260'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221093950' and cthd.MaSP='SP000282' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221093950' and  MaSP='SP000282'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221093950' and cthd.MaSP='SP000146' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221093950' and  MaSP='SP000146'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221093950' and cthd.MaSP='SP00074' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221093950' and  MaSP='SP00074'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221093950' and cthd.MaSP='SP00093' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221093950' and  MaSP='SP00093'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221093950' and cthd.MaSP='SP000232' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221093950' and  MaSP='SP000232'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221120685' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221120685' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221120685' and cthd.MaSP='SP00035' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221120685' and  MaSP='SP00035'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221120685' and cthd.MaSP='SP000120' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221120685' and  MaSP='SP000120'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221120685' and cthd.MaSP='SP000172' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221120685' and  MaSP='SP000172'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221120685' and cthd.MaSP='SP000292' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221120685' and  MaSP='SP000292'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221120685' and cthd.MaSP='SP00087' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221120685' and  MaSP='SP00087'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER020.20221221091594' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER020.20221221091594' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER020.20221221091594' and cthd.MaSP='SP0002' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER020.20221221091594' and  MaSP='SP0002'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER020.20221221091594' and cthd.MaSP='SP00027' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER020.20221221091594' and  MaSP='SP00027'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221138944' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221138944' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221138944' and cthd.MaSP='SP00094' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221138944' and  MaSP='SP00094'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221138944' and cthd.MaSP='SP00075' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221138944' and  MaSP='SP00075'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221138944' and cthd.MaSP='SP000263' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221138944' and  MaSP='SP000263'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221138944' and cthd.MaSP='SP000171' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221138944' and  MaSP='SP000171'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221138944' and cthd.MaSP='SP000270' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221138944' and  MaSP='SP000270'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221138944' and cthd.MaSP='SP000235' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221138944' and  MaSP='SP000235'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER010.20221221114986' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER010.20221221114986' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER010.20221221114986' and cthd.MaSP='SP000317' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER010.20221221114986' and  MaSP='SP000317'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER010.20221221114986' and cthd.MaSP='SP000289' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER010.20221221114986' and  MaSP='SP000289'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER010.20221221114986' and cthd.MaSP='SP000241' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER010.20221221114986' and  MaSP='SP000241'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER010.20221221114986' and cthd.MaSP='SP000112' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER010.20221221114986' and  MaSP='SP000112'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER015.20221221085468' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER015.20221221085468' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER015.20221221085468' and cthd.MaSP='SP000195' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER015.20221221085468' and  MaSP='SP000195'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER015.20221221085468' and cthd.MaSP='SP00039' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER015.20221221085468' and  MaSP='SP00039'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER015.20221221085468' and cthd.MaSP='SP000271' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER015.20221221085468' and  MaSP='SP000271'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER015.20221221085468' and cthd.MaSP='SP000286' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER015.20221221085468' and  MaSP='SP000286'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER020.20221221105180' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER020.20221221105180' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER020.20221221105180' and cthd.MaSP='SP00042' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER020.20221221105180' and  MaSP='SP00042'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221080000' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221080000' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221080000' and cthd.MaSP='SP000108' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221080000' and  MaSP='SP000108'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221080000' and cthd.MaSP='SP000255' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221080000' and  MaSP='SP000255'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221080000' and cthd.MaSP='SP000183' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221080000' and  MaSP='SP000183'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221080000' and cthd.MaSP='SP000116' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221080000' and  MaSP='SP000116'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221080000' and cthd.MaSP='SP000266' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221080000' and  MaSP='SP000266'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221080000' and cthd.MaSP='SP000245' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221080000' and  MaSP='SP000245'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221082198' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221082198' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221082198' and cthd.MaSP='SP000161' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221082198' and  MaSP='SP000161'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221082198' and cthd.MaSP='SP000319' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221082198' and  MaSP='SP000319'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221082198' and cthd.MaSP='SP00030' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221082198' and  MaSP='SP00030'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221082198' and cthd.MaSP='SP00082' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221082198' and  MaSP='SP00082'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221082198' and cthd.MaSP='SP00045' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221082198' and  MaSP='SP00045'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221082198' and cthd.MaSP='SP000102' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221082198' and  MaSP='SP000102'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221082198' and cthd.MaSP='SP000323' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221082198' and  MaSP='SP000323'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221082198' and cthd.MaSP='SP000112' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221082198' and  MaSP='SP000112'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221168075' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221168075' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221168075' and cthd.MaSP='SP000316' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221168075' and  MaSP='SP000316'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221168075' and cthd.MaSP='SP000288' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221168075' and  MaSP='SP000288'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221168075' and cthd.MaSP='SP00088' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221168075' and  MaSP='SP00088'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221168075' and cthd.MaSP='SP000311' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221168075' and  MaSP='SP000311'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221168075' and cthd.MaSP='SP000289' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221168075' and  MaSP='SP000289'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221168075' and cthd.MaSP='SP000242' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221168075' and  MaSP='SP000242'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221077176' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221077176' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221077176' and cthd.MaSP='SP00033' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221077176' and  MaSP='SP00033'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221077176' and cthd.MaSP='SP000215' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221077176' and  MaSP='SP000215'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221077176' and cthd.MaSP='SP000307' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221077176' and  MaSP='SP000307'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221077176' and cthd.MaSP='SP00093' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221077176' and  MaSP='SP00093'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221077176' and cthd.MaSP='SP0002' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221077176' and  MaSP='SP0002'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221077176' and cthd.MaSP='SP000322' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221077176' and  MaSP='SP000322'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221077176' and cthd.MaSP='SP000242' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221077176' and  MaSP='SP000242'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221077176' and cthd.MaSP='SP000222' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221077176' and  MaSP='SP000222'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221077176' and cthd.MaSP='SP000135' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221077176' and  MaSP='SP000135'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221075985' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221075985' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221075985' and cthd.MaSP='SP00020' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221075985' and  MaSP='SP00020'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221075985' and cthd.MaSP='SP000114' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221075985' and  MaSP='SP000114'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221075985' and cthd.MaSP='SP00030' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221075985' and  MaSP='SP00030'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221075985' and cthd.MaSP='SP00044' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221075985' and  MaSP='SP00044'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221075985' and cthd.MaSP='SP000167' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221075985' and  MaSP='SP000167'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221075985' and cthd.MaSP='SP000166' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221075985' and  MaSP='SP000166'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221075985' and cthd.MaSP='SP000119' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221075985' and  MaSP='SP000119'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221075985' and cthd.MaSP='SP000246' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221075985' and  MaSP='SP000246'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221214786' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221214786' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221214786' and cthd.MaSP='SP00016' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221214786' and  MaSP='SP00016'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221214786' and cthd.MaSP='SP00085' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221214786' and  MaSP='SP00085'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221111542' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221111542' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221111542' and cthd.MaSP='SP00068' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221111542' and  MaSP='SP00068'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221111542' and cthd.MaSP='SP000158' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221111542' and  MaSP='SP000158'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221111542' and cthd.MaSP='SP000281' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221111542' and  MaSP='SP000281'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221111542' and cthd.MaSP='SP00062' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221111542' and  MaSP='SP00062'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221111542' and cthd.MaSP='SP000185' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221111542' and  MaSP='SP000185'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221111542' and cthd.MaSP='SP000156' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221111542' and  MaSP='SP000156'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221111542' and cthd.MaSP='SP000301' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221111542' and  MaSP='SP000301'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER013.20221221145768' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER013.20221221145768' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER013.20221221145768' and cthd.MaSP='SP000186' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER013.20221221145768' and  MaSP='SP000186'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER013.20221221145768' and cthd.MaSP='SP000113' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER013.20221221145768' and  MaSP='SP000113'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER013.20221221145768' and cthd.MaSP='SP000172' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER013.20221221145768' and  MaSP='SP000172'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER013.20221221145768' and cthd.MaSP='SP000320' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER013.20221221145768' and  MaSP='SP000320'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER013.20221221145768' and cthd.MaSP='SP000254' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER013.20221221145768' and  MaSP='SP000254'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER013.20221221145768' and cthd.MaSP='SP000141' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER013.20221221145768' and  MaSP='SP000141'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER03.20221221124473' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER03.20221221124473' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER03.20221221124473' and cthd.MaSP='SP00035' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER03.20221221124473' and  MaSP='SP00035'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER03.20221221124473' and cthd.MaSP='SP00024' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER03.20221221124473' and  MaSP='SP00024'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER03.20221221124473' and cthd.MaSP='SP00046' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER03.20221221124473' and  MaSP='SP00046'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER03.20221221124473' and cthd.MaSP='SP000302' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER03.20221221124473' and  MaSP='SP000302'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER03.20221221124473' and cthd.MaSP='SP000156' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER03.20221221124473' and  MaSP='SP000156'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221179210' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221179210' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221179210' and cthd.MaSP='SP000296' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221179210' and  MaSP='SP000296'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221179210' and cthd.MaSP='SP00054' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221179210' and  MaSP='SP00054'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221179210' and cthd.MaSP='SP00018' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221179210' and  MaSP='SP00018'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221179210' and cthd.MaSP='SP000278' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221179210' and  MaSP='SP000278'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221179210' and cthd.MaSP='SP000165' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221179210' and  MaSP='SP000165'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER08.20221221172474' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER08.20221221172474' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER04.20221221282004' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER04.20221221282004' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER04.20221221282004' and cthd.MaSP='SP000213' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER04.20221221282004' and  MaSP='SP000213'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221150222' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221150222' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221150222' and cthd.MaSP='SP00045' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221150222' and  MaSP='SP00045'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER05.20221221150222' and cthd.MaSP='SP00025' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER05.20221221150222' and  MaSP='SP00025'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221246610' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221246610' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221246610' and cthd.MaSP='SP000113' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221246610' and  MaSP='SP000113'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221246610' and cthd.MaSP='SP00011' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221246610' and  MaSP='SP00011'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221246610' and cthd.MaSP='SP000260' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221246610' and  MaSP='SP000260'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221315025' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221315025' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER020.20221221288624' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER020.20221221288624' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER020.20221221288624' and cthd.MaSP='SP00043' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER020.20221221288624' and  MaSP='SP00043'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER020.20221221288624' and cthd.MaSP='SP00073' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER020.20221221288624' and  MaSP='SP00073'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221158278' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221158278' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221158278' and cthd.MaSP='SP000219' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221158278' and  MaSP='SP000219'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221158278' and cthd.MaSP='SP00034' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221158278' and  MaSP='SP00034'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221158278' and cthd.MaSP='SP000151' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221158278' and  MaSP='SP000151'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221158278' and cthd.MaSP='SP00018' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221158278' and  MaSP='SP00018'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221304354' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221304354' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER012.20221221304354' and cthd.MaSP='SP00010' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER012.20221221304354' and  MaSP='SP00010'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221110202' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221110202' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221110202' and cthd.MaSP='SP000267' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221110202' and  MaSP='SP000267'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221110202' and cthd.MaSP='SP000111' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221110202' and  MaSP='SP000111'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221110202' and cthd.MaSP='SP000116' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221110202' and  MaSP='SP000116'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221110202' and cthd.MaSP='SP00054' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221110202' and  MaSP='SP00054'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221110202' and cthd.MaSP='SP000105' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221110202' and  MaSP='SP000105'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221110202' and cthd.MaSP='SP000113' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221110202' and  MaSP='SP000113'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221110202' and cthd.MaSP='SP00056' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221110202' and  MaSP='SP00056'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221110202' and cthd.MaSP='SP000242' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221110202' and  MaSP='SP000242'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221357130' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221357130' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221357130' and cthd.MaSP='SP00028' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221357130' and  MaSP='SP00028'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221357130' and cthd.MaSP='SP000293' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221357130' and  MaSP='SP000293'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221357130' and cthd.MaSP='SP000152' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221357130' and  MaSP='SP000152'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221357130' and cthd.MaSP='SP000112' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221357130' and  MaSP='SP000112'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221357130' and cthd.MaSP='SP000190' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221357130' and  MaSP='SP000190'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221357130' and cthd.MaSP='SP000192' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221357130' and  MaSP='SP000192'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221117118' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221117118' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221117118' and cthd.MaSP='SP00096' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221117118' and  MaSP='SP00096'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221117118' and cthd.MaSP='SP000214' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221117118' and  MaSP='SP000214'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221117118' and cthd.MaSP='SP000227' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221117118' and  MaSP='SP000227'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221117118' and cthd.MaSP='SP000140' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221117118' and  MaSP='SP000140'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221117118' and cthd.MaSP='SP000247' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221117118' and  MaSP='SP000247'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER07.20221221173906' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER07.20221221173906' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER07.20221221173906' and cthd.MaSP='SP000295' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER07.20221221173906' and  MaSP='SP000295'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER07.20221221098755' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER07.20221221098755' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER07.20221221098755' and cthd.MaSP='SP00056' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER07.20221221098755' and  MaSP='SP00056'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER07.20221221098755' and cthd.MaSP='SP000295' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER07.20221221098755' and  MaSP='SP000295'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER07.20221221098755' and cthd.MaSP='SP00071' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER07.20221221098755' and  MaSP='SP00071'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER07.20221221098755' and cthd.MaSP='SP000278' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER07.20221221098755' and  MaSP='SP000278'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER07.20221221098755' and cthd.MaSP='SP000144' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER07.20221221098755' and  MaSP='SP000144'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER07.20221221098755' and cthd.MaSP='SP000108' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER07.20221221098755' and  MaSP='SP000108'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221084206' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221084206' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER019.20221221084206' and cthd.MaSP='SP000126' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER019.20221221084206' and  MaSP='SP000126'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221227235' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221227235' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221227235' and cthd.MaSP='SP000137' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221227235' and  MaSP='SP000137'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221227235' and cthd.MaSP='SP000279' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221227235' and  MaSP='SP000279'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221227235' and cthd.MaSP='SP00079' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221227235' and  MaSP='SP00079'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221227235' and cthd.MaSP='SP00022' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221227235' and  MaSP='SP00022'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221227235' and cthd.MaSP='SP000218' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221227235' and  MaSP='SP000218'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221227235' and cthd.MaSP='SP00045' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221227235' and  MaSP='SP00045'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221227235' and cthd.MaSP='SP000256' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221227235' and  MaSP='SP000256'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221227235' and cthd.MaSP='SP000235' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221227235' and  MaSP='SP000235'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221227235' and cthd.MaSP='SP000305' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221227235' and  MaSP='SP000305'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221335686' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221335686' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221335686' and cthd.MaSP='SP0009' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221335686' and  MaSP='SP0009'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221335686' and cthd.MaSP='SP000225' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221335686' and  MaSP='SP000225'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221335686' and cthd.MaSP='SP000296' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221335686' and  MaSP='SP000296'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221352940' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221352940' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221352940' and cthd.MaSP='SP000182' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221352940' and  MaSP='SP000182'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221352940' and cthd.MaSP='SP000252' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221352940' and  MaSP='SP000252'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221352940' and cthd.MaSP='SP000160' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221352940' and  MaSP='SP000160'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221352940' and cthd.MaSP='SP00092' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221352940' and  MaSP='SP00092'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221352940' and cthd.MaSP='SP000226' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221352940' and  MaSP='SP000226'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221352940' and cthd.MaSP='SP000262' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221352940' and  MaSP='SP000262'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221259240' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221259240' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221259240' and cthd.MaSP='SP00023' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221259240' and  MaSP='SP00023'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221293707' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221293707' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221293707' and cthd.MaSP='SP00090' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221293707' and  MaSP='SP00090'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221293707' and cthd.MaSP='SP00036' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221293707' and  MaSP='SP00036'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221293707' and cthd.MaSP='SP00075' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221293707' and  MaSP='SP00075'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221293707' and cthd.MaSP='SP000165' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221293707' and  MaSP='SP000165'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221293707' and cthd.MaSP='SP000201' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221293707' and  MaSP='SP000201'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221293707' and cthd.MaSP='SP00091' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221293707' and  MaSP='SP00091'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER018.20221221293707' and cthd.MaSP='SP0006' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER018.20221221293707' and  MaSP='SP0006'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER015.20221221232490' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER015.20221221232490' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER015.20221221232490' and cthd.MaSP='SP000301' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER015.20221221232490' and  MaSP='SP000301'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER015.20221221232490' and cthd.MaSP='SP000197' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER015.20221221232490' and  MaSP='SP000197'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER015.20221221232490' and cthd.MaSP='SP000112' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER015.20221221232490' and  MaSP='SP000112'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221384819' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221384819' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221384819' and cthd.MaSP='SP000320' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221384819' and  MaSP='SP000320'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221384819' and cthd.MaSP='SP00083' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221384819' and  MaSP='SP00083'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER09.20221221384819' and cthd.MaSP='SP00047' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER09.20221221384819' and  MaSP='SP00047'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221083938' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221083938' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER014.20221221083938' and cthd.MaSP='SP000228' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER014.20221221083938' and  MaSP='SP000228'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221136189' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221136189' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221136189' and cthd.MaSP='SP000288' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221136189' and  MaSP='SP000288'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221136189' and cthd.MaSP='SP000304' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221136189' and  MaSP='SP000304'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221136189' and cthd.MaSP='SP000211' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221136189' and  MaSP='SP000211'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221136189' and cthd.MaSP='SP00055' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221136189' and  MaSP='SP00055'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221136189' and cthd.MaSP='SP000275' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221136189' and  MaSP='SP000275'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER016.20221221136189' and cthd.MaSP='SP000164' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER016.20221221136189' and  MaSP='SP000164'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER015.20221221213298' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER015.20221221213298' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER015.20221221213298' and cthd.MaSP='SP000101' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER015.20221221213298' and  MaSP='SP000101'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER01.20221221084955' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER01.20221221084955' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER02.20221221431604' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER02.20221221431604' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER02.20221221431604' and cthd.MaSP='SP000158' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER02.20221221431604' and  MaSP='SP000158'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER02.20221221431604' and cthd.MaSP='SP000198' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER02.20221221431604' and  MaSP='SP000198'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER02.20221221431604' and cthd.MaSP='SP000129' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER02.20221221431604' and  MaSP='SP000129'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER02.20221221431604' and cthd.MaSP='SP000114' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER02.20221221431604' and  MaSP='SP000114'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER02.20221221431604' and cthd.MaSP='SP00036' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER02.20221221431604' and  MaSP='SP00036'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER02.20221221431604' and cthd.MaSP='SP00030' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER02.20221221431604' and  MaSP='SP00030'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER02.20221221431604' and cthd.MaSP='SP000266' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER02.20221221431604' and  MaSP='SP000266'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER07.20221221153737' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER07.20221221153737' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER07.20221221153737' and cthd.MaSP='SP000141' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER07.20221221153737' and  MaSP='SP000141'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER08.20221221477298' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER08.20221221477298' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER08.20221221477298' and cthd.MaSP='SP000304' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER08.20221221477298' and  MaSP='SP000304'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER08.20221221477298' and cthd.MaSP='SP00053' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER08.20221221477298' and  MaSP='SP00053'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER08.20221221477298' and cthd.MaSP='SP000321' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER08.20221221477298' and  MaSP='SP000321'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER08.20221221477298' and cthd.MaSP='SP00080' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER08.20221221477298' and  MaSP='SP00080'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221453825' and cthd.MaSP='SP0001' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221453825' and  MaSP='SP0001'
+
+ GO 
+
+update ChiTietHoaDon set TongPhu = (select cthd.SoLuong * sp.Gia from ChiTietHoaDon cthd, SanPham sp where cthd.MaHoaDon='DH.USER017.20221221453825' and cthd.MaSP='SP000121' and cthd.MaSP=sp.MaSP ) where MaHoaDon='DH.USER017.20221221453825' and  MaSP='SP000121'
+
+ GO 
+
+/*
+update tttongthanhtoan
+*/
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER020.20221221072850') where MaHoaDon='DH.USER020.20221221072850'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER016.20221221074813') where MaHoaDon='DH.USER016.20221221074813'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER01.20221221082592') where MaHoaDon='DH.USER01.20221221082592'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER01.20221221092542') where MaHoaDon='DH.USER01.20221221092542'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER017.20221221093950') where MaHoaDon='DH.USER017.20221221093950'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER012.20221221120685') where MaHoaDon='DH.USER012.20221221120685'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER020.20221221091594') where MaHoaDon='DH.USER020.20221221091594'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER012.20221221138944') where MaHoaDon='DH.USER012.20221221138944'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER010.20221221114986') where MaHoaDon='DH.USER010.20221221114986'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER015.20221221085468') where MaHoaDon='DH.USER015.20221221085468'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER020.20221221105180') where MaHoaDon='DH.USER020.20221221105180'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER016.20221221080000') where MaHoaDon='DH.USER016.20221221080000'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER05.20221221082198') where MaHoaDon='DH.USER05.20221221082198'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER01.20221221168075') where MaHoaDon='DH.USER01.20221221168075'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER09.20221221077176') where MaHoaDon='DH.USER09.20221221077176'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER09.20221221075985') where MaHoaDon='DH.USER09.20221221075985'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER018.20221221214786') where MaHoaDon='DH.USER018.20221221214786'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER01.20221221111542') where MaHoaDon='DH.USER01.20221221111542'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER013.20221221145768') where MaHoaDon='DH.USER013.20221221145768'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER03.20221221124473') where MaHoaDon='DH.USER03.20221221124473'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER019.20221221179210') where MaHoaDon='DH.USER019.20221221179210'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER08.20221221172474') where MaHoaDon='DH.USER08.20221221172474'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER04.20221221282004') where MaHoaDon='DH.USER04.20221221282004'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER05.20221221150222') where MaHoaDon='DH.USER05.20221221150222'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER01.20221221246610') where MaHoaDon='DH.USER01.20221221246610'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER012.20221221315025') where MaHoaDon='DH.USER012.20221221315025'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER020.20221221288624') where MaHoaDon='DH.USER020.20221221288624'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER09.20221221158278') where MaHoaDon='DH.USER09.20221221158278'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER012.20221221304354') where MaHoaDon='DH.USER012.20221221304354'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER019.20221221110202') where MaHoaDon='DH.USER019.20221221110202'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER09.20221221357130') where MaHoaDon='DH.USER09.20221221357130'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER014.20221221117118') where MaHoaDon='DH.USER014.20221221117118'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER07.20221221173906') where MaHoaDon='DH.USER07.20221221173906'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER07.20221221098755') where MaHoaDon='DH.USER07.20221221098755'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER019.20221221084206') where MaHoaDon='DH.USER019.20221221084206'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER018.20221221227235') where MaHoaDon='DH.USER018.20221221227235'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER014.20221221335686') where MaHoaDon='DH.USER014.20221221335686'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER01.20221221352940') where MaHoaDon='DH.USER01.20221221352940'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER014.20221221259240') where MaHoaDon='DH.USER014.20221221259240'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER018.20221221293707') where MaHoaDon='DH.USER018.20221221293707'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER015.20221221232490') where MaHoaDon='DH.USER015.20221221232490'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER09.20221221384819') where MaHoaDon='DH.USER09.20221221384819'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER014.20221221083938') where MaHoaDon='DH.USER014.20221221083938'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER016.20221221136189') where MaHoaDon='DH.USER016.20221221136189'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER015.20221221213298') where MaHoaDon='DH.USER015.20221221213298'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER01.20221221084955') where MaHoaDon='DH.USER01.20221221084955'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER02.20221221431604') where MaHoaDon='DH.USER02.20221221431604'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER07.20221221153737') where MaHoaDon='DH.USER07.20221221153737'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER08.20221221477298') where MaHoaDon='DH.USER08.20221221477298'
+
+ GO 
+
+update HoaDon set TongThanhToan=(select sum(tongphu) from ChiTietHoaDon where MaHoaDon='DH.USER017.20221221453825') where MaHoaDon='DH.USER017.20221221453825'
+
+ GO 
+
+
+
