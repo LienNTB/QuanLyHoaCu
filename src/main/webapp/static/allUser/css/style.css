@@ -905,6 +905,8 @@ textarea.input {
 
 .product .product-img {
   position: relative;
+  width: 262px;
+  height: 262px;
 }
 
 .product .product-img > img {
@@ -952,6 +954,8 @@ textarea.input {
 .product .product-body .product-name {
   text-transform: uppercase;
   font-size: 14px;
+  height:32px;
+  overflow:hidden;
 }
 
 .product .product-body .product-name > a {
@@ -2326,6 +2330,6 @@ td {
   justify-content: center;
 }
 .product-wrap {
-	height: 420px;
+	max-height: 430px;
 	margin: 20px 0;
 }
