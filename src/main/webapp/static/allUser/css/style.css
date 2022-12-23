@@ -2317,10 +2317,6 @@ td {
 .user-info {
   display: inline-block;
   margin-left: 26%;
-  font-size: 20px;
-}
-.user-info input {
-	width: 500px;
 }
 .user-info-item {
   width: 100%;
@@ -2328,4 +2324,8 @@ td {
   flex-direction: row;
   text-align: center;
   justify-content: center;
+}
+.product-wrap {
+	height: 420px;
+	margin: 20px 0;
 }
