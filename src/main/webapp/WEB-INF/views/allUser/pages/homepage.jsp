@@ -201,7 +201,7 @@
 		            <div class="row">
 		              <c:forEach var="sp" items="${sanPhamList}">
 		              
-		                <div class="col-md-4 col-xs-6">
+		                <div class="product-wrap col-md-4 col-xs-6">
 		                  <div class="product">
 		                    <div class="product-img">
 		                      <img
