@@ -69,7 +69,7 @@
 					<label class="desc" id="title3" for="Field3">Họ tên:</label>
 					<div>
 						<input name="hoTen" type="text" spellcheck="false"
-							 maxlength="255" tabindex="3" />
+							 value="${user.hoTen}"maxlength="255" tabindex="3" />
 					</div>
 				</div>
 				<div>

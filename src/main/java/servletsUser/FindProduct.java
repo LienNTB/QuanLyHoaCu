@@ -44,6 +44,7 @@ public class FindProduct extends HttpServlet {
 		catch (Exception e)
 		{
 			e.printStackTrace();
+			System.out.println("inputFind rỗng");
 			
 		}
 		if (dataInput == null || dataInput=="")
