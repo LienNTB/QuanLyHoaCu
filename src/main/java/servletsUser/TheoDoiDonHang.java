@@ -62,6 +62,8 @@ public class TheoDoiDonHang extends HttpServlet {
 		{
 			e.printStackTrace();
 		}
+		
+		System.out.println("Đang ở trang theo dõi đơn hàng");
 		request.setAttribute("mode",mode);
 		request.setAttribute("hoadonList", list);
 		response.setContentType("text/html;charset=UTF-8");
