@@ -14,6 +14,11 @@
         var username=document.forms["SignUpForm"]["Username"].value;
         var password=document.forms["SignUpForm"]["Password"].value;
         var Repassword=document.forms["SignUpForm"]["Repassword"].value;
+        
+        var name=document.forms["SignUpForm"]["Name"].value;
+        var birthday=document.forms["SignUpForm"]["Birthday"].value;
+        var address=document.forms["SignUpForm"]["Address"].value;
+        
         if (username=="" || password=="")
         {
           alert("Vui lòng nhập tên đăng nhập và mật khẩu");
@@ -29,6 +34,22 @@
           alert("Mật khẩu và xác nhận mật khẩu không giống nhau!");
           return false;
         }
+        if (name=="" )
+        {
+          alert("Vui lòng nhập tên của bạn");
+          return false;
+        }
+        if (birthday=="" )
+        {
+          alert("Vui lòng chọn ngày sinh của bạn");
+          return false;
+        }
+        if (address=="" )
+        {
+          alert("Vui lòng nhập địa chỉ của bạn");
+          return false;
+        }
+        
         return true;
       
       }
