@@ -114,7 +114,7 @@
 								</div>
 								</div>
 								<div>
-									<c:forEach var="cthd" items="${ chiTietHoaDon}">
+									<c:forEach var="cthd" items="${chiTietHoaDon}">
 										<div class="order-products">
 											<div class="order-col">
 												<div>${cthd.tenSP}</div>
