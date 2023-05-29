@@ -14,7 +14,7 @@ public class XFrameOptionsFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
-        httpResponse.setHeader("X-Frame-Options", "SAMEORIGIN");
+        httpResponse.setHeader("X-Frame-Options", "DENY");
         chain.doFilter(request, response);
     }
 
